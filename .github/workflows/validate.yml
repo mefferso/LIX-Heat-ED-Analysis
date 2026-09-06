@@ -33,7 +33,9 @@ jobs:
         run: python -m py_compile scripts/update_data.py
 
       - name: Validate JavaScript syntax
-        run: node --check app.js
+        run: |
+          node --check app.js
+          node --check scripts/fetch_ldh.mjs
 
       - name: Validate geography JSON
         run: python -m json.tool config/geography.json > /dev/null
