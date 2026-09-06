@@ -15,6 +15,10 @@ on:
 permissions:
   contents: write
 
+concurrency:
+  group: heat-health-data-${{ github.ref }}
+  cancel-in-progress: true
+
 jobs:
   update:
     runs-on: ubuntu-latest
@@ -41,5 +45,6 @@ jobs:
             echo "No generated data changes."
           else
             git commit -m "Update LIX heat-health data"
+            git pull --rebase origin main
             git push
           fi
