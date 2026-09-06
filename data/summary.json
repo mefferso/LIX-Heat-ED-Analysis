@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-09-06T08:37:28.445031+00:00",
+  "generated_at": "2026-09-06T08:38:40.821650+00:00",
   "iem_status": "ok",
   "iem_rows_received": 6492,
   "heat_event_zone_rows_used": 4875,
@@ -9,5 +9,9 @@
   "hazard_period_end": "2026-09-06",
   "ldh_status": "no_data",
   "ldh_source_rows": 0,
-  "analysis_rows": 0
+  "analysis_rows": 0,
+  "ldh_tableau_probe": {
+    "status": "error",
+    "error": "HTTP Error 404: Not Found"
+  }
 }
