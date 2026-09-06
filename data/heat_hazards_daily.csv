@@ -1,4 +1,1984 @@
 date,parish,ldh_region,heat_advisory,excessive_heat_warning,headline,hazard_hours
+2023-01-01,Ascension,2,0,0,none,0.00
+2023-01-01,Assumption,3,0,0,none,0.00
+2023-01-01,East Baton Rouge,2,0,0,none,0.00
+2023-01-01,East Feliciana,2,0,0,none,0.00
+2023-01-01,Iberville,2,0,0,none,0.00
+2023-01-01,Jefferson,1,0,0,none,0.00
+2023-01-01,Lafourche,3,0,0,none,0.00
+2023-01-01,Livingston,9,0,0,none,0.00
+2023-01-01,Orleans,1,0,0,none,0.00
+2023-01-01,Plaquemines,1,0,0,none,0.00
+2023-01-01,Pointe Coupee,2,0,0,none,0.00
+2023-01-01,St. Bernard,1,0,0,none,0.00
+2023-01-01,St. Charles,3,0,0,none,0.00
+2023-01-01,St. Helena,9,0,0,none,0.00
+2023-01-01,St. James,3,0,0,none,0.00
+2023-01-01,St. John the Baptist,3,0,0,none,0.00
+2023-01-01,St. Tammany,9,0,0,none,0.00
+2023-01-01,Tangipahoa,9,0,0,none,0.00
+2023-01-01,Terrebonne,3,0,0,none,0.00
+2023-01-01,Washington,9,0,0,none,0.00
+2023-01-01,West Baton Rouge,2,0,0,none,0.00
+2023-01-01,West Feliciana,2,0,0,none,0.00
+2023-01-02,Ascension,2,0,0,none,0.00
+2023-01-02,Assumption,3,0,0,none,0.00
+2023-01-02,East Baton Rouge,2,0,0,none,0.00
+2023-01-02,East Feliciana,2,0,0,none,0.00
+2023-01-02,Iberville,2,0,0,none,0.00
+2023-01-02,Jefferson,1,0,0,none,0.00
+2023-01-02,Lafourche,3,0,0,none,0.00
+2023-01-02,Livingston,9,0,0,none,0.00
+2023-01-02,Orleans,1,0,0,none,0.00
+2023-01-02,Plaquemines,1,0,0,none,0.00
+2023-01-02,Pointe Coupee,2,0,0,none,0.00
+2023-01-02,St. Bernard,1,0,0,none,0.00
+2023-01-02,St. Charles,3,0,0,none,0.00
+2023-01-02,St. Helena,9,0,0,none,0.00
+2023-01-02,St. James,3,0,0,none,0.00
+2023-01-02,St. John the Baptist,3,0,0,none,0.00
+2023-01-02,St. Tammany,9,0,0,none,0.00
+2023-01-02,Tangipahoa,9,0,0,none,0.00
+2023-01-02,Terrebonne,3,0,0,none,0.00
+2023-01-02,Washington,9,0,0,none,0.00
+2023-01-02,West Baton Rouge,2,0,0,none,0.00
+2023-01-02,West Feliciana,2,0,0,none,0.00
+2023-01-03,Ascension,2,0,0,none,0.00
+2023-01-03,Assumption,3,0,0,none,0.00
+2023-01-03,East Baton Rouge,2,0,0,none,0.00
+2023-01-03,East Feliciana,2,0,0,none,0.00
+2023-01-03,Iberville,2,0,0,none,0.00
+2023-01-03,Jefferson,1,0,0,none,0.00
+2023-01-03,Lafourche,3,0,0,none,0.00
+2023-01-03,Livingston,9,0,0,none,0.00
+2023-01-03,Orleans,1,0,0,none,0.00
+2023-01-03,Plaquemines,1,0,0,none,0.00
+2023-01-03,Pointe Coupee,2,0,0,none,0.00
+2023-01-03,St. Bernard,1,0,0,none,0.00
+2023-01-03,St. Charles,3,0,0,none,0.00
+2023-01-03,St. Helena,9,0,0,none,0.00
+2023-01-03,St. James,3,0,0,none,0.00
+2023-01-03,St. John the Baptist,3,0,0,none,0.00
+2023-01-03,St. Tammany,9,0,0,none,0.00
+2023-01-03,Tangipahoa,9,0,0,none,0.00
+2023-01-03,Terrebonne,3,0,0,none,0.00
+2023-01-03,Washington,9,0,0,none,0.00
+2023-01-03,West Baton Rouge,2,0,0,none,0.00
+2023-01-03,West Feliciana,2,0,0,none,0.00
+2023-01-04,Ascension,2,0,0,none,0.00
+2023-01-04,Assumption,3,0,0,none,0.00
+2023-01-04,East Baton Rouge,2,0,0,none,0.00
+2023-01-04,East Feliciana,2,0,0,none,0.00
+2023-01-04,Iberville,2,0,0,none,0.00
+2023-01-04,Jefferson,1,0,0,none,0.00
+2023-01-04,Lafourche,3,0,0,none,0.00
+2023-01-04,Livingston,9,0,0,none,0.00
+2023-01-04,Orleans,1,0,0,none,0.00
+2023-01-04,Plaquemines,1,0,0,none,0.00
+2023-01-04,Pointe Coupee,2,0,0,none,0.00
+2023-01-04,St. Bernard,1,0,0,none,0.00
+2023-01-04,St. Charles,3,0,0,none,0.00
+2023-01-04,St. Helena,9,0,0,none,0.00
+2023-01-04,St. James,3,0,0,none,0.00
+2023-01-04,St. John the Baptist,3,0,0,none,0.00
+2023-01-04,St. Tammany,9,0,0,none,0.00
+2023-01-04,Tangipahoa,9,0,0,none,0.00
+2023-01-04,Terrebonne,3,0,0,none,0.00
+2023-01-04,Washington,9,0,0,none,0.00
+2023-01-04,West Baton Rouge,2,0,0,none,0.00
+2023-01-04,West Feliciana,2,0,0,none,0.00
+2023-01-05,Ascension,2,0,0,none,0.00
+2023-01-05,Assumption,3,0,0,none,0.00
+2023-01-05,East Baton Rouge,2,0,0,none,0.00
+2023-01-05,East Feliciana,2,0,0,none,0.00
+2023-01-05,Iberville,2,0,0,none,0.00
+2023-01-05,Jefferson,1,0,0,none,0.00
+2023-01-05,Lafourche,3,0,0,none,0.00
+2023-01-05,Livingston,9,0,0,none,0.00
+2023-01-05,Orleans,1,0,0,none,0.00
+2023-01-05,Plaquemines,1,0,0,none,0.00
+2023-01-05,Pointe Coupee,2,0,0,none,0.00
+2023-01-05,St. Bernard,1,0,0,none,0.00
+2023-01-05,St. Charles,3,0,0,none,0.00
+2023-01-05,St. Helena,9,0,0,none,0.00
+2023-01-05,St. James,3,0,0,none,0.00
+2023-01-05,St. John the Baptist,3,0,0,none,0.00
+2023-01-05,St. Tammany,9,0,0,none,0.00
+2023-01-05,Tangipahoa,9,0,0,none,0.00
+2023-01-05,Terrebonne,3,0,0,none,0.00
+2023-01-05,Washington,9,0,0,none,0.00
+2023-01-05,West Baton Rouge,2,0,0,none,0.00
+2023-01-05,West Feliciana,2,0,0,none,0.00
+2023-01-06,Ascension,2,0,0,none,0.00
+2023-01-06,Assumption,3,0,0,none,0.00
+2023-01-06,East Baton Rouge,2,0,0,none,0.00
+2023-01-06,East Feliciana,2,0,0,none,0.00
+2023-01-06,Iberville,2,0,0,none,0.00
+2023-01-06,Jefferson,1,0,0,none,0.00
+2023-01-06,Lafourche,3,0,0,none,0.00
+2023-01-06,Livingston,9,0,0,none,0.00
+2023-01-06,Orleans,1,0,0,none,0.00
+2023-01-06,Plaquemines,1,0,0,none,0.00
+2023-01-06,Pointe Coupee,2,0,0,none,0.00
+2023-01-06,St. Bernard,1,0,0,none,0.00
+2023-01-06,St. Charles,3,0,0,none,0.00
+2023-01-06,St. Helena,9,0,0,none,0.00
+2023-01-06,St. James,3,0,0,none,0.00
+2023-01-06,St. John the Baptist,3,0,0,none,0.00
+2023-01-06,St. Tammany,9,0,0,none,0.00
+2023-01-06,Tangipahoa,9,0,0,none,0.00
+2023-01-06,Terrebonne,3,0,0,none,0.00
+2023-01-06,Washington,9,0,0,none,0.00
+2023-01-06,West Baton Rouge,2,0,0,none,0.00
+2023-01-06,West Feliciana,2,0,0,none,0.00
+2023-01-07,Ascension,2,0,0,none,0.00
+2023-01-07,Assumption,3,0,0,none,0.00
+2023-01-07,East Baton Rouge,2,0,0,none,0.00
+2023-01-07,East Feliciana,2,0,0,none,0.00
+2023-01-07,Iberville,2,0,0,none,0.00
+2023-01-07,Jefferson,1,0,0,none,0.00
+2023-01-07,Lafourche,3,0,0,none,0.00
+2023-01-07,Livingston,9,0,0,none,0.00
+2023-01-07,Orleans,1,0,0,none,0.00
+2023-01-07,Plaquemines,1,0,0,none,0.00
+2023-01-07,Pointe Coupee,2,0,0,none,0.00
+2023-01-07,St. Bernard,1,0,0,none,0.00
+2023-01-07,St. Charles,3,0,0,none,0.00
+2023-01-07,St. Helena,9,0,0,none,0.00
+2023-01-07,St. James,3,0,0,none,0.00
+2023-01-07,St. John the Baptist,3,0,0,none,0.00
+2023-01-07,St. Tammany,9,0,0,none,0.00
+2023-01-07,Tangipahoa,9,0,0,none,0.00
+2023-01-07,Terrebonne,3,0,0,none,0.00
+2023-01-07,Washington,9,0,0,none,0.00
+2023-01-07,West Baton Rouge,2,0,0,none,0.00
+2023-01-07,West Feliciana,2,0,0,none,0.00
+2023-01-08,Ascension,2,0,0,none,0.00
+2023-01-08,Assumption,3,0,0,none,0.00
+2023-01-08,East Baton Rouge,2,0,0,none,0.00
+2023-01-08,East Feliciana,2,0,0,none,0.00
+2023-01-08,Iberville,2,0,0,none,0.00
+2023-01-08,Jefferson,1,0,0,none,0.00
+2023-01-08,Lafourche,3,0,0,none,0.00
+2023-01-08,Livingston,9,0,0,none,0.00
+2023-01-08,Orleans,1,0,0,none,0.00
+2023-01-08,Plaquemines,1,0,0,none,0.00
+2023-01-08,Pointe Coupee,2,0,0,none,0.00
+2023-01-08,St. Bernard,1,0,0,none,0.00
+2023-01-08,St. Charles,3,0,0,none,0.00
+2023-01-08,St. Helena,9,0,0,none,0.00
+2023-01-08,St. James,3,0,0,none,0.00
+2023-01-08,St. John the Baptist,3,0,0,none,0.00
+2023-01-08,St. Tammany,9,0,0,none,0.00
+2023-01-08,Tangipahoa,9,0,0,none,0.00
+2023-01-08,Terrebonne,3,0,0,none,0.00
+2023-01-08,Washington,9,0,0,none,0.00
+2023-01-08,West Baton Rouge,2,0,0,none,0.00
+2023-01-08,West Feliciana,2,0,0,none,0.00
+2023-01-09,Ascension,2,0,0,none,0.00
+2023-01-09,Assumption,3,0,0,none,0.00
+2023-01-09,East Baton Rouge,2,0,0,none,0.00
+2023-01-09,East Feliciana,2,0,0,none,0.00
+2023-01-09,Iberville,2,0,0,none,0.00
+2023-01-09,Jefferson,1,0,0,none,0.00
+2023-01-09,Lafourche,3,0,0,none,0.00
+2023-01-09,Livingston,9,0,0,none,0.00
+2023-01-09,Orleans,1,0,0,none,0.00
+2023-01-09,Plaquemines,1,0,0,none,0.00
+2023-01-09,Pointe Coupee,2,0,0,none,0.00
+2023-01-09,St. Bernard,1,0,0,none,0.00
+2023-01-09,St. Charles,3,0,0,none,0.00
+2023-01-09,St. Helena,9,0,0,none,0.00
+2023-01-09,St. James,3,0,0,none,0.00
+2023-01-09,St. John the Baptist,3,0,0,none,0.00
+2023-01-09,St. Tammany,9,0,0,none,0.00
+2023-01-09,Tangipahoa,9,0,0,none,0.00
+2023-01-09,Terrebonne,3,0,0,none,0.00
+2023-01-09,Washington,9,0,0,none,0.00
+2023-01-09,West Baton Rouge,2,0,0,none,0.00
+2023-01-09,West Feliciana,2,0,0,none,0.00
+2023-01-10,Ascension,2,0,0,none,0.00
+2023-01-10,Assumption,3,0,0,none,0.00
+2023-01-10,East Baton Rouge,2,0,0,none,0.00
+2023-01-10,East Feliciana,2,0,0,none,0.00
+2023-01-10,Iberville,2,0,0,none,0.00
+2023-01-10,Jefferson,1,0,0,none,0.00
+2023-01-10,Lafourche,3,0,0,none,0.00
+2023-01-10,Livingston,9,0,0,none,0.00
+2023-01-10,Orleans,1,0,0,none,0.00
+2023-01-10,Plaquemines,1,0,0,none,0.00
+2023-01-10,Pointe Coupee,2,0,0,none,0.00
+2023-01-10,St. Bernard,1,0,0,none,0.00
+2023-01-10,St. Charles,3,0,0,none,0.00
+2023-01-10,St. Helena,9,0,0,none,0.00
+2023-01-10,St. James,3,0,0,none,0.00
+2023-01-10,St. John the Baptist,3,0,0,none,0.00
+2023-01-10,St. Tammany,9,0,0,none,0.00
+2023-01-10,Tangipahoa,9,0,0,none,0.00
+2023-01-10,Terrebonne,3,0,0,none,0.00
+2023-01-10,Washington,9,0,0,none,0.00
+2023-01-10,West Baton Rouge,2,0,0,none,0.00
+2023-01-10,West Feliciana,2,0,0,none,0.00
+2023-01-11,Ascension,2,0,0,none,0.00
+2023-01-11,Assumption,3,0,0,none,0.00
+2023-01-11,East Baton Rouge,2,0,0,none,0.00
+2023-01-11,East Feliciana,2,0,0,none,0.00
+2023-01-11,Iberville,2,0,0,none,0.00
+2023-01-11,Jefferson,1,0,0,none,0.00
+2023-01-11,Lafourche,3,0,0,none,0.00
+2023-01-11,Livingston,9,0,0,none,0.00
+2023-01-11,Orleans,1,0,0,none,0.00
+2023-01-11,Plaquemines,1,0,0,none,0.00
+2023-01-11,Pointe Coupee,2,0,0,none,0.00
+2023-01-11,St. Bernard,1,0,0,none,0.00
+2023-01-11,St. Charles,3,0,0,none,0.00
+2023-01-11,St. Helena,9,0,0,none,0.00
+2023-01-11,St. James,3,0,0,none,0.00
+2023-01-11,St. John the Baptist,3,0,0,none,0.00
+2023-01-11,St. Tammany,9,0,0,none,0.00
+2023-01-11,Tangipahoa,9,0,0,none,0.00
+2023-01-11,Terrebonne,3,0,0,none,0.00
+2023-01-11,Washington,9,0,0,none,0.00
+2023-01-11,West Baton Rouge,2,0,0,none,0.00
+2023-01-11,West Feliciana,2,0,0,none,0.00
+2023-01-12,Ascension,2,0,0,none,0.00
+2023-01-12,Assumption,3,0,0,none,0.00
+2023-01-12,East Baton Rouge,2,0,0,none,0.00
+2023-01-12,East Feliciana,2,0,0,none,0.00
+2023-01-12,Iberville,2,0,0,none,0.00
+2023-01-12,Jefferson,1,0,0,none,0.00
+2023-01-12,Lafourche,3,0,0,none,0.00
+2023-01-12,Livingston,9,0,0,none,0.00
+2023-01-12,Orleans,1,0,0,none,0.00
+2023-01-12,Plaquemines,1,0,0,none,0.00
+2023-01-12,Pointe Coupee,2,0,0,none,0.00
+2023-01-12,St. Bernard,1,0,0,none,0.00
+2023-01-12,St. Charles,3,0,0,none,0.00
+2023-01-12,St. Helena,9,0,0,none,0.00
+2023-01-12,St. James,3,0,0,none,0.00
+2023-01-12,St. John the Baptist,3,0,0,none,0.00
+2023-01-12,St. Tammany,9,0,0,none,0.00
+2023-01-12,Tangipahoa,9,0,0,none,0.00
+2023-01-12,Terrebonne,3,0,0,none,0.00
+2023-01-12,Washington,9,0,0,none,0.00
+2023-01-12,West Baton Rouge,2,0,0,none,0.00
+2023-01-12,West Feliciana,2,0,0,none,0.00
+2023-01-13,Ascension,2,0,0,none,0.00
+2023-01-13,Assumption,3,0,0,none,0.00
+2023-01-13,East Baton Rouge,2,0,0,none,0.00
+2023-01-13,East Feliciana,2,0,0,none,0.00
+2023-01-13,Iberville,2,0,0,none,0.00
+2023-01-13,Jefferson,1,0,0,none,0.00
+2023-01-13,Lafourche,3,0,0,none,0.00
+2023-01-13,Livingston,9,0,0,none,0.00
+2023-01-13,Orleans,1,0,0,none,0.00
+2023-01-13,Plaquemines,1,0,0,none,0.00
+2023-01-13,Pointe Coupee,2,0,0,none,0.00
+2023-01-13,St. Bernard,1,0,0,none,0.00
+2023-01-13,St. Charles,3,0,0,none,0.00
+2023-01-13,St. Helena,9,0,0,none,0.00
+2023-01-13,St. James,3,0,0,none,0.00
+2023-01-13,St. John the Baptist,3,0,0,none,0.00
+2023-01-13,St. Tammany,9,0,0,none,0.00
+2023-01-13,Tangipahoa,9,0,0,none,0.00
+2023-01-13,Terrebonne,3,0,0,none,0.00
+2023-01-13,Washington,9,0,0,none,0.00
+2023-01-13,West Baton Rouge,2,0,0,none,0.00
+2023-01-13,West Feliciana,2,0,0,none,0.00
+2023-01-14,Ascension,2,0,0,none,0.00
+2023-01-14,Assumption,3,0,0,none,0.00
+2023-01-14,East Baton Rouge,2,0,0,none,0.00
+2023-01-14,East Feliciana,2,0,0,none,0.00
+2023-01-14,Iberville,2,0,0,none,0.00
+2023-01-14,Jefferson,1,0,0,none,0.00
+2023-01-14,Lafourche,3,0,0,none,0.00
+2023-01-14,Livingston,9,0,0,none,0.00
+2023-01-14,Orleans,1,0,0,none,0.00
+2023-01-14,Plaquemines,1,0,0,none,0.00
+2023-01-14,Pointe Coupee,2,0,0,none,0.00
+2023-01-14,St. Bernard,1,0,0,none,0.00
+2023-01-14,St. Charles,3,0,0,none,0.00
+2023-01-14,St. Helena,9,0,0,none,0.00
+2023-01-14,St. James,3,0,0,none,0.00
+2023-01-14,St. John the Baptist,3,0,0,none,0.00
+2023-01-14,St. Tammany,9,0,0,none,0.00
+2023-01-14,Tangipahoa,9,0,0,none,0.00
+2023-01-14,Terrebonne,3,0,0,none,0.00
+2023-01-14,Washington,9,0,0,none,0.00
+2023-01-14,West Baton Rouge,2,0,0,none,0.00
+2023-01-14,West Feliciana,2,0,0,none,0.00
+2023-01-15,Ascension,2,0,0,none,0.00
+2023-01-15,Assumption,3,0,0,none,0.00
+2023-01-15,East Baton Rouge,2,0,0,none,0.00
+2023-01-15,East Feliciana,2,0,0,none,0.00
+2023-01-15,Iberville,2,0,0,none,0.00
+2023-01-15,Jefferson,1,0,0,none,0.00
+2023-01-15,Lafourche,3,0,0,none,0.00
+2023-01-15,Livingston,9,0,0,none,0.00
+2023-01-15,Orleans,1,0,0,none,0.00
+2023-01-15,Plaquemines,1,0,0,none,0.00
+2023-01-15,Pointe Coupee,2,0,0,none,0.00
+2023-01-15,St. Bernard,1,0,0,none,0.00
+2023-01-15,St. Charles,3,0,0,none,0.00
+2023-01-15,St. Helena,9,0,0,none,0.00
+2023-01-15,St. James,3,0,0,none,0.00
+2023-01-15,St. John the Baptist,3,0,0,none,0.00
+2023-01-15,St. Tammany,9,0,0,none,0.00
+2023-01-15,Tangipahoa,9,0,0,none,0.00
+2023-01-15,Terrebonne,3,0,0,none,0.00
+2023-01-15,Washington,9,0,0,none,0.00
+2023-01-15,West Baton Rouge,2,0,0,none,0.00
+2023-01-15,West Feliciana,2,0,0,none,0.00
+2023-01-16,Ascension,2,0,0,none,0.00
+2023-01-16,Assumption,3,0,0,none,0.00
+2023-01-16,East Baton Rouge,2,0,0,none,0.00
+2023-01-16,East Feliciana,2,0,0,none,0.00
+2023-01-16,Iberville,2,0,0,none,0.00
+2023-01-16,Jefferson,1,0,0,none,0.00
+2023-01-16,Lafourche,3,0,0,none,0.00
+2023-01-16,Livingston,9,0,0,none,0.00
+2023-01-16,Orleans,1,0,0,none,0.00
+2023-01-16,Plaquemines,1,0,0,none,0.00
+2023-01-16,Pointe Coupee,2,0,0,none,0.00
+2023-01-16,St. Bernard,1,0,0,none,0.00
+2023-01-16,St. Charles,3,0,0,none,0.00
+2023-01-16,St. Helena,9,0,0,none,0.00
+2023-01-16,St. James,3,0,0,none,0.00
+2023-01-16,St. John the Baptist,3,0,0,none,0.00
+2023-01-16,St. Tammany,9,0,0,none,0.00
+2023-01-16,Tangipahoa,9,0,0,none,0.00
+2023-01-16,Terrebonne,3,0,0,none,0.00
+2023-01-16,Washington,9,0,0,none,0.00
+2023-01-16,West Baton Rouge,2,0,0,none,0.00
+2023-01-16,West Feliciana,2,0,0,none,0.00
+2023-01-17,Ascension,2,0,0,none,0.00
+2023-01-17,Assumption,3,0,0,none,0.00
+2023-01-17,East Baton Rouge,2,0,0,none,0.00
+2023-01-17,East Feliciana,2,0,0,none,0.00
+2023-01-17,Iberville,2,0,0,none,0.00
+2023-01-17,Jefferson,1,0,0,none,0.00
+2023-01-17,Lafourche,3,0,0,none,0.00
+2023-01-17,Livingston,9,0,0,none,0.00
+2023-01-17,Orleans,1,0,0,none,0.00
+2023-01-17,Plaquemines,1,0,0,none,0.00
+2023-01-17,Pointe Coupee,2,0,0,none,0.00
+2023-01-17,St. Bernard,1,0,0,none,0.00
+2023-01-17,St. Charles,3,0,0,none,0.00
+2023-01-17,St. Helena,9,0,0,none,0.00
+2023-01-17,St. James,3,0,0,none,0.00
+2023-01-17,St. John the Baptist,3,0,0,none,0.00
+2023-01-17,St. Tammany,9,0,0,none,0.00
+2023-01-17,Tangipahoa,9,0,0,none,0.00
+2023-01-17,Terrebonne,3,0,0,none,0.00
+2023-01-17,Washington,9,0,0,none,0.00
+2023-01-17,West Baton Rouge,2,0,0,none,0.00
+2023-01-17,West Feliciana,2,0,0,none,0.00
+2023-01-18,Ascension,2,0,0,none,0.00
+2023-01-18,Assumption,3,0,0,none,0.00
+2023-01-18,East Baton Rouge,2,0,0,none,0.00
+2023-01-18,East Feliciana,2,0,0,none,0.00
+2023-01-18,Iberville,2,0,0,none,0.00
+2023-01-18,Jefferson,1,0,0,none,0.00
+2023-01-18,Lafourche,3,0,0,none,0.00
+2023-01-18,Livingston,9,0,0,none,0.00
+2023-01-18,Orleans,1,0,0,none,0.00
+2023-01-18,Plaquemines,1,0,0,none,0.00
+2023-01-18,Pointe Coupee,2,0,0,none,0.00
+2023-01-18,St. Bernard,1,0,0,none,0.00
+2023-01-18,St. Charles,3,0,0,none,0.00
+2023-01-18,St. Helena,9,0,0,none,0.00
+2023-01-18,St. James,3,0,0,none,0.00
+2023-01-18,St. John the Baptist,3,0,0,none,0.00
+2023-01-18,St. Tammany,9,0,0,none,0.00
+2023-01-18,Tangipahoa,9,0,0,none,0.00
+2023-01-18,Terrebonne,3,0,0,none,0.00
+2023-01-18,Washington,9,0,0,none,0.00
+2023-01-18,West Baton Rouge,2,0,0,none,0.00
+2023-01-18,West Feliciana,2,0,0,none,0.00
+2023-01-19,Ascension,2,0,0,none,0.00
+2023-01-19,Assumption,3,0,0,none,0.00
+2023-01-19,East Baton Rouge,2,0,0,none,0.00
+2023-01-19,East Feliciana,2,0,0,none,0.00
+2023-01-19,Iberville,2,0,0,none,0.00
+2023-01-19,Jefferson,1,0,0,none,0.00
+2023-01-19,Lafourche,3,0,0,none,0.00
+2023-01-19,Livingston,9,0,0,none,0.00
+2023-01-19,Orleans,1,0,0,none,0.00
+2023-01-19,Plaquemines,1,0,0,none,0.00
+2023-01-19,Pointe Coupee,2,0,0,none,0.00
+2023-01-19,St. Bernard,1,0,0,none,0.00
+2023-01-19,St. Charles,3,0,0,none,0.00
+2023-01-19,St. Helena,9,0,0,none,0.00
+2023-01-19,St. James,3,0,0,none,0.00
+2023-01-19,St. John the Baptist,3,0,0,none,0.00
+2023-01-19,St. Tammany,9,0,0,none,0.00
+2023-01-19,Tangipahoa,9,0,0,none,0.00
+2023-01-19,Terrebonne,3,0,0,none,0.00
+2023-01-19,Washington,9,0,0,none,0.00
+2023-01-19,West Baton Rouge,2,0,0,none,0.00
+2023-01-19,West Feliciana,2,0,0,none,0.00
+2023-01-20,Ascension,2,0,0,none,0.00
+2023-01-20,Assumption,3,0,0,none,0.00
+2023-01-20,East Baton Rouge,2,0,0,none,0.00
+2023-01-20,East Feliciana,2,0,0,none,0.00
+2023-01-20,Iberville,2,0,0,none,0.00
+2023-01-20,Jefferson,1,0,0,none,0.00
+2023-01-20,Lafourche,3,0,0,none,0.00
+2023-01-20,Livingston,9,0,0,none,0.00
+2023-01-20,Orleans,1,0,0,none,0.00
+2023-01-20,Plaquemines,1,0,0,none,0.00
+2023-01-20,Pointe Coupee,2,0,0,none,0.00
+2023-01-20,St. Bernard,1,0,0,none,0.00
+2023-01-20,St. Charles,3,0,0,none,0.00
+2023-01-20,St. Helena,9,0,0,none,0.00
+2023-01-20,St. James,3,0,0,none,0.00
+2023-01-20,St. John the Baptist,3,0,0,none,0.00
+2023-01-20,St. Tammany,9,0,0,none,0.00
+2023-01-20,Tangipahoa,9,0,0,none,0.00
+2023-01-20,Terrebonne,3,0,0,none,0.00
+2023-01-20,Washington,9,0,0,none,0.00
+2023-01-20,West Baton Rouge,2,0,0,none,0.00
+2023-01-20,West Feliciana,2,0,0,none,0.00
+2023-01-21,Ascension,2,0,0,none,0.00
+2023-01-21,Assumption,3,0,0,none,0.00
+2023-01-21,East Baton Rouge,2,0,0,none,0.00
+2023-01-21,East Feliciana,2,0,0,none,0.00
+2023-01-21,Iberville,2,0,0,none,0.00
+2023-01-21,Jefferson,1,0,0,none,0.00
+2023-01-21,Lafourche,3,0,0,none,0.00
+2023-01-21,Livingston,9,0,0,none,0.00
+2023-01-21,Orleans,1,0,0,none,0.00
+2023-01-21,Plaquemines,1,0,0,none,0.00
+2023-01-21,Pointe Coupee,2,0,0,none,0.00
+2023-01-21,St. Bernard,1,0,0,none,0.00
+2023-01-21,St. Charles,3,0,0,none,0.00
+2023-01-21,St. Helena,9,0,0,none,0.00
+2023-01-21,St. James,3,0,0,none,0.00
+2023-01-21,St. John the Baptist,3,0,0,none,0.00
+2023-01-21,St. Tammany,9,0,0,none,0.00
+2023-01-21,Tangipahoa,9,0,0,none,0.00
+2023-01-21,Terrebonne,3,0,0,none,0.00
+2023-01-21,Washington,9,0,0,none,0.00
+2023-01-21,West Baton Rouge,2,0,0,none,0.00
+2023-01-21,West Feliciana,2,0,0,none,0.00
+2023-01-22,Ascension,2,0,0,none,0.00
+2023-01-22,Assumption,3,0,0,none,0.00
+2023-01-22,East Baton Rouge,2,0,0,none,0.00
+2023-01-22,East Feliciana,2,0,0,none,0.00
+2023-01-22,Iberville,2,0,0,none,0.00
+2023-01-22,Jefferson,1,0,0,none,0.00
+2023-01-22,Lafourche,3,0,0,none,0.00
+2023-01-22,Livingston,9,0,0,none,0.00
+2023-01-22,Orleans,1,0,0,none,0.00
+2023-01-22,Plaquemines,1,0,0,none,0.00
+2023-01-22,Pointe Coupee,2,0,0,none,0.00
+2023-01-22,St. Bernard,1,0,0,none,0.00
+2023-01-22,St. Charles,3,0,0,none,0.00
+2023-01-22,St. Helena,9,0,0,none,0.00
+2023-01-22,St. James,3,0,0,none,0.00
+2023-01-22,St. John the Baptist,3,0,0,none,0.00
+2023-01-22,St. Tammany,9,0,0,none,0.00
+2023-01-22,Tangipahoa,9,0,0,none,0.00
+2023-01-22,Terrebonne,3,0,0,none,0.00
+2023-01-22,Washington,9,0,0,none,0.00
+2023-01-22,West Baton Rouge,2,0,0,none,0.00
+2023-01-22,West Feliciana,2,0,0,none,0.00
+2023-01-23,Ascension,2,0,0,none,0.00
+2023-01-23,Assumption,3,0,0,none,0.00
+2023-01-23,East Baton Rouge,2,0,0,none,0.00
+2023-01-23,East Feliciana,2,0,0,none,0.00
+2023-01-23,Iberville,2,0,0,none,0.00
+2023-01-23,Jefferson,1,0,0,none,0.00
+2023-01-23,Lafourche,3,0,0,none,0.00
+2023-01-23,Livingston,9,0,0,none,0.00
+2023-01-23,Orleans,1,0,0,none,0.00
+2023-01-23,Plaquemines,1,0,0,none,0.00
+2023-01-23,Pointe Coupee,2,0,0,none,0.00
+2023-01-23,St. Bernard,1,0,0,none,0.00
+2023-01-23,St. Charles,3,0,0,none,0.00
+2023-01-23,St. Helena,9,0,0,none,0.00
+2023-01-23,St. James,3,0,0,none,0.00
+2023-01-23,St. John the Baptist,3,0,0,none,0.00
+2023-01-23,St. Tammany,9,0,0,none,0.00
+2023-01-23,Tangipahoa,9,0,0,none,0.00
+2023-01-23,Terrebonne,3,0,0,none,0.00
+2023-01-23,Washington,9,0,0,none,0.00
+2023-01-23,West Baton Rouge,2,0,0,none,0.00
+2023-01-23,West Feliciana,2,0,0,none,0.00
+2023-01-24,Ascension,2,0,0,none,0.00
+2023-01-24,Assumption,3,0,0,none,0.00
+2023-01-24,East Baton Rouge,2,0,0,none,0.00
+2023-01-24,East Feliciana,2,0,0,none,0.00
+2023-01-24,Iberville,2,0,0,none,0.00
+2023-01-24,Jefferson,1,0,0,none,0.00
+2023-01-24,Lafourche,3,0,0,none,0.00
+2023-01-24,Livingston,9,0,0,none,0.00
+2023-01-24,Orleans,1,0,0,none,0.00
+2023-01-24,Plaquemines,1,0,0,none,0.00
+2023-01-24,Pointe Coupee,2,0,0,none,0.00
+2023-01-24,St. Bernard,1,0,0,none,0.00
+2023-01-24,St. Charles,3,0,0,none,0.00
+2023-01-24,St. Helena,9,0,0,none,0.00
+2023-01-24,St. James,3,0,0,none,0.00
+2023-01-24,St. John the Baptist,3,0,0,none,0.00
+2023-01-24,St. Tammany,9,0,0,none,0.00
+2023-01-24,Tangipahoa,9,0,0,none,0.00
+2023-01-24,Terrebonne,3,0,0,none,0.00
+2023-01-24,Washington,9,0,0,none,0.00
+2023-01-24,West Baton Rouge,2,0,0,none,0.00
+2023-01-24,West Feliciana,2,0,0,none,0.00
+2023-01-25,Ascension,2,0,0,none,0.00
+2023-01-25,Assumption,3,0,0,none,0.00
+2023-01-25,East Baton Rouge,2,0,0,none,0.00
+2023-01-25,East Feliciana,2,0,0,none,0.00
+2023-01-25,Iberville,2,0,0,none,0.00
+2023-01-25,Jefferson,1,0,0,none,0.00
+2023-01-25,Lafourche,3,0,0,none,0.00
+2023-01-25,Livingston,9,0,0,none,0.00
+2023-01-25,Orleans,1,0,0,none,0.00
+2023-01-25,Plaquemines,1,0,0,none,0.00
+2023-01-25,Pointe Coupee,2,0,0,none,0.00
+2023-01-25,St. Bernard,1,0,0,none,0.00
+2023-01-25,St. Charles,3,0,0,none,0.00
+2023-01-25,St. Helena,9,0,0,none,0.00
+2023-01-25,St. James,3,0,0,none,0.00
+2023-01-25,St. John the Baptist,3,0,0,none,0.00
+2023-01-25,St. Tammany,9,0,0,none,0.00
+2023-01-25,Tangipahoa,9,0,0,none,0.00
+2023-01-25,Terrebonne,3,0,0,none,0.00
+2023-01-25,Washington,9,0,0,none,0.00
+2023-01-25,West Baton Rouge,2,0,0,none,0.00
+2023-01-25,West Feliciana,2,0,0,none,0.00
+2023-01-26,Ascension,2,0,0,none,0.00
+2023-01-26,Assumption,3,0,0,none,0.00
+2023-01-26,East Baton Rouge,2,0,0,none,0.00
+2023-01-26,East Feliciana,2,0,0,none,0.00
+2023-01-26,Iberville,2,0,0,none,0.00
+2023-01-26,Jefferson,1,0,0,none,0.00
+2023-01-26,Lafourche,3,0,0,none,0.00
+2023-01-26,Livingston,9,0,0,none,0.00
+2023-01-26,Orleans,1,0,0,none,0.00
+2023-01-26,Plaquemines,1,0,0,none,0.00
+2023-01-26,Pointe Coupee,2,0,0,none,0.00
+2023-01-26,St. Bernard,1,0,0,none,0.00
+2023-01-26,St. Charles,3,0,0,none,0.00
+2023-01-26,St. Helena,9,0,0,none,0.00
+2023-01-26,St. James,3,0,0,none,0.00
+2023-01-26,St. John the Baptist,3,0,0,none,0.00
+2023-01-26,St. Tammany,9,0,0,none,0.00
+2023-01-26,Tangipahoa,9,0,0,none,0.00
+2023-01-26,Terrebonne,3,0,0,none,0.00
+2023-01-26,Washington,9,0,0,none,0.00
+2023-01-26,West Baton Rouge,2,0,0,none,0.00
+2023-01-26,West Feliciana,2,0,0,none,0.00
+2023-01-27,Ascension,2,0,0,none,0.00
+2023-01-27,Assumption,3,0,0,none,0.00
+2023-01-27,East Baton Rouge,2,0,0,none,0.00
+2023-01-27,East Feliciana,2,0,0,none,0.00
+2023-01-27,Iberville,2,0,0,none,0.00
+2023-01-27,Jefferson,1,0,0,none,0.00
+2023-01-27,Lafourche,3,0,0,none,0.00
+2023-01-27,Livingston,9,0,0,none,0.00
+2023-01-27,Orleans,1,0,0,none,0.00
+2023-01-27,Plaquemines,1,0,0,none,0.00
+2023-01-27,Pointe Coupee,2,0,0,none,0.00
+2023-01-27,St. Bernard,1,0,0,none,0.00
+2023-01-27,St. Charles,3,0,0,none,0.00
+2023-01-27,St. Helena,9,0,0,none,0.00
+2023-01-27,St. James,3,0,0,none,0.00
+2023-01-27,St. John the Baptist,3,0,0,none,0.00
+2023-01-27,St. Tammany,9,0,0,none,0.00
+2023-01-27,Tangipahoa,9,0,0,none,0.00
+2023-01-27,Terrebonne,3,0,0,none,0.00
+2023-01-27,Washington,9,0,0,none,0.00
+2023-01-27,West Baton Rouge,2,0,0,none,0.00
+2023-01-27,West Feliciana,2,0,0,none,0.00
+2023-01-28,Ascension,2,0,0,none,0.00
+2023-01-28,Assumption,3,0,0,none,0.00
+2023-01-28,East Baton Rouge,2,0,0,none,0.00
+2023-01-28,East Feliciana,2,0,0,none,0.00
+2023-01-28,Iberville,2,0,0,none,0.00
+2023-01-28,Jefferson,1,0,0,none,0.00
+2023-01-28,Lafourche,3,0,0,none,0.00
+2023-01-28,Livingston,9,0,0,none,0.00
+2023-01-28,Orleans,1,0,0,none,0.00
+2023-01-28,Plaquemines,1,0,0,none,0.00
+2023-01-28,Pointe Coupee,2,0,0,none,0.00
+2023-01-28,St. Bernard,1,0,0,none,0.00
+2023-01-28,St. Charles,3,0,0,none,0.00
+2023-01-28,St. Helena,9,0,0,none,0.00
+2023-01-28,St. James,3,0,0,none,0.00
+2023-01-28,St. John the Baptist,3,0,0,none,0.00
+2023-01-28,St. Tammany,9,0,0,none,0.00
+2023-01-28,Tangipahoa,9,0,0,none,0.00
+2023-01-28,Terrebonne,3,0,0,none,0.00
+2023-01-28,Washington,9,0,0,none,0.00
+2023-01-28,West Baton Rouge,2,0,0,none,0.00
+2023-01-28,West Feliciana,2,0,0,none,0.00
+2023-01-29,Ascension,2,0,0,none,0.00
+2023-01-29,Assumption,3,0,0,none,0.00
+2023-01-29,East Baton Rouge,2,0,0,none,0.00
+2023-01-29,East Feliciana,2,0,0,none,0.00
+2023-01-29,Iberville,2,0,0,none,0.00
+2023-01-29,Jefferson,1,0,0,none,0.00
+2023-01-29,Lafourche,3,0,0,none,0.00
+2023-01-29,Livingston,9,0,0,none,0.00
+2023-01-29,Orleans,1,0,0,none,0.00
+2023-01-29,Plaquemines,1,0,0,none,0.00
+2023-01-29,Pointe Coupee,2,0,0,none,0.00
+2023-01-29,St. Bernard,1,0,0,none,0.00
+2023-01-29,St. Charles,3,0,0,none,0.00
+2023-01-29,St. Helena,9,0,0,none,0.00
+2023-01-29,St. James,3,0,0,none,0.00
+2023-01-29,St. John the Baptist,3,0,0,none,0.00
+2023-01-29,St. Tammany,9,0,0,none,0.00
+2023-01-29,Tangipahoa,9,0,0,none,0.00
+2023-01-29,Terrebonne,3,0,0,none,0.00
+2023-01-29,Washington,9,0,0,none,0.00
+2023-01-29,West Baton Rouge,2,0,0,none,0.00
+2023-01-29,West Feliciana,2,0,0,none,0.00
+2023-01-30,Ascension,2,0,0,none,0.00
+2023-01-30,Assumption,3,0,0,none,0.00
+2023-01-30,East Baton Rouge,2,0,0,none,0.00
+2023-01-30,East Feliciana,2,0,0,none,0.00
+2023-01-30,Iberville,2,0,0,none,0.00
+2023-01-30,Jefferson,1,0,0,none,0.00
+2023-01-30,Lafourche,3,0,0,none,0.00
+2023-01-30,Livingston,9,0,0,none,0.00
+2023-01-30,Orleans,1,0,0,none,0.00
+2023-01-30,Plaquemines,1,0,0,none,0.00
+2023-01-30,Pointe Coupee,2,0,0,none,0.00
+2023-01-30,St. Bernard,1,0,0,none,0.00
+2023-01-30,St. Charles,3,0,0,none,0.00
+2023-01-30,St. Helena,9,0,0,none,0.00
+2023-01-30,St. James,3,0,0,none,0.00
+2023-01-30,St. John the Baptist,3,0,0,none,0.00
+2023-01-30,St. Tammany,9,0,0,none,0.00
+2023-01-30,Tangipahoa,9,0,0,none,0.00
+2023-01-30,Terrebonne,3,0,0,none,0.00
+2023-01-30,Washington,9,0,0,none,0.00
+2023-01-30,West Baton Rouge,2,0,0,none,0.00
+2023-01-30,West Feliciana,2,0,0,none,0.00
+2023-01-31,Ascension,2,0,0,none,0.00
+2023-01-31,Assumption,3,0,0,none,0.00
+2023-01-31,East Baton Rouge,2,0,0,none,0.00
+2023-01-31,East Feliciana,2,0,0,none,0.00
+2023-01-31,Iberville,2,0,0,none,0.00
+2023-01-31,Jefferson,1,0,0,none,0.00
+2023-01-31,Lafourche,3,0,0,none,0.00
+2023-01-31,Livingston,9,0,0,none,0.00
+2023-01-31,Orleans,1,0,0,none,0.00
+2023-01-31,Plaquemines,1,0,0,none,0.00
+2023-01-31,Pointe Coupee,2,0,0,none,0.00
+2023-01-31,St. Bernard,1,0,0,none,0.00
+2023-01-31,St. Charles,3,0,0,none,0.00
+2023-01-31,St. Helena,9,0,0,none,0.00
+2023-01-31,St. James,3,0,0,none,0.00
+2023-01-31,St. John the Baptist,3,0,0,none,0.00
+2023-01-31,St. Tammany,9,0,0,none,0.00
+2023-01-31,Tangipahoa,9,0,0,none,0.00
+2023-01-31,Terrebonne,3,0,0,none,0.00
+2023-01-31,Washington,9,0,0,none,0.00
+2023-01-31,West Baton Rouge,2,0,0,none,0.00
+2023-01-31,West Feliciana,2,0,0,none,0.00
+2023-02-01,Ascension,2,0,0,none,0.00
+2023-02-01,Assumption,3,0,0,none,0.00
+2023-02-01,East Baton Rouge,2,0,0,none,0.00
+2023-02-01,East Feliciana,2,0,0,none,0.00
+2023-02-01,Iberville,2,0,0,none,0.00
+2023-02-01,Jefferson,1,0,0,none,0.00
+2023-02-01,Lafourche,3,0,0,none,0.00
+2023-02-01,Livingston,9,0,0,none,0.00
+2023-02-01,Orleans,1,0,0,none,0.00
+2023-02-01,Plaquemines,1,0,0,none,0.00
+2023-02-01,Pointe Coupee,2,0,0,none,0.00
+2023-02-01,St. Bernard,1,0,0,none,0.00
+2023-02-01,St. Charles,3,0,0,none,0.00
+2023-02-01,St. Helena,9,0,0,none,0.00
+2023-02-01,St. James,3,0,0,none,0.00
+2023-02-01,St. John the Baptist,3,0,0,none,0.00
+2023-02-01,St. Tammany,9,0,0,none,0.00
+2023-02-01,Tangipahoa,9,0,0,none,0.00
+2023-02-01,Terrebonne,3,0,0,none,0.00
+2023-02-01,Washington,9,0,0,none,0.00
+2023-02-01,West Baton Rouge,2,0,0,none,0.00
+2023-02-01,West Feliciana,2,0,0,none,0.00
+2023-02-02,Ascension,2,0,0,none,0.00
+2023-02-02,Assumption,3,0,0,none,0.00
+2023-02-02,East Baton Rouge,2,0,0,none,0.00
+2023-02-02,East Feliciana,2,0,0,none,0.00
+2023-02-02,Iberville,2,0,0,none,0.00
+2023-02-02,Jefferson,1,0,0,none,0.00
+2023-02-02,Lafourche,3,0,0,none,0.00
+2023-02-02,Livingston,9,0,0,none,0.00
+2023-02-02,Orleans,1,0,0,none,0.00
+2023-02-02,Plaquemines,1,0,0,none,0.00
+2023-02-02,Pointe Coupee,2,0,0,none,0.00
+2023-02-02,St. Bernard,1,0,0,none,0.00
+2023-02-02,St. Charles,3,0,0,none,0.00
+2023-02-02,St. Helena,9,0,0,none,0.00
+2023-02-02,St. James,3,0,0,none,0.00
+2023-02-02,St. John the Baptist,3,0,0,none,0.00
+2023-02-02,St. Tammany,9,0,0,none,0.00
+2023-02-02,Tangipahoa,9,0,0,none,0.00
+2023-02-02,Terrebonne,3,0,0,none,0.00
+2023-02-02,Washington,9,0,0,none,0.00
+2023-02-02,West Baton Rouge,2,0,0,none,0.00
+2023-02-02,West Feliciana,2,0,0,none,0.00
+2023-02-03,Ascension,2,0,0,none,0.00
+2023-02-03,Assumption,3,0,0,none,0.00
+2023-02-03,East Baton Rouge,2,0,0,none,0.00
+2023-02-03,East Feliciana,2,0,0,none,0.00
+2023-02-03,Iberville,2,0,0,none,0.00
+2023-02-03,Jefferson,1,0,0,none,0.00
+2023-02-03,Lafourche,3,0,0,none,0.00
+2023-02-03,Livingston,9,0,0,none,0.00
+2023-02-03,Orleans,1,0,0,none,0.00
+2023-02-03,Plaquemines,1,0,0,none,0.00
+2023-02-03,Pointe Coupee,2,0,0,none,0.00
+2023-02-03,St. Bernard,1,0,0,none,0.00
+2023-02-03,St. Charles,3,0,0,none,0.00
+2023-02-03,St. Helena,9,0,0,none,0.00
+2023-02-03,St. James,3,0,0,none,0.00
+2023-02-03,St. John the Baptist,3,0,0,none,0.00
+2023-02-03,St. Tammany,9,0,0,none,0.00
+2023-02-03,Tangipahoa,9,0,0,none,0.00
+2023-02-03,Terrebonne,3,0,0,none,0.00
+2023-02-03,Washington,9,0,0,none,0.00
+2023-02-03,West Baton Rouge,2,0,0,none,0.00
+2023-02-03,West Feliciana,2,0,0,none,0.00
+2023-02-04,Ascension,2,0,0,none,0.00
+2023-02-04,Assumption,3,0,0,none,0.00
+2023-02-04,East Baton Rouge,2,0,0,none,0.00
+2023-02-04,East Feliciana,2,0,0,none,0.00
+2023-02-04,Iberville,2,0,0,none,0.00
+2023-02-04,Jefferson,1,0,0,none,0.00
+2023-02-04,Lafourche,3,0,0,none,0.00
+2023-02-04,Livingston,9,0,0,none,0.00
+2023-02-04,Orleans,1,0,0,none,0.00
+2023-02-04,Plaquemines,1,0,0,none,0.00
+2023-02-04,Pointe Coupee,2,0,0,none,0.00
+2023-02-04,St. Bernard,1,0,0,none,0.00
+2023-02-04,St. Charles,3,0,0,none,0.00
+2023-02-04,St. Helena,9,0,0,none,0.00
+2023-02-04,St. James,3,0,0,none,0.00
+2023-02-04,St. John the Baptist,3,0,0,none,0.00
+2023-02-04,St. Tammany,9,0,0,none,0.00
+2023-02-04,Tangipahoa,9,0,0,none,0.00
+2023-02-04,Terrebonne,3,0,0,none,0.00
+2023-02-04,Washington,9,0,0,none,0.00
+2023-02-04,West Baton Rouge,2,0,0,none,0.00
+2023-02-04,West Feliciana,2,0,0,none,0.00
+2023-02-05,Ascension,2,0,0,none,0.00
+2023-02-05,Assumption,3,0,0,none,0.00
+2023-02-05,East Baton Rouge,2,0,0,none,0.00
+2023-02-05,East Feliciana,2,0,0,none,0.00
+2023-02-05,Iberville,2,0,0,none,0.00
+2023-02-05,Jefferson,1,0,0,none,0.00
+2023-02-05,Lafourche,3,0,0,none,0.00
+2023-02-05,Livingston,9,0,0,none,0.00
+2023-02-05,Orleans,1,0,0,none,0.00
+2023-02-05,Plaquemines,1,0,0,none,0.00
+2023-02-05,Pointe Coupee,2,0,0,none,0.00
+2023-02-05,St. Bernard,1,0,0,none,0.00
+2023-02-05,St. Charles,3,0,0,none,0.00
+2023-02-05,St. Helena,9,0,0,none,0.00
+2023-02-05,St. James,3,0,0,none,0.00
+2023-02-05,St. John the Baptist,3,0,0,none,0.00
+2023-02-05,St. Tammany,9,0,0,none,0.00
+2023-02-05,Tangipahoa,9,0,0,none,0.00
+2023-02-05,Terrebonne,3,0,0,none,0.00
+2023-02-05,Washington,9,0,0,none,0.00
+2023-02-05,West Baton Rouge,2,0,0,none,0.00
+2023-02-05,West Feliciana,2,0,0,none,0.00
+2023-02-06,Ascension,2,0,0,none,0.00
+2023-02-06,Assumption,3,0,0,none,0.00
+2023-02-06,East Baton Rouge,2,0,0,none,0.00
+2023-02-06,East Feliciana,2,0,0,none,0.00
+2023-02-06,Iberville,2,0,0,none,0.00
+2023-02-06,Jefferson,1,0,0,none,0.00
+2023-02-06,Lafourche,3,0,0,none,0.00
+2023-02-06,Livingston,9,0,0,none,0.00
+2023-02-06,Orleans,1,0,0,none,0.00
+2023-02-06,Plaquemines,1,0,0,none,0.00
+2023-02-06,Pointe Coupee,2,0,0,none,0.00
+2023-02-06,St. Bernard,1,0,0,none,0.00
+2023-02-06,St. Charles,3,0,0,none,0.00
+2023-02-06,St. Helena,9,0,0,none,0.00
+2023-02-06,St. James,3,0,0,none,0.00
+2023-02-06,St. John the Baptist,3,0,0,none,0.00
+2023-02-06,St. Tammany,9,0,0,none,0.00
+2023-02-06,Tangipahoa,9,0,0,none,0.00
+2023-02-06,Terrebonne,3,0,0,none,0.00
+2023-02-06,Washington,9,0,0,none,0.00
+2023-02-06,West Baton Rouge,2,0,0,none,0.00
+2023-02-06,West Feliciana,2,0,0,none,0.00
+2023-02-07,Ascension,2,0,0,none,0.00
+2023-02-07,Assumption,3,0,0,none,0.00
+2023-02-07,East Baton Rouge,2,0,0,none,0.00
+2023-02-07,East Feliciana,2,0,0,none,0.00
+2023-02-07,Iberville,2,0,0,none,0.00
+2023-02-07,Jefferson,1,0,0,none,0.00
+2023-02-07,Lafourche,3,0,0,none,0.00
+2023-02-07,Livingston,9,0,0,none,0.00
+2023-02-07,Orleans,1,0,0,none,0.00
+2023-02-07,Plaquemines,1,0,0,none,0.00
+2023-02-07,Pointe Coupee,2,0,0,none,0.00
+2023-02-07,St. Bernard,1,0,0,none,0.00
+2023-02-07,St. Charles,3,0,0,none,0.00
+2023-02-07,St. Helena,9,0,0,none,0.00
+2023-02-07,St. James,3,0,0,none,0.00
+2023-02-07,St. John the Baptist,3,0,0,none,0.00
+2023-02-07,St. Tammany,9,0,0,none,0.00
+2023-02-07,Tangipahoa,9,0,0,none,0.00
+2023-02-07,Terrebonne,3,0,0,none,0.00
+2023-02-07,Washington,9,0,0,none,0.00
+2023-02-07,West Baton Rouge,2,0,0,none,0.00
+2023-02-07,West Feliciana,2,0,0,none,0.00
+2023-02-08,Ascension,2,0,0,none,0.00
+2023-02-08,Assumption,3,0,0,none,0.00
+2023-02-08,East Baton Rouge,2,0,0,none,0.00
+2023-02-08,East Feliciana,2,0,0,none,0.00
+2023-02-08,Iberville,2,0,0,none,0.00
+2023-02-08,Jefferson,1,0,0,none,0.00
+2023-02-08,Lafourche,3,0,0,none,0.00
+2023-02-08,Livingston,9,0,0,none,0.00
+2023-02-08,Orleans,1,0,0,none,0.00
+2023-02-08,Plaquemines,1,0,0,none,0.00
+2023-02-08,Pointe Coupee,2,0,0,none,0.00
+2023-02-08,St. Bernard,1,0,0,none,0.00
+2023-02-08,St. Charles,3,0,0,none,0.00
+2023-02-08,St. Helena,9,0,0,none,0.00
+2023-02-08,St. James,3,0,0,none,0.00
+2023-02-08,St. John the Baptist,3,0,0,none,0.00
+2023-02-08,St. Tammany,9,0,0,none,0.00
+2023-02-08,Tangipahoa,9,0,0,none,0.00
+2023-02-08,Terrebonne,3,0,0,none,0.00
+2023-02-08,Washington,9,0,0,none,0.00
+2023-02-08,West Baton Rouge,2,0,0,none,0.00
+2023-02-08,West Feliciana,2,0,0,none,0.00
+2023-02-09,Ascension,2,0,0,none,0.00
+2023-02-09,Assumption,3,0,0,none,0.00
+2023-02-09,East Baton Rouge,2,0,0,none,0.00
+2023-02-09,East Feliciana,2,0,0,none,0.00
+2023-02-09,Iberville,2,0,0,none,0.00
+2023-02-09,Jefferson,1,0,0,none,0.00
+2023-02-09,Lafourche,3,0,0,none,0.00
+2023-02-09,Livingston,9,0,0,none,0.00
+2023-02-09,Orleans,1,0,0,none,0.00
+2023-02-09,Plaquemines,1,0,0,none,0.00
+2023-02-09,Pointe Coupee,2,0,0,none,0.00
+2023-02-09,St. Bernard,1,0,0,none,0.00
+2023-02-09,St. Charles,3,0,0,none,0.00
+2023-02-09,St. Helena,9,0,0,none,0.00
+2023-02-09,St. James,3,0,0,none,0.00
+2023-02-09,St. John the Baptist,3,0,0,none,0.00
+2023-02-09,St. Tammany,9,0,0,none,0.00
+2023-02-09,Tangipahoa,9,0,0,none,0.00
+2023-02-09,Terrebonne,3,0,0,none,0.00
+2023-02-09,Washington,9,0,0,none,0.00
+2023-02-09,West Baton Rouge,2,0,0,none,0.00
+2023-02-09,West Feliciana,2,0,0,none,0.00
+2023-02-10,Ascension,2,0,0,none,0.00
+2023-02-10,Assumption,3,0,0,none,0.00
+2023-02-10,East Baton Rouge,2,0,0,none,0.00
+2023-02-10,East Feliciana,2,0,0,none,0.00
+2023-02-10,Iberville,2,0,0,none,0.00
+2023-02-10,Jefferson,1,0,0,none,0.00
+2023-02-10,Lafourche,3,0,0,none,0.00
+2023-02-10,Livingston,9,0,0,none,0.00
+2023-02-10,Orleans,1,0,0,none,0.00
+2023-02-10,Plaquemines,1,0,0,none,0.00
+2023-02-10,Pointe Coupee,2,0,0,none,0.00
+2023-02-10,St. Bernard,1,0,0,none,0.00
+2023-02-10,St. Charles,3,0,0,none,0.00
+2023-02-10,St. Helena,9,0,0,none,0.00
+2023-02-10,St. James,3,0,0,none,0.00
+2023-02-10,St. John the Baptist,3,0,0,none,0.00
+2023-02-10,St. Tammany,9,0,0,none,0.00
+2023-02-10,Tangipahoa,9,0,0,none,0.00
+2023-02-10,Terrebonne,3,0,0,none,0.00
+2023-02-10,Washington,9,0,0,none,0.00
+2023-02-10,West Baton Rouge,2,0,0,none,0.00
+2023-02-10,West Feliciana,2,0,0,none,0.00
+2023-02-11,Ascension,2,0,0,none,0.00
+2023-02-11,Assumption,3,0,0,none,0.00
+2023-02-11,East Baton Rouge,2,0,0,none,0.00
+2023-02-11,East Feliciana,2,0,0,none,0.00
+2023-02-11,Iberville,2,0,0,none,0.00
+2023-02-11,Jefferson,1,0,0,none,0.00
+2023-02-11,Lafourche,3,0,0,none,0.00
+2023-02-11,Livingston,9,0,0,none,0.00
+2023-02-11,Orleans,1,0,0,none,0.00
+2023-02-11,Plaquemines,1,0,0,none,0.00
+2023-02-11,Pointe Coupee,2,0,0,none,0.00
+2023-02-11,St. Bernard,1,0,0,none,0.00
+2023-02-11,St. Charles,3,0,0,none,0.00
+2023-02-11,St. Helena,9,0,0,none,0.00
+2023-02-11,St. James,3,0,0,none,0.00
+2023-02-11,St. John the Baptist,3,0,0,none,0.00
+2023-02-11,St. Tammany,9,0,0,none,0.00
+2023-02-11,Tangipahoa,9,0,0,none,0.00
+2023-02-11,Terrebonne,3,0,0,none,0.00
+2023-02-11,Washington,9,0,0,none,0.00
+2023-02-11,West Baton Rouge,2,0,0,none,0.00
+2023-02-11,West Feliciana,2,0,0,none,0.00
+2023-02-12,Ascension,2,0,0,none,0.00
+2023-02-12,Assumption,3,0,0,none,0.00
+2023-02-12,East Baton Rouge,2,0,0,none,0.00
+2023-02-12,East Feliciana,2,0,0,none,0.00
+2023-02-12,Iberville,2,0,0,none,0.00
+2023-02-12,Jefferson,1,0,0,none,0.00
+2023-02-12,Lafourche,3,0,0,none,0.00
+2023-02-12,Livingston,9,0,0,none,0.00
+2023-02-12,Orleans,1,0,0,none,0.00
+2023-02-12,Plaquemines,1,0,0,none,0.00
+2023-02-12,Pointe Coupee,2,0,0,none,0.00
+2023-02-12,St. Bernard,1,0,0,none,0.00
+2023-02-12,St. Charles,3,0,0,none,0.00
+2023-02-12,St. Helena,9,0,0,none,0.00
+2023-02-12,St. James,3,0,0,none,0.00
+2023-02-12,St. John the Baptist,3,0,0,none,0.00
+2023-02-12,St. Tammany,9,0,0,none,0.00
+2023-02-12,Tangipahoa,9,0,0,none,0.00
+2023-02-12,Terrebonne,3,0,0,none,0.00
+2023-02-12,Washington,9,0,0,none,0.00
+2023-02-12,West Baton Rouge,2,0,0,none,0.00
+2023-02-12,West Feliciana,2,0,0,none,0.00
+2023-02-13,Ascension,2,0,0,none,0.00
+2023-02-13,Assumption,3,0,0,none,0.00
+2023-02-13,East Baton Rouge,2,0,0,none,0.00
+2023-02-13,East Feliciana,2,0,0,none,0.00
+2023-02-13,Iberville,2,0,0,none,0.00
+2023-02-13,Jefferson,1,0,0,none,0.00
+2023-02-13,Lafourche,3,0,0,none,0.00
+2023-02-13,Livingston,9,0,0,none,0.00
+2023-02-13,Orleans,1,0,0,none,0.00
+2023-02-13,Plaquemines,1,0,0,none,0.00
+2023-02-13,Pointe Coupee,2,0,0,none,0.00
+2023-02-13,St. Bernard,1,0,0,none,0.00
+2023-02-13,St. Charles,3,0,0,none,0.00
+2023-02-13,St. Helena,9,0,0,none,0.00
+2023-02-13,St. James,3,0,0,none,0.00
+2023-02-13,St. John the Baptist,3,0,0,none,0.00
+2023-02-13,St. Tammany,9,0,0,none,0.00
+2023-02-13,Tangipahoa,9,0,0,none,0.00
+2023-02-13,Terrebonne,3,0,0,none,0.00
+2023-02-13,Washington,9,0,0,none,0.00
+2023-02-13,West Baton Rouge,2,0,0,none,0.00
+2023-02-13,West Feliciana,2,0,0,none,0.00
+2023-02-14,Ascension,2,0,0,none,0.00
+2023-02-14,Assumption,3,0,0,none,0.00
+2023-02-14,East Baton Rouge,2,0,0,none,0.00
+2023-02-14,East Feliciana,2,0,0,none,0.00
+2023-02-14,Iberville,2,0,0,none,0.00
+2023-02-14,Jefferson,1,0,0,none,0.00
+2023-02-14,Lafourche,3,0,0,none,0.00
+2023-02-14,Livingston,9,0,0,none,0.00
+2023-02-14,Orleans,1,0,0,none,0.00
+2023-02-14,Plaquemines,1,0,0,none,0.00
+2023-02-14,Pointe Coupee,2,0,0,none,0.00
+2023-02-14,St. Bernard,1,0,0,none,0.00
+2023-02-14,St. Charles,3,0,0,none,0.00
+2023-02-14,St. Helena,9,0,0,none,0.00
+2023-02-14,St. James,3,0,0,none,0.00
+2023-02-14,St. John the Baptist,3,0,0,none,0.00
+2023-02-14,St. Tammany,9,0,0,none,0.00
+2023-02-14,Tangipahoa,9,0,0,none,0.00
+2023-02-14,Terrebonne,3,0,0,none,0.00
+2023-02-14,Washington,9,0,0,none,0.00
+2023-02-14,West Baton Rouge,2,0,0,none,0.00
+2023-02-14,West Feliciana,2,0,0,none,0.00
+2023-02-15,Ascension,2,0,0,none,0.00
+2023-02-15,Assumption,3,0,0,none,0.00
+2023-02-15,East Baton Rouge,2,0,0,none,0.00
+2023-02-15,East Feliciana,2,0,0,none,0.00
+2023-02-15,Iberville,2,0,0,none,0.00
+2023-02-15,Jefferson,1,0,0,none,0.00
+2023-02-15,Lafourche,3,0,0,none,0.00
+2023-02-15,Livingston,9,0,0,none,0.00
+2023-02-15,Orleans,1,0,0,none,0.00
+2023-02-15,Plaquemines,1,0,0,none,0.00
+2023-02-15,Pointe Coupee,2,0,0,none,0.00
+2023-02-15,St. Bernard,1,0,0,none,0.00
+2023-02-15,St. Charles,3,0,0,none,0.00
+2023-02-15,St. Helena,9,0,0,none,0.00
+2023-02-15,St. James,3,0,0,none,0.00
+2023-02-15,St. John the Baptist,3,0,0,none,0.00
+2023-02-15,St. Tammany,9,0,0,none,0.00
+2023-02-15,Tangipahoa,9,0,0,none,0.00
+2023-02-15,Terrebonne,3,0,0,none,0.00
+2023-02-15,Washington,9,0,0,none,0.00
+2023-02-15,West Baton Rouge,2,0,0,none,0.00
+2023-02-15,West Feliciana,2,0,0,none,0.00
+2023-02-16,Ascension,2,0,0,none,0.00
+2023-02-16,Assumption,3,0,0,none,0.00
+2023-02-16,East Baton Rouge,2,0,0,none,0.00
+2023-02-16,East Feliciana,2,0,0,none,0.00
+2023-02-16,Iberville,2,0,0,none,0.00
+2023-02-16,Jefferson,1,0,0,none,0.00
+2023-02-16,Lafourche,3,0,0,none,0.00
+2023-02-16,Livingston,9,0,0,none,0.00
+2023-02-16,Orleans,1,0,0,none,0.00
+2023-02-16,Plaquemines,1,0,0,none,0.00
+2023-02-16,Pointe Coupee,2,0,0,none,0.00
+2023-02-16,St. Bernard,1,0,0,none,0.00
+2023-02-16,St. Charles,3,0,0,none,0.00
+2023-02-16,St. Helena,9,0,0,none,0.00
+2023-02-16,St. James,3,0,0,none,0.00
+2023-02-16,St. John the Baptist,3,0,0,none,0.00
+2023-02-16,St. Tammany,9,0,0,none,0.00
+2023-02-16,Tangipahoa,9,0,0,none,0.00
+2023-02-16,Terrebonne,3,0,0,none,0.00
+2023-02-16,Washington,9,0,0,none,0.00
+2023-02-16,West Baton Rouge,2,0,0,none,0.00
+2023-02-16,West Feliciana,2,0,0,none,0.00
+2023-02-17,Ascension,2,0,0,none,0.00
+2023-02-17,Assumption,3,0,0,none,0.00
+2023-02-17,East Baton Rouge,2,0,0,none,0.00
+2023-02-17,East Feliciana,2,0,0,none,0.00
+2023-02-17,Iberville,2,0,0,none,0.00
+2023-02-17,Jefferson,1,0,0,none,0.00
+2023-02-17,Lafourche,3,0,0,none,0.00
+2023-02-17,Livingston,9,0,0,none,0.00
+2023-02-17,Orleans,1,0,0,none,0.00
+2023-02-17,Plaquemines,1,0,0,none,0.00
+2023-02-17,Pointe Coupee,2,0,0,none,0.00
+2023-02-17,St. Bernard,1,0,0,none,0.00
+2023-02-17,St. Charles,3,0,0,none,0.00
+2023-02-17,St. Helena,9,0,0,none,0.00
+2023-02-17,St. James,3,0,0,none,0.00
+2023-02-17,St. John the Baptist,3,0,0,none,0.00
+2023-02-17,St. Tammany,9,0,0,none,0.00
+2023-02-17,Tangipahoa,9,0,0,none,0.00
+2023-02-17,Terrebonne,3,0,0,none,0.00
+2023-02-17,Washington,9,0,0,none,0.00
+2023-02-17,West Baton Rouge,2,0,0,none,0.00
+2023-02-17,West Feliciana,2,0,0,none,0.00
+2023-02-18,Ascension,2,0,0,none,0.00
+2023-02-18,Assumption,3,0,0,none,0.00
+2023-02-18,East Baton Rouge,2,0,0,none,0.00
+2023-02-18,East Feliciana,2,0,0,none,0.00
+2023-02-18,Iberville,2,0,0,none,0.00
+2023-02-18,Jefferson,1,0,0,none,0.00
+2023-02-18,Lafourche,3,0,0,none,0.00
+2023-02-18,Livingston,9,0,0,none,0.00
+2023-02-18,Orleans,1,0,0,none,0.00
+2023-02-18,Plaquemines,1,0,0,none,0.00
+2023-02-18,Pointe Coupee,2,0,0,none,0.00
+2023-02-18,St. Bernard,1,0,0,none,0.00
+2023-02-18,St. Charles,3,0,0,none,0.00
+2023-02-18,St. Helena,9,0,0,none,0.00
+2023-02-18,St. James,3,0,0,none,0.00
+2023-02-18,St. John the Baptist,3,0,0,none,0.00
+2023-02-18,St. Tammany,9,0,0,none,0.00
+2023-02-18,Tangipahoa,9,0,0,none,0.00
+2023-02-18,Terrebonne,3,0,0,none,0.00
+2023-02-18,Washington,9,0,0,none,0.00
+2023-02-18,West Baton Rouge,2,0,0,none,0.00
+2023-02-18,West Feliciana,2,0,0,none,0.00
+2023-02-19,Ascension,2,0,0,none,0.00
+2023-02-19,Assumption,3,0,0,none,0.00
+2023-02-19,East Baton Rouge,2,0,0,none,0.00
+2023-02-19,East Feliciana,2,0,0,none,0.00
+2023-02-19,Iberville,2,0,0,none,0.00
+2023-02-19,Jefferson,1,0,0,none,0.00
+2023-02-19,Lafourche,3,0,0,none,0.00
+2023-02-19,Livingston,9,0,0,none,0.00
+2023-02-19,Orleans,1,0,0,none,0.00
+2023-02-19,Plaquemines,1,0,0,none,0.00
+2023-02-19,Pointe Coupee,2,0,0,none,0.00
+2023-02-19,St. Bernard,1,0,0,none,0.00
+2023-02-19,St. Charles,3,0,0,none,0.00
+2023-02-19,St. Helena,9,0,0,none,0.00
+2023-02-19,St. James,3,0,0,none,0.00
+2023-02-19,St. John the Baptist,3,0,0,none,0.00
+2023-02-19,St. Tammany,9,0,0,none,0.00
+2023-02-19,Tangipahoa,9,0,0,none,0.00
+2023-02-19,Terrebonne,3,0,0,none,0.00
+2023-02-19,Washington,9,0,0,none,0.00
+2023-02-19,West Baton Rouge,2,0,0,none,0.00
+2023-02-19,West Feliciana,2,0,0,none,0.00
+2023-02-20,Ascension,2,0,0,none,0.00
+2023-02-20,Assumption,3,0,0,none,0.00
+2023-02-20,East Baton Rouge,2,0,0,none,0.00
+2023-02-20,East Feliciana,2,0,0,none,0.00
+2023-02-20,Iberville,2,0,0,none,0.00
+2023-02-20,Jefferson,1,0,0,none,0.00
+2023-02-20,Lafourche,3,0,0,none,0.00
+2023-02-20,Livingston,9,0,0,none,0.00
+2023-02-20,Orleans,1,0,0,none,0.00
+2023-02-20,Plaquemines,1,0,0,none,0.00
+2023-02-20,Pointe Coupee,2,0,0,none,0.00
+2023-02-20,St. Bernard,1,0,0,none,0.00
+2023-02-20,St. Charles,3,0,0,none,0.00
+2023-02-20,St. Helena,9,0,0,none,0.00
+2023-02-20,St. James,3,0,0,none,0.00
+2023-02-20,St. John the Baptist,3,0,0,none,0.00
+2023-02-20,St. Tammany,9,0,0,none,0.00
+2023-02-20,Tangipahoa,9,0,0,none,0.00
+2023-02-20,Terrebonne,3,0,0,none,0.00
+2023-02-20,Washington,9,0,0,none,0.00
+2023-02-20,West Baton Rouge,2,0,0,none,0.00
+2023-02-20,West Feliciana,2,0,0,none,0.00
+2023-02-21,Ascension,2,0,0,none,0.00
+2023-02-21,Assumption,3,0,0,none,0.00
+2023-02-21,East Baton Rouge,2,0,0,none,0.00
+2023-02-21,East Feliciana,2,0,0,none,0.00
+2023-02-21,Iberville,2,0,0,none,0.00
+2023-02-21,Jefferson,1,0,0,none,0.00
+2023-02-21,Lafourche,3,0,0,none,0.00
+2023-02-21,Livingston,9,0,0,none,0.00
+2023-02-21,Orleans,1,0,0,none,0.00
+2023-02-21,Plaquemines,1,0,0,none,0.00
+2023-02-21,Pointe Coupee,2,0,0,none,0.00
+2023-02-21,St. Bernard,1,0,0,none,0.00
+2023-02-21,St. Charles,3,0,0,none,0.00
+2023-02-21,St. Helena,9,0,0,none,0.00
+2023-02-21,St. James,3,0,0,none,0.00
+2023-02-21,St. John the Baptist,3,0,0,none,0.00
+2023-02-21,St. Tammany,9,0,0,none,0.00
+2023-02-21,Tangipahoa,9,0,0,none,0.00
+2023-02-21,Terrebonne,3,0,0,none,0.00
+2023-02-21,Washington,9,0,0,none,0.00
+2023-02-21,West Baton Rouge,2,0,0,none,0.00
+2023-02-21,West Feliciana,2,0,0,none,0.00
+2023-02-22,Ascension,2,0,0,none,0.00
+2023-02-22,Assumption,3,0,0,none,0.00
+2023-02-22,East Baton Rouge,2,0,0,none,0.00
+2023-02-22,East Feliciana,2,0,0,none,0.00
+2023-02-22,Iberville,2,0,0,none,0.00
+2023-02-22,Jefferson,1,0,0,none,0.00
+2023-02-22,Lafourche,3,0,0,none,0.00
+2023-02-22,Livingston,9,0,0,none,0.00
+2023-02-22,Orleans,1,0,0,none,0.00
+2023-02-22,Plaquemines,1,0,0,none,0.00
+2023-02-22,Pointe Coupee,2,0,0,none,0.00
+2023-02-22,St. Bernard,1,0,0,none,0.00
+2023-02-22,St. Charles,3,0,0,none,0.00
+2023-02-22,St. Helena,9,0,0,none,0.00
+2023-02-22,St. James,3,0,0,none,0.00
+2023-02-22,St. John the Baptist,3,0,0,none,0.00
+2023-02-22,St. Tammany,9,0,0,none,0.00
+2023-02-22,Tangipahoa,9,0,0,none,0.00
+2023-02-22,Terrebonne,3,0,0,none,0.00
+2023-02-22,Washington,9,0,0,none,0.00
+2023-02-22,West Baton Rouge,2,0,0,none,0.00
+2023-02-22,West Feliciana,2,0,0,none,0.00
+2023-02-23,Ascension,2,0,0,none,0.00
+2023-02-23,Assumption,3,0,0,none,0.00
+2023-02-23,East Baton Rouge,2,0,0,none,0.00
+2023-02-23,East Feliciana,2,0,0,none,0.00
+2023-02-23,Iberville,2,0,0,none,0.00
+2023-02-23,Jefferson,1,0,0,none,0.00
+2023-02-23,Lafourche,3,0,0,none,0.00
+2023-02-23,Livingston,9,0,0,none,0.00
+2023-02-23,Orleans,1,0,0,none,0.00
+2023-02-23,Plaquemines,1,0,0,none,0.00
+2023-02-23,Pointe Coupee,2,0,0,none,0.00
+2023-02-23,St. Bernard,1,0,0,none,0.00
+2023-02-23,St. Charles,3,0,0,none,0.00
+2023-02-23,St. Helena,9,0,0,none,0.00
+2023-02-23,St. James,3,0,0,none,0.00
+2023-02-23,St. John the Baptist,3,0,0,none,0.00
+2023-02-23,St. Tammany,9,0,0,none,0.00
+2023-02-23,Tangipahoa,9,0,0,none,0.00
+2023-02-23,Terrebonne,3,0,0,none,0.00
+2023-02-23,Washington,9,0,0,none,0.00
+2023-02-23,West Baton Rouge,2,0,0,none,0.00
+2023-02-23,West Feliciana,2,0,0,none,0.00
+2023-02-24,Ascension,2,0,0,none,0.00
+2023-02-24,Assumption,3,0,0,none,0.00
+2023-02-24,East Baton Rouge,2,0,0,none,0.00
+2023-02-24,East Feliciana,2,0,0,none,0.00
+2023-02-24,Iberville,2,0,0,none,0.00
+2023-02-24,Jefferson,1,0,0,none,0.00
+2023-02-24,Lafourche,3,0,0,none,0.00
+2023-02-24,Livingston,9,0,0,none,0.00
+2023-02-24,Orleans,1,0,0,none,0.00
+2023-02-24,Plaquemines,1,0,0,none,0.00
+2023-02-24,Pointe Coupee,2,0,0,none,0.00
+2023-02-24,St. Bernard,1,0,0,none,0.00
+2023-02-24,St. Charles,3,0,0,none,0.00
+2023-02-24,St. Helena,9,0,0,none,0.00
+2023-02-24,St. James,3,0,0,none,0.00
+2023-02-24,St. John the Baptist,3,0,0,none,0.00
+2023-02-24,St. Tammany,9,0,0,none,0.00
+2023-02-24,Tangipahoa,9,0,0,none,0.00
+2023-02-24,Terrebonne,3,0,0,none,0.00
+2023-02-24,Washington,9,0,0,none,0.00
+2023-02-24,West Baton Rouge,2,0,0,none,0.00
+2023-02-24,West Feliciana,2,0,0,none,0.00
+2023-02-25,Ascension,2,0,0,none,0.00
+2023-02-25,Assumption,3,0,0,none,0.00
+2023-02-25,East Baton Rouge,2,0,0,none,0.00
+2023-02-25,East Feliciana,2,0,0,none,0.00
+2023-02-25,Iberville,2,0,0,none,0.00
+2023-02-25,Jefferson,1,0,0,none,0.00
+2023-02-25,Lafourche,3,0,0,none,0.00
+2023-02-25,Livingston,9,0,0,none,0.00
+2023-02-25,Orleans,1,0,0,none,0.00
+2023-02-25,Plaquemines,1,0,0,none,0.00
+2023-02-25,Pointe Coupee,2,0,0,none,0.00
+2023-02-25,St. Bernard,1,0,0,none,0.00
+2023-02-25,St. Charles,3,0,0,none,0.00
+2023-02-25,St. Helena,9,0,0,none,0.00
+2023-02-25,St. James,3,0,0,none,0.00
+2023-02-25,St. John the Baptist,3,0,0,none,0.00
+2023-02-25,St. Tammany,9,0,0,none,0.00
+2023-02-25,Tangipahoa,9,0,0,none,0.00
+2023-02-25,Terrebonne,3,0,0,none,0.00
+2023-02-25,Washington,9,0,0,none,0.00
+2023-02-25,West Baton Rouge,2,0,0,none,0.00
+2023-02-25,West Feliciana,2,0,0,none,0.00
+2023-02-26,Ascension,2,0,0,none,0.00
+2023-02-26,Assumption,3,0,0,none,0.00
+2023-02-26,East Baton Rouge,2,0,0,none,0.00
+2023-02-26,East Feliciana,2,0,0,none,0.00
+2023-02-26,Iberville,2,0,0,none,0.00
+2023-02-26,Jefferson,1,0,0,none,0.00
+2023-02-26,Lafourche,3,0,0,none,0.00
+2023-02-26,Livingston,9,0,0,none,0.00
+2023-02-26,Orleans,1,0,0,none,0.00
+2023-02-26,Plaquemines,1,0,0,none,0.00
+2023-02-26,Pointe Coupee,2,0,0,none,0.00
+2023-02-26,St. Bernard,1,0,0,none,0.00
+2023-02-26,St. Charles,3,0,0,none,0.00
+2023-02-26,St. Helena,9,0,0,none,0.00
+2023-02-26,St. James,3,0,0,none,0.00
+2023-02-26,St. John the Baptist,3,0,0,none,0.00
+2023-02-26,St. Tammany,9,0,0,none,0.00
+2023-02-26,Tangipahoa,9,0,0,none,0.00
+2023-02-26,Terrebonne,3,0,0,none,0.00
+2023-02-26,Washington,9,0,0,none,0.00
+2023-02-26,West Baton Rouge,2,0,0,none,0.00
+2023-02-26,West Feliciana,2,0,0,none,0.00
+2023-02-27,Ascension,2,0,0,none,0.00
+2023-02-27,Assumption,3,0,0,none,0.00
+2023-02-27,East Baton Rouge,2,0,0,none,0.00
+2023-02-27,East Feliciana,2,0,0,none,0.00
+2023-02-27,Iberville,2,0,0,none,0.00
+2023-02-27,Jefferson,1,0,0,none,0.00
+2023-02-27,Lafourche,3,0,0,none,0.00
+2023-02-27,Livingston,9,0,0,none,0.00
+2023-02-27,Orleans,1,0,0,none,0.00
+2023-02-27,Plaquemines,1,0,0,none,0.00
+2023-02-27,Pointe Coupee,2,0,0,none,0.00
+2023-02-27,St. Bernard,1,0,0,none,0.00
+2023-02-27,St. Charles,3,0,0,none,0.00
+2023-02-27,St. Helena,9,0,0,none,0.00
+2023-02-27,St. James,3,0,0,none,0.00
+2023-02-27,St. John the Baptist,3,0,0,none,0.00
+2023-02-27,St. Tammany,9,0,0,none,0.00
+2023-02-27,Tangipahoa,9,0,0,none,0.00
+2023-02-27,Terrebonne,3,0,0,none,0.00
+2023-02-27,Washington,9,0,0,none,0.00
+2023-02-27,West Baton Rouge,2,0,0,none,0.00
+2023-02-27,West Feliciana,2,0,0,none,0.00
+2023-02-28,Ascension,2,0,0,none,0.00
+2023-02-28,Assumption,3,0,0,none,0.00
+2023-02-28,East Baton Rouge,2,0,0,none,0.00
+2023-02-28,East Feliciana,2,0,0,none,0.00
+2023-02-28,Iberville,2,0,0,none,0.00
+2023-02-28,Jefferson,1,0,0,none,0.00
+2023-02-28,Lafourche,3,0,0,none,0.00
+2023-02-28,Livingston,9,0,0,none,0.00
+2023-02-28,Orleans,1,0,0,none,0.00
+2023-02-28,Plaquemines,1,0,0,none,0.00
+2023-02-28,Pointe Coupee,2,0,0,none,0.00
+2023-02-28,St. Bernard,1,0,0,none,0.00
+2023-02-28,St. Charles,3,0,0,none,0.00
+2023-02-28,St. Helena,9,0,0,none,0.00
+2023-02-28,St. James,3,0,0,none,0.00
+2023-02-28,St. John the Baptist,3,0,0,none,0.00
+2023-02-28,St. Tammany,9,0,0,none,0.00
+2023-02-28,Tangipahoa,9,0,0,none,0.00
+2023-02-28,Terrebonne,3,0,0,none,0.00
+2023-02-28,Washington,9,0,0,none,0.00
+2023-02-28,West Baton Rouge,2,0,0,none,0.00
+2023-02-28,West Feliciana,2,0,0,none,0.00
+2023-03-01,Ascension,2,0,0,none,0.00
+2023-03-01,Assumption,3,0,0,none,0.00
+2023-03-01,East Baton Rouge,2,0,0,none,0.00
+2023-03-01,East Feliciana,2,0,0,none,0.00
+2023-03-01,Iberville,2,0,0,none,0.00
+2023-03-01,Jefferson,1,0,0,none,0.00
+2023-03-01,Lafourche,3,0,0,none,0.00
+2023-03-01,Livingston,9,0,0,none,0.00
+2023-03-01,Orleans,1,0,0,none,0.00
+2023-03-01,Plaquemines,1,0,0,none,0.00
+2023-03-01,Pointe Coupee,2,0,0,none,0.00
+2023-03-01,St. Bernard,1,0,0,none,0.00
+2023-03-01,St. Charles,3,0,0,none,0.00
+2023-03-01,St. Helena,9,0,0,none,0.00
+2023-03-01,St. James,3,0,0,none,0.00
+2023-03-01,St. John the Baptist,3,0,0,none,0.00
+2023-03-01,St. Tammany,9,0,0,none,0.00
+2023-03-01,Tangipahoa,9,0,0,none,0.00
+2023-03-01,Terrebonne,3,0,0,none,0.00
+2023-03-01,Washington,9,0,0,none,0.00
+2023-03-01,West Baton Rouge,2,0,0,none,0.00
+2023-03-01,West Feliciana,2,0,0,none,0.00
+2023-03-02,Ascension,2,0,0,none,0.00
+2023-03-02,Assumption,3,0,0,none,0.00
+2023-03-02,East Baton Rouge,2,0,0,none,0.00
+2023-03-02,East Feliciana,2,0,0,none,0.00
+2023-03-02,Iberville,2,0,0,none,0.00
+2023-03-02,Jefferson,1,0,0,none,0.00
+2023-03-02,Lafourche,3,0,0,none,0.00
+2023-03-02,Livingston,9,0,0,none,0.00
+2023-03-02,Orleans,1,0,0,none,0.00
+2023-03-02,Plaquemines,1,0,0,none,0.00
+2023-03-02,Pointe Coupee,2,0,0,none,0.00
+2023-03-02,St. Bernard,1,0,0,none,0.00
+2023-03-02,St. Charles,3,0,0,none,0.00
+2023-03-02,St. Helena,9,0,0,none,0.00
+2023-03-02,St. James,3,0,0,none,0.00
+2023-03-02,St. John the Baptist,3,0,0,none,0.00
+2023-03-02,St. Tammany,9,0,0,none,0.00
+2023-03-02,Tangipahoa,9,0,0,none,0.00
+2023-03-02,Terrebonne,3,0,0,none,0.00
+2023-03-02,Washington,9,0,0,none,0.00
+2023-03-02,West Baton Rouge,2,0,0,none,0.00
+2023-03-02,West Feliciana,2,0,0,none,0.00
+2023-03-03,Ascension,2,0,0,none,0.00
+2023-03-03,Assumption,3,0,0,none,0.00
+2023-03-03,East Baton Rouge,2,0,0,none,0.00
+2023-03-03,East Feliciana,2,0,0,none,0.00
+2023-03-03,Iberville,2,0,0,none,0.00
+2023-03-03,Jefferson,1,0,0,none,0.00
+2023-03-03,Lafourche,3,0,0,none,0.00
+2023-03-03,Livingston,9,0,0,none,0.00
+2023-03-03,Orleans,1,0,0,none,0.00
+2023-03-03,Plaquemines,1,0,0,none,0.00
+2023-03-03,Pointe Coupee,2,0,0,none,0.00
+2023-03-03,St. Bernard,1,0,0,none,0.00
+2023-03-03,St. Charles,3,0,0,none,0.00
+2023-03-03,St. Helena,9,0,0,none,0.00
+2023-03-03,St. James,3,0,0,none,0.00
+2023-03-03,St. John the Baptist,3,0,0,none,0.00
+2023-03-03,St. Tammany,9,0,0,none,0.00
+2023-03-03,Tangipahoa,9,0,0,none,0.00
+2023-03-03,Terrebonne,3,0,0,none,0.00
+2023-03-03,Washington,9,0,0,none,0.00
+2023-03-03,West Baton Rouge,2,0,0,none,0.00
+2023-03-03,West Feliciana,2,0,0,none,0.00
+2023-03-04,Ascension,2,0,0,none,0.00
+2023-03-04,Assumption,3,0,0,none,0.00
+2023-03-04,East Baton Rouge,2,0,0,none,0.00
+2023-03-04,East Feliciana,2,0,0,none,0.00
+2023-03-04,Iberville,2,0,0,none,0.00
+2023-03-04,Jefferson,1,0,0,none,0.00
+2023-03-04,Lafourche,3,0,0,none,0.00
+2023-03-04,Livingston,9,0,0,none,0.00
+2023-03-04,Orleans,1,0,0,none,0.00
+2023-03-04,Plaquemines,1,0,0,none,0.00
+2023-03-04,Pointe Coupee,2,0,0,none,0.00
+2023-03-04,St. Bernard,1,0,0,none,0.00
+2023-03-04,St. Charles,3,0,0,none,0.00
+2023-03-04,St. Helena,9,0,0,none,0.00
+2023-03-04,St. James,3,0,0,none,0.00
+2023-03-04,St. John the Baptist,3,0,0,none,0.00
+2023-03-04,St. Tammany,9,0,0,none,0.00
+2023-03-04,Tangipahoa,9,0,0,none,0.00
+2023-03-04,Terrebonne,3,0,0,none,0.00
+2023-03-04,Washington,9,0,0,none,0.00
+2023-03-04,West Baton Rouge,2,0,0,none,0.00
+2023-03-04,West Feliciana,2,0,0,none,0.00
+2023-03-05,Ascension,2,0,0,none,0.00
+2023-03-05,Assumption,3,0,0,none,0.00
+2023-03-05,East Baton Rouge,2,0,0,none,0.00
+2023-03-05,East Feliciana,2,0,0,none,0.00
+2023-03-05,Iberville,2,0,0,none,0.00
+2023-03-05,Jefferson,1,0,0,none,0.00
+2023-03-05,Lafourche,3,0,0,none,0.00
+2023-03-05,Livingston,9,0,0,none,0.00
+2023-03-05,Orleans,1,0,0,none,0.00
+2023-03-05,Plaquemines,1,0,0,none,0.00
+2023-03-05,Pointe Coupee,2,0,0,none,0.00
+2023-03-05,St. Bernard,1,0,0,none,0.00
+2023-03-05,St. Charles,3,0,0,none,0.00
+2023-03-05,St. Helena,9,0,0,none,0.00
+2023-03-05,St. James,3,0,0,none,0.00
+2023-03-05,St. John the Baptist,3,0,0,none,0.00
+2023-03-05,St. Tammany,9,0,0,none,0.00
+2023-03-05,Tangipahoa,9,0,0,none,0.00
+2023-03-05,Terrebonne,3,0,0,none,0.00
+2023-03-05,Washington,9,0,0,none,0.00
+2023-03-05,West Baton Rouge,2,0,0,none,0.00
+2023-03-05,West Feliciana,2,0,0,none,0.00
+2023-03-06,Ascension,2,0,0,none,0.00
+2023-03-06,Assumption,3,0,0,none,0.00
+2023-03-06,East Baton Rouge,2,0,0,none,0.00
+2023-03-06,East Feliciana,2,0,0,none,0.00
+2023-03-06,Iberville,2,0,0,none,0.00
+2023-03-06,Jefferson,1,0,0,none,0.00
+2023-03-06,Lafourche,3,0,0,none,0.00
+2023-03-06,Livingston,9,0,0,none,0.00
+2023-03-06,Orleans,1,0,0,none,0.00
+2023-03-06,Plaquemines,1,0,0,none,0.00
+2023-03-06,Pointe Coupee,2,0,0,none,0.00
+2023-03-06,St. Bernard,1,0,0,none,0.00
+2023-03-06,St. Charles,3,0,0,none,0.00
+2023-03-06,St. Helena,9,0,0,none,0.00
+2023-03-06,St. James,3,0,0,none,0.00
+2023-03-06,St. John the Baptist,3,0,0,none,0.00
+2023-03-06,St. Tammany,9,0,0,none,0.00
+2023-03-06,Tangipahoa,9,0,0,none,0.00
+2023-03-06,Terrebonne,3,0,0,none,0.00
+2023-03-06,Washington,9,0,0,none,0.00
+2023-03-06,West Baton Rouge,2,0,0,none,0.00
+2023-03-06,West Feliciana,2,0,0,none,0.00
+2023-03-07,Ascension,2,0,0,none,0.00
+2023-03-07,Assumption,3,0,0,none,0.00
+2023-03-07,East Baton Rouge,2,0,0,none,0.00
+2023-03-07,East Feliciana,2,0,0,none,0.00
+2023-03-07,Iberville,2,0,0,none,0.00
+2023-03-07,Jefferson,1,0,0,none,0.00
+2023-03-07,Lafourche,3,0,0,none,0.00
+2023-03-07,Livingston,9,0,0,none,0.00
+2023-03-07,Orleans,1,0,0,none,0.00
+2023-03-07,Plaquemines,1,0,0,none,0.00
+2023-03-07,Pointe Coupee,2,0,0,none,0.00
+2023-03-07,St. Bernard,1,0,0,none,0.00
+2023-03-07,St. Charles,3,0,0,none,0.00
+2023-03-07,St. Helena,9,0,0,none,0.00
+2023-03-07,St. James,3,0,0,none,0.00
+2023-03-07,St. John the Baptist,3,0,0,none,0.00
+2023-03-07,St. Tammany,9,0,0,none,0.00
+2023-03-07,Tangipahoa,9,0,0,none,0.00
+2023-03-07,Terrebonne,3,0,0,none,0.00
+2023-03-07,Washington,9,0,0,none,0.00
+2023-03-07,West Baton Rouge,2,0,0,none,0.00
+2023-03-07,West Feliciana,2,0,0,none,0.00
+2023-03-08,Ascension,2,0,0,none,0.00
+2023-03-08,Assumption,3,0,0,none,0.00
+2023-03-08,East Baton Rouge,2,0,0,none,0.00
+2023-03-08,East Feliciana,2,0,0,none,0.00
+2023-03-08,Iberville,2,0,0,none,0.00
+2023-03-08,Jefferson,1,0,0,none,0.00
+2023-03-08,Lafourche,3,0,0,none,0.00
+2023-03-08,Livingston,9,0,0,none,0.00
+2023-03-08,Orleans,1,0,0,none,0.00
+2023-03-08,Plaquemines,1,0,0,none,0.00
+2023-03-08,Pointe Coupee,2,0,0,none,0.00
+2023-03-08,St. Bernard,1,0,0,none,0.00
+2023-03-08,St. Charles,3,0,0,none,0.00
+2023-03-08,St. Helena,9,0,0,none,0.00
+2023-03-08,St. James,3,0,0,none,0.00
+2023-03-08,St. John the Baptist,3,0,0,none,0.00
+2023-03-08,St. Tammany,9,0,0,none,0.00
+2023-03-08,Tangipahoa,9,0,0,none,0.00
+2023-03-08,Terrebonne,3,0,0,none,0.00
+2023-03-08,Washington,9,0,0,none,0.00
+2023-03-08,West Baton Rouge,2,0,0,none,0.00
+2023-03-08,West Feliciana,2,0,0,none,0.00
+2023-03-09,Ascension,2,0,0,none,0.00
+2023-03-09,Assumption,3,0,0,none,0.00
+2023-03-09,East Baton Rouge,2,0,0,none,0.00
+2023-03-09,East Feliciana,2,0,0,none,0.00
+2023-03-09,Iberville,2,0,0,none,0.00
+2023-03-09,Jefferson,1,0,0,none,0.00
+2023-03-09,Lafourche,3,0,0,none,0.00
+2023-03-09,Livingston,9,0,0,none,0.00
+2023-03-09,Orleans,1,0,0,none,0.00
+2023-03-09,Plaquemines,1,0,0,none,0.00
+2023-03-09,Pointe Coupee,2,0,0,none,0.00
+2023-03-09,St. Bernard,1,0,0,none,0.00
+2023-03-09,St. Charles,3,0,0,none,0.00
+2023-03-09,St. Helena,9,0,0,none,0.00
+2023-03-09,St. James,3,0,0,none,0.00
+2023-03-09,St. John the Baptist,3,0,0,none,0.00
+2023-03-09,St. Tammany,9,0,0,none,0.00
+2023-03-09,Tangipahoa,9,0,0,none,0.00
+2023-03-09,Terrebonne,3,0,0,none,0.00
+2023-03-09,Washington,9,0,0,none,0.00
+2023-03-09,West Baton Rouge,2,0,0,none,0.00
+2023-03-09,West Feliciana,2,0,0,none,0.00
+2023-03-10,Ascension,2,0,0,none,0.00
+2023-03-10,Assumption,3,0,0,none,0.00
+2023-03-10,East Baton Rouge,2,0,0,none,0.00
+2023-03-10,East Feliciana,2,0,0,none,0.00
+2023-03-10,Iberville,2,0,0,none,0.00
+2023-03-10,Jefferson,1,0,0,none,0.00
+2023-03-10,Lafourche,3,0,0,none,0.00
+2023-03-10,Livingston,9,0,0,none,0.00
+2023-03-10,Orleans,1,0,0,none,0.00
+2023-03-10,Plaquemines,1,0,0,none,0.00
+2023-03-10,Pointe Coupee,2,0,0,none,0.00
+2023-03-10,St. Bernard,1,0,0,none,0.00
+2023-03-10,St. Charles,3,0,0,none,0.00
+2023-03-10,St. Helena,9,0,0,none,0.00
+2023-03-10,St. James,3,0,0,none,0.00
+2023-03-10,St. John the Baptist,3,0,0,none,0.00
+2023-03-10,St. Tammany,9,0,0,none,0.00
+2023-03-10,Tangipahoa,9,0,0,none,0.00
+2023-03-10,Terrebonne,3,0,0,none,0.00
+2023-03-10,Washington,9,0,0,none,0.00
+2023-03-10,West Baton Rouge,2,0,0,none,0.00
+2023-03-10,West Feliciana,2,0,0,none,0.00
+2023-03-11,Ascension,2,0,0,none,0.00
+2023-03-11,Assumption,3,0,0,none,0.00
+2023-03-11,East Baton Rouge,2,0,0,none,0.00
+2023-03-11,East Feliciana,2,0,0,none,0.00
+2023-03-11,Iberville,2,0,0,none,0.00
+2023-03-11,Jefferson,1,0,0,none,0.00
+2023-03-11,Lafourche,3,0,0,none,0.00
+2023-03-11,Livingston,9,0,0,none,0.00
+2023-03-11,Orleans,1,0,0,none,0.00
+2023-03-11,Plaquemines,1,0,0,none,0.00
+2023-03-11,Pointe Coupee,2,0,0,none,0.00
+2023-03-11,St. Bernard,1,0,0,none,0.00
+2023-03-11,St. Charles,3,0,0,none,0.00
+2023-03-11,St. Helena,9,0,0,none,0.00
+2023-03-11,St. James,3,0,0,none,0.00
+2023-03-11,St. John the Baptist,3,0,0,none,0.00
+2023-03-11,St. Tammany,9,0,0,none,0.00
+2023-03-11,Tangipahoa,9,0,0,none,0.00
+2023-03-11,Terrebonne,3,0,0,none,0.00
+2023-03-11,Washington,9,0,0,none,0.00
+2023-03-11,West Baton Rouge,2,0,0,none,0.00
+2023-03-11,West Feliciana,2,0,0,none,0.00
+2023-03-12,Ascension,2,0,0,none,0.00
+2023-03-12,Assumption,3,0,0,none,0.00
+2023-03-12,East Baton Rouge,2,0,0,none,0.00
+2023-03-12,East Feliciana,2,0,0,none,0.00
+2023-03-12,Iberville,2,0,0,none,0.00
+2023-03-12,Jefferson,1,0,0,none,0.00
+2023-03-12,Lafourche,3,0,0,none,0.00
+2023-03-12,Livingston,9,0,0,none,0.00
+2023-03-12,Orleans,1,0,0,none,0.00
+2023-03-12,Plaquemines,1,0,0,none,0.00
+2023-03-12,Pointe Coupee,2,0,0,none,0.00
+2023-03-12,St. Bernard,1,0,0,none,0.00
+2023-03-12,St. Charles,3,0,0,none,0.00
+2023-03-12,St. Helena,9,0,0,none,0.00
+2023-03-12,St. James,3,0,0,none,0.00
+2023-03-12,St. John the Baptist,3,0,0,none,0.00
+2023-03-12,St. Tammany,9,0,0,none,0.00
+2023-03-12,Tangipahoa,9,0,0,none,0.00
+2023-03-12,Terrebonne,3,0,0,none,0.00
+2023-03-12,Washington,9,0,0,none,0.00
+2023-03-12,West Baton Rouge,2,0,0,none,0.00
+2023-03-12,West Feliciana,2,0,0,none,0.00
+2023-03-13,Ascension,2,0,0,none,0.00
+2023-03-13,Assumption,3,0,0,none,0.00
+2023-03-13,East Baton Rouge,2,0,0,none,0.00
+2023-03-13,East Feliciana,2,0,0,none,0.00
+2023-03-13,Iberville,2,0,0,none,0.00
+2023-03-13,Jefferson,1,0,0,none,0.00
+2023-03-13,Lafourche,3,0,0,none,0.00
+2023-03-13,Livingston,9,0,0,none,0.00
+2023-03-13,Orleans,1,0,0,none,0.00
+2023-03-13,Plaquemines,1,0,0,none,0.00
+2023-03-13,Pointe Coupee,2,0,0,none,0.00
+2023-03-13,St. Bernard,1,0,0,none,0.00
+2023-03-13,St. Charles,3,0,0,none,0.00
+2023-03-13,St. Helena,9,0,0,none,0.00
+2023-03-13,St. James,3,0,0,none,0.00
+2023-03-13,St. John the Baptist,3,0,0,none,0.00
+2023-03-13,St. Tammany,9,0,0,none,0.00
+2023-03-13,Tangipahoa,9,0,0,none,0.00
+2023-03-13,Terrebonne,3,0,0,none,0.00
+2023-03-13,Washington,9,0,0,none,0.00
+2023-03-13,West Baton Rouge,2,0,0,none,0.00
+2023-03-13,West Feliciana,2,0,0,none,0.00
+2023-03-14,Ascension,2,0,0,none,0.00
+2023-03-14,Assumption,3,0,0,none,0.00
+2023-03-14,East Baton Rouge,2,0,0,none,0.00
+2023-03-14,East Feliciana,2,0,0,none,0.00
+2023-03-14,Iberville,2,0,0,none,0.00
+2023-03-14,Jefferson,1,0,0,none,0.00
+2023-03-14,Lafourche,3,0,0,none,0.00
+2023-03-14,Livingston,9,0,0,none,0.00
+2023-03-14,Orleans,1,0,0,none,0.00
+2023-03-14,Plaquemines,1,0,0,none,0.00
+2023-03-14,Pointe Coupee,2,0,0,none,0.00
+2023-03-14,St. Bernard,1,0,0,none,0.00
+2023-03-14,St. Charles,3,0,0,none,0.00
+2023-03-14,St. Helena,9,0,0,none,0.00
+2023-03-14,St. James,3,0,0,none,0.00
+2023-03-14,St. John the Baptist,3,0,0,none,0.00
+2023-03-14,St. Tammany,9,0,0,none,0.00
+2023-03-14,Tangipahoa,9,0,0,none,0.00
+2023-03-14,Terrebonne,3,0,0,none,0.00
+2023-03-14,Washington,9,0,0,none,0.00
+2023-03-14,West Baton Rouge,2,0,0,none,0.00
+2023-03-14,West Feliciana,2,0,0,none,0.00
+2023-03-15,Ascension,2,0,0,none,0.00
+2023-03-15,Assumption,3,0,0,none,0.00
+2023-03-15,East Baton Rouge,2,0,0,none,0.00
+2023-03-15,East Feliciana,2,0,0,none,0.00
+2023-03-15,Iberville,2,0,0,none,0.00
+2023-03-15,Jefferson,1,0,0,none,0.00
+2023-03-15,Lafourche,3,0,0,none,0.00
+2023-03-15,Livingston,9,0,0,none,0.00
+2023-03-15,Orleans,1,0,0,none,0.00
+2023-03-15,Plaquemines,1,0,0,none,0.00
+2023-03-15,Pointe Coupee,2,0,0,none,0.00
+2023-03-15,St. Bernard,1,0,0,none,0.00
+2023-03-15,St. Charles,3,0,0,none,0.00
+2023-03-15,St. Helena,9,0,0,none,0.00
+2023-03-15,St. James,3,0,0,none,0.00
+2023-03-15,St. John the Baptist,3,0,0,none,0.00
+2023-03-15,St. Tammany,9,0,0,none,0.00
+2023-03-15,Tangipahoa,9,0,0,none,0.00
+2023-03-15,Terrebonne,3,0,0,none,0.00
+2023-03-15,Washington,9,0,0,none,0.00
+2023-03-15,West Baton Rouge,2,0,0,none,0.00
+2023-03-15,West Feliciana,2,0,0,none,0.00
+2023-03-16,Ascension,2,0,0,none,0.00
+2023-03-16,Assumption,3,0,0,none,0.00
+2023-03-16,East Baton Rouge,2,0,0,none,0.00
+2023-03-16,East Feliciana,2,0,0,none,0.00
+2023-03-16,Iberville,2,0,0,none,0.00
+2023-03-16,Jefferson,1,0,0,none,0.00
+2023-03-16,Lafourche,3,0,0,none,0.00
+2023-03-16,Livingston,9,0,0,none,0.00
+2023-03-16,Orleans,1,0,0,none,0.00
+2023-03-16,Plaquemines,1,0,0,none,0.00
+2023-03-16,Pointe Coupee,2,0,0,none,0.00
+2023-03-16,St. Bernard,1,0,0,none,0.00
+2023-03-16,St. Charles,3,0,0,none,0.00
+2023-03-16,St. Helena,9,0,0,none,0.00
+2023-03-16,St. James,3,0,0,none,0.00
+2023-03-16,St. John the Baptist,3,0,0,none,0.00
+2023-03-16,St. Tammany,9,0,0,none,0.00
+2023-03-16,Tangipahoa,9,0,0,none,0.00
+2023-03-16,Terrebonne,3,0,0,none,0.00
+2023-03-16,Washington,9,0,0,none,0.00
+2023-03-16,West Baton Rouge,2,0,0,none,0.00
+2023-03-16,West Feliciana,2,0,0,none,0.00
+2023-03-17,Ascension,2,0,0,none,0.00
+2023-03-17,Assumption,3,0,0,none,0.00
+2023-03-17,East Baton Rouge,2,0,0,none,0.00
+2023-03-17,East Feliciana,2,0,0,none,0.00
+2023-03-17,Iberville,2,0,0,none,0.00
+2023-03-17,Jefferson,1,0,0,none,0.00
+2023-03-17,Lafourche,3,0,0,none,0.00
+2023-03-17,Livingston,9,0,0,none,0.00
+2023-03-17,Orleans,1,0,0,none,0.00
+2023-03-17,Plaquemines,1,0,0,none,0.00
+2023-03-17,Pointe Coupee,2,0,0,none,0.00
+2023-03-17,St. Bernard,1,0,0,none,0.00
+2023-03-17,St. Charles,3,0,0,none,0.00
+2023-03-17,St. Helena,9,0,0,none,0.00
+2023-03-17,St. James,3,0,0,none,0.00
+2023-03-17,St. John the Baptist,3,0,0,none,0.00
+2023-03-17,St. Tammany,9,0,0,none,0.00
+2023-03-17,Tangipahoa,9,0,0,none,0.00
+2023-03-17,Terrebonne,3,0,0,none,0.00
+2023-03-17,Washington,9,0,0,none,0.00
+2023-03-17,West Baton Rouge,2,0,0,none,0.00
+2023-03-17,West Feliciana,2,0,0,none,0.00
+2023-03-18,Ascension,2,0,0,none,0.00
+2023-03-18,Assumption,3,0,0,none,0.00
+2023-03-18,East Baton Rouge,2,0,0,none,0.00
+2023-03-18,East Feliciana,2,0,0,none,0.00
+2023-03-18,Iberville,2,0,0,none,0.00
+2023-03-18,Jefferson,1,0,0,none,0.00
+2023-03-18,Lafourche,3,0,0,none,0.00
+2023-03-18,Livingston,9,0,0,none,0.00
+2023-03-18,Orleans,1,0,0,none,0.00
+2023-03-18,Plaquemines,1,0,0,none,0.00
+2023-03-18,Pointe Coupee,2,0,0,none,0.00
+2023-03-18,St. Bernard,1,0,0,none,0.00
+2023-03-18,St. Charles,3,0,0,none,0.00
+2023-03-18,St. Helena,9,0,0,none,0.00
+2023-03-18,St. James,3,0,0,none,0.00
+2023-03-18,St. John the Baptist,3,0,0,none,0.00
+2023-03-18,St. Tammany,9,0,0,none,0.00
+2023-03-18,Tangipahoa,9,0,0,none,0.00
+2023-03-18,Terrebonne,3,0,0,none,0.00
+2023-03-18,Washington,9,0,0,none,0.00
+2023-03-18,West Baton Rouge,2,0,0,none,0.00
+2023-03-18,West Feliciana,2,0,0,none,0.00
+2023-03-19,Ascension,2,0,0,none,0.00
+2023-03-19,Assumption,3,0,0,none,0.00
+2023-03-19,East Baton Rouge,2,0,0,none,0.00
+2023-03-19,East Feliciana,2,0,0,none,0.00
+2023-03-19,Iberville,2,0,0,none,0.00
+2023-03-19,Jefferson,1,0,0,none,0.00
+2023-03-19,Lafourche,3,0,0,none,0.00
+2023-03-19,Livingston,9,0,0,none,0.00
+2023-03-19,Orleans,1,0,0,none,0.00
+2023-03-19,Plaquemines,1,0,0,none,0.00
+2023-03-19,Pointe Coupee,2,0,0,none,0.00
+2023-03-19,St. Bernard,1,0,0,none,0.00
+2023-03-19,St. Charles,3,0,0,none,0.00
+2023-03-19,St. Helena,9,0,0,none,0.00
+2023-03-19,St. James,3,0,0,none,0.00
+2023-03-19,St. John the Baptist,3,0,0,none,0.00
+2023-03-19,St. Tammany,9,0,0,none,0.00
+2023-03-19,Tangipahoa,9,0,0,none,0.00
+2023-03-19,Terrebonne,3,0,0,none,0.00
+2023-03-19,Washington,9,0,0,none,0.00
+2023-03-19,West Baton Rouge,2,0,0,none,0.00
+2023-03-19,West Feliciana,2,0,0,none,0.00
+2023-03-20,Ascension,2,0,0,none,0.00
+2023-03-20,Assumption,3,0,0,none,0.00
+2023-03-20,East Baton Rouge,2,0,0,none,0.00
+2023-03-20,East Feliciana,2,0,0,none,0.00
+2023-03-20,Iberville,2,0,0,none,0.00
+2023-03-20,Jefferson,1,0,0,none,0.00
+2023-03-20,Lafourche,3,0,0,none,0.00
+2023-03-20,Livingston,9,0,0,none,0.00
+2023-03-20,Orleans,1,0,0,none,0.00
+2023-03-20,Plaquemines,1,0,0,none,0.00
+2023-03-20,Pointe Coupee,2,0,0,none,0.00
+2023-03-20,St. Bernard,1,0,0,none,0.00
+2023-03-20,St. Charles,3,0,0,none,0.00
+2023-03-20,St. Helena,9,0,0,none,0.00
+2023-03-20,St. James,3,0,0,none,0.00
+2023-03-20,St. John the Baptist,3,0,0,none,0.00
+2023-03-20,St. Tammany,9,0,0,none,0.00
+2023-03-20,Tangipahoa,9,0,0,none,0.00
+2023-03-20,Terrebonne,3,0,0,none,0.00
+2023-03-20,Washington,9,0,0,none,0.00
+2023-03-20,West Baton Rouge,2,0,0,none,0.00
+2023-03-20,West Feliciana,2,0,0,none,0.00
+2023-03-21,Ascension,2,0,0,none,0.00
+2023-03-21,Assumption,3,0,0,none,0.00
+2023-03-21,East Baton Rouge,2,0,0,none,0.00
+2023-03-21,East Feliciana,2,0,0,none,0.00
+2023-03-21,Iberville,2,0,0,none,0.00
+2023-03-21,Jefferson,1,0,0,none,0.00
+2023-03-21,Lafourche,3,0,0,none,0.00
+2023-03-21,Livingston,9,0,0,none,0.00
+2023-03-21,Orleans,1,0,0,none,0.00
+2023-03-21,Plaquemines,1,0,0,none,0.00
+2023-03-21,Pointe Coupee,2,0,0,none,0.00
+2023-03-21,St. Bernard,1,0,0,none,0.00
+2023-03-21,St. Charles,3,0,0,none,0.00
+2023-03-21,St. Helena,9,0,0,none,0.00
+2023-03-21,St. James,3,0,0,none,0.00
+2023-03-21,St. John the Baptist,3,0,0,none,0.00
+2023-03-21,St. Tammany,9,0,0,none,0.00
+2023-03-21,Tangipahoa,9,0,0,none,0.00
+2023-03-21,Terrebonne,3,0,0,none,0.00
+2023-03-21,Washington,9,0,0,none,0.00
+2023-03-21,West Baton Rouge,2,0,0,none,0.00
+2023-03-21,West Feliciana,2,0,0,none,0.00
+2023-03-22,Ascension,2,0,0,none,0.00
+2023-03-22,Assumption,3,0,0,none,0.00
+2023-03-22,East Baton Rouge,2,0,0,none,0.00
+2023-03-22,East Feliciana,2,0,0,none,0.00
+2023-03-22,Iberville,2,0,0,none,0.00
+2023-03-22,Jefferson,1,0,0,none,0.00
+2023-03-22,Lafourche,3,0,0,none,0.00
+2023-03-22,Livingston,9,0,0,none,0.00
+2023-03-22,Orleans,1,0,0,none,0.00
+2023-03-22,Plaquemines,1,0,0,none,0.00
+2023-03-22,Pointe Coupee,2,0,0,none,0.00
+2023-03-22,St. Bernard,1,0,0,none,0.00
+2023-03-22,St. Charles,3,0,0,none,0.00
+2023-03-22,St. Helena,9,0,0,none,0.00
+2023-03-22,St. James,3,0,0,none,0.00
+2023-03-22,St. John the Baptist,3,0,0,none,0.00
+2023-03-22,St. Tammany,9,0,0,none,0.00
+2023-03-22,Tangipahoa,9,0,0,none,0.00
+2023-03-22,Terrebonne,3,0,0,none,0.00
+2023-03-22,Washington,9,0,0,none,0.00
+2023-03-22,West Baton Rouge,2,0,0,none,0.00
+2023-03-22,West Feliciana,2,0,0,none,0.00
+2023-03-23,Ascension,2,0,0,none,0.00
+2023-03-23,Assumption,3,0,0,none,0.00
+2023-03-23,East Baton Rouge,2,0,0,none,0.00
+2023-03-23,East Feliciana,2,0,0,none,0.00
+2023-03-23,Iberville,2,0,0,none,0.00
+2023-03-23,Jefferson,1,0,0,none,0.00
+2023-03-23,Lafourche,3,0,0,none,0.00
+2023-03-23,Livingston,9,0,0,none,0.00
+2023-03-23,Orleans,1,0,0,none,0.00
+2023-03-23,Plaquemines,1,0,0,none,0.00
+2023-03-23,Pointe Coupee,2,0,0,none,0.00
+2023-03-23,St. Bernard,1,0,0,none,0.00
+2023-03-23,St. Charles,3,0,0,none,0.00
+2023-03-23,St. Helena,9,0,0,none,0.00
+2023-03-23,St. James,3,0,0,none,0.00
+2023-03-23,St. John the Baptist,3,0,0,none,0.00
+2023-03-23,St. Tammany,9,0,0,none,0.00
+2023-03-23,Tangipahoa,9,0,0,none,0.00
+2023-03-23,Terrebonne,3,0,0,none,0.00
+2023-03-23,Washington,9,0,0,none,0.00
+2023-03-23,West Baton Rouge,2,0,0,none,0.00
+2023-03-23,West Feliciana,2,0,0,none,0.00
+2023-03-24,Ascension,2,0,0,none,0.00
+2023-03-24,Assumption,3,0,0,none,0.00
+2023-03-24,East Baton Rouge,2,0,0,none,0.00
+2023-03-24,East Feliciana,2,0,0,none,0.00
+2023-03-24,Iberville,2,0,0,none,0.00
+2023-03-24,Jefferson,1,0,0,none,0.00
+2023-03-24,Lafourche,3,0,0,none,0.00
+2023-03-24,Livingston,9,0,0,none,0.00
+2023-03-24,Orleans,1,0,0,none,0.00
+2023-03-24,Plaquemines,1,0,0,none,0.00
+2023-03-24,Pointe Coupee,2,0,0,none,0.00
+2023-03-24,St. Bernard,1,0,0,none,0.00
+2023-03-24,St. Charles,3,0,0,none,0.00
+2023-03-24,St. Helena,9,0,0,none,0.00
+2023-03-24,St. James,3,0,0,none,0.00
+2023-03-24,St. John the Baptist,3,0,0,none,0.00
+2023-03-24,St. Tammany,9,0,0,none,0.00
+2023-03-24,Tangipahoa,9,0,0,none,0.00
+2023-03-24,Terrebonne,3,0,0,none,0.00
+2023-03-24,Washington,9,0,0,none,0.00
+2023-03-24,West Baton Rouge,2,0,0,none,0.00
+2023-03-24,West Feliciana,2,0,0,none,0.00
+2023-03-25,Ascension,2,0,0,none,0.00
+2023-03-25,Assumption,3,0,0,none,0.00
+2023-03-25,East Baton Rouge,2,0,0,none,0.00
+2023-03-25,East Feliciana,2,0,0,none,0.00
+2023-03-25,Iberville,2,0,0,none,0.00
+2023-03-25,Jefferson,1,0,0,none,0.00
+2023-03-25,Lafourche,3,0,0,none,0.00
+2023-03-25,Livingston,9,0,0,none,0.00
+2023-03-25,Orleans,1,0,0,none,0.00
+2023-03-25,Plaquemines,1,0,0,none,0.00
+2023-03-25,Pointe Coupee,2,0,0,none,0.00
+2023-03-25,St. Bernard,1,0,0,none,0.00
+2023-03-25,St. Charles,3,0,0,none,0.00
+2023-03-25,St. Helena,9,0,0,none,0.00
+2023-03-25,St. James,3,0,0,none,0.00
+2023-03-25,St. John the Baptist,3,0,0,none,0.00
+2023-03-25,St. Tammany,9,0,0,none,0.00
+2023-03-25,Tangipahoa,9,0,0,none,0.00
+2023-03-25,Terrebonne,3,0,0,none,0.00
+2023-03-25,Washington,9,0,0,none,0.00
+2023-03-25,West Baton Rouge,2,0,0,none,0.00
+2023-03-25,West Feliciana,2,0,0,none,0.00
+2023-03-26,Ascension,2,0,0,none,0.00
+2023-03-26,Assumption,3,0,0,none,0.00
+2023-03-26,East Baton Rouge,2,0,0,none,0.00
+2023-03-26,East Feliciana,2,0,0,none,0.00
+2023-03-26,Iberville,2,0,0,none,0.00
+2023-03-26,Jefferson,1,0,0,none,0.00
+2023-03-26,Lafourche,3,0,0,none,0.00
+2023-03-26,Livingston,9,0,0,none,0.00
+2023-03-26,Orleans,1,0,0,none,0.00
+2023-03-26,Plaquemines,1,0,0,none,0.00
+2023-03-26,Pointe Coupee,2,0,0,none,0.00
+2023-03-26,St. Bernard,1,0,0,none,0.00
+2023-03-26,St. Charles,3,0,0,none,0.00
+2023-03-26,St. Helena,9,0,0,none,0.00
+2023-03-26,St. James,3,0,0,none,0.00
+2023-03-26,St. John the Baptist,3,0,0,none,0.00
+2023-03-26,St. Tammany,9,0,0,none,0.00
+2023-03-26,Tangipahoa,9,0,0,none,0.00
+2023-03-26,Terrebonne,3,0,0,none,0.00
+2023-03-26,Washington,9,0,0,none,0.00
+2023-03-26,West Baton Rouge,2,0,0,none,0.00
+2023-03-26,West Feliciana,2,0,0,none,0.00
+2023-03-27,Ascension,2,0,0,none,0.00
+2023-03-27,Assumption,3,0,0,none,0.00
+2023-03-27,East Baton Rouge,2,0,0,none,0.00
+2023-03-27,East Feliciana,2,0,0,none,0.00
+2023-03-27,Iberville,2,0,0,none,0.00
+2023-03-27,Jefferson,1,0,0,none,0.00
+2023-03-27,Lafourche,3,0,0,none,0.00
+2023-03-27,Livingston,9,0,0,none,0.00
+2023-03-27,Orleans,1,0,0,none,0.00
+2023-03-27,Plaquemines,1,0,0,none,0.00
+2023-03-27,Pointe Coupee,2,0,0,none,0.00
+2023-03-27,St. Bernard,1,0,0,none,0.00
+2023-03-27,St. Charles,3,0,0,none,0.00
+2023-03-27,St. Helena,9,0,0,none,0.00
+2023-03-27,St. James,3,0,0,none,0.00
+2023-03-27,St. John the Baptist,3,0,0,none,0.00
+2023-03-27,St. Tammany,9,0,0,none,0.00
+2023-03-27,Tangipahoa,9,0,0,none,0.00
+2023-03-27,Terrebonne,3,0,0,none,0.00
+2023-03-27,Washington,9,0,0,none,0.00
+2023-03-27,West Baton Rouge,2,0,0,none,0.00
+2023-03-27,West Feliciana,2,0,0,none,0.00
+2023-03-28,Ascension,2,0,0,none,0.00
+2023-03-28,Assumption,3,0,0,none,0.00
+2023-03-28,East Baton Rouge,2,0,0,none,0.00
+2023-03-28,East Feliciana,2,0,0,none,0.00
+2023-03-28,Iberville,2,0,0,none,0.00
+2023-03-28,Jefferson,1,0,0,none,0.00
+2023-03-28,Lafourche,3,0,0,none,0.00
+2023-03-28,Livingston,9,0,0,none,0.00
+2023-03-28,Orleans,1,0,0,none,0.00
+2023-03-28,Plaquemines,1,0,0,none,0.00
+2023-03-28,Pointe Coupee,2,0,0,none,0.00
+2023-03-28,St. Bernard,1,0,0,none,0.00
+2023-03-28,St. Charles,3,0,0,none,0.00
+2023-03-28,St. Helena,9,0,0,none,0.00
+2023-03-28,St. James,3,0,0,none,0.00
+2023-03-28,St. John the Baptist,3,0,0,none,0.00
+2023-03-28,St. Tammany,9,0,0,none,0.00
+2023-03-28,Tangipahoa,9,0,0,none,0.00
+2023-03-28,Terrebonne,3,0,0,none,0.00
+2023-03-28,Washington,9,0,0,none,0.00
+2023-03-28,West Baton Rouge,2,0,0,none,0.00
+2023-03-28,West Feliciana,2,0,0,none,0.00
+2023-03-29,Ascension,2,0,0,none,0.00
+2023-03-29,Assumption,3,0,0,none,0.00
+2023-03-29,East Baton Rouge,2,0,0,none,0.00
+2023-03-29,East Feliciana,2,0,0,none,0.00
+2023-03-29,Iberville,2,0,0,none,0.00
+2023-03-29,Jefferson,1,0,0,none,0.00
+2023-03-29,Lafourche,3,0,0,none,0.00
+2023-03-29,Livingston,9,0,0,none,0.00
+2023-03-29,Orleans,1,0,0,none,0.00
+2023-03-29,Plaquemines,1,0,0,none,0.00
+2023-03-29,Pointe Coupee,2,0,0,none,0.00
+2023-03-29,St. Bernard,1,0,0,none,0.00
+2023-03-29,St. Charles,3,0,0,none,0.00
+2023-03-29,St. Helena,9,0,0,none,0.00
+2023-03-29,St. James,3,0,0,none,0.00
+2023-03-29,St. John the Baptist,3,0,0,none,0.00
+2023-03-29,St. Tammany,9,0,0,none,0.00
+2023-03-29,Tangipahoa,9,0,0,none,0.00
+2023-03-29,Terrebonne,3,0,0,none,0.00
+2023-03-29,Washington,9,0,0,none,0.00
+2023-03-29,West Baton Rouge,2,0,0,none,0.00
+2023-03-29,West Feliciana,2,0,0,none,0.00
+2023-03-30,Ascension,2,0,0,none,0.00
+2023-03-30,Assumption,3,0,0,none,0.00
+2023-03-30,East Baton Rouge,2,0,0,none,0.00
+2023-03-30,East Feliciana,2,0,0,none,0.00
+2023-03-30,Iberville,2,0,0,none,0.00
+2023-03-30,Jefferson,1,0,0,none,0.00
+2023-03-30,Lafourche,3,0,0,none,0.00
+2023-03-30,Livingston,9,0,0,none,0.00
+2023-03-30,Orleans,1,0,0,none,0.00
+2023-03-30,Plaquemines,1,0,0,none,0.00
+2023-03-30,Pointe Coupee,2,0,0,none,0.00
+2023-03-30,St. Bernard,1,0,0,none,0.00
+2023-03-30,St. Charles,3,0,0,none,0.00
+2023-03-30,St. Helena,9,0,0,none,0.00
+2023-03-30,St. James,3,0,0,none,0.00
+2023-03-30,St. John the Baptist,3,0,0,none,0.00
+2023-03-30,St. Tammany,9,0,0,none,0.00
+2023-03-30,Tangipahoa,9,0,0,none,0.00
+2023-03-30,Terrebonne,3,0,0,none,0.00
+2023-03-30,Washington,9,0,0,none,0.00
+2023-03-30,West Baton Rouge,2,0,0,none,0.00
+2023-03-30,West Feliciana,2,0,0,none,0.00
+2023-03-31,Ascension,2,0,0,none,0.00
+2023-03-31,Assumption,3,0,0,none,0.00
+2023-03-31,East Baton Rouge,2,0,0,none,0.00
+2023-03-31,East Feliciana,2,0,0,none,0.00
+2023-03-31,Iberville,2,0,0,none,0.00
+2023-03-31,Jefferson,1,0,0,none,0.00
+2023-03-31,Lafourche,3,0,0,none,0.00
+2023-03-31,Livingston,9,0,0,none,0.00
+2023-03-31,Orleans,1,0,0,none,0.00
+2023-03-31,Plaquemines,1,0,0,none,0.00
+2023-03-31,Pointe Coupee,2,0,0,none,0.00
+2023-03-31,St. Bernard,1,0,0,none,0.00
+2023-03-31,St. Charles,3,0,0,none,0.00
+2023-03-31,St. Helena,9,0,0,none,0.00
+2023-03-31,St. James,3,0,0,none,0.00
+2023-03-31,St. John the Baptist,3,0,0,none,0.00
+2023-03-31,St. Tammany,9,0,0,none,0.00
+2023-03-31,Tangipahoa,9,0,0,none,0.00
+2023-03-31,Terrebonne,3,0,0,none,0.00
+2023-03-31,Washington,9,0,0,none,0.00
+2023-03-31,West Baton Rouge,2,0,0,none,0.00
+2023-03-31,West Feliciana,2,0,0,none,0.00
 2023-04-01,Ascension,2,0,0,none,0.00
 2023-04-01,Assumption,3,0,0,none,0.00
 2023-04-01,East Baton Rouge,2,0,0,none,0.00
