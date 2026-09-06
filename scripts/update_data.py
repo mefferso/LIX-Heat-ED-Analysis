@@ -364,6 +364,23 @@ def write_csv(path: Path, rows: list[dict], fieldnames: list[str]):
         writer.writerows(rows)
 
 
+def probe_ldh_tableau():
+    url = (
+        "https://analytics.la.gov/t/LDH/views/"
+        "HeatRelatedIllnessDashboardLive_17568488201530/"
+        "HeatRelatedIllnessesDashboard.csv?:showVizHome=no"
+    )
+    try:
+        text = request_text(url)
+        return {
+            "status": "ok",
+            "bytes": len(text.encode("utf-8")),
+            "first_1000_chars": text[:1000],
+        }
+    except Exception as exc:
+        return {"status": "error", "error": str(exc)}
+
+
 def main():
     iem_rows = fetch_iem_rows()
     hazard_rows, used_events, zone_cache = build_hazard_grid(iem_rows)
@@ -422,6 +439,7 @@ def main():
         "ldh_status": "loaded" if ldh_source_rows else "no_data",
         "ldh_source_rows": len(ldh_source_rows),
         "analysis_rows": len(analysis_rows),
+        "ldh_tableau_probe": probe_ldh_tableau(),
     }
     SUMMARY_OUTPUT.write_text(json.dumps(summary, indent=2) + "\n", encoding="utf-8")
 
