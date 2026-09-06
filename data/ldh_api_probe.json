@@ -1,0 +1,182 @@
+{
+  "bodyLength": 1503060,
+  "chunkCount": 2,
+  "chunks": [
+    {
+      "i": 0,
+      "topKeys": [
+        "sheetName",
+        "layoutId",
+        "newSessionId",
+        "isDeferredBootstrap",
+        "workbookLocale",
+        "allowSubscriptions",
+        "allowSubscribeOnDataPresent",
+        "repositoryUrl",
+        "isResponseCacheHit",
+        "worldUpdate"
+      ],
+      "parseError": null,
+      "dataSegments": [],
+      "hriObjects": [
+        {
+          "path": "$.worldUpdate.applicationPresModel.workbookPresModel.dashboardPresModel.zones.345",
+          "keys": [
+            "zoneId",
+            "zoneCommon",
+            "zoneZOrder",
+            "worksheet",
+            "presModelHolder",
+            "hasCaption",
+            "isVisible",
+            "sheet",
+            "bgColor",
+            "blendedZoneContentColor"
+          ],
+          "zoneId": 345
+        },
+        {
+          "path": "$.worldUpdate.applicationPresModel.workbookPresModel.dashboardPresModel.zones.345.presModelHolder.visual.visualIdPresModel",
+          "keys": [
+            "worksheet",
+            "dashboard"
+          ],
+          "zoneId": null
+        },
+        {
+          "path": "$.worldUpdate.applicationPresModel.workbookPresModel.dashboardPresModel.zones.346",
+          "keys": [
+            "zoneId",
+            "zoneCommon",
+            "zoneZOrder",
+            "worksheet",
+            "presModelHolder",
+            "hasCaption",
+            "isVisible",
+            "sheet",
+            "bgColor",
+            "blendedZoneContentColor"
+          ],
+          "zoneId": 346
+        },
+        {
+          "path": "$.worldUpdate.applicationPresModel.workbookPresModel.dashboardPresModel.zones.347",
+          "keys": [
+            "zoneId",
+            "zoneCommon",
+            "zoneZOrder",
+            "worksheet",
+            "presModelHolder",
+            "hasCaption",
+            "isVisible",
+            "sheet",
+            "frameJson",
+            "titleHeight",
+            "bgColor",
+            "blendedZoneContentColor"
+          ],
+          "zoneId": 347
+        },
+        {
+          "path": "$.worldUpdate.applicationPresModel.workbookPresModel.dashboardPresModel.visualIds.2",
+          "keys": [
+            "worksheet",
+            "dashboard"
+          ],
+          "zoneId": null
+        },
+        {
+          "path": "$.worldUpdate.applicationPresModel.presentationLayerNotification.6.presModelHolder.genSummaryDataChangeEventPresModel.visualIdPresModel",
+          "keys": [
+            "worksheet"
+          ],
+          "zoneId": null
+        },
+        {
+          "path": "$.worldUpdate.applicationPresModel.presentationLayerNotification.35.presModelHolder.genSummaryDataChangeEventPresModel.visualIdPresModel",
+          "keys": [
+            "worksheet"
+          ],
+          "zoneId": null
+        }
+      ]
+    },
+    {
+      "i": 1,
+      "topKeys": [
+        "secondaryInfo"
+      ],
+      "parseError": null,
+      "dataSegments": [
+        {
+          "path": "$.secondaryInfo.presModelMap.dataDictionary.presModelHolder.genDataDictionaryPresModel.dataSegments",
+          "summary": [
+            {
+              "key": "0",
+              "isNull": false,
+              "columns": [
+                {
+                  "dataType": "integer",
+                  "valueCount": 268,
+                  "sample": [
+                    39,
+                    32,
+                    24,
+                    52,
+                    40,
+                    30,
+                    47,
+                    50
+                  ]
+                },
+                {
+                  "dataType": "real",
+                  "valueCount": 480,
+                  "sample": [
+                    1,
+                    66.61174230044602,
+                    68.17099498231315,
+                    68.37529053560442,
+                    60.9333212376961,
+                    52.887488465087664,
+                    45.8394919351738,
+                    48.14078696939403
+                  ]
+                },
+                {
+                  "dataType": "cstring",
+                  "valueCount": 960,
+                  "sample": [
+                    "8/29/2026",
+                    "4/1/2026",
+                    "1.000",
+                    "Reset Filter",
+                    "Aug 29",
+                    "Aug 28",
+                    "Aug 27",
+                    "Aug 26"
+                  ]
+                },
+                {
+                  "dataType": "date",
+                  "valueCount": 151,
+                  "sample": [
+                    "2026-08-29",
+                    "2026-08-28",
+                    "2026-08-27",
+                    "2026-08-26",
+                    "2026-08-25",
+                    "2026-08-24",
+                    "2026-08-23",
+                    "2026-08-22"
+                  ]
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "hriObjects": []
+    }
+  ]
+}
