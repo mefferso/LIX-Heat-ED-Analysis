@@ -35,9 +35,7 @@ function parseLengthPrefixedJson(body) {
 class TableauDictionary {
   constructor() {
     this.values = new Map();
-    // Segment IDs are reused in separate Tableau command responses. Keep every
-    // response's dictionary delta; de-duplicating by ID silently drops later
-    // year/region values.
+    // Segment IDs are local to one Tableau response and are reused later.
     this.appliedSegments = [];
   }
 
@@ -94,6 +92,11 @@ function getCommandApp(root) {
 function applyCommandDictionary(root, dictionary) {
   const app = getCommandApp(root);
   if (app?.dataDictionary?.dataSegments) {
+    // A command response's value indices address that response's dictionary.
+    // Keeping the prior response in front of it makes 2025/2024/2023 indices
+    // resolve to the 2026 values at the same positions.
+    dictionary.values.clear();
+    dictionary.appliedSegments.length = 0;
     dictionary.appendSegments(app.dataDictionary.dataSegments);
   }
 }
