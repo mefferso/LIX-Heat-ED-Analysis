@@ -364,23 +364,6 @@ def write_csv(path: Path, rows: list[dict], fieldnames: list[str]):
         writer.writerows(rows)
 
 
-def probe_ldh_tableau():
-    url = (
-        "https://analytics.la.gov/t/LDH/views/"
-        "HeatRelatedIllnessDashboardLive_17568488201530/"
-        "HeatRelatedIllnessesDashboard.csv?:showVizHome=no"
-    )
-    try:
-        text = request_text(url)
-        return {
-            "status": "ok",
-            "bytes": len(text.encode("utf-8")),
-            "first_1000_chars": text[:1000],
-        }
-    except Exception as exc:
-        return {"status": "error", "error": str(exc)}
-
-
 def main():
     iem_rows = fetch_iem_rows()
     hazard_rows, used_events, zone_cache = build_hazard_grid(iem_rows)
@@ -390,6 +373,10 @@ def main():
         hazard_rows,
         ["date", "parish", "ldh_region", "heat_advisory", "excessive_heat_warning", "headline", "hazard_hours"],
     )
+
+    advisory_parish_days = sum(1 for r in hazard_rows if r["headline"] == "advisory")
+    warning_parish_days = sum(1 for r in hazard_rows if r["headline"] == "warning")
+    headline_dates = {r["date"] for r in hazard_rows if r["headline"] != "none"}
 
     ldh_map, ldh_source_rows = normalize_ldh_rows()
     analysis_rows = []
@@ -434,12 +421,14 @@ def main():
         "heat_event_zone_rows_used": used_events,
         "mapped_zone_count": len(zone_cache),
         "hazard_rows": len(hazard_rows),
+        "advisory_parish_days": advisory_parish_days,
+        "warning_parish_days": warning_parish_days,
+        "unique_lix_la_headline_days": len(headline_dates),
         "hazard_period_start": START_DATE.isoformat(),
         "hazard_period_end": datetime.now(LOCAL_TZ).date().isoformat(),
         "ldh_status": "loaded" if ldh_source_rows else "no_data",
         "ldh_source_rows": len(ldh_source_rows),
         "analysis_rows": len(analysis_rows),
-        "ldh_tableau_probe": probe_ldh_tableau(),
     }
     SUMMARY_OUTPUT.write_text(json.dumps(summary, indent=2) + "\n", encoding="utf-8")
 
