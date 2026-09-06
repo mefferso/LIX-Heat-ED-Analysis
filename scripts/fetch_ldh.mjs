@@ -35,12 +35,15 @@ function parseLengthPrefixedJson(body) {
 class TableauDictionary {
   constructor() {
     this.values = new Map();
-    this.appliedSegments = new Set();
+    // Segment IDs are reused in separate Tableau command responses. Keep every
+    // response's dictionary delta; de-duplicating by ID silently drops later
+    // year/region values.
+    this.appliedSegments = [];
   }
 
   appendSegments(segments) {
     for (const [segmentId, segment] of Object.entries(segments || {})) {
-      if (!segment || this.appliedSegments.has(String(segmentId))) continue;
+      if (!segment) continue;
 
       for (const col of segment.dataColumns || []) {
         const dataType = col.dataType;
@@ -49,7 +52,7 @@ class TableauDictionary {
         const target = this.values.get(dataType);
         for (const value of col.dataValues || []) target.push(value);
       }
-      this.appliedSegments.add(String(segmentId));
+      this.appliedSegments.push(String(segmentId));
     }
   }
 
@@ -239,20 +242,77 @@ async function selectRegionAndExtract(page, region, year, dictionary) {
   return rows;
 }
 
-const browser = await chromium.launch({headless:true});
-const page = await browser.newPage({viewport:{width:1600,height:1200}});
+const browser = await chromium.launch({
+  headless:true,
+  args:["--disable-blink-features=AutomationControlled"]
+});
+const page = await browser.newPage({
+  viewport:{width:1600,height:1200},
+  locale:"en-US",
+  userAgent:"Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/140.0.0.0 Safari/537.36"
+});
 page.setDefaultTimeout(60000);
 
-console.log("Opening LDH Tableau dashboard...");
-const bootstrapPromise = page.waitForResponse(
-  (resp) => resp.status() === 200 && resp.url().includes("/bootstrapSession/"),
-  {timeout:120000}
-);
+async function loadDashboardWithRetry() {
+  const attempts = 4;
 
-await page.goto(DASHBOARD_URL, {waitUntil:"domcontentloaded", timeout:120000});
-const bootstrapResponse = await bootstrapPromise;
-const bootstrapBody = await bootstrapResponse.text();
-const bootstrapChunks = parseLengthPrefixedJson(bootstrapBody);
+  for (let attempt = 1; attempt <= attempts; attempt++) {
+    console.log("Opening LDH Tableau dashboard (attempt " + attempt + "/" + attempts + ")...");
+
+    const recentResponses = [];
+    const noteResponse = (resp) => {
+      const url = resp.url();
+      if (resp.request().resourceType() === "document" || /bootstrapSession/i.test(url)) {
+        recentResponses.push({status:resp.status(), url});
+        if (recentResponses.length > 12) recentResponses.shift();
+      }
+    };
+    page.on("response", noteResponse);
+
+    try {
+      const bootstrapPromise = page.waitForResponse(
+        (resp) => /bootstrapSession/i.test(resp.url()) &&
+          resp.status() >= 200 && resp.status() < 400,
+        {timeout:120000}
+      );
+
+      await page.goto(DASHBOARD_URL, {waitUntil:"domcontentloaded", timeout:120000});
+      const bootstrapResponse = await bootstrapPromise;
+      const body = await bootstrapResponse.text();
+      const chunks = parseLengthPrefixedJson(body);
+
+      // Validate the response now so a proxy/rate-limit page is retried too.
+      getBootstrapSegments(chunks);
+      page.off("response", noteResponse);
+      return {body, chunks};
+    } catch (error) {
+      page.off("response", noteResponse);
+      const pageText = await page.locator("body").innerText({timeout:5000})
+        .catch(() => "");
+      console.warn(JSON.stringify({
+        attempt,
+        error:String(error),
+        page_url:page.url(),
+        page_text:pageText.replace(/\s+/g, " ").slice(0,500),
+        recent_responses:recentResponses
+      }, null, 2));
+
+      if (attempt === attempts) throw error;
+
+      await page.goto("about:blank", {waitUntil:"commit", timeout:10000})
+        .catch(() => {});
+      // Tableau occasionally throttles cloud-runner sessions. Back off instead
+      // of immediately starting another anonymous session.
+      await page.waitForTimeout(attempt * 30000);
+    }
+  }
+
+  throw new Error("LDH dashboard did not load.");
+}
+
+const loadedDashboard = await loadDashboardWithRetry();
+const bootstrapBody = loadedDashboard.body;
+const bootstrapChunks = loadedDashboard.chunks;
 
 const dictionary = new TableauDictionary();
 dictionary.appendSegments(getBootstrapSegments(bootstrapChunks));

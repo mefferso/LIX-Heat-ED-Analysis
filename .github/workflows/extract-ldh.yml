@@ -1,12 +1,9 @@
 name: Extract LDH heat ED data
 
+# Manual diagnostic only. The production update-data workflow owns the scheduled
+# extraction so two Playwright jobs never open concurrent Tableau sessions.
 on:
   workflow_dispatch:
-  push:
-    branches: [main]
-    paths:
-      - "scripts/fetch_ldh.mjs"
-      - ".github/workflows/extract-ldh.yml"
 
 permissions:
   contents: write
