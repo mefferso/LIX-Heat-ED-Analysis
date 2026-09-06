@@ -1,103 +1,206 @@
 # LIX Heat ED Analysis
 
-Operational/research dashboard for comparing **heat-related emergency department (ED) visits** in the Louisiana portion of the NWS New Orleans/Baton Rouge (LIX) CWA with **Heat Advisory** and **Excessive/Extreme Heat Warning** days.
+Automated analysis of **NWS LIX heat headlines** and **Louisiana Department of Health heat-related emergency department visits** for the Louisiana portion of the WFO New Orleans/Baton Rouge CWA.
 
-## What this project does
+Live dashboard:
 
-- Downloads historical LIX heat headlines from the Iowa Environmental Mesonet (IEM) VTEC archive.
-- Converts zone-based heat products to the 22 Louisiana parishes in the LIX CWA.
-- Handles the March 2026 LIX forecast-zone changes.
-- Recognizes both legacy and newer heat VTEC code families:
-  - Heat Advisory: `HT.Y` and `HY.Y`
-  - Excessive/Extreme Heat Warning: `EH.W` and `XH.W`
-- Merges hazard days with Louisiana Department of Health (LDH) heat-related ED visit data.
-- Calculates same-day and 1–3 day lag relationships between headline exposure and ED visits.
-- Displays an interactive GitHub Pages dashboard for the whole Louisiana LIX CWA, LDH regions, or individual parishes.
+https://mefferso.github.io/LIX-Heat-ED-Analysis/
+
+## What is automated
+
+A GitHub Actions pipeline retrieves and processes both sides of the comparison with no local server and no manual HAR/CSV workflow.
+
+### NWS / IEM heat headlines
+
+The pipeline queries the Iowa Environmental Mesonet NWS Watch/Warning/Advisory VTEC archive for WFO LIX from 2023 through the present.
+
+Recognized heat products include both legacy and newer VTEC code families:
+
+- Heat Advisory: `HT.Y`, `HY.Y`
+- Excessive / Extreme Heat Warning: `EH.W`, `XH.W`
+
+The archive is expanded from forecast-zone events to local calendar days and mapped to the 22 Louisiana parishes in the LIX CWA. Historical and current LIX public-zone configurations are supported, including the March 2026 zone reconfiguration.
+
+### LDH heat-related ED visits
+
+The pipeline launches headless Chromium with Playwright and reads the public LDH **Heat-Related Illness** Tableau dashboard.
+
+It automatically retrieves daily HRI ED counts for:
+
+- 2023
+- 2024
+- 2025
+- 2026
+
+and for the four LDH regions relevant to the Louisiana side of LIX:
+
+- Region 1 — Southeast
+- Region 2 — Capital Region
+- Region 3 — South Central
+- Region 9 — Northshore
+
+The extraction uses Tableau's public anonymous session and the `HRI Epi Curve` worksheet data. No user cookies, credentials, browser export, HAR file, or manual download are required.
+
+LDH states that the HRI dashboard data are preliminary and refresh weekly during the warm season.
 
 ## Geography
 
-The analysis is parish-first. The 22 Louisiana parishes in WFO LIX are grouped into these LDH regions:
+The IEM/NWS side is parish-first.
 
-- **Region 1 — Southeast / New Orleans:** Jefferson, Orleans, Plaquemines, St. Bernard
-- **Region 2 — Capital:** Ascension, East Baton Rouge, East Feliciana, Iberville, Pointe Coupee, West Baton Rouge, West Feliciana
-- **Region 3 — South Central (LIX subset):** Assumption, Lafourche, St. Charles, St. James, St. John the Baptist, Terrebonne
-- **Region 9 — Northshore:** Livingston, St. Helena, St. Tammany, Tangipahoa, Washington
+### Region 1 — Southeast
 
-LDH Region 3 also contains **St. Mary Parish**, but St. Mary is not in the LIX CWA and is intentionally excluded.
+- Jefferson
+- Orleans
+- Plaquemines
+- St. Bernard
 
-Mississippi counties in the LIX CWA are not included in the health analysis because a comparable public daily county-level HRI ED dataset has not yet been identified.
+### Region 2 — Capital
+
+- Ascension
+- East Baton Rouge
+- East Feliciana
+- Iberville
+- Pointe Coupee
+- West Baton Rouge
+- West Feliciana
+
+### Region 3 — South Central
+
+LIX parishes:
+
+- Assumption
+- Lafourche
+- St. Charles
+- St. James
+- St. John the Baptist
+- Terrebonne
+
+**Important:** LDH Region 3 also contains **St. Mary Parish**, which is outside the LIX CWA. The public LDH daily region series cannot separate St. Mary from the rest of Region 3, so South Central ED counts include St. Mary. The dashboard calls this out rather than pretending the geographic match is exact.
+
+### Region 9 — Northshore
+
+- Livingston
+- St. Helena
+- St. Tammany
+- Tangipahoa
+- Washington
+
+### Mississippi
+
+Mississippi counties in the LIX CWA are not included in the health analysis because a comparable public daily county-level HRI ED series has not been identified.
+
+## Generated data
+
+### `data/ldh_heat_region_daily.csv`
+
+Automated LDH region/day HRI ED series.
+
+Columns:
+
+```text
+date
+season
+ldh_region
+region_name
+ed_visits
+source_updated
+```
+
+### `data/heat_hazards_daily.csv`
+
+Daily IEM/NWS heat headline status for every Louisiana LIX parish.
+
+Columns:
+
+```text
+date
+parish
+ldh_region
+heat_advisory
+excessive_heat_warning
+headline
+hazard_hours
+```
+
+### `data/analysis_region_daily.csv`
+
+Merged LDH + IEM analysis table.
+
+For each LDH region/day it includes:
+
+- HRI ED visits
+- number and percentage of LIX parishes under Heat Advisory
+- number and percentage under Excessive/Extreme Heat Warning
+- coverage-weighted headline severity score
+- mean headline hours per LIX parish
+
+### `data/summary.json`
+
+Pipeline status, coverage dates, source timestamps, row counts, and validation information.
+
+## Dashboard analysis
+
+The GitHub Pages dashboard supports:
+
+- individual 2023, 2024, 2025, and 2026 seasons
+- combined 2023–2026 view
+- entire Louisiana LIX CWA
+- Southeast
+- Capital
+- South Central
+- Northshore
+- individual parish heat-headline timelines
+
+Health metrics include:
+
+- mean ED visits on no-headline days
+- mean ED visits on Heat Advisory days
+- mean ED visits on warning days
+- percent difference from no-headline days
+- Pearson correlation
+- 0-, 1-, 2-, and 3-day lag correlations
+
+For individual parish views, only the NWS/IEM headline history is shown because the public LDH dashboard does not expose the **daily** HRI ED series at parish resolution.
+
+## Headline severity
+
+Each LIX parish/day is scored:
+
+- no heat headline = 0
+- Heat Advisory = 1
+- Excessive/Extreme Heat Warning = 2
+
+For a region or the full Louisiana LIX CWA, the daily severity score is averaged across the selected LIX parishes. This retains partial headline coverage instead of treating a headline covering one parish as equivalent to one covering the entire area.
+
+## Automation
+
+The production GitHub Action runs the data pipeline on a schedule and can also be started manually.
+
+The workflow:
+
+1. starts an anonymous LDH Tableau session in headless Chromium,
+2. retrieves 2023–2026 HRI ED data for Regions 1, 2, 3, and 9,
+3. retrieves the LIX heat-product history from IEM,
+4. maps heat products to Louisiana LIX parishes and local dates,
+5. builds the merged region/day analysis,
+6. validates the generated files,
+7. commits changed data back to the repository,
+8. GitHub Pages republishes the dashboard.
+
+If LDH changes its Tableau workbook structure and extraction fails, the Action fails rather than silently replacing the data with zeros.
 
 ## Data sources
 
-### NWS heat headlines
-Iowa Environmental Mesonet NWS Watch/Warning/Advisory VTEC archive:
-
-https://mesonet.agron.iastate.edu/request/gis/watchwarn.phtml
-
-### Heat-related ED visits
 Louisiana Department of Health Heat-Related Illness dashboard:
 
 https://ldh.la.gov/page/heat
 
-LDH reports that approximately 90% of Louisiana EDs participate in the syndromic surveillance system. Parish-level HRI counts are based on the patient's parish of residence.
+Iowa Environmental Mesonet NWS Watch/Warning/Advisory archive:
 
-## LDH import
+https://mesonet.agron.iastate.edu/request/gis/watchwarn.phtml
 
-The public LDH heat dashboard is Tableau-based, while the underlying ESSENCE syndromic feed is restricted. Until a stable public machine-readable Tableau endpoint is confirmed, the project uses a deliberately simple import layer.
+## Interpretation
 
-Put/export normalized daily parish data in:
+This is an exploratory operational/public-health analysis, not a causal study. Heat headlines are not randomized exposure. Weather severity, behavior, demographics, access to cooling, location of exposure, healthcare-seeking behavior, and surveillance/reporting practices can all affect ED visits.
 
-`data/input/ldh_heat_raw.csv`
-
-Required columns:
-
-```csv
-date,parish,ed_visits
-2026-07-01,St. Tammany,4
-2026-07-01,East Baton Rouge,7
-```
-
-The website also allows an LDH CSV to be loaded directly in the browser. Browser uploads remain local to the browser and are not sent anywhere.
-
-## Automated update
-
-`.github/workflows/update-data.yml` runs daily and can also be run manually. It:
-
-1. downloads LIX heat VTEC events from IEM,
-2. expands the events to local calendar days and Louisiana parishes,
-3. merges any committed LDH input data,
-4. regenerates the dashboard CSV/JSON files,
-5. commits changed generated data back to the repository.
-
-## GitHub Pages
-
-The site is built from static files in the repository root.
-
-After the files are committed, go to:
-
-**Settings → Pages → Build and deployment → Deploy from a branch → main → /(root) → Save**
-
-Expected site:
-
-https://mefferso.github.io/LIX-Heat-ED-Analysis/
-
-## Analysis notes
-
-The dashboard's headline severity score is parish-coverage weighted:
-
-- no headline = 0
-- Heat Advisory = 1
-- Excessive/Extreme Heat Warning = 2
-
-For a multi-parish selection, the score is averaged across selected parishes for each day. This lets a headline covering one parish differ from a headline covering the entire selected region.
-
-Correlations are exploratory and **do not imply causation**. HRI ED surveillance has reporting limitations, and the location of illness/exposure may differ from parish of residence.
-
-## Next upgrades
-
-- Stable automated LDH Tableau ingestion if/when a reliable public export endpoint is confirmed
-- observed maximum heat index / temperature exposure
-- population-normalized HRI rates
-- episode-level analysis
-- threshold / hit / miss / false-alarm verification based on elevated HRI days
-- Mississippi data if a suitable public daily county-level source becomes available
+This project is not an official NWS or LDH product.
