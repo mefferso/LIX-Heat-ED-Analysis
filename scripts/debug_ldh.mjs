@@ -3,79 +3,93 @@ import fs from "fs";
 
 const URL="https://analytics.la.gov/t/LDH/views/HeatRelatedIllnessDashboardLive_17568488201530/HeatRelatedIllnessesDashboard?:showVizHome=no";
 
-function parseChunks(body) {
-  const chunks=[];
-  let pos=0;
-  while (pos<body.length) {
-    while (pos<body.length && /\s/.test(body[pos])) pos++;
-    const semi=body.indexOf(";",pos);
-    if (semi<0) break;
-    const len=Number(body.slice(pos,semi));
-    if (!Number.isFinite(len) || len<1) break;
-    const start=semi+1;
-    const raw=body.slice(start,start+len);
-    try { chunks.push(JSON.parse(raw)); }
-    catch (e) { chunks.push({__parseError:String(e),__rawStart:raw.slice(0,200)}); }
-    pos=start+len;
-  }
-  return chunks;
-}
+function summarizeRoot(root,label) {
+  const app=root?.vqlCmdResponse?.layoutStatus?.applicationPresModel;
+  const segments=app?.dataDictionary?.dataSegments||{};
+  const zones=app?.workbookPresModel?.dashboardPresModel?.zones||{};
+  const zone=Object.values(zones).find(z=>z?.worksheet==="HRI Epi Curve");
+  const pcd=zone?.presModelHolder?.visual?.vizData?.paneColumnsData;
+  const metas=pcd?.vizDataColumns||[];
+  const panes=pcd?.paneColumnsList||[];
+  const paneIndex=panes.findIndex(p=>(p?.paneDescriptor?.yFields||[]).some(x=>String(x).includes("Cases HRI")));
+  const cols=paneIndex>=0?(panes[paneIndex]?.vizPaneColumns||[]):[];
 
-function summarizeSegments(segments) {
-  return Object.entries(segments||{}).map(([key,seg])=>({
-    key,
-    isNull:!seg,
-    columns:(seg?.dataColumns||[]).map(c=>({
-      dataType:c.dataType,
-      valueCount:Array.isArray(c.dataValues)?c.dataValues.length:null,
-      sample:Array.isArray(c.dataValues)?c.dataValues.slice(0,8):null
+  return {
+    label,
+    segmentKeys:Object.keys(segments),
+    segments:Object.entries(segments).map(([key,seg])=>({
+      key,
+      columns:(seg?.dataColumns||[]).map(c=>({
+        dataType:c.dataType,
+        keys:Object.keys(c),
+        count:(c.dataValues||[]).length,
+        sample:(c.dataValues||[]).slice(0,12)
+      }))
+    })),
+    metas:metas.map(m=>({
+      caption:m.fieldCaption,
+      dataType:m.dataType,
+      paneIndices:m.paneIndices,
+      columnIndices:m.columnIndices,
+      keys:Object.keys(m)
+    })),
+    paneIndex,
+    columns:cols.map((c,i)=>({
+      i,
+      keys:Object.keys(c),
+      obj:c
     }))
-  }));
+  };
 }
 
-function walk(obj,path,out,seen) {
-  if (!obj || typeof obj!=="object" || seen.has(obj)) return;
-  seen.add(obj);
-  if (Object.prototype.hasOwnProperty.call(obj,"dataSegments")) {
-    out.dataSegments.push({path:path+".dataSegments",summary:summarizeSegments(obj.dataSegments)});
-  }
-  if (obj.worksheet==="HRI Epi Curve") {
-    out.hriObjects.push({path,keys:Object.keys(obj),zoneId:obj.zoneId||null});
-  }
-  for (const [k,v] of Object.entries(obj)) {
-    if (v && typeof v==="object") walk(v,path+"."+k,out,seen);
-  }
+async function command(page,action,needle=null) {
+  const p=page.waitForResponse(r=>r.status()===200 && r.url().includes("/commands/tabdoc/") &&
+    (!needle || r.url().includes(needle)),{timeout:60000});
+  await action();
+  const resp=await p;
+  return JSON.parse(await resp.text());
 }
 
 const browser=await chromium.launch({headless:true});
 const page=await browser.newPage({viewport:{width:1600,height:1200}});
-let bootstrapBody=null;
-page.on("response",async resp=>{
-  if (resp.url().includes("/bootstrapSession/") && resp.status()===200) {
-    try { bootstrapBody=await resp.text(); } catch {}
-  }
-});
-await page.goto(URL,{waitUntil:"domcontentloaded",timeout:120000});
-await page.waitForFunction(()=>document.body.innerText.includes("Emergency Department Visits for Heat-Related Illness"),null,{timeout:120000});
-await page.waitForTimeout(7000);
-if (!bootstrapBody) throw new Error("No Tableau bootstrap response captured");
+page.setDefaultTimeout(120000);
 
-const chunks=parseChunks(bootstrapBody);
+const boot=page.waitForResponse(r=>r.status()===200&&r.url().includes("/bootstrapSession/"),{timeout:120000});
+await page.goto(URL,{waitUntil:"domcontentloaded",timeout:120000});
+await boot;
+await page.waitForFunction(()=>document.body.innerText.includes("Emergency Department Visits for Heat-Related Illness"),null,{timeout:120000});
+await page.waitForTimeout(4000);
+
+const combo=page.getByRole("combobox");
+await combo.click();
+const seasonRoot=await command(page,async()=>{
+  await page.getByRole("option",{name:"2025",exact:true}).click();
+});
+await page.waitForTimeout(1200);
+
+const regionButton=page.getByRole("button",{name:/^Region /});
+await regionButton.click();
+const regionRoot=await command(page,async()=>{
+  await page.getByRole("menuitem",{name:"1 - Southeast",exact:true}).click();
+},"set-parameter-value-from-index");
+await page.waitForTimeout(800);
+
 const out={
-  bodyLength:bootstrapBody.length,
-  chunkCount:chunks.length,
-  chunks:chunks.map((chunk,i)=>{
-    const found={dataSegments:[],hriObjects:[]};
-    walk(chunk,"$",found,new WeakSet());
-    return {
-      i,
-      topKeys:Object.keys(chunk||{}),
-      parseError:chunk?.__parseError||null,
-      dataSegments:found.dataSegments,
-      hriObjects:found.hriObjects.slice(0,10)
-    };
-  })
+  seasonControl:(await combo.innerText()).trim(),
+  regionControl:await regionButton.getAttribute("aria-label"),
+  season:summarizeRoot(seasonRoot,"season-2025"),
+  region:summarizeRoot(regionRoot,"region-1-2025")
 };
+
 fs.writeFileSync("data/ldh_api_probe.json",JSON.stringify(out,null,2)+"\n");
-console.log(JSON.stringify(out,null,2));
+console.log(JSON.stringify({
+  seasonControl:out.seasonControl,
+  regionControl:out.regionControl,
+  seasonSegmentKeys:out.season.segmentKeys,
+  seasonSegments:out.season.segments.map(s=>({key:s.key,columns:s.columns.map(c=>({dataType:c.dataType,count:c.count,sample:c.sample}))})),
+  regionSegmentKeys:out.region.segmentKeys,
+  regionSegments:out.region.segments.map(s=>({key:s.key,columns:s.columns.map(c=>({dataType:c.dataType,count:c.count,sample:c.sample}))})),
+  seasonDateColumn:out.season.columns.find(c=>c.i===1),
+  regionDateColumn:out.region.columns.find(c=>c.i===1)
+},null,2));
 await browser.close();
