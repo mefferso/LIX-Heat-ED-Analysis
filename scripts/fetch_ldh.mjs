@@ -78,7 +78,42 @@ function extractEpiCurve(text, expectedYear) {
   })).filter((r) => r.date.startsWith(String(expectedYear)));
 
   if (rows.length < 100) {
-    throw new Error("Only " + rows.length + " daily HRI rows decoded for " + expectedYear + ".");
+    const debug = {
+      expectedYear,
+      segmentKeys: Object.keys(segments),
+      segments: Object.entries(segments).map(([key, seg]) => ({
+        key,
+        isNull: !seg,
+        columns: (seg?.dataColumns || []).map((col) => ({
+          dataType: col.dataType,
+          valueCount: Array.isArray(col.dataValues) ? col.dataValues.length : null,
+          sample: Array.isArray(col.dataValues) ? col.dataValues.slice(0,5) : null
+        }))
+      })),
+      zoneKeys: Object.keys(zone || {}),
+      meta: metas.map((m) => ({
+        caption:m.fieldCaption,
+        dataType:m.dataType,
+        paneIndices:m.paneIndices,
+        columnIndices:m.columnIndices
+      })),
+      paneIndex,
+      paneDescriptors: panes.map((p) => p?.paneDescriptor),
+      paneColumns: paneColumns.map((col, idx) => ({
+        idx,
+        valueLen:(col.valueIndices || []).length,
+        aliasLen:(col.aliasIndices || []).length,
+        valueSample:(col.valueIndices || []).slice(0,5),
+        aliasSample:(col.aliasIndices || []).slice(0,5)
+      })),
+      decodedDateSample: dates.slice(0,10),
+      decodedCaseSample: cases.slice(0,10)
+    };
+    fs.mkdirSync("data", {recursive:true});
+    fs.writeFileSync("data/ldh_debug.json", JSON.stringify(debug,null,2));
+    throw new Error("Only " + rows.length + " daily HRI rows decoded for " + expectedYear +
+      ". Debug: dates=" + JSON.stringify(dates.slice(0,5)) +
+      " cases=" + JSON.stringify(cases.slice(0,5)));
   }
   return rows;
 }
