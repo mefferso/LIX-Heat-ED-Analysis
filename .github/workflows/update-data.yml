@@ -9,7 +9,6 @@ on:
     paths:
       - "scripts/**"
       - "config/**"
-      - "data/input/**"
       - ".github/workflows/update-data.yml"
 
 permissions:
@@ -22,7 +21,7 @@ concurrency:
 jobs:
   update:
     runs-on: ubuntu-latest
-    timeout-minutes: 10
+    timeout-minutes: 30
 
     steps:
       - name: Check out repository
@@ -33,14 +32,32 @@ jobs:
         with:
           python-version: "3.12"
 
-      - name: Build heat-health datasets
+      - name: Set up Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: "22"
+
+      - name: Install Playwright
+        run: |
+          npm install --no-save playwright@1.55.0
+          npx playwright install --with-deps chromium
+
+      - name: Fetch LDH heat-related ED visits
+        run: node scripts/fetch_ldh.mjs
+
+      - name: Fetch IEM heat headlines and build merged datasets
         run: python scripts/update_data.py
 
       - name: Commit generated data
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add data/heat_hazards_daily.csv data/analysis_region_daily.csv data/summary.json
+          git add \
+            data/ldh_heat_region_daily.csv \
+            data/ldh_meta.json \
+            data/heat_hazards_daily.csv \
+            data/analysis_region_daily.csv \
+            data/summary.json
           if git diff --cached --quiet; then
             echo "No generated data changes."
           else
