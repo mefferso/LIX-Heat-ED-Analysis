@@ -1,0 +1,195 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="WFO LIX Louisiana heat headline and heat-related emergency department visit analysis.">
+  <title>LIX Heat + ED Analysis</title>
+  <link rel="preconnect" href="https://cdn.jsdelivr.net">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header class="hero">
+    <div class="hero__inner">
+      <div>
+        <p class="eyebrow">WFO NEW ORLEANS / BATON ROUGE • LOUISIANA</p>
+        <h1>Heat Headlines + ED Visits</h1>
+        <p class="lede">Explore how heat-related emergency department visits line up with Heat Advisory and Excessive/Extreme Heat Warning days across the Louisiana portion of the LIX CWA.</p>
+      </div>
+      <div class="status-card" aria-live="polite">
+        <span class="status-dot" id="statusDot"></span>
+        <div>
+          <strong id="dataStatus">Loading data…</strong>
+          <span id="dataUpdated">Checking generated datasets</span>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <section class="panel controls-panel">
+      <div class="control-grid">
+        <label>
+          <span>Area</span>
+          <select id="areaSelect"></select>
+        </label>
+
+        <label>
+          <span>Start date</span>
+          <input id="startDate" type="date">
+        </label>
+
+        <label>
+          <span>End date</span>
+          <input id="endDate" type="date">
+        </label>
+
+        <label class="upload-label">
+          <span>LDH data</span>
+          <input id="ldhFile" type="file" accept=".csv,text/csv">
+          <span class="file-button">Load LDH CSV locally</span>
+        </label>
+      </div>
+      <div class="control-footer">
+        <p id="scopeNote">Louisiana parishes only. Mississippi is not included in the health analysis.</p>
+        <button id="resetDates" class="ghost-button" type="button">Reset dates</button>
+      </div>
+      <div id="uploadMessage" class="notice hidden"></div>
+    </section>
+
+    <section class="metric-grid" aria-label="Summary statistics">
+      <article class="metric-card">
+        <span class="metric-label">No-headline mean</span>
+        <strong id="meanNone">—</strong>
+        <span class="metric-unit">ED visits / day</span>
+      </article>
+      <article class="metric-card advisory">
+        <span class="metric-label">Heat Advisory mean</span>
+        <strong id="meanAdvisory">—</strong>
+        <span class="metric-unit" id="advisoryDelta">ED visits / day</span>
+      </article>
+      <article class="metric-card warning">
+        <span class="metric-label">Heat Warning mean</span>
+        <strong id="meanWarning">—</strong>
+        <span class="metric-unit" id="warningDelta">ED visits / day</span>
+      </article>
+      <article class="metric-card">
+        <span class="metric-label">Same-day correlation</span>
+        <strong id="corrSame">—</strong>
+        <span class="metric-unit">Pearson r</span>
+      </article>
+      <article class="metric-card">
+        <span class="metric-label">Strongest lag</span>
+        <strong id="bestLag">—</strong>
+        <span class="metric-unit" id="bestLagDetail">0–3 days tested</span>
+      </article>
+    </section>
+
+    <section class="panel chart-panel">
+      <div class="panel-heading">
+        <div>
+          <p class="eyebrow dark">DAILY TIMELINE</p>
+          <h2 id="timelineTitle">LIX Louisiana CWA</h2>
+        </div>
+        <div class="legend-note">
+          <span><i class="legend-swatch ed"></i>ED visits</span>
+          <span><i class="legend-swatch advisory"></i>Advisory coverage</span>
+          <span><i class="legend-swatch warning"></i>Warning coverage</span>
+        </div>
+      </div>
+      <div class="chart-wrap">
+        <canvas id="timelineChart"></canvas>
+      </div>
+      <p class="chart-caption">Headline coverage is the percentage of selected parishes under the headline at any point during the local calendar day. Warning coverage takes precedence where a parish had both products that day.</p>
+    </section>
+
+    <section class="two-column">
+      <section class="panel">
+        <div class="panel-heading compact">
+          <div>
+            <p class="eyebrow dark">HEADLINE COMPARISON</p>
+            <h2>ED visits by headline</h2>
+          </div>
+        </div>
+        <div class="table-wrap">
+          <table>
+            <thead>
+              <tr>
+                <th>Headline</th>
+                <th>Days</th>
+                <th>Mean visits</th>
+                <th>Median</th>
+                <th>vs. no headline</th>
+              </tr>
+            </thead>
+            <tbody id="categoryTable"></tbody>
+          </table>
+        </div>
+      </section>
+
+      <section class="panel">
+        <div class="panel-heading compact">
+          <div>
+            <p class="eyebrow dark">LAG TEST</p>
+            <h2>Headline severity vs. ED visits</h2>
+          </div>
+        </div>
+        <div class="table-wrap">
+          <table>
+            <thead>
+              <tr>
+                <th>ED response</th>
+                <th>Pearson r</th>
+                <th>Paired days</th>
+              </tr>
+            </thead>
+            <tbody id="lagTable"></tbody>
+          </table>
+        </div>
+        <p class="chart-caption">A +1 day lag compares today's headline exposure with tomorrow's ED visits. Correlation is exploratory and does not establish causation.</p>
+      </section>
+    </section>
+
+    <section class="panel methodology">
+      <div class="panel-heading compact">
+        <div>
+          <p class="eyebrow dark">WHAT THE NUMBERS MEAN</p>
+          <h2>Methodology & limitations</h2>
+        </div>
+      </div>
+      <div class="method-grid">
+        <div>
+          <h3>Headline severity</h3>
+          <p>Each parish/day is scored 0 for no headline, 1 for Heat Advisory, and 2 for Excessive/Extreme Heat Warning. Multi-parish views use the average score across the selected parishes.</p>
+        </div>
+        <div>
+          <h3>LDH surveillance</h3>
+          <p>Heat-related ED visits are grouped by patient parish of residence. LDH reports that roughly 90% of Louisiana emergency departments participate in syndromic surveillance.</p>
+        </div>
+        <div>
+          <h3>Geography</h3>
+          <p>The analysis includes the 22 Louisiana parishes in the LIX CWA. St. Mary is excluded from South Central because it is outside LIX. Mississippi counties are not currently included.</p>
+        </div>
+        <div>
+          <h3>Interpretation</h3>
+          <p>Headline days are not randomized exposure. Weather severity, behavior, access to cooling, demographics, reporting practices, and other factors can affect ED visits.</p>
+        </div>
+      </div>
+    </section>
+
+    <section id="noLdhPanel" class="panel no-data hidden">
+      <h2>IEM headlines are loaded. LDH visits are not yet committed.</h2>
+      <p>You can still inspect historical LIX heat headline coverage. To activate the health analysis immediately, choose <strong>Load LDH CSV locally</strong> above and select a CSV containing date, parish, and ED-visit count columns. The file stays in your browser.</p>
+      <code>date,parish,ed_visits</code>
+    </section>
+  </main>
+
+  <footer>
+    <p>Data: NWS/IEM VTEC archive + Louisiana Department of Health heat-related illness surveillance.</p>
+    <p>Research/operational analysis • Not an official NWS or LDH product.</p>
+  </footer>
+
+  <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.7/dist/chart.umd.min.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>
