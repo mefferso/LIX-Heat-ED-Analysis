@@ -1,1 +1,13 @@
-{"generated_at":null,"iem_status":"pending","ldh_status":"no_data","hazard_rows":0,"ldh_rows":0,"analysis_rows":0}
+{
+  "generated_at": "2026-09-06T08:32:53.757931+00:00",
+  "iem_status": "ok",
+  "iem_rows_received": 6492,
+  "heat_event_zone_rows_used": 0,
+  "mapped_zone_count": 0,
+  "hazard_rows": 27610,
+  "hazard_period_start": "2023-04-01",
+  "hazard_period_end": "2026-09-06",
+  "ldh_status": "no_data",
+  "ldh_source_rows": 0,
+  "analysis_rows": 0
+}
