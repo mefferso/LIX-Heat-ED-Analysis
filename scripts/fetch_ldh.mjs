@@ -34,8 +34,8 @@ function parseLengthPrefixedJson(body) {
 
 class TableauDictionary {
   constructor() {
+    this.segments = new Map();
     this.values = new Map();
-    // Segment IDs are local to one Tableau response and are reused later.
     this.appliedSegments = [];
   }
 
@@ -43,15 +43,34 @@ class TableauDictionary {
     for (const [segmentId, segment] of Object.entries(segments || {})) {
       if (!segment) continue;
 
+      const segmentValues = new Map();
       for (const col of segment.dataColumns || []) {
         const dataType = col.dataType;
         if (!dataType) continue;
-        if (!this.values.has(dataType)) this.values.set(dataType, []);
-        const target = this.values.get(dataType);
-        for (const value of col.dataValues || []) target.push(value);
+        if (!segmentValues.has(dataType)) segmentValues.set(dataType, []);
+        segmentValues.get(dataType).push(...(col.dataValues || []));
       }
-      this.appliedSegments.push(String(segmentId));
+
+      // Tableau reuses a segment ID when filters/parameters change. That means
+      // replace that segment while preserving the other dictionary segments.
+      this.segments.set(String(segmentId), segmentValues);
     }
+
+    const ordered = [...this.segments.entries()].sort(([a], [b]) => {
+      const an = Number(a);
+      const bn = Number(b);
+      if (Number.isFinite(an) && Number.isFinite(bn)) return an - bn;
+      return a.localeCompare(b);
+    });
+
+    this.values.clear();
+    for (const [, segmentValues] of ordered) {
+      for (const [dataType, dataValues] of segmentValues) {
+        if (!this.values.has(dataType)) this.values.set(dataType, []);
+        this.values.get(dataType).push(...dataValues);
+      }
+    }
+    this.appliedSegments = ordered.map(([segmentId]) => segmentId);
   }
 
   decode(meta, column) {
@@ -92,11 +111,6 @@ function getCommandApp(root) {
 function applyCommandDictionary(root, dictionary) {
   const app = getCommandApp(root);
   if (app?.dataDictionary?.dataSegments) {
-    // A command response's value indices address that response's dictionary.
-    // Keeping the prior response in front of it makes 2025/2024/2023 indices
-    // resolve to the 2026 values at the same positions.
-    dictionary.values.clear();
-    dictionary.appliedSegments.length = 0;
     dictionary.appendSegments(app.dataDictionary.dataSegments);
   }
 }
