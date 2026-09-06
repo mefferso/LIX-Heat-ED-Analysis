@@ -1,0 +1,37 @@
+name: Probe LDH Tableau
+
+on:
+  workflow_dispatch:
+  push:
+    branches: [main]
+    paths:
+      - "scripts/probe_ldh.mjs"
+      - ".github/workflows/probe-ldh.yml"
+
+permissions:
+  contents: write
+
+jobs:
+  probe:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "22"
+      - name: Install Playwright
+        run: |
+          npm init -y
+          npm install playwright
+          npx playwright install --with-deps chromium
+      - name: Probe dashboard
+        run: node scripts/probe_ldh.mjs
+      - name: Commit probe output
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add data/ldh_probe.json
+          git commit -m "Probe LDH Tableau controls" || exit 0
+          git pull --rebase origin main
+          git push
