@@ -1,17 +1,16 @@
 {
-  "generated_at": "2026-09-06T08:38:40.821650+00:00",
+  "generated_at": "2026-09-06T08:40:07.630230+00:00",
   "iem_status": "ok",
   "iem_rows_received": 6492,
   "heat_event_zone_rows_used": 4875,
   "mapped_zone_count": 46,
   "hazard_rows": 27610,
+  "advisory_parish_days": 2029,
+  "warning_parish_days": 977,
+  "unique_lix_la_headline_days": 143,
   "hazard_period_start": "2023-04-01",
   "hazard_period_end": "2026-09-06",
   "ldh_status": "no_data",
   "ldh_source_rows": 0,
-  "analysis_rows": 0,
-  "ldh_tableau_probe": {
-    "status": "error",
-    "error": "HTTP Error 404: Not Found"
-  }
+  "analysis_rows": 0
 }
