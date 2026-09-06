@@ -31,11 +31,12 @@ jobs:
           npx playwright install --with-deps chromium
       - name: Extract LDH 2023-2026 region/day HRI ED data
         run: node scripts/fetch_ldh.mjs
-      - name: Commit extracted LDH data
+      - name: Commit LDH output or diagnostics
+        if: always()
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add data/ldh_heat_region_daily.csv data/ldh_meta.json
+          git add data/ldh_heat_region_daily.csv data/ldh_meta.json data/ldh_debug.json 2>/dev/null || true
           if git diff --cached --quiet; then
             echo "No LDH changes."
           else
