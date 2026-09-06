@@ -1,0 +1,35 @@
+{
+  "wfo": "LIX",
+  "state": "LA",
+  "notes": "Parish-first Louisiana subset of the WFO LIX CWA. LDH Region 3 includes St. Mary Parish, but St. Mary is outside LIX and is excluded.",
+  "regions": {
+    "1": {"name": "Southeast / New Orleans", "short_name": "Southeast"},
+    "2": {"name": "Capital", "short_name": "Capital"},
+    "3": {"name": "South Central (LIX subset)", "short_name": "South Central"},
+    "9": {"name": "Northshore", "short_name": "Northshore"}
+  },
+  "parishes": [
+    {"name":"Ascension","fips":"22005","region":"2"},
+    {"name":"Assumption","fips":"22007","region":"3"},
+    {"name":"East Baton Rouge","fips":"22033","region":"2"},
+    {"name":"East Feliciana","fips":"22037","region":"2"},
+    {"name":"Iberville","fips":"22047","region":"2"},
+    {"name":"Jefferson","fips":"22051","region":"1"},
+    {"name":"Lafourche","fips":"22057","region":"3"},
+    {"name":"Livingston","fips":"22063","region":"9"},
+    {"name":"Orleans","fips":"22071","region":"1"},
+    {"name":"Plaquemines","fips":"22075","region":"1"},
+    {"name":"Pointe Coupee","fips":"22077","region":"2"},
+    {"name":"St. Bernard","fips":"22087","region":"1"},
+    {"name":"St. Charles","fips":"22089","region":"3"},
+    {"name":"St. Helena","fips":"22091","region":"9"},
+    {"name":"St. James","fips":"22093","region":"3"},
+    {"name":"St. John the Baptist","fips":"22095","region":"3"},
+    {"name":"St. Tammany","fips":"22103","region":"9"},
+    {"name":"Tangipahoa","fips":"22105","region":"9"},
+    {"name":"Terrebonne","fips":"22109","region":"3"},
+    {"name":"Washington","fips":"22117","region":"9"},
+    {"name":"West Baton Rouge","fips":"22121","region":"2"},
+    {"name":"West Feliciana","fips":"22125","region":"2"}
+  ]
+}
