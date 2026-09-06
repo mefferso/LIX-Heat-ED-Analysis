@@ -7,7 +7,6 @@ const API="https://analytics.la.gov/javascripts/api/tableau.embedding.3.latest.m
 const browser=await chromium.launch({headless:true});
 const page=await browser.newPage({viewport:{width:1600,height:1200}});
 page.setDefaultTimeout(120000);
-
 await page.goto("about:blank");
 
 const result=await page.evaluate(async ({VIEW,API})=>{
@@ -22,25 +21,19 @@ const result=await page.evaluate(async ({VIEW,API})=>{
   const ready=new Promise((resolve,reject)=>{
     const timer=setTimeout(()=>reject(new Error("FirstInteractive timeout")),90000);
     viz.addEventListener(mod.TableauEventType.FirstInteractive,()=>{
-      clearTimeout(timer);
-      resolve();
+      clearTimeout(timer); resolve();
     },{once:true});
   });
-
   document.body.appendChild(viz);
   await ready;
 
-  const workbook=viz.workbook;
-  const active=workbook.activeSheet;
-  const params=await workbook.getParametersAsync();
-  const dashboardFilters=await active.getFiltersAsync();
+  const active=viz.workbook.activeSheet;
   const worksheets=active.worksheets || [];
   const hri=worksheets.find(w=>w.name==="HRI Epi Curve");
-  if (!hri) throw new Error("HRI Epi Curve worksheet not found via Embedding API");
-  const hriFilters=await hri.getFiltersAsync();
-  const table=await hri.getSummaryDataAsync({maxRows:1000});
+  if (!hri) throw new Error("HRI Epi Curve not found");
 
-  function cleanValue(v) {
+  const table=await hri.getSummaryDataAsync({maxRows:1000});
+  function clean(v) {
     if (v===null || v===undefined) return null;
     if (v instanceof Date) return v.toISOString();
     if (typeof v==="object") {
@@ -49,41 +42,32 @@ const result=await page.evaluate(async ({VIEW,API})=>{
     return v;
   }
 
+  window.__tableauViz=viz;
   return {
     activeSheet:{name:active.name,sheetType:active.sheetType},
     worksheets:worksheets.map(w=>({name:w.name,sheetType:w.sheetType})),
-    parameters:params.map(p=>({
-      name:p.name,
-      currentValue:cleanValue(p.currentValue),
-      allowableValuesType:p.allowableValuesType,
-      allowableValues:(p.allowableValues||[]).map(cleanValue),
-      dataType:p.dataType
-    })),
-    dashboardFilters:dashboardFilters.map(f=>({
-      fieldName:f.fieldName,
-      filterType:f.filterType,
-      className:f.constructor?.name || null
-    })),
-    hriFilters:hriFilters.map(f=>({
-      fieldName:f.fieldName,
-      filterType:f.filterType,
-      className:f.constructor?.name || null
-    })),
-    summary:{
-      columns:table.columns.map(c=>({
-        fieldName:c.fieldName,
-        index:c.index,
-        dataType:c.dataType
-      })),
-      totalRowCount:table.totalRowCount,
-      data:table.data.slice(0,12).map(row=>row.map(cell=>({
-        value:cleanValue(cell.value),
-        formattedValue:cell.formattedValue
-      })))
-    }
+    columns:table.columns.map(c=>({fieldName:c.fieldName,index:c.index,dataType:c.dataType})),
+    totalRowCount:table.totalRowCount,
+    data:table.data.slice(0,15).map(row=>row.map(cell=>({
+      value:clean(cell.value),formattedValue:cell.formattedValue
+    })))
   };
 },{VIEW,API});
 
+const frames=page.frames().map(f=>({name:f.name(),url:f.url()}));
+const controls=[];
+for (const frame of page.frames()) {
+  if (!frame.url().includes("analytics.la.gov")) continue;
+  try {
+    controls.push({
+      url:frame.url(),
+      regionButtons:await frame.getByRole("button",{name:/^Region /}).count(),
+      seasonCombos:await frame.getByRole("combobox").count()
+    });
+  } catch {}
+}
+result.frames=frames;
+result.controls=controls;
 fs.writeFileSync("data/ldh_api_probe.json",JSON.stringify(result,null,2)+"\n");
 console.log(JSON.stringify(result,null,2));
 await browser.close();
