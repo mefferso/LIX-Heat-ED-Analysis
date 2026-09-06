@@ -410,10 +410,24 @@ def main():
         ["date", "parish", "ldh_region", "ed_visits", "heat_advisory", "excessive_heat_warning", "headline", "hazard_hours"],
     )
 
+    phenom_counts = defaultdict(int)
+    sig_counts = defaultdict(int)
+    ugc_prefix_counts = defaultdict(int)
+    for row in iem_rows:
+        phenom_counts[row_value(row, "PHENOM", "TYPE") or "(blank)"] += 1
+        sig_counts[row_value(row, "SIG") or "(blank)"] += 1
+        ugc = row_value(row, "NWS_UGC")
+        ugc_prefix_counts[(ugc[:3] if ugc else "(blank)")] += 1
+
     summary = {
         "generated_at": datetime.now(timezone.utc).isoformat(),
         "iem_status": "ok",
         "iem_rows_received": len(iem_rows),
+        "iem_columns": list(iem_rows[0].keys()) if iem_rows else [],
+        "iem_phenom_counts": dict(sorted(phenom_counts.items())),
+        "iem_sig_counts": dict(sorted(sig_counts.items())),
+        "iem_ugc_prefix_counts": dict(sorted(ugc_prefix_counts.items())),
+        "iem_sample": iem_rows[:2],
         "heat_event_zone_rows_used": used_events,
         "mapped_zone_count": len(zone_cache),
         "hazard_rows": len(hazard_rows),
