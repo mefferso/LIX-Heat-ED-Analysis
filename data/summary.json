@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-09-06T10:15:27.054545+00:00",
+  "generated_at": "2026-09-06T10:55:36.579500+00:00",
   "iem_status": "ok",
   "iem_rows_received": 6492,
   "heat_event_zone_rows_used": 4875,
@@ -10,14 +10,24 @@
   "unique_lix_la_headline_days": 143,
   "hazard_period_start": "2023-01-01",
   "hazard_period_end": "2026-09-06",
-  "ldh_status": "no_data",
-  "ldh_rows": 0,
-  "ldh_years": [],
-  "ldh_regions": [],
-  "ldh_period_start": null,
-  "ldh_period_end": null,
-  "ldh_source_updated": null,
-  "ldh_fetched_at": null,
-  "analysis_region_rows": 0,
+  "ldh_status": "loaded",
+  "ldh_rows": 3172,
+  "ldh_years": [
+    2023,
+    2024,
+    2025,
+    2026
+  ],
+  "ldh_regions": [
+    "1",
+    "2",
+    "3",
+    "9"
+  ],
+  "ldh_period_start": "2023-04-01",
+  "ldh_period_end": "2026-08-29",
+  "ldh_source_updated": "9/3/2026",
+  "ldh_fetched_at": "2026-09-06T10:55:34.142Z",
+  "analysis_region_rows": 3172,
   "south_central_note": "LDH Region 3 includes St. Mary Parish, which is outside the LIX CWA."
 }
