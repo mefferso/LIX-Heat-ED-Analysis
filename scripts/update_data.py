@@ -24,7 +24,7 @@ ANALYSIS_OUTPUT = ROOT / "data" / "analysis_region_daily.csv"
 SUMMARY_OUTPUT = ROOT / "data" / "summary.json"
 
 LOCAL_TZ = ZoneInfo("America/Chicago")
-START_DATE = date(2023, 4, 1)
+START_DATE = date(2023, 1, 1)
 IEM_URL = "https://mesonet.agron.iastate.edu/cgi-bin/request/gis/watchwarn.py"
 USER_AGENT = "LIX-Heat-ED-Analysis/2.0 (https://github.com/mefferso/LIX-Heat-ED-Analysis)"
 
