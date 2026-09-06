@@ -1,37 +1,89 @@
 import { chromium } from "playwright";
 import fs from "fs";
 
-const URL="https://analytics.la.gov/t/LDH/views/HeatRelatedIllnessDashboardLive_17568488201530/HeatRelatedIllnessesDashboard?:showVizHome=no";
+const VIEW="https://analytics.la.gov/t/LDH/views/HeatRelatedIllnessDashboardLive_17568488201530/HeatRelatedIllnessesDashboard";
+const API="https://analytics.la.gov/javascripts/api/tableau.embedding.3.latest.min.js";
+
 const browser=await chromium.launch({headless:true});
 const page=await browser.newPage({viewport:{width:1600,height:1200}});
-const captures=[];
+page.setDefaultTimeout(120000);
 
-page.on("response", async (resp)=>{
-  const url=resp.url();
-  if (!url.includes("analytics.la.gov")) return;
-  if (!/bootstrap|sessions|vizql/i.test(url)) return;
-  try {
-    const body=await resp.text();
-    captures.push({
-      url,
-      status:resp.status(),
-      contentType:resp.headers()["content-type"]||"",
-      length:body.length,
-      first:body.slice(0,1200),
-      hasDataSegments:body.includes("dataSegments"),
-      hasHri:body.includes("HRI Epi Curve"),
-      dataSegmentsPos:body.indexOf("dataSegments"),
-      hriPos:body.indexOf("HRI Epi Curve")
-    });
-    if (url.includes("bootstrap") && body.length>10000) {
-      fs.writeFileSync("data/ldh_bootstrap_raw.txt",body);
+await page.goto("about:blank");
+
+const result=await page.evaluate(async ({VIEW,API})=>{
+  const mod=await import(API);
+  const viz=new mod.TableauViz();
+  viz.src=VIEW;
+  viz.hideTabs=true;
+  viz.hideToolbar=true;
+  viz.width="1400px";
+  viz.height="1000px";
+
+  const ready=new Promise((resolve,reject)=>{
+    const timer=setTimeout(()=>reject(new Error("FirstInteractive timeout")),90000);
+    viz.addEventListener(mod.TableauEventType.FirstInteractive,()=>{
+      clearTimeout(timer);
+      resolve();
+    },{once:true});
+  });
+
+  document.body.appendChild(viz);
+  await ready;
+
+  const workbook=viz.workbook;
+  const active=workbook.activeSheet;
+  const params=await workbook.getParametersAsync();
+  const dashboardFilters=await active.getFiltersAsync();
+  const worksheets=active.worksheets || [];
+  const hri=worksheets.find(w=>w.name==="HRI Epi Curve");
+  if (!hri) throw new Error("HRI Epi Curve worksheet not found via Embedding API");
+  const hriFilters=await hri.getFiltersAsync();
+  const table=await hri.getSummaryDataAsync({maxRows:1000});
+
+  function cleanValue(v) {
+    if (v===null || v===undefined) return null;
+    if (v instanceof Date) return v.toISOString();
+    if (typeof v==="object") {
+      try { return JSON.parse(JSON.stringify(v)); } catch { return String(v); }
     }
-  } catch {}
-});
+    return v;
+  }
 
-await page.goto(URL,{waitUntil:"domcontentloaded",timeout:120000});
-await page.waitForFunction(()=>document.body.innerText.includes("Emergency Department Visits for Heat-Related Illness"),null,{timeout:120000});
-await page.waitForTimeout(7000);
-fs.writeFileSync("data/ldh_bootstrap_debug.json",JSON.stringify(captures,null,2));
-console.log(JSON.stringify(captures.map(c=>({url:c.url,length:c.length,hasDataSegments:c.hasDataSegments,hasHri:c.hasHri,first:c.first.slice(0,150)})),null,2));
+  return {
+    activeSheet:{name:active.name,sheetType:active.sheetType},
+    worksheets:worksheets.map(w=>({name:w.name,sheetType:w.sheetType})),
+    parameters:params.map(p=>({
+      name:p.name,
+      currentValue:cleanValue(p.currentValue),
+      allowableValuesType:p.allowableValuesType,
+      allowableValues:(p.allowableValues||[]).map(cleanValue),
+      dataType:p.dataType
+    })),
+    dashboardFilters:dashboardFilters.map(f=>({
+      fieldName:f.fieldName,
+      filterType:f.filterType,
+      className:f.constructor?.name || null
+    })),
+    hriFilters:hriFilters.map(f=>({
+      fieldName:f.fieldName,
+      filterType:f.filterType,
+      className:f.constructor?.name || null
+    })),
+    summary:{
+      columns:table.columns.map(c=>({
+        fieldName:c.fieldName,
+        index:c.index,
+        dataType:c.dataType
+      })),
+      totalRowCount:table.totalRowCount,
+      data:table.data.slice(0,12).map(row=>row.map(cell=>({
+        value:cleanValue(cell.value),
+        formattedValue:cell.formattedValue
+      })))
+    }
+  };
+},{VIEW,API});
+
+fs.writeFileSync("data/ldh_api_probe.json",JSON.stringify(result,null,2)+"\n");
+console.log(JSON.stringify(result,null,2));
 await browser.close();
