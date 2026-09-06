@@ -25,7 +25,7 @@ jobs:
       - run: |
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add data/ldh_bootstrap_debug.json data/ldh_bootstrap_raw.txt
+          git add data/ldh_api_probe.json
           git commit -m "Capture LDH live response diagnostics" || exit 0
           git pull --rebase origin main
           git push
