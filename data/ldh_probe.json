@@ -1,573 +1,414 @@
 {
-  "title": "Workbook: Heat Related Illness Dashboard Live",
-  "bodyText": "Emergency Department Visits for Heat-Related Illness\nLast Updated: 9/3/2026    \nPurpose\nThe Occupational Heat-Related Illness Prevention Program monitors emergency department (ED) visits for heat-related illness (HRI) to determine the effect of extreme heat on people seeking healthcare in Louisiana.\n\n\nHeat-Related Illness\nHRI, or hyperthermia, occurs when the body cannot cool itself sufficiently through sweating. HRI ranges in severity from mild such as heat rash and heat cramps, to severe such as heat exhaustion and heatstroke.\nData Description\nED visits for HRI are selected if the medical record contains text or a diagnostic code associated with heat exhaustion, heat or sun exposure, heat cramps, heat stroke or hyperthermia. \n\n\nShown below are the daily number of HRI Emergency Department visits (for residents and out of state visitors) to EDs in Louisiana and cumulative counts by age, sex, race, ethnicity, LDH region, day of the week, and time of day. Data presented are preliminary and may have slight variations each week.  \n\n\nReporting Period\nData refreshes weekly on Thursdays, April – October.\nEmergency Department Visits by Date\nRegion\nLouisiana\nFilter\nSeason\nInclusive\n2026\nDate (Only applies to the ED Visits by Date visualization)\n4/1/2026\n8/29/2026\nChanging the Season filter after selecting specific dates on the slider will cause the graph to disappear. Click the 'Reset Filter' button to populate dates for the selected season.\nED Visits for Heat-Related Illness by Date\nED Visits\n0\n20\n40\n60\n80\nTemperature (F°)\n0\n20\n40\n60\n80\n100\nMar 24\nApr 8\nApr 23\nMay 8\nMay 23\nJun 7\nJun 22\nJul 7\nJul 22\nAug 6\nAug 21\nSep 5\nDaily Mean Maximum Temperature\nDaily Mean Minimum Temperature\nEmergency Department Visits by Area\nED Visits for Heat-Related Illness by the Patient's Parish\nED Visits for Heat-Related Illness by the Patient's Region\n1 - Southeast\n2 - Capital Region\n3 - South Central\n4 - Acadiana\n5 - Southwest\n6 - Central\n7 - Northwest\n8 - Northeast\n9 - Northshore\nOut of State\nUnknown\nGrand Total\n% Total E.D.\nVisits\nED Visits\n0 - 4\n5 - 49\n50 - 99\n100 - 199\n200 - 399\n400+\nTo highlight parishes within a specific region, select the region from the filter at the top of the dashboard. \nEmergency Department Visits by Day and Time\nThese two visualizations are interactive. Clicking a bar on the day or the time will filter the other chart. To clear the filter, click on the highlighted bar. \nED Visits by Day of the Week\nED Visits\n0\n200\n400\n600\nSun\nMon\nTue\nWed\nThu\nFri\nSat\nED Visits by Time\nED Visits\n500\n1000\n12 AM - 2:59 AM\n3 AM - 5:59 AM\n6 AM - 8:59 AM\n9 AM - 11:59 AM\n12 PM - 2:59 PM\n3 PM - 5:59 PM\n6 PM - 8:59 PM\n9 PM - 11:59 PM\nEmergency Department Visits by Demographics\nED Visits for Heat-Related Illness by Sex and Age Group\nED Visits\n0\n200\n400\n600\n800\n1000\n0 - 17 Years\n18 - 29 Years\n30 - 49 Years\n50 - 64 Years\n65+ Years\nUnknown\nYears\nMale\nFemale\nMale\nFemale\nMale\nFemale\nMale\nFemale\nMale\nFemale\nMale\nHRI ED Visits by Race\nHRI ED Visits by Ethnicity\nED Visits\n0\n1,000\n2,000\nBlack\nWhite\nAddt'l Groups\nUnknown\nED Visits\n0\n1,000\n2,000\n3,000\nNot Hispanic\nHispanic\nUnknown\nUndo\nRedo\nRevert\nRefresh\nPause\nReplay Animation\nReplay Speed Options\nDownload\nFull Screen\nShare",
-  "selects": [],
-  "combo": [
-    {
-      "tag": "SPAN",
-      "id": "",
-      "cls": "tabComboBox tab-ctrl-formatted-widget tab-ctrl-formatted-darker-border-hover tab-ctrl-formatted-darker-border-focus tabComboStdTheme tabComboBoxNoIcon tiledContent",
-      "role": "combobox",
-      "aria": null,
-      "title": null,
-      "text": "2026",
-      "html": "<span class=\"tabComboBox tab-ctrl-formatted-widget tab-ctrl-formatted-darker-border-hover tab-ctrl-formatted-darker-border-focus tabComboStdTheme tabComboBoxNoIcon tiledContent\" tabindex=\"0\" role=\"combobox\" aria-haspopup=\"listbox\" aria-expanded=\"false\" aria-live=\"polite\" aria-describedby=\"tab-ui-id-1788688559066\" aria-labelledby=\"tab-ui-id-1788688559065\" style=\"user-select: none; -webkit-tap-highlight-color: transparent;\"><div class=\"tabComboBoxNameContainer tab-ctrl-formatted-fixedsize\"><span class=\"tabComboBoxName\" id=\"tab-ui-id-1788688559066\" aria-hidden=\"true\">2026</span></div><div class=\"tabComboBoxButtonHolder\"><span class=\"tabComboBoxButton\"><svg focusable=\"false\" version=\"1.1\" xmlns=\"http://www.w3.org/2000/svg\" xmlns:xlink=\"http://www.w3.org/1999/xlink\" x=\"0px\" y=\"0px\" width=\"12px\" height=\"12px\" viewBox=\"0 0 12 12\" style=\"enable-background:new 0 0 12 12;\" xml:space=\"preserve\"><path style=\"fill:rgb(0,0,0);\" d=\"M4.9,6.9L2.1,3.3C2,3.2,2.1,3,2.2,3h5.6C8,3,8.1,3.2,8,3.3L5.2,6.9C5.1,7,4.9,7,4.9,6.9z\"></path></svg></span></div></span>"
-    }
-  ],
-  "buttons": [
-    {
-      "tag": "DIV",
-      "id": "",
-      "cls": "f1jr9v3y",
-      "role": "button",
-      "aria": "Show 'Bar chart counts are the number of ED visits that occured on that date.   Statewide daily maximum temperature estimates represent the average daily maximum temperatures from National Weather Service stations in Louisiana.  Regional daily maximum temperature estimates represent the average daily maximum temperatures from National Weather Service stations within the respective LDH region.  Temperature data lags ED Visit data by 2 - 4 days.   The statewide Mean Maximum Temperature is used for Unknown and Out-of-State parish/county residences.'",
-      "title": "Show 'Bar chart counts are the number of ED visits that occured on that date.   Statewide daily maximum temperature estimates represent the average daily maximum temperatures from National Weather Service stations in Louisiana.  Regional daily maximum temperature estimates represent the average daily maximum temperatures from National Weather Service stations within the respective LDH region.  Temperature data lags ED Visit data by 2 - 4 days.   The statewide Mean Maximum Temperature is used for Unknown and Out-of-State parish/county residences.'",
-      "text": "",
-      "html": "<div role=\"button\" tabindex=\"0\" class=\"f1jr9v3y\" data-testid=\"tab-custom-button\" title=\"Show 'Bar chart counts are the number of ED visits that occured on that date.   Statewide daily maximum temperature estimates represent the average daily maximum temperatures from National Weather Service stations in Louisiana.  Regional daily maximum temperature estimates represent the average daily maximum temperatures from National Weather Service stations within the respective LDH region.  Temperature data lags ED Visit data by 2 - 4 days.   The statewide Mean Maximum Temperature is used for Unknown and Out-of-State parish/county residences.'\" aria-label=\"Show 'Bar chart counts are the number of ED visits that occured on that date.   Statewide daily maximum temperature estimates represent the average daily maximum temperatures from National Weather Service stations in Louisiana.  Regional daily maximum temperature estimates represent the average daily maximum temperatures from National Weather Service stations within the respective LDH region.  Temperature data lags ED Visit data by 2 - 4 days.   The statewide Mean Maximum Temperature is used for Unknown and Out-of-State parish/county residences.'\" data-eventutils-optout=\"true\" aria-disabled=\"false\" style=\"background-color: rgba(255, 255, 255, 0); width: 22px; height: 30px; display: flex; justify-content: center; align-items: center; box-sizing: border-box; border-color: rgba(255, 255, 255, 0); border-style: none; border-width: 0px;\"><"
-    },
-    {
-      "tag": "SPAN",
-      "id": "",
-      "cls": "tabComboBox tab-ctrl-formatted-widget tab-ctrl-formatted-darker-border-hover tab-widget tabComboStdTheme tabComboBoxNoIcon",
-      "role": "button",
-      "aria": "Region Louisiana",
-      "title": null,
-      "text": "Louisiana",
-      "html": "<span role=\"button\" aria-live=\"off\" aria-expanded=\"false\" aria-haspopup=\"true\" aria-atomic=\"true\" aria-relevant=\"text\" class=\"tabComboBox tab-ctrl-formatted-widget tab-ctrl-formatted-darker-border-hover tab-widget tabComboStdTheme tabComboBoxNoIcon\" tabindex=\"0\" aria-label=\"Region Louisiana\" style=\"user-select: none; -webkit-tap-highlight-color: transparent;\"><div class=\"tabComboBoxNameContainer tab-ctrl-formatted-fixedsize\" aria-hidden=\"true\"><span class=\"tabComboBoxName\">Louisiana</span></div><div class=\"tabComboBoxButtonHolder\"><span class=\"tabComboBoxButton\"><svg focusable=\"false\" version=\"1.1\" xmlns=\"http://www.w3.org/2000/svg\" xmlns:xlink=\"http://www.w3.org/1999/xlink\" x=\"0px\" y=\"0px\" width=\"12px\" height=\"12px\" viewBox=\"0 0 12 12\" style=\"enable-background:new 0 0 12 12;\" xml:space=\"preserve\"><path style=\"fill:rgb(51,51,51);\" d=\"M4.9,6.9L2.1,3.3C2,3.2,2.1,3,2.2,3h5.6C8,3,8.1,3.2,8,3.3L5.2,6.9C5.1,7,4.9,7,4.9,6.9z\"></path></svg></span></div><span class=\"tabComboBoxIcon\"></span></span>"
-    },
-    {
-      "tag": "DIV",
-      "id": "",
-      "cls": "f1jr9v3y",
-      "role": "button",
-      "aria": "Show 'ED visits where the patient is from out of state or the residence is unknown are excluded from the map.  ED visits by parish and region are based on where the patient resides.  This data should not be used to determine how many emergency departments visits occurred in a parish because several parishes do not have emergency departments.'",
-      "title": "Show 'ED visits where the patient is from out of state or the residence is unknown are excluded from the map.  ED visits by parish and region are based on where the patient resides.  This data should not be used to determine how many emergency departments visits occurred in a parish because several parishes do not have emergency departments.'",
-      "text": "",
-      "html": "<div role=\"button\" tabindex=\"0\" class=\"f1jr9v3y\" data-testid=\"tab-custom-button\" title=\"Show 'ED visits where the patient is from out of state or the residence is unknown are excluded from the map.  ED visits by parish and region are based on where the patient resides.  This data should not be used to determine how many emergency departments visits occurred in a parish because several parishes do not have emergency departments.'\" aria-label=\"Show 'ED visits where the patient is from out of state or the residence is unknown are excluded from the map.  ED visits by parish and region are based on where the patient resides.  This data should not be used to determine how many emergency departments visits occurred in a parish because several parishes do not have emergency departments.'\" data-eventutils-optout=\"true\" aria-disabled=\"false\" style=\"background-color: rgba(255, 255, 255, 0); width: 22px; height: 28px; display: flex; justify-content: center; align-items: center; box-sizing: border-box; border-color: rgba(255, 255, 255, 0); border-style: none; border-width: 0px;\"><div class=\"fcjsjij\" data-testid=\"tab-button-zone-image-enabled-container\"><svg class=\"tab-button-zone-SVG-image-wrapper\" width=\"22\" height=\"22\"><defs><filter id=\"grayscale\"><feColorMatrix values=\"0.3333 0.3333 0.3333 0.4 0\n                      0.3333 0.3333 0.3333 0.4 0\n                      0.3333 0.3333 0.3333 0.4 0\n                      0      0      0      1   0\"></feColorMatrix></filter></defs><image class="
-    }
-  ],
-  "textMatches": [
-    {
-      "tag": "DIV",
-      "id": "centeringContainer",
-      "cls": "",
-      "role": null,
-      "aria": null,
-      "title": null,
-      "text": "Emergency Department Visits for Heat-Related Illness Last Updated: 9/3/2026 Purpose The Occupational Heat-Related Illness Prevention Program monitors emergency department (ED) visits for heat-related illness (HRI) to determine the effect of extreme heat on people seeking healthcare in Louisiana. Heat-Related Illness HRI, or hyperthermia, occurs when the body cannot cool itself sufficiently through sweating. HRI ranges in severity from mild such as heat rash and heat cramps, to severe such as hea",
-      "html": "<div id=\"centeringContainer\">\n        <div class=\"wcStaticImage\" id=\"staticImage\" style=\"display: none; transition: opacity 150ms; opacity: 0;\"></div>\n        <div id=\"tabBootErr\" class=\"tabErrorDialog\">\n            <div id=\"tabBootErrTitle\">Unexpected Error</div>\n            <div id=\"tabBootErrBody\">An unexpected error occurred. If you continue to receive this error please contact\n                your Tableau Server Administrator.<div id=\"tabBootErrMsg\"></div>\n            </div>\n        </div>\n        \n        <div id=\"viz-client-container\">\n            \n            <div id=\"main-content\" style=\"width: 100%;\">\n            <div id=\"dashboard-viewport\" class=\"tab-widget\"><div id=\"dashboard-spacer\" class=\"dashboardSpacer tab-widget\" role=\"application\" style=\"width: 900px; height: 3214px; background-color: rgb(255, 255, 255); visibility: visible; margin: auto;\"><div class=\"tabbedNavigationWrapper\" id=\"tab-container\">\n        </div><div id=\"tab-dashboard-region\" class=\"tab-dashboard tab-widget is-dashboard\" style=\"height: 3214px; width: 900px; background-color: rgb(255, 255, 255); color: rgb(0, 0, 0);\"><div class=\"tab-ReactView\"></div><div class=\"tab-ReactView\"></div><div class=\"tab-zone tab-widget tabZone-layout-basic fade-bg\" id=\"tabZoneId4\" style=\"z-index: 11; width: 900px; height: 3214px; top: 0px; left: 0px;\"><div class=\"tab-zone-margin\" style=\"inset: 8px; position: absolute; background-color: rgba(0, 0, 0, 0); border-width: 0px; border-style: none; border-color: rgb(0, 0, 0"
-    },
-    {
-      "tag": "DIV",
-      "id": "viz-client-container",
-      "cls": "",
-      "role": null,
-      "aria": null,
-      "title": null,
-      "text": "Emergency Department Visits for Heat-Related Illness Last Updated: 9/3/2026 Purpose The Occupational Heat-Related Illness Prevention Program monitors emergency department (ED) visits for heat-related illness (HRI) to determine the effect of extreme heat on people seeking healthcare in Louisiana. Heat-Related Illness HRI, or hyperthermia, occurs when the body cannot cool itself sufficiently through sweating. HRI ranges in severity from mild such as heat rash and heat cramps, to severe such as hea",
-      "html": "<div id=\"viz-client-container\">\n            \n            <div id=\"main-content\" style=\"width: 100%;\">\n            <div id=\"dashboard-viewport\" class=\"tab-widget\"><div id=\"dashboard-spacer\" class=\"dashboardSpacer tab-widget\" role=\"application\" style=\"width: 900px; height: 3214px; background-color: rgb(255, 255, 255); visibility: visible; margin: auto;\"><div class=\"tabbedNavigationWrapper\" id=\"tab-container\">\n        </div><div id=\"tab-dashboard-region\" class=\"tab-dashboard tab-widget is-dashboard\" style=\"height: 3214px; width: 900px; background-color: rgb(255, 255, 255); color: rgb(0, 0, 0);\"><div class=\"tab-ReactView\"></div><div class=\"tab-ReactView\"></div><div class=\"tab-zone tab-widget tabZone-layout-basic fade-bg\" id=\"tabZoneId4\" style=\"z-index: 11; width: 900px; height: 3214px; top: 0px; left: 0px;\"><div class=\"tab-zone-margin\" style=\"inset: 8px; position: absolute; background-color: rgba(0, 0, 0, 0); border-width: 0px; border-style: none; border-color: rgb(0, 0, 0);\"><div class=\"tab-zone-padding\" style=\"inset: 0px; position: absolute;\"></div></div></div><div class=\"tab-zone tab-widget wcLayoutContainer tabZone-layout-flow fade-bg\" id=\"tabZoneId36\" style=\"z-index: 12; width: 884px; height: 3198px; top: 8px; left: 8px;\"><div class=\"tab-zone-margin\" style=\"inset: 0px; position: absolute; background-color: rgba(0, 0, 0, 0); border-width: 0px; border-style: none; border-color: rgb(0, 0, 0);\"><div class=\"tab-zone-padding\" style=\"inset: 0px; position: absolute; border-width: 1p"
-    },
-    {
-      "tag": "DIV",
-      "id": "main-content",
-      "cls": "",
-      "role": null,
-      "aria": null,
-      "title": null,
-      "text": "Emergency Department Visits for Heat-Related Illness Last Updated: 9/3/2026 Purpose The Occupational Heat-Related Illness Prevention Program monitors emergency department (ED) visits for heat-related illness (HRI) to determine the effect of extreme heat on people seeking healthcare in Louisiana. Heat-Related Illness HRI, or hyperthermia, occurs when the body cannot cool itself sufficiently through sweating. HRI ranges in severity from mild such as heat rash and heat cramps, to severe such as hea",
-      "html": "<div id=\"main-content\" style=\"width: 100%;\">\n            <div id=\"dashboard-viewport\" class=\"tab-widget\"><div id=\"dashboard-spacer\" class=\"dashboardSpacer tab-widget\" role=\"application\" style=\"width: 900px; height: 3214px; background-color: rgb(255, 255, 255); visibility: visible; margin: auto;\"><div class=\"tabbedNavigationWrapper\" id=\"tab-container\">\n        </div><div id=\"tab-dashboard-region\" class=\"tab-dashboard tab-widget is-dashboard\" style=\"height: 3214px; width: 900px; background-color: rgb(255, 255, 255); color: rgb(0, 0, 0);\"><div class=\"tab-ReactView\"></div><div class=\"tab-ReactView\"></div><div class=\"tab-zone tab-widget tabZone-layout-basic fade-bg\" id=\"tabZoneId4\" style=\"z-index: 11; width: 900px; height: 3214px; top: 0px; left: 0px;\"><div class=\"tab-zone-margin\" style=\"inset: 8px; position: absolute; background-color: rgba(0, 0, 0, 0); border-width: 0px; border-style: none; border-color: rgb(0, 0, 0);\"><div class=\"tab-zone-padding\" style=\"inset: 0px; position: absolute;\"></div></div></div><div class=\"tab-zone tab-widget wcLayoutContainer tabZone-layout-flow fade-bg\" id=\"tabZoneId36\" style=\"z-index: 12; width: 884px; height: 3198px; top: 8px; left: 8px;\"><div class=\"tab-zone-margin\" style=\"inset: 0px; position: absolute; background-color: rgba(0, 0, 0, 0); border-width: 0px; border-style: none; border-color: rgb(0, 0, 0);\"><div class=\"tab-zone-padding\" style=\"inset: 0px; position: absolute; border-width: 1px; border-color: rgb(172, 168, 153); border-style: none; "
-    },
-    {
-      "tag": "DIV",
-      "id": "dashboard-viewport",
-      "cls": "tab-widget",
-      "role": null,
-      "aria": null,
-      "title": null,
-      "text": "Emergency Department Visits for Heat-Related Illness Last Updated: 9/3/2026 Purpose The Occupational Heat-Related Illness Prevention Program monitors emergency department (ED) visits for heat-related illness (HRI) to determine the effect of extreme heat on people seeking healthcare in Louisiana. Heat-Related Illness HRI, or hyperthermia, occurs when the body cannot cool itself sufficiently through sweating. HRI ranges in severity from mild such as heat rash and heat cramps, to severe such as hea",
-      "html": "<div id=\"dashboard-viewport\" class=\"tab-widget\"><div id=\"dashboard-spacer\" class=\"dashboardSpacer tab-widget\" role=\"application\" style=\"width: 900px; height: 3214px; background-color: rgb(255, 255, 255); visibility: visible; margin: auto;\"><div class=\"tabbedNavigationWrapper\" id=\"tab-container\">\n        </div><div id=\"tab-dashboard-region\" class=\"tab-dashboard tab-widget is-dashboard\" style=\"height: 3214px; width: 900px; background-color: rgb(255, 255, 255); color: rgb(0, 0, 0);\"><div class=\"tab-ReactView\"></div><div class=\"tab-ReactView\"></div><div class=\"tab-zone tab-widget tabZone-layout-basic fade-bg\" id=\"tabZoneId4\" style=\"z-index: 11; width: 900px; height: 3214px; top: 0px; left: 0px;\"><div class=\"tab-zone-margin\" style=\"inset: 8px; position: absolute; background-color: rgba(0, 0, 0, 0); border-width: 0px; border-style: none; border-color: rgb(0, 0, 0);\"><div class=\"tab-zone-padding\" style=\"inset: 0px; position: absolute;\"></div></div></div><div class=\"tab-zone tab-widget wcLayoutContainer tabZone-layout-flow fade-bg\" id=\"tabZoneId36\" style=\"z-index: 12; width: 884px; height: 3198px; top: 8px; left: 8px;\"><div class=\"tab-zone-margin\" style=\"inset: 0px; position: absolute; background-color: rgba(0, 0, 0, 0); border-width: 0px; border-style: none; border-color: rgb(0, 0, 0);\"><div class=\"tab-zone-padding\" style=\"inset: 0px; position: absolute; border-width: 1px; border-color: rgb(172, 168, 153); border-style: none; padding: 0px;\"></div></div></div><div class=\"tab-zone tab"
-    },
-    {
-      "tag": "DIV",
-      "id": "dashboard-spacer",
-      "cls": "dashboardSpacer tab-widget",
-      "role": "application",
-      "aria": null,
-      "title": null,
-      "text": "Emergency Department Visits for Heat-Related Illness Last Updated: 9/3/2026 Purpose The Occupational Heat-Related Illness Prevention Program monitors emergency department (ED) visits for heat-related illness (HRI) to determine the effect of extreme heat on people seeking healthcare in Louisiana. Heat-Related Illness HRI, or hyperthermia, occurs when the body cannot cool itself sufficiently through sweating. HRI ranges in severity from mild such as heat rash and heat cramps, to severe such as hea",
-      "html": "<div id=\"dashboard-spacer\" class=\"dashboardSpacer tab-widget\" role=\"application\" style=\"width: 900px; height: 3214px; background-color: rgb(255, 255, 255); visibility: visible; margin: auto;\"><div class=\"tabbedNavigationWrapper\" id=\"tab-container\">\n        </div><div id=\"tab-dashboard-region\" class=\"tab-dashboard tab-widget is-dashboard\" style=\"height: 3214px; width: 900px; background-color: rgb(255, 255, 255); color: rgb(0, 0, 0);\"><div class=\"tab-ReactView\"></div><div class=\"tab-ReactView\"></div><div class=\"tab-zone tab-widget tabZone-layout-basic fade-bg\" id=\"tabZoneId4\" style=\"z-index: 11; width: 900px; height: 3214px; top: 0px; left: 0px;\"><div class=\"tab-zone-margin\" style=\"inset: 8px; position: absolute; background-color: rgba(0, 0, 0, 0); border-width: 0px; border-style: none; border-color: rgb(0, 0, 0);\"><div class=\"tab-zone-padding\" style=\"inset: 0px; position: absolute;\"></div></div></div><div class=\"tab-zone tab-widget wcLayoutContainer tabZone-layout-flow fade-bg\" id=\"tabZoneId36\" style=\"z-index: 12; width: 884px; height: 3198px; top: 8px; left: 8px;\"><div class=\"tab-zone-margin\" style=\"inset: 0px; position: absolute; background-color: rgba(0, 0, 0, 0); border-width: 0px; border-style: none; border-color: rgb(0, 0, 0);\"><div class=\"tab-zone-padding\" style=\"inset: 0px; position: absolute; border-width: 1px; border-color: rgb(172, 168, 153); border-style: none; padding: 0px;\"></div></div></div><div class=\"tab-zone tab-widget wcLayoutContainer tabZone-layout-flow fa"
-    },
-    {
-      "tag": "DIV",
-      "id": "tab-dashboard-region",
-      "cls": "tab-dashboard tab-widget is-dashboard",
-      "role": null,
-      "aria": null,
-      "title": null,
-      "text": "Emergency Department Visits for Heat-Related Illness Last Updated: 9/3/2026 Purpose The Occupational Heat-Related Illness Prevention Program monitors emergency department (ED) visits for heat-related illness (HRI) to determine the effect of extreme heat on people seeking healthcare in Louisiana. Heat-Related Illness HRI, or hyperthermia, occurs when the body cannot cool itself sufficiently through sweating. HRI ranges in severity from mild such as heat rash and heat cramps, to severe such as hea",
-      "html": "<div id=\"tab-dashboard-region\" class=\"tab-dashboard tab-widget is-dashboard\" style=\"height: 3214px; width: 900px; background-color: rgb(255, 255, 255); color: rgb(0, 0, 0);\"><div class=\"tab-ReactView\"></div><div class=\"tab-ReactView\"></div><div class=\"tab-zone tab-widget tabZone-layout-basic fade-bg\" id=\"tabZoneId4\" style=\"z-index: 11; width: 900px; height: 3214px; top: 0px; left: 0px;\"><div class=\"tab-zone-margin\" style=\"inset: 8px; position: absolute; background-color: rgba(0, 0, 0, 0); border-width: 0px; border-style: none; border-color: rgb(0, 0, 0);\"><div class=\"tab-zone-padding\" style=\"inset: 0px; position: absolute;\"></div></div></div><div class=\"tab-zone tab-widget wcLayoutContainer tabZone-layout-flow fade-bg\" id=\"tabZoneId36\" style=\"z-index: 12; width: 884px; height: 3198px; top: 8px; left: 8px;\"><div class=\"tab-zone-margin\" style=\"inset: 0px; position: absolute; background-color: rgba(0, 0, 0, 0); border-width: 0px; border-style: none; border-color: rgb(0, 0, 0);\"><div class=\"tab-zone-padding\" style=\"inset: 0px; position: absolute; border-width: 1px; border-color: rgb(172, 168, 153); border-style: none; padding: 0px;\"></div></div></div><div class=\"tab-zone tab-widget wcLayoutContainer tabZone-layout-flow fade-bg\" id=\"tabZoneId3\" style=\"z-index: 13; width: 884px; height: 3198px; top: 8px; left: 8px;\"><div class=\"tab-zone-margin\" style=\"inset: 0px; position: absolute; background-color: rgba(0, 0, 0, 0); border-width: 0px; border-style: none; border-color: rgb(0, 0, 0"
-    },
-    {
-      "tag": "DIV",
-      "id": "",
-      "cls": "Title",
-      "role": null,
-      "aria": null,
-      "title": null,
-      "text": "Region",
-      "html": "<div class=\"Title\"><h3 class=\"ParamTitle\" dojoattachpoint=\"domTitleBar\" title=\"Region\" style=\"height: 17px; width: auto; float: none;\"><span style=\"white-space:pre;tab-size:10;-moz-tab-size:10\"><div style=\"text-align: left; text-overflow: ellipsis; overflow: hidden;\"><span style=\"font-family:'Arial';font-size:12px;line-height:13px;color:#333333;font-weight:normal;font-style:normal;text-decoration:none;\">Region</span></div></span></h3></div>"
-    },
-    {
-      "tag": "H3",
-      "id": "",
-      "cls": "ParamTitle",
-      "role": null,
-      "aria": null,
-      "title": "Region",
-      "text": "Region",
-      "html": "<h3 class=\"ParamTitle\" dojoattachpoint=\"domTitleBar\" title=\"Region\" style=\"height: 17px; width: auto; float: none;\"><span style=\"white-space:pre;tab-size:10;-moz-tab-size:10\"><div style=\"text-align: left; text-overflow: ellipsis; overflow: hidden;\"><span style=\"font-family:'Arial';font-size:12px;line-height:13px;color:#333333;font-weight:normal;font-style:normal;text-decoration:none;\">Region</span></div></span></h3>"
-    },
-    {
-      "tag": "SPAN",
-      "id": "",
-      "cls": "",
-      "role": null,
-      "aria": null,
-      "title": null,
-      "text": "Region",
-      "html": "<span style=\"white-space:pre;tab-size:10;-moz-tab-size:10\"><div style=\"text-align: left; text-overflow: ellipsis; overflow: hidden;\"><span style=\"font-family:'Arial';font-size:12px;line-height:13px;color:#333333;font-weight:normal;font-style:normal;text-decoration:none;\">Region</span></div></span>"
-    },
-    {
-      "tag": "DIV",
-      "id": "",
-      "cls": "",
-      "role": null,
-      "aria": null,
-      "title": null,
-      "text": "Region",
-      "html": "<div style=\"text-align: left; text-overflow: ellipsis; overflow: hidden;\"><span style=\"font-family:'Arial';font-size:12px;line-height:13px;color:#333333;font-weight:normal;font-style:normal;text-decoration:none;\">Region</span></div>"
-    },
-    {
-      "tag": "SPAN",
-      "id": "",
-      "cls": "",
-      "role": null,
-      "aria": null,
-      "title": null,
-      "text": "Region",
-      "html": "<span style=\"font-family:'Arial';font-size:12px;line-height:13px;color:#333333;font-weight:normal;font-style:normal;text-decoration:none;\">Region</span>"
-    },
-    {
-      "tag": "SPAN",
-      "id": "",
-      "cls": "",
-      "role": null,
-      "aria": null,
-      "title": null,
-      "text": "Season",
-      "html": "<span style=\"white-space:pre;tab-size:10;-moz-tab-size:10\"><div style=\"text-align: left; font-family: Arial; font-size: 13px; line-height: 15px; color: rgb(0, 0, 0); font-weight: normal; font-style: normal; text-decoration: none; text-overflow: ellipsis; overflow: hidden;\"><span style=\"font-family:'Arial';font-size:13px;line-height:15px;color:#000000;font-weight:normal;font-style:normal;text-decoration:none;\">Season</span></div></span>"
-    },
-    {
-      "tag": "DIV",
-      "id": "",
-      "cls": "",
-      "role": null,
-      "aria": null,
-      "title": null,
-      "text": "Season",
-      "html": "<div style=\"text-align: left; font-family: Arial; font-size: 13px; line-height: 15px; color: rgb(0, 0, 0); font-weight: normal; font-style: normal; text-decoration: none; text-overflow: ellipsis; overflow: hidden;\"><span style=\"font-family:'Arial';font-size:13px;line-height:15px;color:#000000;font-weight:normal;font-style:normal;text-decoration:none;\">Season</span></div>"
-    },
-    {
-      "tag": "SPAN",
-      "id": "",
-      "cls": "",
-      "role": null,
-      "aria": null,
-      "title": null,
-      "text": "Season",
-      "html": "<span style=\"font-family:'Arial';font-size:13px;line-height:15px;color:#000000;font-weight:normal;font-style:normal;text-decoration:none;\">Season</span>"
-    },
-    {
-      "tag": "DIV",
-      "id": "",
-      "cls": "CFContent",
-      "role": null,
-      "aria": null,
-      "title": null,
-      "text": "2026",
-      "html": "<div class=\"CFContent\" dojoattachpoint=\"domContent\" style=\"cursor: default; float: none; width: 128px; height: 30px;\"><span class=\"tabComboBox tab-ctrl-formatted-widget tab-ctrl-formatted-darker-border-hover tab-ctrl-formatted-darker-border-focus tabComboStdTheme tabComboBoxNoIcon tiledContent\" tabindex=\"0\" role=\"combobox\" aria-haspopup=\"listbox\" aria-expanded=\"false\" aria-live=\"polite\" aria-describedby=\"tab-ui-id-1788688559066\" aria-labelledby=\"tab-ui-id-1788688559065\" style=\"user-select: none; -webkit-tap-highlight-color: transparent;\"><div class=\"tabComboBoxNameContainer tab-ctrl-formatted-fixedsize\"><span class=\"tabComboBoxName\" id=\"tab-ui-id-1788688559066\" aria-hidden=\"true\">2026</span></div><div class=\"tabComboBoxButtonHolder\"><span class=\"tabComboBoxButton\"><svg focusable=\"false\" version=\"1.1\" xmlns=\"http://www.w3.org/2000/svg\" xmlns:xlink=\"http://www.w3.org/1999/xlink\" x=\"0px\" y=\"0px\" width=\"12px\" height=\"12px\" viewBox=\"0 0 12 12\" style=\"enable-background:new 0 0 12 12;\" xml:space=\"preserve\"><path style=\"fill:rgb(0,0,0);\" d=\"M4.9,6.9L2.1,3.3C2,3.2,2.1,3,2.2,3h5.6C8,3,8.1,3.2,8,3.3L5.2,6.9C5.1,7,4.9,7,4.9,6.9z\"></path></svg></span></div></span></div>"
-    },
-    {
-      "tag": "SPAN",
-      "id": "",
-      "cls": "tabComboBox tab-ctrl-formatted-widget tab-ctrl-formatted-darker-border-hover tab-ctrl-formatted-darker-border-focus tabComboStdTheme tabComboBoxNoIcon tiledContent",
-      "role": "combobox",
-      "aria": null,
-      "title": null,
-      "text": "2026",
-      "html": "<span class=\"tabComboBox tab-ctrl-formatted-widget tab-ctrl-formatted-darker-border-hover tab-ctrl-formatted-darker-border-focus tabComboStdTheme tabComboBoxNoIcon tiledContent\" tabindex=\"0\" role=\"combobox\" aria-haspopup=\"listbox\" aria-expanded=\"false\" aria-live=\"polite\" aria-describedby=\"tab-ui-id-1788688559066\" aria-labelledby=\"tab-ui-id-1788688559065\" style=\"user-select: none; -webkit-tap-highlight-color: transparent;\"><div class=\"tabComboBoxNameContainer tab-ctrl-formatted-fixedsize\"><span class=\"tabComboBoxName\" id=\"tab-ui-id-1788688559066\" aria-hidden=\"true\">2026</span></div><div class=\"tabComboBoxButtonHolder\"><span class=\"tabComboBoxButton\"><svg focusable=\"false\" version=\"1.1\" xmlns=\"http://www.w3.org/2000/svg\" xmlns:xlink=\"http://www.w3.org/1999/xlink\" x=\"0px\" y=\"0px\" width=\"12px\" height=\"12px\" viewBox=\"0 0 12 12\" style=\"enable-background:new 0 0 12 12;\" xml:space=\"preserve\"><path style=\"fill:rgb(0,0,0);\" d=\"M4.9,6.9L2.1,3.3C2,3.2,2.1,3,2.2,3h5.6C8,3,8.1,3.2,8,3.3L5.2,6.9C5.1,7,4.9,7,4.9,6.9z\"></path></svg></span></div></span>"
-    },
-    {
-      "tag": "DIV",
-      "id": "",
-      "cls": "tabComboBoxNameContainer tab-ctrl-formatted-fixedsize",
-      "role": null,
-      "aria": null,
-      "title": null,
-      "text": "2026",
-      "html": "<div class=\"tabComboBoxNameContainer tab-ctrl-formatted-fixedsize\"><span class=\"tabComboBoxName\" id=\"tab-ui-id-1788688559066\" aria-hidden=\"true\">2026</span></div>"
-    },
-    {
-      "tag": "SPAN",
-      "id": "tab-ui-id-1788688559066",
-      "cls": "tabComboBoxName",
-      "role": null,
-      "aria": null,
-      "title": null,
-      "text": "2026",
-      "html": "<span class=\"tabComboBoxName\" id=\"tab-ui-id-1788688559066\" aria-hidden=\"true\">2026</span>"
-    },
-    {
-      "tag": "DIV",
-      "id": "41148699281_6",
-      "cls": "tab-vizHeaderWrapper",
-      "role": "gridcell",
-      "aria": null,
-      "title": null,
-      "text": "2023",
-      "html": "<div class=\"tab-vizHeaderWrapper\" id=\"41148699281_6\" tabindex=\"-1\" role=\"gridcell\" aria-selected=\"false\" aria-level=\"1\" style=\"width: 60px; height: 20px; left: 0px; align-items: center; justify-content: flex-end; background-color: rgba(255, 255, 255, 0);\"><div class=\"tab-vizHeaderLabelContainer\" style=\"padding-left: 4px; padding-right: 4px; pointer-events: none;\"><div class=\"tab-vizHeader\" style=\"font-family: Arial; font-size: 9pt; font-style: normal; font-weight: normal; text-decoration: none; color: rgb(51, 51, 51); text-align: right; max-width: 60px;\">2023</div></div></div>"
-    },
-    {
-      "tag": "DIV",
-      "id": "",
-      "cls": "tab-vizHeaderLabelContainer",
-      "role": null,
-      "aria": null,
-      "title": null,
-      "text": "2023",
-      "html": "<div class=\"tab-vizHeaderLabelContainer\" style=\"padding-left: 4px; padding-right: 4px; pointer-events: none;\"><div class=\"tab-vizHeader\" style=\"font-family: Arial; font-size: 9pt; font-style: normal; font-weight: normal; text-decoration: none; color: rgb(51, 51, 51); text-align: right; max-width: 60px;\">2023</div></div>"
-    },
-    {
-      "tag": "DIV",
-      "id": "",
-      "cls": "tab-vizHeader",
-      "role": null,
-      "aria": null,
-      "title": null,
-      "text": "2023",
-      "html": "<div class=\"tab-vizHeader\" style=\"font-family: Arial; font-size: 9pt; font-style: normal; font-weight: normal; text-decoration: none; color: rgb(51, 51, 51); text-align: right; max-width: 60px;\">2023</div>"
-    },
-    {
-      "tag": "DIV",
-      "id": "17491206831_6",
-      "cls": "tab-vizHeaderWrapper",
-      "role": "gridcell",
-      "aria": null,
-      "title": null,
-      "text": "2024",
-      "html": "<div class=\"tab-vizHeaderWrapper\" id=\"17491206831_6\" tabindex=\"-1\" role=\"gridcell\" aria-selected=\"false\" aria-level=\"1\" style=\"width: 60px; height: 20px; left: 60px; align-items: center; justify-content: flex-end; background-color: rgba(255, 255, 255, 0);\"><div class=\"tab-vizHeaderLabelContainer\" style=\"padding-left: 4px; padding-right: 4px; pointer-events: none;\"><div class=\"tab-vizHeader\" style=\"font-family: Arial; font-size: 9pt; font-style: normal; font-weight: normal; text-decoration: none; color: rgb(51, 51, 51); text-align: right; max-width: 60px;\">2024</div></div></div>"
-    },
-    {
-      "tag": "DIV",
-      "id": "",
-      "cls": "tab-vizHeaderLabelContainer",
-      "role": null,
-      "aria": null,
-      "title": null,
-      "text": "2024",
-      "html": "<div class=\"tab-vizHeaderLabelContainer\" style=\"padding-left: 4px; padding-right: 4px; pointer-events: none;\"><div class=\"tab-vizHeader\" style=\"font-family: Arial; font-size: 9pt; font-style: normal; font-weight: normal; text-decoration: none; color: rgb(51, 51, 51); text-align: right; max-width: 60px;\">2024</div></div>"
-    },
-    {
-      "tag": "DIV",
-      "id": "",
-      "cls": "tab-vizHeader",
-      "role": null,
-      "aria": null,
-      "title": null,
-      "text": "2024",
-      "html": "<div class=\"tab-vizHeader\" style=\"font-family: Arial; font-size: 9pt; font-style: normal; font-weight: normal; text-decoration: none; color: rgb(51, 51, 51); text-align: right; max-width: 60px;\">2024</div>"
-    },
-    {
-      "tag": "DIV",
-      "id": "34701836311_6",
-      "cls": "tab-vizHeaderWrapper",
-      "role": "gridcell",
-      "aria": null,
-      "title": null,
-      "text": "2025",
-      "html": "<div class=\"tab-vizHeaderWrapper\" id=\"34701836311_6\" tabindex=\"-1\" role=\"gridcell\" aria-selected=\"false\" aria-level=\"1\" style=\"width: 60px; height: 20px; left: 120px; align-items: center; justify-content: flex-end; background-color: rgba(255, 255, 255, 0);\"><div class=\"tab-vizHeaderLabelContainer\" style=\"padding-left: 4px; padding-right: 4px; pointer-events: none;\"><div class=\"tab-vizHeader\" style=\"font-family: Arial; font-size: 9pt; font-style: normal; font-weight: normal; text-decoration: none; color: rgb(51, 51, 51); text-align: right; max-width: 60px;\">2025</div></div></div>"
-    },
-    {
-      "tag": "DIV",
-      "id": "",
-      "cls": "tab-vizHeaderLabelContainer",
-      "role": null,
-      "aria": null,
-      "title": null,
-      "text": "2025",
-      "html": "<div class=\"tab-vizHeaderLabelContainer\" style=\"padding-left: 4px; padding-right: 4px; pointer-events: none;\"><div class=\"tab-vizHeader\" style=\"font-family: Arial; font-size: 9pt; font-style: normal; font-weight: normal; text-decoration: none; color: rgb(51, 51, 51); text-align: right; max-width: 60px;\">2025</div></div>"
-    },
-    {
-      "tag": "DIV",
-      "id": "",
-      "cls": "tab-vizHeader",
-      "role": null,
-      "aria": null,
-      "title": null,
-      "text": "2025",
-      "html": "<div class=\"tab-vizHeader\" style=\"font-family: Arial; font-size: 9pt; font-style: normal; font-weight: normal; text-decoration: none; color: rgb(51, 51, 51); text-align: right; max-width: 60px;\">2025</div>"
-    },
-    {
-      "tag": "DIV",
-      "id": "40508870811_6",
-      "cls": "tab-vizHeaderWrapper",
-      "role": "gridcell",
-      "aria": null,
-      "title": null,
-      "text": "2026",
-      "html": "<div class=\"tab-vizHeaderWrapper\" id=\"40508870811_6\" tabindex=\"-1\" role=\"gridcell\" aria-selected=\"false\" aria-level=\"1\" style=\"width: 60px; height: 20px; left: 180px; align-items: center; justify-content: flex-end; background-color: rgba(255, 255, 255, 0);\"><div class=\"tab-vizHeaderLabelContainer\" style=\"padding-left: 4px; padding-right: 4px; pointer-events: none;\"><div class=\"tab-vizHeader\" style=\"font-family: Arial; font-size: 9pt; font-style: normal; font-weight: normal; text-decoration: none; color: rgb(51, 51, 51); text-align: right; max-width: 60px;\">2026</div></div></div>"
-    },
-    {
-      "tag": "DIV",
-      "id": "",
-      "cls": "tab-vizHeaderLabelContainer",
-      "role": null,
-      "aria": null,
-      "title": null,
-      "text": "2026",
-      "html": "<div class=\"tab-vizHeaderLabelContainer\" style=\"padding-left: 4px; padding-right: 4px; pointer-events: none;\"><div class=\"tab-vizHeader\" style=\"font-family: Arial; font-size: 9pt; font-style: normal; font-weight: normal; text-decoration: none; color: rgb(51, 51, 51); text-align: right; max-width: 60px;\">2026</div></div>"
-    },
-    {
-      "tag": "DIV",
-      "id": "",
-      "cls": "tab-vizHeader",
-      "role": null,
-      "aria": null,
-      "title": null,
-      "text": "2026",
-      "html": "<div class=\"tab-vizHeader\" style=\"font-family: Arial; font-size: 9pt; font-style: normal; font-weight: normal; text-decoration: none; color: rgb(51, 51, 51); text-align: right; max-width: 60px;\">2026</div>"
-    },
-    {
-      "tag": "DIV",
-      "id": "tabZoneId30",
-      "cls": "tab-zone tab-widget tabZone-viz fade-bg",
-      "role": null,
-      "aria": null,
-      "title": null,
-      "text": "1 - Southeast 2 - Capital Region 3 - South Central 4 - Acadiana 5 - Southwest 6 - Central 7 - Northwest 8 - Northeast 9 - Northshore Out of State Unknown Grand Total % Total E.D. Visits ED Visits",
-      "html": "<div class=\"tab-zone tab-widget tabZone-viz fade-bg\" id=\"tabZoneId30\" style=\"z-index: 59; width: 375px; height: 374px; top: 1318px; left: 517px;\"><div class=\"tab-zone-margin\" style=\"inset: 10px; position: absolute; background-color: rgba(0, 0, 0, 0); border-width: 0px; border-style: none; border-color: rgb(0, 0, 0);\"><div class=\"tab-zone-padding\" style=\"inset: 0px; position: absolute;\"><div class=\"tab-tiledViewer placeholder tab-widget\" data-tb-test-id=\"VisualizationContainer\" tb-test-id=\"Region Table HRI Cases\" tabindex=\"-1\" style=\"inset: 0px;\"><div class=\"tab-clip\" style=\"user-select: none; -webkit-tap-highlight-color: transparent;\"><h2 class=\"tab-tvTitle tvimagesNS\" tabindex=\"-1\" aria-describedby=\"tab-title-description-8170510537931260753_15608350872589465182\"><div class=\"tab-title-focusbox\"></div><span class=\"sr-only\" id=\"tab-title-description-8170510537931260753_15608350872589465182\"></span></h2><div class=\"tab-tvTLSpacer tvimagesNS\" style=\"background-color: rgb(255, 255, 255); left: 0px; top: 0px; width: 140px; height: 44px;\"><canvas width=\"140\" height=\"44\" style=\"width: 140px; height: 44px;\"></canvas></div><div class=\"tab-tvTRSpacer tvimagesNS\" style=\"background-color: rgb(255, 255, 255); display: none;\"><img></div><div class=\"tab-tvBLSpacer tvimagesNS\" style=\"background-color: rgb(255, 255, 255); display: none;\"><img></div><div class=\"tab-tvBRSpacer tvimagesNS\" style=\"background-color: rgb(255, 255, 255); display: none;\"><img></div><div class=\"tab-tvYLabel tvimagesNS\""
-    },
-    {
-      "tag": "DIV",
-      "id": "",
-      "cls": "tab-zone-margin",
-      "role": null,
-      "aria": null,
-      "title": null,
-      "text": "1 - Southeast 2 - Capital Region 3 - South Central 4 - Acadiana 5 - Southwest 6 - Central 7 - Northwest 8 - Northeast 9 - Northshore Out of State Unknown Grand Total % Total E.D. Visits ED Visits",
-      "html": "<div class=\"tab-zone-margin\" style=\"inset: 10px; position: absolute; background-color: rgba(0, 0, 0, 0); border-width: 0px; border-style: none; border-color: rgb(0, 0, 0);\"><div class=\"tab-zone-padding\" style=\"inset: 0px; position: absolute;\"><div class=\"tab-tiledViewer placeholder tab-widget\" data-tb-test-id=\"VisualizationContainer\" tb-test-id=\"Region Table HRI Cases\" tabindex=\"-1\" style=\"inset: 0px;\"><div class=\"tab-clip\" style=\"user-select: none; -webkit-tap-highlight-color: transparent;\"><h2 class=\"tab-tvTitle tvimagesNS\" tabindex=\"-1\" aria-describedby=\"tab-title-description-8170510537931260753_15608350872589465182\"><div class=\"tab-title-focusbox\"></div><span class=\"sr-only\" id=\"tab-title-description-8170510537931260753_15608350872589465182\"></span></h2><div class=\"tab-tvTLSpacer tvimagesNS\" style=\"background-color: rgb(255, 255, 255); left: 0px; top: 0px; width: 140px; height: 44px;\"><canvas width=\"140\" height=\"44\" style=\"width: 140px; height: 44px;\"></canvas></div><div class=\"tab-tvTRSpacer tvimagesNS\" style=\"background-color: rgb(255, 255, 255); display: none;\"><img></div><div class=\"tab-tvBLSpacer tvimagesNS\" style=\"background-color: rgb(255, 255, 255); display: none;\"><img></div><div class=\"tab-tvBRSpacer tvimagesNS\" style=\"background-color: rgb(255, 255, 255); display: none;\"><img></div><div class=\"tab-tvYLabel tvimagesNS\" style=\"background-color: rgb(255, 255, 255); left: 0px; top: 44px; width: 140px; height: 310px;\"><div class=\"tvimagesContainer\"></div><div class="
-    },
-    {
-      "tag": "DIV",
-      "id": "",
-      "cls": "tab-zone-padding",
-      "role": null,
-      "aria": null,
-      "title": null,
-      "text": "1 - Southeast 2 - Capital Region 3 - South Central 4 - Acadiana 5 - Southwest 6 - Central 7 - Northwest 8 - Northeast 9 - Northshore Out of State Unknown Grand Total % Total E.D. Visits ED Visits",
-      "html": "<div class=\"tab-zone-padding\" style=\"inset: 0px; position: absolute;\"><div class=\"tab-tiledViewer placeholder tab-widget\" data-tb-test-id=\"VisualizationContainer\" tb-test-id=\"Region Table HRI Cases\" tabindex=\"-1\" style=\"inset: 0px;\"><div class=\"tab-clip\" style=\"user-select: none; -webkit-tap-highlight-color: transparent;\"><h2 class=\"tab-tvTitle tvimagesNS\" tabindex=\"-1\" aria-describedby=\"tab-title-description-8170510537931260753_15608350872589465182\"><div class=\"tab-title-focusbox\"></div><span class=\"sr-only\" id=\"tab-title-description-8170510537931260753_15608350872589465182\"></span></h2><div class=\"tab-tvTLSpacer tvimagesNS\" style=\"background-color: rgb(255, 255, 255); left: 0px; top: 0px; width: 140px; height: 44px;\"><canvas width=\"140\" height=\"44\" style=\"width: 140px; height: 44px;\"></canvas></div><div class=\"tab-tvTRSpacer tvimagesNS\" style=\"background-color: rgb(255, 255, 255); display: none;\"><img></div><div class=\"tab-tvBLSpacer tvimagesNS\" style=\"background-color: rgb(255, 255, 255); display: none;\"><img></div><div class=\"tab-tvBRSpacer tvimagesNS\" style=\"background-color: rgb(255, 255, 255); display: none;\"><img></div><div class=\"tab-tvYLabel tvimagesNS\" style=\"background-color: rgb(255, 255, 255); left: 0px; top: 44px; width: 140px; height: 310px;\"><div class=\"tvimagesContainer\"></div><div class=\"tab-ReactView\"><div class=\"tab-vizLeftSceneMargin\" role=\"treegrid\" style=\"top: 0px;\"><div class=\"tab-vizHeaderHolderWrapper\" role=\"row\" aria-multiselectable=\"true\" style=\"w"
-    },
-    {
-      "tag": "DIV",
-      "id": "",
-      "cls": "tab-tiledViewer placeholder tab-widget",
-      "role": null,
-      "aria": null,
-      "title": null,
-      "text": "1 - Southeast 2 - Capital Region 3 - South Central 4 - Acadiana 5 - Southwest 6 - Central 7 - Northwest 8 - Northeast 9 - Northshore Out of State Unknown Grand Total % Total E.D. Visits ED Visits",
-      "html": "<div class=\"tab-tiledViewer placeholder tab-widget\" data-tb-test-id=\"VisualizationContainer\" tb-test-id=\"Region Table HRI Cases\" tabindex=\"-1\" style=\"inset: 0px;\"><div class=\"tab-clip\" style=\"user-select: none; -webkit-tap-highlight-color: transparent;\"><h2 class=\"tab-tvTitle tvimagesNS\" tabindex=\"-1\" aria-describedby=\"tab-title-description-8170510537931260753_15608350872589465182\"><div class=\"tab-title-focusbox\"></div><span class=\"sr-only\" id=\"tab-title-description-8170510537931260753_15608350872589465182\"></span></h2><div class=\"tab-tvTLSpacer tvimagesNS\" style=\"background-color: rgb(255, 255, 255); left: 0px; top: 0px; width: 140px; height: 44px;\"><canvas width=\"140\" height=\"44\" style=\"width: 140px; height: 44px;\"></canvas></div><div class=\"tab-tvTRSpacer tvimagesNS\" style=\"background-color: rgb(255, 255, 255); display: none;\"><img></div><div class=\"tab-tvBLSpacer tvimagesNS\" style=\"background-color: rgb(255, 255, 255); display: none;\"><img></div><div class=\"tab-tvBRSpacer tvimagesNS\" style=\"background-color: rgb(255, 255, 255); display: none;\"><img></div><div class=\"tab-tvYLabel tvimagesNS\" style=\"background-color: rgb(255, 255, 255); left: 0px; top: 44px; width: 140px; height: 310px;\"><div class=\"tvimagesContainer\"></div><div class=\"tab-ReactView\"><div class=\"tab-vizLeftSceneMargin\" role=\"treegrid\" style=\"top: 0px;\"><div class=\"tab-vizHeaderHolderWrapper\" role=\"row\" aria-multiselectable=\"true\" style=\"width: 140px; height: 309px;\"><div class=\"tab-vizHeaderWrapper\" id=\"169"
-    },
-    {
-      "tag": "DIV",
-      "id": "",
-      "cls": "tab-clip",
-      "role": null,
-      "aria": null,
-      "title": null,
-      "text": "1 - Southeast 2 - Capital Region 3 - South Central 4 - Acadiana 5 - Southwest 6 - Central 7 - Northwest 8 - Northeast 9 - Northshore Out of State Unknown Grand Total % Total E.D. Visits ED Visits",
-      "html": "<div class=\"tab-clip\" style=\"user-select: none; -webkit-tap-highlight-color: transparent;\"><h2 class=\"tab-tvTitle tvimagesNS\" tabindex=\"-1\" aria-describedby=\"tab-title-description-8170510537931260753_15608350872589465182\"><div class=\"tab-title-focusbox\"></div><span class=\"sr-only\" id=\"tab-title-description-8170510537931260753_15608350872589465182\"></span></h2><div class=\"tab-tvTLSpacer tvimagesNS\" style=\"background-color: rgb(255, 255, 255); left: 0px; top: 0px; width: 140px; height: 44px;\"><canvas width=\"140\" height=\"44\" style=\"width: 140px; height: 44px;\"></canvas></div><div class=\"tab-tvTRSpacer tvimagesNS\" style=\"background-color: rgb(255, 255, 255); display: none;\"><img></div><div class=\"tab-tvBLSpacer tvimagesNS\" style=\"background-color: rgb(255, 255, 255); display: none;\"><img></div><div class=\"tab-tvBRSpacer tvimagesNS\" style=\"background-color: rgb(255, 255, 255); display: none;\"><img></div><div class=\"tab-tvYLabel tvimagesNS\" style=\"background-color: rgb(255, 255, 255); left: 0px; top: 44px; width: 140px; height: 310px;\"><div class=\"tvimagesContainer\"></div><div class=\"tab-ReactView\"><div class=\"tab-vizLeftSceneMargin\" role=\"treegrid\" style=\"top: 0px;\"><div class=\"tab-vizHeaderHolderWrapper\" role=\"row\" aria-multiselectable=\"true\" style=\"width: 140px; height: 309px;\"><div class=\"tab-vizHeaderWrapper\" id=\"16950777420_1\" tabindex=\"-1\" role=\"gridcell\" aria-selected=\"false\" aria-level=\"1\" style=\"width: 140px; height: 26px; top: 0px; align-items: center; justify-content: f"
-    },
-    {
-      "tag": "DIV",
-      "id": "",
-      "cls": "tab-tvYLabel tvimagesNS",
-      "role": null,
-      "aria": null,
-      "title": null,
-      "text": "1 - Southeast 2 - Capital Region 3 - South Central 4 - Acadiana 5 - Southwest 6 - Central 7 - Northwest 8 - Northeast 9 - Northshore Out of State Unknown Grand Total",
-      "html": "<div class=\"tab-tvYLabel tvimagesNS\" style=\"background-color: rgb(255, 255, 255); left: 0px; top: 44px; width: 140px; height: 310px;\"><div class=\"tvimagesContainer\"></div><div class=\"tab-ReactView\"><div class=\"tab-vizLeftSceneMargin\" role=\"treegrid\" style=\"top: 0px;\"><div class=\"tab-vizHeaderHolderWrapper\" role=\"row\" aria-multiselectable=\"true\" style=\"width: 140px; height: 309px;\"><div class=\"tab-vizHeaderWrapper\" id=\"16950777420_1\" tabindex=\"-1\" role=\"gridcell\" aria-selected=\"false\" aria-level=\"1\" style=\"width: 140px; height: 26px; top: 0px; align-items: center; justify-content: flex-start; background-color: rgba(255, 255, 255, 0);\"><div class=\"tab-vizHeaderLabelContainer\" style=\"padding-left: 6px; padding-right: 0px; pointer-events: none;\"><div class=\"tab-vizHeader\" style=\"font-family: Arial; font-size: 11pt; font-style: normal; font-weight: normal; text-decoration: none; color: rgb(51, 51, 51); text-align: left; max-width: 140px;\">1 - Southeast</div></div></div><div class=\"tab-vizHeaderWrapper\" id=\"35359103900_1\" tabindex=\"-1\" role=\"gridcell\" aria-selected=\"false\" aria-level=\"1\" style=\"width: 140px; height: 26px; top: 26px; align-items: center; justify-content: flex-start; background-color: rgb(245, 245, 245);\"><div class=\"tab-vizHeaderLabelContainer\" style=\"padding-left: 6px; padding-right: 0px; pointer-events: none;\"><div class=\"tab-vizHeader\" style=\"font-family: Arial; font-size: 11pt; font-style: normal; font-weight: normal; text-decoration: none; color: rgb(51, 51, 51"
-    },
-    {
-      "tag": "DIV",
-      "id": "",
-      "cls": "tab-ReactView",
-      "role": null,
-      "aria": null,
-      "title": null,
-      "text": "1 - Southeast 2 - Capital Region 3 - South Central 4 - Acadiana 5 - Southwest 6 - Central 7 - Northwest 8 - Northeast 9 - Northshore Out of State Unknown Grand Total",
-      "html": "<div class=\"tab-ReactView\"><div class=\"tab-vizLeftSceneMargin\" role=\"treegrid\" style=\"top: 0px;\"><div class=\"tab-vizHeaderHolderWrapper\" role=\"row\" aria-multiselectable=\"true\" style=\"width: 140px; height: 309px;\"><div class=\"tab-vizHeaderWrapper\" id=\"16950777420_1\" tabindex=\"-1\" role=\"gridcell\" aria-selected=\"false\" aria-level=\"1\" style=\"width: 140px; height: 26px; top: 0px; align-items: center; justify-content: flex-start; background-color: rgba(255, 255, 255, 0);\"><div class=\"tab-vizHeaderLabelContainer\" style=\"padding-left: 6px; padding-right: 0px; pointer-events: none;\"><div class=\"tab-vizHeader\" style=\"font-family: Arial; font-size: 11pt; font-style: normal; font-weight: normal; text-decoration: none; color: rgb(51, 51, 51); text-align: left; max-width: 140px;\">1 - Southeast</div></div></div><div class=\"tab-vizHeaderWrapper\" id=\"35359103900_1\" tabindex=\"-1\" role=\"gridcell\" aria-selected=\"false\" aria-level=\"1\" style=\"width: 140px; height: 26px; top: 26px; align-items: center; justify-content: flex-start; background-color: rgb(245, 245, 245);\"><div class=\"tab-vizHeaderLabelContainer\" style=\"padding-left: 6px; padding-right: 0px; pointer-events: none;\"><div class=\"tab-vizHeader\" style=\"font-family: Arial; font-size: 11pt; font-style: normal; font-weight: normal; text-decoration: none; color: rgb(51, 51, 51); text-align: left; max-width: 140px;\">2 - Capital Region</div></div></div><div class=\"tab-vizHeaderWrapper\" id=\"8102287720_1\" tabindex=\"-1\" role=\"gridcell\" aria-selected"
-    },
-    {
-      "tag": "DIV",
-      "id": "",
-      "cls": "tab-vizLeftSceneMargin",
-      "role": "treegrid",
-      "aria": null,
-      "title": null,
-      "text": "1 - Southeast 2 - Capital Region 3 - South Central 4 - Acadiana 5 - Southwest 6 - Central 7 - Northwest 8 - Northeast 9 - Northshore Out of State Unknown Grand Total",
-      "html": "<div class=\"tab-vizLeftSceneMargin\" role=\"treegrid\" style=\"top: 0px;\"><div class=\"tab-vizHeaderHolderWrapper\" role=\"row\" aria-multiselectable=\"true\" style=\"width: 140px; height: 309px;\"><div class=\"tab-vizHeaderWrapper\" id=\"16950777420_1\" tabindex=\"-1\" role=\"gridcell\" aria-selected=\"false\" aria-level=\"1\" style=\"width: 140px; height: 26px; top: 0px; align-items: center; justify-content: flex-start; background-color: rgba(255, 255, 255, 0);\"><div class=\"tab-vizHeaderLabelContainer\" style=\"padding-left: 6px; padding-right: 0px; pointer-events: none;\"><div class=\"tab-vizHeader\" style=\"font-family: Arial; font-size: 11pt; font-style: normal; font-weight: normal; text-decoration: none; color: rgb(51, 51, 51); text-align: left; max-width: 140px;\">1 - Southeast</div></div></div><div class=\"tab-vizHeaderWrapper\" id=\"35359103900_1\" tabindex=\"-1\" role=\"gridcell\" aria-selected=\"false\" aria-level=\"1\" style=\"width: 140px; height: 26px; top: 26px; align-items: center; justify-content: flex-start; background-color: rgb(245, 245, 245);\"><div class=\"tab-vizHeaderLabelContainer\" style=\"padding-left: 6px; padding-right: 0px; pointer-events: none;\"><div class=\"tab-vizHeader\" style=\"font-family: Arial; font-size: 11pt; font-style: normal; font-weight: normal; text-decoration: none; color: rgb(51, 51, 51); text-align: left; max-width: 140px;\">2 - Capital Region</div></div></div><div class=\"tab-vizHeaderWrapper\" id=\"8102287720_1\" tabindex=\"-1\" role=\"gridcell\" aria-selected=\"false\" aria-level=\"1\" sty"
-    },
-    {
-      "tag": "DIV",
-      "id": "",
-      "cls": "tab-vizHeaderHolderWrapper",
-      "role": "row",
-      "aria": null,
-      "title": null,
-      "text": "1 - Southeast 2 - Capital Region 3 - South Central 4 - Acadiana 5 - Southwest 6 - Central 7 - Northwest 8 - Northeast 9 - Northshore Out of State Unknown Grand Total",
-      "html": "<div class=\"tab-vizHeaderHolderWrapper\" role=\"row\" aria-multiselectable=\"true\" style=\"width: 140px; height: 309px;\"><div class=\"tab-vizHeaderWrapper\" id=\"16950777420_1\" tabindex=\"-1\" role=\"gridcell\" aria-selected=\"false\" aria-level=\"1\" style=\"width: 140px; height: 26px; top: 0px; align-items: center; justify-content: flex-start; background-color: rgba(255, 255, 255, 0);\"><div class=\"tab-vizHeaderLabelContainer\" style=\"padding-left: 6px; padding-right: 0px; pointer-events: none;\"><div class=\"tab-vizHeader\" style=\"font-family: Arial; font-size: 11pt; font-style: normal; font-weight: normal; text-decoration: none; color: rgb(51, 51, 51); text-align: left; max-width: 140px;\">1 - Southeast</div></div></div><div class=\"tab-vizHeaderWrapper\" id=\"35359103900_1\" tabindex=\"-1\" role=\"gridcell\" aria-selected=\"false\" aria-level=\"1\" style=\"width: 140px; height: 26px; top: 26px; align-items: center; justify-content: flex-start; background-color: rgb(245, 245, 245);\"><div class=\"tab-vizHeaderLabelContainer\" style=\"padding-left: 6px; padding-right: 0px; pointer-events: none;\"><div class=\"tab-vizHeader\" style=\"font-family: Arial; font-size: 11pt; font-style: normal; font-weight: normal; text-decoration: none; color: rgb(51, 51, 51); text-align: left; max-width: 140px;\">2 - Capital Region</div></div></div><div class=\"tab-vizHeaderWrapper\" id=\"8102287720_1\" tabindex=\"-1\" role=\"gridcell\" aria-selected=\"false\" aria-level=\"1\" style=\"width: 140px; height: 25px; top: 52px; align-items: center; justif"
-    },
-    {
-      "tag": "DIV",
-      "id": "16950777420_1",
-      "cls": "tab-vizHeaderWrapper",
-      "role": "gridcell",
-      "aria": null,
-      "title": null,
-      "text": "1 - Southeast",
-      "html": "<div class=\"tab-vizHeaderWrapper\" id=\"16950777420_1\" tabindex=\"-1\" role=\"gridcell\" aria-selected=\"false\" aria-level=\"1\" style=\"width: 140px; height: 26px; top: 0px; align-items: center; justify-content: flex-start; background-color: rgba(255, 255, 255, 0);\"><div class=\"tab-vizHeaderLabelContainer\" style=\"padding-left: 6px; padding-right: 0px; pointer-events: none;\"><div class=\"tab-vizHeader\" style=\"font-family: Arial; font-size: 11pt; font-style: normal; font-weight: normal; text-decoration: none; color: rgb(51, 51, 51); text-align: left; max-width: 140px;\">1 - Southeast</div></div></div>"
-    },
-    {
-      "tag": "DIV",
-      "id": "",
-      "cls": "tab-vizHeaderLabelContainer",
-      "role": null,
-      "aria": null,
-      "title": null,
-      "text": "1 - Southeast",
-      "html": "<div class=\"tab-vizHeaderLabelContainer\" style=\"padding-left: 6px; padding-right: 0px; pointer-events: none;\"><div class=\"tab-vizHeader\" style=\"font-family: Arial; font-size: 11pt; font-style: normal; font-weight: normal; text-decoration: none; color: rgb(51, 51, 51); text-align: left; max-width: 140px;\">1 - Southeast</div></div>"
-    },
-    {
-      "tag": "DIV",
-      "id": "",
-      "cls": "tab-vizHeader",
-      "role": null,
-      "aria": null,
-      "title": null,
-      "text": "1 - Southeast",
-      "html": "<div class=\"tab-vizHeader\" style=\"font-family: Arial; font-size: 11pt; font-style: normal; font-weight: normal; text-decoration: none; color: rgb(51, 51, 51); text-align: left; max-width: 140px;\">1 - Southeast</div>"
-    },
-    {
-      "tag": "DIV",
-      "id": "35359103900_1",
-      "cls": "tab-vizHeaderWrapper",
-      "role": "gridcell",
-      "aria": null,
-      "title": null,
-      "text": "2 - Capital Region",
-      "html": "<div class=\"tab-vizHeaderWrapper\" id=\"35359103900_1\" tabindex=\"-1\" role=\"gridcell\" aria-selected=\"false\" aria-level=\"1\" style=\"width: 140px; height: 26px; top: 26px; align-items: center; justify-content: flex-start; background-color: rgb(245, 245, 245);\"><div class=\"tab-vizHeaderLabelContainer\" style=\"padding-left: 6px; padding-right: 0px; pointer-events: none;\"><div class=\"tab-vizHeader\" style=\"font-family: Arial; font-size: 11pt; font-style: normal; font-weight: normal; text-decoration: none; color: rgb(51, 51, 51); text-align: left; max-width: 140px;\">2 - Capital Region</div></div></div>"
-    },
-    {
-      "tag": "DIV",
-      "id": "",
-      "cls": "tab-vizHeaderLabelContainer",
-      "role": null,
-      "aria": null,
-      "title": null,
-      "text": "2 - Capital Region",
-      "html": "<div class=\"tab-vizHeaderLabelContainer\" style=\"padding-left: 6px; padding-right: 0px; pointer-events: none;\"><div class=\"tab-vizHeader\" style=\"font-family: Arial; font-size: 11pt; font-style: normal; font-weight: normal; text-decoration: none; color: rgb(51, 51, 51); text-align: left; max-width: 140px;\">2 - Capital Region</div></div>"
-    },
-    {
-      "tag": "DIV",
-      "id": "",
-      "cls": "tab-vizHeader",
-      "role": null,
-      "aria": null,
-      "title": null,
-      "text": "2 - Capital Region",
-      "html": "<div class=\"tab-vizHeader\" style=\"font-family: Arial; font-size: 11pt; font-style: normal; font-weight: normal; text-decoration: none; color: rgb(51, 51, 51); text-align: left; max-width: 140px;\">2 - Capital Region</div>"
-    },
-    {
-      "tag": "DIV",
-      "id": "8102287720_1",
-      "cls": "tab-vizHeaderWrapper",
-      "role": "gridcell",
-      "aria": null,
-      "title": null,
-      "text": "3 - South Central",
-      "html": "<div class=\"tab-vizHeaderWrapper\" id=\"8102287720_1\" tabindex=\"-1\" role=\"gridcell\" aria-selected=\"false\" aria-level=\"1\" style=\"width: 140px; height: 25px; top: 52px; align-items: center; justify-content: flex-start; background-color: rgba(255, 255, 255, 0);\"><div class=\"tab-vizHeaderLabelContainer\" style=\"padding-left: 6px; padding-right: 0px; pointer-events: none;\"><div class=\"tab-vizHeader\" style=\"font-family: Arial; font-size: 11pt; font-style: normal; font-weight: normal; text-decoration: none; color: rgb(51, 51, 51); text-align: left; max-width: 140px;\">3 - South Central</div></div></div>"
-    },
-    {
-      "tag": "DIV",
-      "id": "",
-      "cls": "tab-vizHeaderLabelContainer",
-      "role": null,
-      "aria": null,
-      "title": null,
-      "text": "3 - South Central",
-      "html": "<div class=\"tab-vizHeaderLabelContainer\" style=\"padding-left: 6px; padding-right: 0px; pointer-events: none;\"><div class=\"tab-vizHeader\" style=\"font-family: Arial; font-size: 11pt; font-style: normal; font-weight: normal; text-decoration: none; color: rgb(51, 51, 51); text-align: left; max-width: 140px;\">3 - South Central</div></div>"
-    },
-    {
-      "tag": "DIV",
-      "id": "",
-      "cls": "tab-vizHeader",
-      "role": null,
-      "aria": null,
-      "title": null,
-      "text": "3 - South Central",
-      "html": "<div class=\"tab-vizHeader\" style=\"font-family: Arial; font-size: 11pt; font-style: normal; font-weight: normal; text-decoration: none; color: rgb(51, 51, 51); text-align: left; max-width: 140px;\">3 - South Central</div>"
-    },
-    {
-      "tag": "DIV",
-      "id": "26956915140_1",
-      "cls": "tab-vizHeaderWrapper",
-      "role": "gridcell",
-      "aria": null,
-      "title": null,
-      "text": "9 - Northshore",
-      "html": "<div class=\"tab-vizHeaderWrapper\" id=\"26956915140_1\" tabindex=\"-1\" role=\"gridcell\" aria-selected=\"false\" aria-level=\"1\" style=\"width: 140px; height: 26px; top: 206px; align-items: center; justify-content: flex-start; background-color: rgba(255, 255, 255, 0);\"><div class=\"tab-vizHeaderLabelContainer\" style=\"padding-left: 6px; padding-right: 0px; pointer-events: none;\"><div class=\"tab-vizHeader\" style=\"font-family: Arial; font-size: 11pt; font-style: normal; font-weight: normal; text-decoration: none; color: rgb(51, 51, 51); text-align: left; max-width: 140px;\">9 - Northshore</div></div></div>"
-    },
-    {
-      "tag": "DIV",
-      "id": "",
-      "cls": "tab-vizHeaderLabelContainer",
-      "role": null,
-      "aria": null,
-      "title": null,
-      "text": "9 - Northshore",
-      "html": "<div class=\"tab-vizHeaderLabelContainer\" style=\"padding-left: 6px; padding-right: 0px; pointer-events: none;\"><div class=\"tab-vizHeader\" style=\"font-family: Arial; font-size: 11pt; font-style: normal; font-weight: normal; text-decoration: none; color: rgb(51, 51, 51); text-align: left; max-width: 140px;\">9 - Northshore</div></div>"
-    },
-    {
-      "tag": "DIV",
-      "id": "",
-      "cls": "tab-vizHeader",
-      "role": null,
-      "aria": null,
-      "title": null,
-      "text": "9 - Northshore",
-      "html": "<div class=\"tab-vizHeader\" style=\"font-family: Arial; font-size: 11pt; font-style: normal; font-weight: normal; text-decoration: none; color: rgb(51, 51, 51); text-align: left; max-width: 140px;\">9 - Northshore</div>"
-    }
-  ],
-  "commandResponses": [
-    {
-      "url": "https://analytics.la.gov/vizql/t/LDH/w/HeatRelatedIllnessDashboardLive_17568488201530/v/HeatRelatedIllnessesDashboard/sessions/984B1F75E4EB4CA99DC12C8120CDF029-1:1/commands/tabdoc/notify-first-client-render-occurred",
-      "status": 200,
-      "contentType": "application/octet-stream;charset=UTF-8"
-    },
-    {
-      "url": "https://analytics.la.gov/vizql/t/LDH/w/HeatRelatedIllnessDashboardLive_17568488201530/v/HeatRelatedIllnessesDashboard/sessions/984B1F75E4EB4CA99DC12C8120CDF029-1:1/commands/tabdoc/notify-first-client-render-occurred",
-      "status": 200,
-      "contentType": "application/octet-stream;charset=UTF-8"
-    }
-  ]
+  "seasonBefore": 1,
+  "seasonOpen": {
+    "label": "season",
+    "items": [
+      {
+        "tag": "DIV",
+        "role": "listbox",
+        "cls": "tabLegendContentHolder",
+        "aria": "color legend for . Press Enter to turn Highlight mode on or off. Use arrow keys to navigate the list of values. Then press Space to toggle the Highlight on or off for a value",
+        "text": "Daily Mean Maximum Temperature Daily Mean Minimum Temperature",
+        "html": "<div class=\"tabLegendContentHolder\" style=\"overflow: hidden; user-select: none; -webkit-tap-highlight-color: transparent; width: 755px; height: 42px;\" aria-label=\"color legend for . Press Enter to turn Highlight mode on or off. Use arrow keys to navigate the list of values. Then press Space to toggle the Highlight on or off for a value\" tabindex=\"-1\" role=\"listbox\" aria-multiselectable=\"true\"><div class=\"tabLegendColumnHolder\" style=\"white-space:nowrap\"><span class=\"tabLegendItemColumn\" style=\"width: 220px;\"><div class=\"tabLegendItem\" tabindex=\"0\" role=\"option\" aria-selected=\"false\" style=\"width: 220px; height: 20px;\"><span class=\"tabLegendItemSwatchHolder\" style=\"width: 20px; height: 20px;\"><span class=\"tabLegendItemSwatch\" id=\"rgb(238,119,51)\" style=\"border-width: 1px; border-style: solid; width: 12px; height: 12px; top: 3px; left: 3px; background-color: rgb(238, 119, 51); border-color: rgba(0, 0, 0, 0);\"></span></span><span class=\"tabLegendItemLabelHolder\" style=\"left: 22px; top: 3px; width: 197px; bottom: 0px; text-align: left;\"><span class=\"tabLegendItemLabel\" style=\"font-size: 9pt; color: rgb(51, 51, 51); font-family: Arial; white-space: nowrap;\">Daily Mean Maximum Temperatur"
+      },
+      {
+        "tag": "DIV",
+        "role": "option",
+        "cls": "tabLegendItem",
+        "aria": null,
+        "text": "Daily Mean Maximum Temperature",
+        "html": "<div class=\"tabLegendItem\" tabindex=\"0\" role=\"option\" aria-selected=\"false\" style=\"width: 220px; height: 20px;\"><span class=\"tabLegendItemSwatchHolder\" style=\"width: 20px; height: 20px;\"><span class=\"tabLegendItemSwatch\" id=\"rgb(238,119,51)\" style=\"border-width: 1px; border-style: solid; width: 12px; height: 12px; top: 3px; left: 3px; background-color: rgb(238, 119, 51); border-color: rgba(0, 0, 0, 0);\"></span></span><span class=\"tabLegendItemLabelHolder\" style=\"left: 22px; top: 3px; width: 197px; bottom: 0px; text-align: left;\"><span class=\"tabLegendItemLabel\" style=\"font-size: 9pt; color: rgb(51, 51, 51); font-family: Arial; white-space: nowrap;\">Daily Mean Maximum Temperature</span></span></div>"
+      },
+      {
+        "tag": "DIV",
+        "role": "option",
+        "cls": "tabLegendItem",
+        "aria": null,
+        "text": "Daily Mean Minimum Temperature",
+        "html": "<div class=\"tabLegendItem\" tabindex=\"-1\" role=\"option\" aria-selected=\"false\" style=\"width: 220px; height: 20px;\"><span class=\"tabLegendItemSwatchHolder\" style=\"width: 20px; height: 20px;\"><span class=\"tabLegendItemSwatch\" id=\"rgb(36,173,150)\" style=\"border-width: 1px; border-style: solid; width: 12px; height: 12px; top: 3px; left: 3px; background-color: rgb(36, 173, 150); border-color: rgba(0, 0, 0, 0);\"></span></span><span class=\"tabLegendItemLabelHolder\" style=\"left: 22px; top: 3px; width: 197px; bottom: 0px; text-align: left;\"><span class=\"tabLegendItemLabel\" style=\"font-size: 9pt; color: rgb(51, 51, 51); font-family: Arial; white-space: nowrap;\">Daily Mean Minimum Temperature</span></span></div>"
+      },
+      {
+        "tag": "DIV",
+        "role": "listbox",
+        "cls": "tabLegendContentHolder",
+        "aria": "color legend for . Press Enter to turn Highlight mode on or off. Use arrow keys to navigate the list of values. Then press Space to toggle the Highlight on or off for a value",
+        "text": "0 - 4 5 - 49 50 - 99 100 - 199 200 - 399 400+",
+        "html": "<div class=\"tabLegendContentHolder\" style=\"overflow: hidden; user-select: none; -webkit-tap-highlight-color: transparent; width: 87px; height: 132px;\" aria-label=\"color legend for . Press Enter to turn Highlight mode on or off. Use arrow keys to navigate the list of values. Then press Space to toggle the Highlight on or off for a value\" tabindex=\"-1\" role=\"listbox\" aria-multiselectable=\"true\"><div class=\"tabLegendColumnHolder\" style=\"white-space:nowrap\"><span class=\"tabLegendItemColumn\" style=\"width: 87px;\"><div class=\"tabLegendItem\" tabindex=\"0\" role=\"option\" aria-selected=\"false\" style=\"width: 87px; height: 20px;\"><span class=\"tabLegendItemSwatchHolder\" style=\"width: 20px; height: 20px;\"><span class=\"tabLegendItemSwatch\" id=\"rgb(211,207,247)\" style=\"border-width: 1px; border-style: solid; width: 12px; height: 12px; top: 3px; left: 3px; background-color: rgb(211, 207, 247); border-color: rgba(0, 0, 0, 0);\"></span></span><span class=\"tabLegendItemLabelHolder\" style=\"left: 22px; top: 3px; width: 64px; bottom: 0px; text-align: left;\"><span class=\"tabLegendItemLabel\" style=\"font-size: 10pt; color: rgb(51, 51, 51); font-family: Arial; white-space: nowrap;\">0 - 4</span></span></div><div"
+      },
+      {
+        "tag": "DIV",
+        "role": "option",
+        "cls": "tabLegendItem",
+        "aria": null,
+        "text": "0 - 4",
+        "html": "<div class=\"tabLegendItem\" tabindex=\"0\" role=\"option\" aria-selected=\"false\" style=\"width: 87px; height: 20px;\"><span class=\"tabLegendItemSwatchHolder\" style=\"width: 20px; height: 20px;\"><span class=\"tabLegendItemSwatch\" id=\"rgb(211,207,247)\" style=\"border-width: 1px; border-style: solid; width: 12px; height: 12px; top: 3px; left: 3px; background-color: rgb(211, 207, 247); border-color: rgba(0, 0, 0, 0);\"></span></span><span class=\"tabLegendItemLabelHolder\" style=\"left: 22px; top: 3px; width: 64px; bottom: 0px; text-align: left;\"><span class=\"tabLegendItemLabel\" style=\"font-size: 10pt; color: rgb(51, 51, 51); font-family: Arial; white-space: nowrap;\">0 - 4</span></span></div>"
+      },
+      {
+        "tag": "DIV",
+        "role": "option",
+        "cls": "tabLegendItem",
+        "aria": null,
+        "text": "5 - 49",
+        "html": "<div class=\"tabLegendItem\" tabindex=\"-1\" role=\"option\" aria-selected=\"false\" style=\"width: 87px; height: 20px;\"><span class=\"tabLegendItemSwatchHolder\" style=\"width: 20px; height: 20px;\"><span class=\"tabLegendItemSwatch\" id=\"rgb(183,176,234)\" style=\"border-width: 1px; border-style: solid; width: 12px; height: 12px; top: 3px; left: 3px; background-color: rgb(183, 176, 234); border-color: rgba(0, 0, 0, 0);\"></span></span><span class=\"tabLegendItemLabelHolder\" style=\"left: 22px; top: 3px; width: 64px; bottom: 0px; text-align: left;\"><span class=\"tabLegendItemLabel\" style=\"font-size: 10pt; color: rgb(51, 51, 51); font-family: Arial; white-space: nowrap;\">5 - 49</span></span></div>"
+      },
+      {
+        "tag": "DIV",
+        "role": "option",
+        "cls": "tabLegendItem",
+        "aria": null,
+        "text": "50 - 99",
+        "html": "<div class=\"tabLegendItem\" tabindex=\"-1\" role=\"option\" aria-selected=\"false\" style=\"width: 87px; height: 20px;\"><span class=\"tabLegendItemSwatchHolder\" style=\"width: 20px; height: 20px;\"><span class=\"tabLegendItemSwatch\" id=\"rgb(151,142,216)\" style=\"border-width: 1px; border-style: solid; width: 12px; height: 12px; top: 3px; left: 3px; background-color: rgb(151, 142, 216); border-color: rgba(0, 0, 0, 0);\"></span></span><span class=\"tabLegendItemLabelHolder\" style=\"left: 22px; top: 3px; width: 64px; bottom: 0px; text-align: left;\"><span class=\"tabLegendItemLabel\" style=\"font-size: 10pt; color: rgb(51, 51, 51); font-family: Arial; white-space: nowrap;\">50 - 99</span></span></div>"
+      },
+      {
+        "tag": "DIV",
+        "role": "option",
+        "cls": "tabLegendItem",
+        "aria": null,
+        "text": "100 - 199",
+        "html": "<div class=\"tabLegendItem\" tabindex=\"-1\" role=\"option\" aria-selected=\"false\" style=\"width: 87px; height: 20px;\"><span class=\"tabLegendItemSwatchHolder\" style=\"width: 20px; height: 20px;\"><span class=\"tabLegendItemSwatch\" id=\"rgb(118,104,197)\" style=\"border-width: 1px; border-style: solid; width: 12px; height: 12px; top: 3px; left: 3px; background-color: rgb(118, 104, 197); border-color: rgba(0, 0, 0, 0);\"></span></span><span class=\"tabLegendItemLabelHolder\" style=\"left: 22px; top: 3px; width: 64px; bottom: 0px; text-align: left;\"><span class=\"tabLegendItemLabel\" style=\"font-size: 10pt; color: rgb(51, 51, 51); font-family: Arial; white-space: nowrap;\">100 - 199</span></span></div>"
+      },
+      {
+        "tag": "DIV",
+        "role": "option",
+        "cls": "tabLegendItem",
+        "aria": null,
+        "text": "200 - 399",
+        "html": "<div class=\"tabLegendItem\" tabindex=\"-1\" role=\"option\" aria-selected=\"false\" style=\"width: 87px; height: 20px;\"><span class=\"tabLegendItemSwatchHolder\" style=\"width: 20px; height: 20px;\"><span class=\"tabLegendItemSwatch\" id=\"rgb(87,76,151)\" style=\"border-width: 1px; border-style: solid; width: 12px; height: 12px; top: 3px; left: 3px; background-color: rgb(87, 76, 151); border-color: rgba(0, 0, 0, 0);\"></span></span><span class=\"tabLegendItemLabelHolder\" style=\"left: 22px; top: 3px; width: 64px; bottom: 0px; text-align: left;\"><span class=\"tabLegendItemLabel\" style=\"font-size: 10pt; color: rgb(51, 51, 51); font-family: Arial; white-space: nowrap;\">200 - 399</span></span></div>"
+      },
+      {
+        "tag": "DIV",
+        "role": "option",
+        "cls": "tabLegendItem",
+        "aria": null,
+        "text": "400+",
+        "html": "<div class=\"tabLegendItem\" tabindex=\"-1\" role=\"option\" aria-selected=\"false\" style=\"width: 87px; height: 20px;\"><span class=\"tabLegendItemSwatchHolder\" style=\"width: 20px; height: 20px;\"><span class=\"tabLegendItemSwatch\" id=\"rgb(49,34,113)\" style=\"border-width: 1px; border-style: solid; width: 12px; height: 12px; top: 3px; left: 3px; background-color: rgb(49, 34, 113); border-color: rgba(0, 0, 0, 0);\"></span></span><span class=\"tabLegendItemLabelHolder\" style=\"left: 22px; top: 3px; width: 64px; bottom: 0px; text-align: left;\"><span class=\"tabLegendItemLabel\" style=\"font-size: 10pt; color: rgb(51, 51, 51); font-family: Arial; white-space: nowrap;\">400+</span></span></div>"
+      },
+      {
+        "tag": "DIV",
+        "role": "listbox",
+        "cls": "tile tab-ctrl-formatted-text",
+        "aria": null,
+        "text": "2026 2025 2024 2023",
+        "html": "<div id=\"tab-ui-id-1788688638642\" aria-labelledby=\"tab-ui-id-1788688638638\" role=\"listbox\" class=\"tile tab-ctrl-formatted-text\" style=\"top: 0px; left: 0px; right: 0px; position: absolute; width: 100%;\"><div tabindex=\"0\" role=\"option\" class=\"FIItem FISimpleDropdownItem\" id=\"FI_sqlproxy.1tpx34d0vfjm5u1eap2oz1vskzah,none:Season:ok8170510537931260753_1542946471274051613_0\"><div class=\"facet\"></div><div class=\"facetOverflow\"><a title=\"2026\">2026</a></div></div><div tabindex=\"-1\" role=\"option\" class=\"FIItem FISimpleDropdownItem\" id=\"FI_sqlproxy.1tpx34d0vfjm5u1eap2oz1vskzah,none:Season:ok8170510537931260753_1542946471274051613_1\"><div class=\"facet\"></div><div class=\"facetOverflow\"><a title=\"2025\">2025</a></div></div><div tabindex=\"-1\" role=\"option\" class=\"FIItem FISimpleDropdownItem\" id=\"FI_sqlproxy.1tpx34d0vfjm5u1eap2oz1vskzah,none:Season:ok8170510537931260753_1542946471274051613_2\"><div class=\"facet\"></div><div class=\"facetOverflow\"><a title=\"2024\">2024</a></div></div><div tabindex=\"-1\" role=\"option\" class=\"FIItem FISimpleDropdownItem\" id=\"FI_sqlproxy.1tpx34d0vfjm5u1eap2oz1vskzah,none:Season:ok8170510537931260753_1542946471274051613_3\"><div class=\"facet\"></div><div class=\"facetOverflow\""
+      },
+      {
+        "tag": "DIV",
+        "role": "option",
+        "cls": "FIItem FISimpleDropdownItem",
+        "aria": null,
+        "text": "2026",
+        "html": "<div tabindex=\"0\" role=\"option\" class=\"FIItem FISimpleDropdownItem\" id=\"FI_sqlproxy.1tpx34d0vfjm5u1eap2oz1vskzah,none:Season:ok8170510537931260753_1542946471274051613_0\"><div class=\"facet\"></div><div class=\"facetOverflow\"><a title=\"2026\">2026</a></div></div>"
+      },
+      {
+        "tag": "DIV",
+        "role": "option",
+        "cls": "FIItem FISimpleDropdownItem",
+        "aria": null,
+        "text": "2025",
+        "html": "<div tabindex=\"-1\" role=\"option\" class=\"FIItem FISimpleDropdownItem\" id=\"FI_sqlproxy.1tpx34d0vfjm5u1eap2oz1vskzah,none:Season:ok8170510537931260753_1542946471274051613_1\"><div class=\"facet\"></div><div class=\"facetOverflow\"><a title=\"2025\">2025</a></div></div>"
+      },
+      {
+        "tag": "DIV",
+        "role": "option",
+        "cls": "FIItem FISimpleDropdownItem",
+        "aria": null,
+        "text": "2024",
+        "html": "<div tabindex=\"-1\" role=\"option\" class=\"FIItem FISimpleDropdownItem\" id=\"FI_sqlproxy.1tpx34d0vfjm5u1eap2oz1vskzah,none:Season:ok8170510537931260753_1542946471274051613_2\"><div class=\"facet\"></div><div class=\"facetOverflow\"><a title=\"2024\">2024</a></div></div>"
+      },
+      {
+        "tag": "DIV",
+        "role": "option",
+        "cls": "FIItem FISimpleDropdownItem",
+        "aria": null,
+        "text": "2023",
+        "html": "<div tabindex=\"-1\" role=\"option\" class=\"FIItem FISimpleDropdownItem\" id=\"FI_sqlproxy.1tpx34d0vfjm5u1eap2oz1vskzah,none:Season:ok8170510537931260753_1542946471274051613_3\"><div class=\"facet\"></div><div class=\"facetOverflow\"><a title=\"2023\">2023</a></div></div>"
+      }
+    ]
+  },
+  "regionBefore": 1,
+  "regionOpen": {
+    "label": "region",
+    "items": [
+      {
+        "tag": "DIV",
+        "role": "listbox",
+        "cls": "tabLegendContentHolder",
+        "aria": "color legend for . Press Enter to turn Highlight mode on or off. Use arrow keys to navigate the list of values. Then press Space to toggle the Highlight on or off for a value",
+        "text": "Daily Mean Maximum Temperature Daily Mean Minimum Temperature",
+        "html": "<div class=\"tabLegendContentHolder\" style=\"overflow: hidden; user-select: none; -webkit-tap-highlight-color: transparent; width: 755px; height: 42px;\" aria-label=\"color legend for . Press Enter to turn Highlight mode on or off. Use arrow keys to navigate the list of values. Then press Space to toggle the Highlight on or off for a value\" tabindex=\"-1\" role=\"listbox\" aria-multiselectable=\"true\"><div class=\"tabLegendColumnHolder\" style=\"white-space:nowrap\"><span class=\"tabLegendItemColumn\" style=\"width: 220px;\"><div class=\"tabLegendItem\" tabindex=\"0\" role=\"option\" aria-selected=\"false\" style=\"width: 220px; height: 20px;\"><span class=\"tabLegendItemSwatchHolder\" style=\"width: 20px; height: 20px;\"><span class=\"tabLegendItemSwatch\" id=\"rgb(238,119,51)\" style=\"border-width: 1px; border-style: solid; width: 12px; height: 12px; top: 3px; left: 3px; background-color: rgb(238, 119, 51); border-color: rgba(0, 0, 0, 0);\"></span></span><span class=\"tabLegendItemLabelHolder\" style=\"left: 22px; top: 3px; width: 197px; bottom: 0px; text-align: left;\"><span class=\"tabLegendItemLabel\" style=\"font-size: 9pt; color: rgb(51, 51, 51); font-family: Arial; white-space: nowrap;\">Daily Mean Maximum Temperatur"
+      },
+      {
+        "tag": "DIV",
+        "role": "option",
+        "cls": "tabLegendItem",
+        "aria": null,
+        "text": "Daily Mean Maximum Temperature",
+        "html": "<div class=\"tabLegendItem\" tabindex=\"0\" role=\"option\" aria-selected=\"false\" style=\"width: 220px; height: 20px;\"><span class=\"tabLegendItemSwatchHolder\" style=\"width: 20px; height: 20px;\"><span class=\"tabLegendItemSwatch\" id=\"rgb(238,119,51)\" style=\"border-width: 1px; border-style: solid; width: 12px; height: 12px; top: 3px; left: 3px; background-color: rgb(238, 119, 51); border-color: rgba(0, 0, 0, 0);\"></span></span><span class=\"tabLegendItemLabelHolder\" style=\"left: 22px; top: 3px; width: 197px; bottom: 0px; text-align: left;\"><span class=\"tabLegendItemLabel\" style=\"font-size: 9pt; color: rgb(51, 51, 51); font-family: Arial; white-space: nowrap;\">Daily Mean Maximum Temperature</span></span></div>"
+      },
+      {
+        "tag": "DIV",
+        "role": "option",
+        "cls": "tabLegendItem",
+        "aria": null,
+        "text": "Daily Mean Minimum Temperature",
+        "html": "<div class=\"tabLegendItem\" tabindex=\"-1\" role=\"option\" aria-selected=\"false\" style=\"width: 220px; height: 20px;\"><span class=\"tabLegendItemSwatchHolder\" style=\"width: 20px; height: 20px;\"><span class=\"tabLegendItemSwatch\" id=\"rgb(36,173,150)\" style=\"border-width: 1px; border-style: solid; width: 12px; height: 12px; top: 3px; left: 3px; background-color: rgb(36, 173, 150); border-color: rgba(0, 0, 0, 0);\"></span></span><span class=\"tabLegendItemLabelHolder\" style=\"left: 22px; top: 3px; width: 197px; bottom: 0px; text-align: left;\"><span class=\"tabLegendItemLabel\" style=\"font-size: 9pt; color: rgb(51, 51, 51); font-family: Arial; white-space: nowrap;\">Daily Mean Minimum Temperature</span></span></div>"
+      },
+      {
+        "tag": "DIV",
+        "role": "listbox",
+        "cls": "tabLegendContentHolder",
+        "aria": "color legend for . Press Enter to turn Highlight mode on or off. Use arrow keys to navigate the list of values. Then press Space to toggle the Highlight on or off for a value",
+        "text": "0 - 4 5 - 49 50 - 99 100 - 199 200 - 399 400+",
+        "html": "<div class=\"tabLegendContentHolder\" style=\"overflow: hidden; user-select: none; -webkit-tap-highlight-color: transparent; width: 87px; height: 132px;\" aria-label=\"color legend for . Press Enter to turn Highlight mode on or off. Use arrow keys to navigate the list of values. Then press Space to toggle the Highlight on or off for a value\" tabindex=\"-1\" role=\"listbox\" aria-multiselectable=\"true\"><div class=\"tabLegendColumnHolder\" style=\"white-space:nowrap\"><span class=\"tabLegendItemColumn\" style=\"width: 87px;\"><div class=\"tabLegendItem\" tabindex=\"0\" role=\"option\" aria-selected=\"false\" style=\"width: 87px; height: 20px;\"><span class=\"tabLegendItemSwatchHolder\" style=\"width: 20px; height: 20px;\"><span class=\"tabLegendItemSwatch\" id=\"rgb(211,207,247)\" style=\"border-width: 1px; border-style: solid; width: 12px; height: 12px; top: 3px; left: 3px; background-color: rgb(211, 207, 247); border-color: rgba(0, 0, 0, 0);\"></span></span><span class=\"tabLegendItemLabelHolder\" style=\"left: 22px; top: 3px; width: 64px; bottom: 0px; text-align: left;\"><span class=\"tabLegendItemLabel\" style=\"font-size: 10pt; color: rgb(51, 51, 51); font-family: Arial; white-space: nowrap;\">0 - 4</span></span></div><div"
+      },
+      {
+        "tag": "DIV",
+        "role": "option",
+        "cls": "tabLegendItem",
+        "aria": null,
+        "text": "0 - 4",
+        "html": "<div class=\"tabLegendItem\" tabindex=\"0\" role=\"option\" aria-selected=\"false\" style=\"width: 87px; height: 20px;\"><span class=\"tabLegendItemSwatchHolder\" style=\"width: 20px; height: 20px;\"><span class=\"tabLegendItemSwatch\" id=\"rgb(211,207,247)\" style=\"border-width: 1px; border-style: solid; width: 12px; height: 12px; top: 3px; left: 3px; background-color: rgb(211, 207, 247); border-color: rgba(0, 0, 0, 0);\"></span></span><span class=\"tabLegendItemLabelHolder\" style=\"left: 22px; top: 3px; width: 64px; bottom: 0px; text-align: left;\"><span class=\"tabLegendItemLabel\" style=\"font-size: 10pt; color: rgb(51, 51, 51); font-family: Arial; white-space: nowrap;\">0 - 4</span></span></div>"
+      },
+      {
+        "tag": "DIV",
+        "role": "option",
+        "cls": "tabLegendItem",
+        "aria": null,
+        "text": "5 - 49",
+        "html": "<div class=\"tabLegendItem\" tabindex=\"-1\" role=\"option\" aria-selected=\"false\" style=\"width: 87px; height: 20px;\"><span class=\"tabLegendItemSwatchHolder\" style=\"width: 20px; height: 20px;\"><span class=\"tabLegendItemSwatch\" id=\"rgb(183,176,234)\" style=\"border-width: 1px; border-style: solid; width: 12px; height: 12px; top: 3px; left: 3px; background-color: rgb(183, 176, 234); border-color: rgba(0, 0, 0, 0);\"></span></span><span class=\"tabLegendItemLabelHolder\" style=\"left: 22px; top: 3px; width: 64px; bottom: 0px; text-align: left;\"><span class=\"tabLegendItemLabel\" style=\"font-size: 10pt; color: rgb(51, 51, 51); font-family: Arial; white-space: nowrap;\">5 - 49</span></span></div>"
+      },
+      {
+        "tag": "DIV",
+        "role": "option",
+        "cls": "tabLegendItem",
+        "aria": null,
+        "text": "50 - 99",
+        "html": "<div class=\"tabLegendItem\" tabindex=\"-1\" role=\"option\" aria-selected=\"false\" style=\"width: 87px; height: 20px;\"><span class=\"tabLegendItemSwatchHolder\" style=\"width: 20px; height: 20px;\"><span class=\"tabLegendItemSwatch\" id=\"rgb(151,142,216)\" style=\"border-width: 1px; border-style: solid; width: 12px; height: 12px; top: 3px; left: 3px; background-color: rgb(151, 142, 216); border-color: rgba(0, 0, 0, 0);\"></span></span><span class=\"tabLegendItemLabelHolder\" style=\"left: 22px; top: 3px; width: 64px; bottom: 0px; text-align: left;\"><span class=\"tabLegendItemLabel\" style=\"font-size: 10pt; color: rgb(51, 51, 51); font-family: Arial; white-space: nowrap;\">50 - 99</span></span></div>"
+      },
+      {
+        "tag": "DIV",
+        "role": "option",
+        "cls": "tabLegendItem",
+        "aria": null,
+        "text": "100 - 199",
+        "html": "<div class=\"tabLegendItem\" tabindex=\"-1\" role=\"option\" aria-selected=\"false\" style=\"width: 87px; height: 20px;\"><span class=\"tabLegendItemSwatchHolder\" style=\"width: 20px; height: 20px;\"><span class=\"tabLegendItemSwatch\" id=\"rgb(118,104,197)\" style=\"border-width: 1px; border-style: solid; width: 12px; height: 12px; top: 3px; left: 3px; background-color: rgb(118, 104, 197); border-color: rgba(0, 0, 0, 0);\"></span></span><span class=\"tabLegendItemLabelHolder\" style=\"left: 22px; top: 3px; width: 64px; bottom: 0px; text-align: left;\"><span class=\"tabLegendItemLabel\" style=\"font-size: 10pt; color: rgb(51, 51, 51); font-family: Arial; white-space: nowrap;\">100 - 199</span></span></div>"
+      },
+      {
+        "tag": "DIV",
+        "role": "option",
+        "cls": "tabLegendItem",
+        "aria": null,
+        "text": "200 - 399",
+        "html": "<div class=\"tabLegendItem\" tabindex=\"-1\" role=\"option\" aria-selected=\"false\" style=\"width: 87px; height: 20px;\"><span class=\"tabLegendItemSwatchHolder\" style=\"width: 20px; height: 20px;\"><span class=\"tabLegendItemSwatch\" id=\"rgb(87,76,151)\" style=\"border-width: 1px; border-style: solid; width: 12px; height: 12px; top: 3px; left: 3px; background-color: rgb(87, 76, 151); border-color: rgba(0, 0, 0, 0);\"></span></span><span class=\"tabLegendItemLabelHolder\" style=\"left: 22px; top: 3px; width: 64px; bottom: 0px; text-align: left;\"><span class=\"tabLegendItemLabel\" style=\"font-size: 10pt; color: rgb(51, 51, 51); font-family: Arial; white-space: nowrap;\">200 - 399</span></span></div>"
+      },
+      {
+        "tag": "DIV",
+        "role": "option",
+        "cls": "tabLegendItem",
+        "aria": null,
+        "text": "400+",
+        "html": "<div class=\"tabLegendItem\" tabindex=\"-1\" role=\"option\" aria-selected=\"false\" style=\"width: 87px; height: 20px;\"><span class=\"tabLegendItemSwatchHolder\" style=\"width: 20px; height: 20px;\"><span class=\"tabLegendItemSwatch\" id=\"rgb(49,34,113)\" style=\"border-width: 1px; border-style: solid; width: 12px; height: 12px; top: 3px; left: 3px; background-color: rgb(49, 34, 113); border-color: rgba(0, 0, 0, 0);\"></span></span><span class=\"tabLegendItemLabelHolder\" style=\"left: 22px; top: 3px; width: 64px; bottom: 0px; text-align: left;\"><span class=\"tabLegendItemLabel\" style=\"font-size: 10pt; color: rgb(51, 51, 51); font-family: Arial; white-space: nowrap;\">400+</span></span></div>"
+      },
+      {
+        "tag": "DIV",
+        "role": "menu",
+        "cls": "tabMenu tab-widget tabMenuComboDropdownTheme tab-ctrl-formatted-widget tableau_base_widget_ParameterControl_0_menu tabMenuNoIcons tabMenuNoDesc tabComboBoxMenu",
+        "aria": "Region",
+        "text": "Louisiana 1 - Southeast 2 - Capital Region 3 - South Central 4 - Acadiana 5 - Southwest 6 - Central 7 - Northwest 8 - Northeast 9 - Northshore Out of State Unknown",
+        "html": "<div class=\"tabMenu tab-widget tabMenuComboDropdownTheme tab-ctrl-formatted-widget tableau_base_widget_ParameterControl_0_menu tabMenuNoIcons tabMenuNoDesc tabComboBoxMenu\" tabindex=\"-1\" role=\"menu\" aria-label=\"Region\" id=\"tab-ui-id-1788688638641\" aria-activedescendant=\"tab-menuItem6\" style=\"user-select: none; -webkit-tap-highlight-color: transparent; min-width: 219px; z-index: 989; max-width: 1590px; top: 668px; left: 373px; overflow-y: hidden;\"><div class=\"tabMenuContent\"><div class=\"tabMenuItem tabMenuItemComboDropdownTheme tab-ctrl-formatted-text tabMenuMenuItem tabMenuFocusedItem\" role=\"menuitem\" data-test-id=\"tabMenuItem\" id=\"tab-menuItem6\">\n  <div class=\"tabMenuItemNameArea\">\n    <span class=\"tabMenuItemName\" data-test-id=\"tabMenuItemName\">Louisiana</span>\n  </div>\n</div><div class=\"tabMenuItem tabMenuItemComboDropdownTheme tab-ctrl-formatted-text tabMenuMenuItem\" role=\"menuitem\" data-test-id=\"tabMenuItem\">\n  <div class=\"tabMenuItemNameArea\">\n    <span class=\"tabMenuItemName\" data-test-id=\"tabMenuItemName\">1 - Southeast</span>\n  </div>\n</div><div class=\"tabMenuItem tabMenuItemComboDropdownTheme tab-ctrl-formatted-text tabMenuMenuItem\" role=\"menuitem\" data-test-id=\"tabMenuIte"
+      },
+      {
+        "tag": "DIV",
+        "role": "menuitem",
+        "cls": "tabMenuItem tabMenuItemComboDropdownTheme tab-ctrl-formatted-text tabMenuMenuItem tabMenuFocusedItem",
+        "aria": null,
+        "text": "Louisiana",
+        "html": "<div class=\"tabMenuItem tabMenuItemComboDropdownTheme tab-ctrl-formatted-text tabMenuMenuItem tabMenuFocusedItem\" role=\"menuitem\" data-test-id=\"tabMenuItem\" id=\"tab-menuItem6\">\n  <div class=\"tabMenuItemNameArea\">\n    <span class=\"tabMenuItemName\" data-test-id=\"tabMenuItemName\">Louisiana</span>\n  </div>\n</div>"
+      },
+      {
+        "tag": "SPAN",
+        "role": null,
+        "cls": "tabMenuItemName",
+        "aria": null,
+        "text": "Louisiana",
+        "html": "<span class=\"tabMenuItemName\" data-test-id=\"tabMenuItemName\">Louisiana</span>"
+      },
+      {
+        "tag": "DIV",
+        "role": "menuitem",
+        "cls": "tabMenuItem tabMenuItemComboDropdownTheme tab-ctrl-formatted-text tabMenuMenuItem",
+        "aria": null,
+        "text": "1 - Southeast",
+        "html": "<div class=\"tabMenuItem tabMenuItemComboDropdownTheme tab-ctrl-formatted-text tabMenuMenuItem\" role=\"menuitem\" data-test-id=\"tabMenuItem\">\n  <div class=\"tabMenuItemNameArea\">\n    <span class=\"tabMenuItemName\" data-test-id=\"tabMenuItemName\">1 - Southeast</span>\n  </div>\n</div>"
+      },
+      {
+        "tag": "SPAN",
+        "role": null,
+        "cls": "tabMenuItemName",
+        "aria": null,
+        "text": "1 - Southeast",
+        "html": "<span class=\"tabMenuItemName\" data-test-id=\"tabMenuItemName\">1 - Southeast</span>"
+      },
+      {
+        "tag": "DIV",
+        "role": "menuitem",
+        "cls": "tabMenuItem tabMenuItemComboDropdownTheme tab-ctrl-formatted-text tabMenuMenuItem",
+        "aria": null,
+        "text": "2 - Capital Region",
+        "html": "<div class=\"tabMenuItem tabMenuItemComboDropdownTheme tab-ctrl-formatted-text tabMenuMenuItem\" role=\"menuitem\" data-test-id=\"tabMenuItem\">\n  <div class=\"tabMenuItemNameArea\">\n    <span class=\"tabMenuItemName\" data-test-id=\"tabMenuItemName\">2 - Capital Region</span>\n  </div>\n</div>"
+      },
+      {
+        "tag": "SPAN",
+        "role": null,
+        "cls": "tabMenuItemName",
+        "aria": null,
+        "text": "2 - Capital Region",
+        "html": "<span class=\"tabMenuItemName\" data-test-id=\"tabMenuItemName\">2 - Capital Region</span>"
+      },
+      {
+        "tag": "DIV",
+        "role": "menuitem",
+        "cls": "tabMenuItem tabMenuItemComboDropdownTheme tab-ctrl-formatted-text tabMenuMenuItem",
+        "aria": null,
+        "text": "3 - South Central",
+        "html": "<div class=\"tabMenuItem tabMenuItemComboDropdownTheme tab-ctrl-formatted-text tabMenuMenuItem\" role=\"menuitem\" data-test-id=\"tabMenuItem\">\n  <div class=\"tabMenuItemNameArea\">\n    <span class=\"tabMenuItemName\" data-test-id=\"tabMenuItemName\">3 - South Central</span>\n  </div>\n</div>"
+      },
+      {
+        "tag": "SPAN",
+        "role": null,
+        "cls": "tabMenuItemName",
+        "aria": null,
+        "text": "3 - South Central",
+        "html": "<span class=\"tabMenuItemName\" data-test-id=\"tabMenuItemName\">3 - South Central</span>"
+      },
+      {
+        "tag": "DIV",
+        "role": "menuitem",
+        "cls": "tabMenuItem tabMenuItemComboDropdownTheme tab-ctrl-formatted-text tabMenuMenuItem",
+        "aria": null,
+        "text": "4 - Acadiana",
+        "html": "<div class=\"tabMenuItem tabMenuItemComboDropdownTheme tab-ctrl-formatted-text tabMenuMenuItem\" role=\"menuitem\" data-test-id=\"tabMenuItem\">\n  <div class=\"tabMenuItemNameArea\">\n    <span class=\"tabMenuItemName\" data-test-id=\"tabMenuItemName\">4 - Acadiana</span>\n  </div>\n</div>"
+      },
+      {
+        "tag": "SPAN",
+        "role": null,
+        "cls": "tabMenuItemName",
+        "aria": null,
+        "text": "4 - Acadiana",
+        "html": "<span class=\"tabMenuItemName\" data-test-id=\"tabMenuItemName\">4 - Acadiana</span>"
+      },
+      {
+        "tag": "DIV",
+        "role": "menuitem",
+        "cls": "tabMenuItem tabMenuItemComboDropdownTheme tab-ctrl-formatted-text tabMenuMenuItem",
+        "aria": null,
+        "text": "5 - Southwest",
+        "html": "<div class=\"tabMenuItem tabMenuItemComboDropdownTheme tab-ctrl-formatted-text tabMenuMenuItem\" role=\"menuitem\" data-test-id=\"tabMenuItem\">\n  <div class=\"tabMenuItemNameArea\">\n    <span class=\"tabMenuItemName\" data-test-id=\"tabMenuItemName\">5 - Southwest</span>\n  </div>\n</div>"
+      },
+      {
+        "tag": "SPAN",
+        "role": null,
+        "cls": "tabMenuItemName",
+        "aria": null,
+        "text": "5 - Southwest",
+        "html": "<span class=\"tabMenuItemName\" data-test-id=\"tabMenuItemName\">5 - Southwest</span>"
+      },
+      {
+        "tag": "DIV",
+        "role": "menuitem",
+        "cls": "tabMenuItem tabMenuItemComboDropdownTheme tab-ctrl-formatted-text tabMenuMenuItem",
+        "aria": null,
+        "text": "6 - Central",
+        "html": "<div class=\"tabMenuItem tabMenuItemComboDropdownTheme tab-ctrl-formatted-text tabMenuMenuItem\" role=\"menuitem\" data-test-id=\"tabMenuItem\">\n  <div class=\"tabMenuItemNameArea\">\n    <span class=\"tabMenuItemName\" data-test-id=\"tabMenuItemName\">6 - Central</span>\n  </div>\n</div>"
+      },
+      {
+        "tag": "SPAN",
+        "role": null,
+        "cls": "tabMenuItemName",
+        "aria": null,
+        "text": "6 - Central",
+        "html": "<span class=\"tabMenuItemName\" data-test-id=\"tabMenuItemName\">6 - Central</span>"
+      },
+      {
+        "tag": "DIV",
+        "role": "menuitem",
+        "cls": "tabMenuItem tabMenuItemComboDropdownTheme tab-ctrl-formatted-text tabMenuMenuItem",
+        "aria": null,
+        "text": "7 - Northwest",
+        "html": "<div class=\"tabMenuItem tabMenuItemComboDropdownTheme tab-ctrl-formatted-text tabMenuMenuItem\" role=\"menuitem\" data-test-id=\"tabMenuItem\">\n  <div class=\"tabMenuItemNameArea\">\n    <span class=\"tabMenuItemName\" data-test-id=\"tabMenuItemName\">7 - Northwest</span>\n  </div>\n</div>"
+      },
+      {
+        "tag": "SPAN",
+        "role": null,
+        "cls": "tabMenuItemName",
+        "aria": null,
+        "text": "7 - Northwest",
+        "html": "<span class=\"tabMenuItemName\" data-test-id=\"tabMenuItemName\">7 - Northwest</span>"
+      },
+      {
+        "tag": "DIV",
+        "role": "menuitem",
+        "cls": "tabMenuItem tabMenuItemComboDropdownTheme tab-ctrl-formatted-text tabMenuMenuItem",
+        "aria": null,
+        "text": "8 - Northeast",
+        "html": "<div class=\"tabMenuItem tabMenuItemComboDropdownTheme tab-ctrl-formatted-text tabMenuMenuItem\" role=\"menuitem\" data-test-id=\"tabMenuItem\">\n  <div class=\"tabMenuItemNameArea\">\n    <span class=\"tabMenuItemName\" data-test-id=\"tabMenuItemName\">8 - Northeast</span>\n  </div>\n</div>"
+      },
+      {
+        "tag": "SPAN",
+        "role": null,
+        "cls": "tabMenuItemName",
+        "aria": null,
+        "text": "8 - Northeast",
+        "html": "<span class=\"tabMenuItemName\" data-test-id=\"tabMenuItemName\">8 - Northeast</span>"
+      },
+      {
+        "tag": "DIV",
+        "role": "menuitem",
+        "cls": "tabMenuItem tabMenuItemComboDropdownTheme tab-ctrl-formatted-text tabMenuMenuItem",
+        "aria": null,
+        "text": "9 - Northshore",
+        "html": "<div class=\"tabMenuItem tabMenuItemComboDropdownTheme tab-ctrl-formatted-text tabMenuMenuItem\" role=\"menuitem\" data-test-id=\"tabMenuItem\">\n  <div class=\"tabMenuItemNameArea\">\n    <span class=\"tabMenuItemName\" data-test-id=\"tabMenuItemName\">9 - Northshore</span>\n  </div>\n</div>"
+      },
+      {
+        "tag": "SPAN",
+        "role": null,
+        "cls": "tabMenuItemName",
+        "aria": null,
+        "text": "9 - Northshore",
+        "html": "<span class=\"tabMenuItemName\" data-test-id=\"tabMenuItemName\">9 - Northshore</span>"
+      },
+      {
+        "tag": "DIV",
+        "role": "menuitem",
+        "cls": "tabMenuItem tabMenuItemComboDropdownTheme tab-ctrl-formatted-text tabMenuMenuItem",
+        "aria": null,
+        "text": "Out of State",
+        "html": "<div class=\"tabMenuItem tabMenuItemComboDropdownTheme tab-ctrl-formatted-text tabMenuMenuItem\" role=\"menuitem\" data-test-id=\"tabMenuItem\">\n  <div class=\"tabMenuItemNameArea\">\n    <span class=\"tabMenuItemName\" data-test-id=\"tabMenuItemName\">Out of State</span>\n  </div>\n</div>"
+      },
+      {
+        "tag": "SPAN",
+        "role": null,
+        "cls": "tabMenuItemName",
+        "aria": null,
+        "text": "Out of State",
+        "html": "<span class=\"tabMenuItemName\" data-test-id=\"tabMenuItemName\">Out of State</span>"
+      },
+      {
+        "tag": "DIV",
+        "role": "menuitem",
+        "cls": "tabMenuItem tabMenuItemComboDropdownTheme tab-ctrl-formatted-text tabMenuMenuItem",
+        "aria": null,
+        "text": "Unknown",
+        "html": "<div class=\"tabMenuItem tabMenuItemComboDropdownTheme tab-ctrl-formatted-text tabMenuMenuItem\" role=\"menuitem\" data-test-id=\"tabMenuItem\">\n  <div class=\"tabMenuItemNameArea\">\n    <span class=\"tabMenuItemName\" data-test-id=\"tabMenuItemName\">Unknown</span>\n  </div>\n</div>"
+      },
+      {
+        "tag": "SPAN",
+        "role": null,
+        "cls": "tabMenuItemName",
+        "aria": null,
+        "text": "Unknown",
+        "html": "<span class=\"tabMenuItemName\" data-test-id=\"tabMenuItemName\">Unknown</span>"
+      }
+    ]
+  }
 }
