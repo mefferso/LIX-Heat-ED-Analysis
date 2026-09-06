@@ -1,0 +1,39 @@
+name: Validate project
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - "*.html"
+      - "*.css"
+      - "*.js"
+      - "scripts/**"
+      - "config/**"
+      - ".github/workflows/validate.yml"
+  pull_request:
+    paths:
+      - "*.html"
+      - "*.css"
+      - "*.js"
+      - "scripts/**"
+      - "config/**"
+
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Validate Python syntax
+        run: python -m py_compile scripts/update_data.py
+
+      - name: Validate JavaScript syntax
+        run: node --check app.js
+
+      - name: Validate geography JSON
+        run: python -m json.tool config/geography.json > /dev/null
