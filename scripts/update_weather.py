@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Cache local-day weather from routine IEM airport observations (no server required)."""
+"""Cache station observations and build resilient regional heat-exposure metrics."""
 import argparse
 import csv
 import io
@@ -14,19 +14,28 @@ from pathlib import Path
 from zoneinfo import ZoneInfo
 
 ROOT = Path(__file__).resolve().parents[1]
-OUTPUT = ROOT / 'data/weather_daily.csv'
-META = ROOT / 'data/weather_meta.json'
-LOCAL = ZoneInfo('America/Chicago')
-FIELDS = ['date', 'station', 'high_f', 'low_f', 'average_f', 'peak_heat_index_f',
-          'temperature_hours', 'heat_index_hours', 'expected_hours']
-SOURCE = 'https://mesonet.agron.iastate.edu/cgi-bin/request/asos.py'
+OUTPUT = ROOT / "data/weather_daily.csv"
+REGION_OUTPUT = ROOT / "data/weather_region_daily.csv"
+META = ROOT / "data/weather_meta.json"
+LOCAL = ZoneInfo("America/Chicago")
+FIELDS = [
+    "date", "station", "high_f", "low_f", "average_f", "peak_heat_index_f",
+    "morning_low_f", "hi_hours_105", "hi_hours_108",
+    "temperature_hours", "heat_index_hours", "expected_hours",
+]
+REGION_FIELDS = [
+    "date", "ldh_region", "high_f", "low_f", "average_f", "peak_heat_index_f",
+    "morning_low_f", "hi_hours_105", "hi_hours_108",
+    "hi_2day_mean_f", "hi_3day_mean_f", "consecutive_hi108_days",
+    "temperature_hours", "heat_index_hours", "expected_hours",
+    "weather_sources", "fallback_used", "source_count", "population_2020",
+]
+SOURCE = "https://mesonet.agron.iastate.edu/cgi-bin/request/asos.py"
+MIN_REGION_COVERAGE = 0.75
 
 
 def heat_index(t, rh):
-    """NWS Steadman screening, Rothfusz regression, and humidity adjustments, °F.
-
-    https://www.wpc.ncep.noaa.gov/html/heatindex_equation.shtml
-    """
+    """NWS Steadman screening + Rothfusz regression and humidity adjustments, °F."""
     simple = 0.5 * (t + 61.0 + (t - 68.0) * 1.2 + rh * 0.094)
     hi = (simple + t) / 2
     if hi < 80:
@@ -49,102 +58,273 @@ def number(value):
         return None
 
 
+def mean(values):
+    vals = [v for v in values if v is not None and math.isfinite(v)]
+    return sum(vals) / len(vals) if vals else None
+
+
+def fmt(value, digits=1):
+    return "" if value is None or not math.isfinite(value) else f"{value:.{digits}f}"
+
+
 def daily_rows(text, start, end, stations):
-    reader = csv.DictReader(line for line in text.splitlines() if not line.startswith('#'))
-    if not {'station', 'valid', 'tmpf', 'relh'}.issubset(reader.fieldnames or []):
-        raise ValueError('Unexpected IEM CSV headers; retaining previous data')
+    reader = csv.DictReader(line for line in text.splitlines() if not line.startswith("#"))
+    if not {"station", "valid", "tmpf", "relh"}.issubset(reader.fieldnames or []):
+        raise ValueError("Unexpected IEM CSV headers; retaining previous data")
     hours = {}
     for row in reader:
-        station = 'K' + row['station'].removeprefix('K')
+        station = "K" + row["station"].removeprefix("K")
         if station not in stations:
             continue
-        stamp = datetime.fromisoformat(row['valid']).replace(tzinfo=timezone.utc)
-        day = stamp.astimezone(LOCAL).date()
-        t, rh = number(row['tmpf']), number(row['relh'])
+        stamp = datetime.fromisoformat(row["valid"]).replace(tzinfo=timezone.utc)
+        local_stamp = stamp.astimezone(LOCAL)
+        day = local_stamp.date()
+        t, rh = number(row["tmpf"]), number(row["relh"])
         if not start <= day < end or t is None or not -100 <= t <= 140:
             continue
-        # Some AWOS sites send multiple routine reports/hour. Keep the latest
-        # valid temperature report, so extra reports do not bias the mean.
+        # Keep latest valid temperature report in each UTC hour so reporting cadence
+        # does not bias daily means. RH stays paired to that same observation.
         key = (station, stamp.replace(minute=0, second=0, microsecond=0))
         if key not in hours or stamp > hours[key][0]:
-            hours[key] = (stamp, day, t, rh if rh is not None and 0 <= rh <= 100 else None)
+            hours[key] = (
+                stamp, local_stamp, day, t,
+                rh if rh is not None and 0 <= rh <= 100 else None,
+            )
+
     grouped = defaultdict(list)
     for (station, _), obs in hours.items():
-        grouped[(obs[1], station)].append(obs)
+        grouped[(obs[2], station)].append(obs)
+
     result = []
     day = start
     while day < end:
         midnight = datetime.combine(day, datetime.min.time(), LOCAL).astimezone(timezone.utc)
-        tomorrow = datetime.combine(day+timedelta(days=1), datetime.min.time(), LOCAL).astimezone(timezone.utc)
+        tomorrow = datetime.combine(day + timedelta(days=1), datetime.min.time(), LOCAL).astimezone(timezone.utc)
         for station in stations:
             obs = grouped[(day, station)]
-            temps = [o[2] for o in obs]
-            his = [heat_index(o[2], o[3]) for o in obs if o[3] is not None]
-            result.append(dict(zip(FIELDS, [day.isoformat(), station,
-                round(max(temps), 1) if temps else '', round(min(temps), 1) if temps else '',
-                round(sum(temps)/len(temps), 1) if temps else '', round(max(his), 1) if his else '',
-                len(temps), len(his), int((tomorrow-midnight).total_seconds()/3600)])))
+            temps = [o[3] for o in obs]
+            his = [heat_index(o[3], o[4]) for o in obs if o[4] is not None]
+            morning = [o[3] for o in obs if o[1].hour < 12]
+            result.append(dict(zip(FIELDS, [
+                day.isoformat(), station,
+                round(max(temps), 1) if temps else "",
+                round(min(temps), 1) if temps else "",
+                round(sum(temps)/len(temps), 1) if temps else "",
+                round(max(his), 1) if his else "",
+                round(min(morning), 1) if morning else "",
+                sum(1 for x in his if x >= 105),
+                sum(1 for x in his if x >= 108),
+                len(temps), len(his),
+                int((tomorrow-midnight).total_seconds()/3600),
+            ])))
         day += timedelta(days=1)
     return result
 
 
 def download(start, end, stations):
-    params = {'station':[s.removeprefix('K') for s in stations], 'data':['tmpf','relh'],
-        'sts':datetime.combine(start, datetime.min.time(), LOCAL).astimezone(timezone.utc).isoformat(),
-        'ets':datetime.combine(end, datetime.min.time(), LOCAL).astimezone(timezone.utc).isoformat(),
-        'tz':'UTC', 'format':'onlycomma', 'latlon':'no', 'elev':'no', 'missing':'M', 'report_type':'3'}
-    request = urllib.request.Request(SOURCE+'?'+urllib.parse.urlencode(params, doseq=True),
-        headers={'User-Agent':'LIX-Heat-ED-Analysis/3.0 (github.com/mefferso/LIX-Heat-ED-Analysis)'})
+    params = {
+        "station": [s.removeprefix("K") for s in stations],
+        "data": ["tmpf", "relh"],
+        "sts": datetime.combine(start, datetime.min.time(), LOCAL).astimezone(timezone.utc).isoformat(),
+        "ets": datetime.combine(end, datetime.min.time(), LOCAL).astimezone(timezone.utc).isoformat(),
+        "tz": "UTC", "format": "onlycomma", "latlon": "no", "elev": "no",
+        "missing": "M", "report_type": "3",
+    }
+    request = urllib.request.Request(
+        SOURCE + "?" + urllib.parse.urlencode(params, doseq=True),
+        headers={"User-Agent": "LIX-Heat-ED-Analysis/4.0 (github.com/mefferso/LIX-Heat-ED-Analysis)"},
+    )
     for attempt in range(3):
         try:
             with urllib.request.urlopen(request, timeout=180) as response:
-                text = response.read().decode('utf-8')
+                text = response.read().decode("utf-8")
             rows = daily_rows(text, start, end, stations)
-            for station in stations:
-                if not any(r['temperature_hours'] for r in rows if r['station'] == station):
-                    raise ValueError(f'No temperatures received for {station}; retaining previous dataset')
+            if not any(r["temperature_hours"] for r in rows):
+                raise ValueError("No temperatures received from any configured station")
             return rows
         except Exception:
             if attempt == 2:
                 raise
-            time.sleep(3*(attempt+1))
+            time.sleep(3 * (attempt + 1))
+
+
+def station_coverage(row):
+    expected = number(row.get("expected_hours"))
+    th = number(row.get("temperature_hours"))
+    hh = number(row.get("heat_index_hours"))
+    if not expected or th is None or hh is None:
+        return 0.0
+    return min(th/expected, hh/expected)
+
+
+def row_complete(row, coverage=MIN_REGION_COVERAGE):
+    return (
+        station_coverage(row) >= coverage
+        and all(number(row.get(k)) is not None for k in
+                ("high_f", "low_f", "average_f", "peak_heat_index_f", "morning_low_f"))
+    )
+
+
+def population_by_region(cfg):
+    out = defaultdict(int)
+    for p in cfg["parishes"]:
+        out[p["region"]] += int(p.get("population_2020") or 0)
+    return dict(out)
+
+
+def build_region_rows(station_rows, cfg):
+    by_key = {(r["date"], r["station"]): r for r in station_rows}
+    pops = population_by_region(cfg)
+    dates = sorted({r["date"] for r in station_rows})
+    rows = []
+
+    for d in dates:
+        for rid, region in cfg["regions"].items():
+            primary = list(region.get("weather_stations", []))
+            fallback = list(region.get("weather_fallback_stations", []))
+            primary_good = [by_key.get((d, s)) for s in primary]
+            primary_good = [r for r in primary_good if r and row_complete(r)]
+            used = primary_good
+
+            # Preserve the intended multi-station Southeast mean when possible.
+            # If no primary station meets QC, use the first qualified fallback.
+            if not used:
+                used = []
+                for s in fallback:
+                    r = by_key.get((d, s))
+                    if r and row_complete(r):
+                        used = [r]
+                        break
+
+            if not used:
+                rows.append({k: "" for k in REGION_FIELDS} | {
+                    "date": d, "ldh_region": rid, "population_2020": pops.get(rid, 0),
+                    "weather_sources": "", "fallback_used": "", "source_count": 0,
+                })
+                continue
+
+            def av(key):
+                return mean([number(r.get(key)) for r in used])
+
+            sources = [r["station"] for r in used]
+            expected = mean([number(r.get("expected_hours")) for r in used])
+            row = {
+                "date": d, "ldh_region": rid,
+                "high_f": fmt(av("high_f")),
+                "low_f": fmt(av("low_f")),
+                "average_f": fmt(av("average_f")),
+                "peak_heat_index_f": fmt(av("peak_heat_index_f")),
+                "morning_low_f": fmt(av("morning_low_f")),
+                "hi_hours_105": fmt(av("hi_hours_105"), 2),
+                "hi_hours_108": fmt(av("hi_hours_108"), 2),
+                "hi_2day_mean_f": "", "hi_3day_mean_f": "",
+                "consecutive_hi108_days": "",
+                "temperature_hours": fmt(av("temperature_hours"), 2),
+                "heat_index_hours": fmt(av("heat_index_hours"), 2),
+                "expected_hours": fmt(expected, 2),
+                "weather_sources": "/".join(sources),
+                "fallback_used": 1 if any(s not in primary for s in sources) else 0,
+                "source_count": len(sources),
+                "population_2020": pops.get(rid, 0),
+            }
+            rows.append(row)
+
+    # Persistence features are calculated within each region on actual consecutive dates.
+    grouped = defaultdict(list)
+    for row in rows:
+        grouped[row["ldh_region"]].append(row)
+    for region_rows in grouped.values():
+        region_rows.sort(key=lambda r: r["date"])
+        streak = 0
+        for i, row in enumerate(region_rows):
+            hi = number(row["peak_heat_index_f"])
+            previous_date = date.fromisoformat(region_rows[i-1]["date"]) if i else None
+            current_date = date.fromisoformat(row["date"])
+            consecutive = i and (current_date - previous_date).days == 1
+            streak = streak + 1 if hi is not None and hi >= 108 and consecutive else (1 if hi is not None and hi >= 108 else 0)
+            row["consecutive_hi108_days"] = streak if hi is not None else ""
+
+            for window, key in ((2, "hi_2day_mean_f"), (3, "hi_3day_mean_f")):
+                if i + 1 < window:
+                    continue
+                subset = region_rows[i-window+1:i+1]
+                ds = [date.fromisoformat(x["date"]) for x in subset]
+                vals = [number(x["peak_heat_index_f"]) for x in subset]
+                if all(v is not None for v in vals) and all((ds[j]-ds[j-1]).days == 1 for j in range(1, len(ds))):
+                    row[key] = fmt(sum(vals)/len(vals))
+
+    return sorted(rows, key=lambda r: (r["date"], r["ldh_region"]))
+
+
+def write_csv(path, rows, fields):
+    buf = io.StringIO()
+    writer = csv.DictWriter(buf, fieldnames=fields, lineterminator="\n")
+    writer.writeheader()
+    writer.writerows(rows)
+    tmp = path.with_suffix(".tmp")
+    tmp.write_text(buf.getvalue())
+    tmp.replace(path)
 
 
 def main():
     parser = argparse.ArgumentParser()
-    parser.add_argument('--full', action='store_true', help='Rebuild from 2023')
+    parser.add_argument("--full", action="store_true", help="Rebuild from 2023")
     args = parser.parse_args()
-    geo = json.loads((ROOT/'config/geography.json').read_text())
-    stations = sorted({s for r in geo['regions'].values() for s in r['weather_stations']})
+    cfg = json.loads((ROOT / "config/geography.json").read_text())
+    all_stations = sorted({
+        s for r in cfg["regions"].values()
+        for s in list(r.get("weather_stations", [])) + list(r.get("weather_fallback_stations", []))
+    })
     end = datetime.now(LOCAL).date()  # completed local days only
     start = date(2023, 1, 1)
     old = []
     if OUTPUT.exists() and not args.full:
         old = list(csv.DictReader(OUTPUT.open()))
         if old:
-            start = max(start, date.fromisoformat(max(r['date'] for r in old))-timedelta(days=7))
-    rows = [r for r in old if r['date'] < start.isoformat()]
+            start = max(start, date.fromisoformat(max(r["date"] for r in old)) - timedelta(days=7))
+
+    rows = [r for r in old if r["date"] < start.isoformat()]
     cursor = start
     while cursor < end:
-        stop = min(date(cursor.year+1, 1, 1), end)
-        print(f'Fetching {cursor} through {stop} (exclusive): {", ".join(stations)}', flush=True)
-        rows.extend(download(cursor, stop, stations))
+        stop = min(date(cursor.year + 1, 1, 1), end)
+        print(f"Fetching {cursor} through {stop} (exclusive): {', '.join(all_stations)}", flush=True)
+        fresh = download(cursor, stop, all_stations)
+        rows.extend(fresh)
+        counts = {s: sum(number(r["temperature_hours"]) or 0 for r in fresh if r["station"] == s)
+                  for s in all_stations}
+        print("  valid temperature-hours: " + ", ".join(f"{s}={int(counts[s])}" for s in all_stations), flush=True)
         cursor = stop
-        time.sleep(1.1)  # IEM per-IP throttle
-    rows.sort(key=lambda r:(r['date'], r['station']))
-    buffer = io.StringIO()
-    writer = csv.DictWriter(buffer, fieldnames=FIELDS, lineterminator='\n')
-    writer.writeheader()
-    writer.writerows(rows)
-    temporary = OUTPUT.with_suffix('.tmp')
-    temporary.write_text(buffer.getvalue())
-    temporary.replace(OUTPUT)
-    META.write_text(json.dumps({'generated_at':datetime.now(timezone.utc).isoformat(),
-        'source':SOURCE, 'timezone':'America/Chicago', 'stations':stations,
-        'period_start':rows[0]['date'], 'period_end':rows[-1]['date'], 'rows':len(rows),
-        'method':'Latest routine observation per UTC hour; local-day extrema and arithmetic hourly mean. NWS heat index computed per hour. Blank when no observations; counts indicate partial days.'}, indent=2)+'\n')
-    print(f'Saved {len(rows)} station-days', flush=True)
+        time.sleep(1.1)
+
+    rows.sort(key=lambda r: (r["date"], r["station"]))
+    write_csv(OUTPUT, rows, FIELDS)
+    region_rows = build_region_rows(rows, cfg)
+    write_csv(REGION_OUTPUT, region_rows, REGION_FIELDS)
+
+    fallback_days = {
+        rid: sum(1 for r in region_rows if r["ldh_region"] == rid and str(r["fallback_used"]) == "1")
+        for rid in cfg["regions"]
+    }
+    META.write_text(json.dumps({
+        "generated_at": datetime.now(timezone.utc).isoformat(),
+        "source": SOURCE,
+        "timezone": "America/Chicago",
+        "stations": all_stations,
+        "period_start": rows[0]["date"],
+        "period_end": rows[-1]["date"],
+        "rows": len(rows),
+        "regional_rows": len(region_rows),
+        "regional_min_coverage": MIN_REGION_COVERAGE,
+        "fallback_days": fallback_days,
+        "method": (
+            "Latest routine observation per UTC hour; local-day extrema and arithmetic hourly mean. "
+            "NWS heat index computed per hour. Regional analysis uses configured primary stations meeting "
+            "75% daily temperature/heat-index coverage, then explicit fallbacks. Morning low is 00-11 local. "
+            "Persistence fields use consecutive regional days."
+        ),
+    }, indent=2) + "\n")
+    print(f"Saved {len(rows)} station-days and {len(region_rows)} region-days", flush=True)
 
 
-if __name__ == '__main__':
+if __name__ == "__main__":
     main()
