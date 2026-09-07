@@ -17,7 +17,7 @@ permissions:
   contents: write
 
 concurrency:
-  # Shared with update-data.yml because both can write advanced_analysis.json and push generated data.
+  # Shared lock with update-data.yml prevents concurrent generated-data commits.
   group: heat-health-generated-data-${{ github.ref }}
   cancel-in-progress: false
 
