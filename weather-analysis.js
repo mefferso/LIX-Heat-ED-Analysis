@@ -35,13 +35,19 @@ function configuredPopulation(geography, region) {
     .reduce((sum,p)=>sum+(finiteValue(p.population_2020)||0),0);
 }
 
+function configuredHealthPopulation(geography, region) {
+  const base=configuredPopulation(geography,region);
+  const extra=finiteValue(geography.regions?.[region]?.health_population_extra_2020)||0;
+  return base+extra;
+}
+
 function weatherPairs({analysis, regionWeather, regions, geography, start, end, season,
                        lag=0, metricKeys=CORE_CORRELATION_METRICS.map(m=>m.key)}) {
   const ed = new Map();
   for (const row of analysis) {
     const visits = finiteValue(row.ed_visits);
-    const pop = finiteValue(row.health_population_2020);
-    if (visits !== null && visits >= 0 && pop !== null && pop > 0 &&
+    const pop = finiteValue(row.health_population_2020) || configuredHealthPopulation(geography,row.ldh_region);
+    if (visits !== null && visits >= 0 && pop > 0 &&
         regions.includes(row.ldh_region) && (season === "all" || String(row.season) === season)) {
       ed.set(row.date + "|" + row.ldh_region, {visits,pop});
     }
@@ -429,5 +435,6 @@ function renderWeatherCorrelations() {
 
 if (typeof module !== "undefined") module.exports = {
   finiteValue,shiftDate,weatherPairs,linearStats,loessCurve,piecewiseBreakpoint,
-  breakpointWithCI,binnedStats,CORE_CORRELATION_METRICS,EXTENDED_CORRELATION_METRICS
+  breakpointWithCI,binnedStats,configuredPopulation,configuredHealthPopulation,
+  CORE_CORRELATION_METRICS,EXTENDED_CORRELATION_METRICS
 };
