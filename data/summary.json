@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-09-07T06:23:21.662797+00:00",
+  "generated_at": "2026-09-07T06:29:14.001204+00:00",
   "iem_status": "ok",
   "iem_rows_received": 6536,
   "heat_event_zone_rows_used": 4912,
@@ -27,7 +27,7 @@
   "ldh_period_start": "2023-04-01",
   "ldh_period_end": "2026-08-29",
   "ldh_source_updated": "9/3/2026",
-  "ldh_fetched_at": "2026-09-07T06:23:19.605Z",
+  "ldh_fetched_at": "2026-09-07T06:29:11.527Z",
   "analysis_region_rows": 3172,
   "population_source": "2020 U.S. Census PL 94-171 POP100",
   "population_source_url": "https://tigerweb.geo.census.gov/tigerwebmain/Files/bas25/tigerweb_bas25_county_2020_tab20_la.html",
