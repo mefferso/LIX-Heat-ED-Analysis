@@ -25,6 +25,7 @@ ANALYSIS = ROOT / "data/analysis_region_daily.csv"
 WEATHER = ROOT / "data/weather_region_daily.csv"
 WBGT = ROOT / "data/wbgt_region_daily.csv"
 OUTPUT = ROOT / "data/advanced_analysis.json"
+CONFIG = ROOT / "config/geography.json"
 
 METRICS = [
     ("high_f", "High temperature", "°F"),
@@ -64,9 +65,31 @@ def merge_data():
     df["month"] = df["date"].dt.month.astype(str)
     df["dow"] = df["date"].dt.dayofweek.astype(str)
     df["ldh_region"] = df["ldh_region"].astype(str)
-    df["health_population_2020"] = pd.to_numeric(df["health_population_2020"], errors="coerce")
+
+    # Be compatible with analysis CSVs generated just before the population columns
+    # were introduced. This also makes weather and LDH workflows safe to serialize
+    # in either order after a code deployment.
+    cfg = json.loads(CONFIG.read_text())
+    configured_population = {}
+    for rid, region in cfg["regions"].items():
+        base = sum(
+            int(p.get("population_2020") or 0)
+            for p in cfg["parishes"] if str(p.get("region")) == str(rid)
+        )
+        configured_population[str(rid)] = base + int(region.get("health_population_extra_2020") or 0)
+
+    if "health_population_2020" not in df.columns:
+        df["health_population_2020"] = df["ldh_region"].map(configured_population)
+    else:
+        df["health_population_2020"] = pd.to_numeric(df["health_population_2020"], errors="coerce")
+        missing_pop = df["health_population_2020"].isna() | (df["health_population_2020"] <= 0)
+        df.loc[missing_pop, "health_population_2020"] = df.loc[missing_pop, "ldh_region"].map(configured_population)
+
     df["ed_visits"] = pd.to_numeric(df["ed_visits"], errors="coerce")
-    df["ed_visits_per_100k"] = pd.to_numeric(df["ed_visits_per_100k"], errors="coerce")
+    if "ed_visits_per_100k" not in df.columns:
+        df["ed_visits_per_100k"] = df["ed_visits"] / df["health_population_2020"] * 100000.0
+    else:
+        df["ed_visits_per_100k"] = pd.to_numeric(df["ed_visits_per_100k"], errors="coerce")
     for key, _, _ in METRICS:
         df[key] = pd.to_numeric(df.get(key), errors="coerce")
     return df
