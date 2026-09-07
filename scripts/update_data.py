@@ -304,6 +304,9 @@ def build_region_analysis(hazard_rows, ldh_rows):
             hours_total += float(h["hazard_hours"])
 
         n = len(parishes)
+        lix_population = sum(int(PARISH_META[p].get("population_2020") or 0) for p in parishes)
+        health_population = lix_population + int(CFG["regions"][region].get("health_population_extra_2020") or 0)
+        ed_rate = (ldh["ed_visits"] / health_population * 100000.0) if health_population else None
         headline = "warning" if warning else "advisory" if advisory else "none"
         rows.append({
             "date": ldh["date"],
@@ -311,6 +314,8 @@ def build_region_analysis(hazard_rows, ldh_rows):
             "ldh_region": region,
             "region_name": ldh["region_name"],
             "ed_visits": ldh["ed_visits"],
+            "health_population_2020": health_population,
+            "ed_visits_per_100k": f"{ed_rate:.3f}" if ed_rate is not None else "",
             "lix_parish_count": n,
             "advisory_parishes": advisory,
             "warning_parishes": warning,
@@ -347,7 +352,8 @@ def main():
         ANALYSIS_OUTPUT,
         analysis_rows,
         [
-            "date", "season", "ldh_region", "region_name", "ed_visits", "lix_parish_count",
+            "date", "season", "ldh_region", "region_name", "ed_visits",
+            "health_population_2020", "ed_visits_per_100k", "lix_parish_count",
             "advisory_parishes", "warning_parishes", "advisory_pct", "warning_pct",
             "severity_score", "headline", "mean_hazard_hours",
         ],
@@ -386,7 +392,9 @@ def main():
         "ldh_source_updated": ldh_meta.get("source_updated"),
         "ldh_fetched_at": ldh_meta.get("fetched_at"),
         "analysis_region_rows": len(analysis_rows),
-        "south_central_note": "LDH Region 3 includes St. Mary Parish, which is outside the LIX CWA.",
+        "population_source": CFG.get("population_source"),
+        "population_source_url": CFG.get("population_source_url"),
+        "south_central_note": "LDH Region 3 includes St. Mary Parish, which is outside the LIX CWA. Region 3 ED rates include St. Mary in the population denominator; LIX headline/weather geography does not.",
     }
     SUMMARY_OUTPUT.write_text(json.dumps(summary, indent=2) + "\n", encoding="utf-8")
     print(json.dumps(summary, indent=2))
