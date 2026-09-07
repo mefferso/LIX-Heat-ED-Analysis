@@ -302,5 +302,16 @@ Peak heat index uses the NWS Steadman/Rothfusz approach with humidity adjustment
 
 The weather/WBGT Action refreshes the airport archive, regional exposure series, WBGT archive, and adjusted model summary. WBGT reanalysis intentionally trails real time by several days; it is a retrospective analysis variable, not an operational real-time observation.
 
-Population values come from the 2020 U.S. Census PL 94-171 Louisiana parish population table and are stored in `config/geography.json`.
+The airport updater records its archive schema version in `data/weather_meta.json`.
+Schema or configured-station changes trigger a full historical backfill automatically;
+ordinary updates refresh the latest week. Missing ancillary metrics do not discard
+otherwise qualified high/low/average temperature or peak heat index. A coverage-loss
+guard checks station-year and region-year counts before replacing the saved archive.
 
+Run `node tests/archive.cjs` to check the actual published CSVs through the dashboard's
+loader and pairing code. It verifies coverage in every available season/area, populated
+scatter plots, and all five core adjusted models. Both data workflows run this check
+before committing their output. Observation gaps that fail the 75% coverage rule remain
+missing rather than being interpolated.
+
+Population values come from the 2020 U.S. Census PL 94-171 Louisiana parish population table and are stored in `config/geography.json`.

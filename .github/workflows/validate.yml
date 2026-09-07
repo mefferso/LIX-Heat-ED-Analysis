@@ -10,6 +10,9 @@ on:
       - "scripts/**"
       - "config/**"
       - "tests/**"
+      - "data/weather*.csv"
+      - "data/wbgt_region_daily.csv"
+      - "data/advanced_analysis.json"
       - ".github/workflows/validate.yml"
   pull_request:
     paths:
@@ -19,6 +22,9 @@ on:
       - "scripts/**"
       - "config/**"
       - "tests/**"
+      - "data/weather*.csv"
+      - "data/wbgt_region_daily.csv"
+      - "data/advanced_analysis.json"
 
 jobs:
   validate:
@@ -39,6 +45,7 @@ jobs:
           python -m unittest discover -s tests
           node tests/chart.cjs
           node tests/correlation.cjs
+          node tests/archive.cjs
 
       - name: Validate JavaScript syntax
         run: |

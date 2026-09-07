@@ -27,6 +27,8 @@ jobs:
     timeout-minutes: 60
     steps:
       - uses: actions/checkout@v4
+        with:
+          ref: main
       - uses: actions/setup-python@v5
         with:
           python-version: "3.12"
@@ -42,6 +44,9 @@ jobs:
 
       - name: Build adjusted heat-health model summaries
         run: python scripts/build_advanced_analysis.py
+
+      - name: Verify published archive coverage and comparisons
+        run: node tests/archive.cjs
 
       - name: Commit weather and analysis data
         run: |

@@ -27,6 +27,8 @@ jobs:
     steps:
       - name: Check out repository
         uses: actions/checkout@v4
+        with:
+          ref: main
 
       - name: Set up Python
         uses: actions/setup-python@v5
@@ -54,6 +56,9 @@ jobs:
 
       - name: Refresh adjusted heat-health model summaries
         run: python scripts/build_advanced_analysis.py
+
+      - name: Verify published archive coverage and comparisons
+        run: node tests/archive.cjs
 
       - name: Commit generated data
         run: |

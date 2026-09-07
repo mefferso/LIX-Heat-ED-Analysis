@@ -32,6 +32,8 @@ REGION_FIELDS = [
 ]
 SOURCE = "https://mesonet.agron.iastate.edu/cgi-bin/request/asos.py"
 MIN_REGION_COVERAGE = 0.75
+ARCHIVE_SCHEMA_VERSION = 2
+CORE_FIELDS = ("high_f", "low_f", "average_f", "peak_heat_index_f")
 
 
 def heat_index(t, rh):
@@ -158,11 +160,53 @@ def station_coverage(row):
 
 
 def row_complete(row, coverage=MIN_REGION_COVERAGE):
+    # Ancillary fields must not invalidate observed core weather. In particular,
+    # pre-upgrade rows have no morning low or duration metrics.
     return (
         station_coverage(row) >= coverage
-        and all(number(row.get(k)) is not None for k in
-                ("high_f", "low_f", "average_f", "peak_heat_index_f", "morning_low_f"))
+        and all(number(row.get(k)) is not None for k in CORE_FIELDS)
     )
+
+
+def needs_archive_rebuild(old, metadata, stations):
+    """Migrate historical calculations and new stations, not just the last week."""
+    if not old:
+        return True
+    if metadata.get("schema_version") != ARCHIVE_SCHEMA_VERSION:
+        return True
+    if set(metadata.get("stations", [])) != set(stations):
+        return True
+    # Detect partially migrated archives even if newer headers were written over
+    # old rows. Duration zero is valid; blank on an observed day is not.
+    return any(
+        not set(FIELDS).issubset(row)
+        or (number(row.get("heat_index_hours")) not in (None, 0)
+            and any(number(row.get(k)) is None for k in ("hi_hours_105", "hi_hours_108")))
+        for row in old
+    )
+
+
+def validate_archive(rows, region_rows, old, cfg):
+    """Reject empty/partial provider responses before replacing published data."""
+    if not rows or not any(row_complete(r) for r in rows):
+        raise ValueError("No usable weather received; retaining previous archive")
+    for candidate, previous, area_key, fields in (
+        (rows, old, "station", CORE_FIELDS),
+        (region_rows, build_region_rows(old, cfg), "ldh_region", CORE_FIELDS),
+    ):
+        def counts(source):
+            out = defaultdict(int)
+            for row in source:
+                if all(number(row.get(k)) is not None for k in fields):
+                    out[(row["date"][:4], row[area_key])] += 1
+            return out
+        before, after = counts(previous), counts(candidate)
+        for key, n in before.items():
+            if n - after[key] > max(3, n * 0.05):
+                raise ValueError(
+                    f"Weather coverage regression for {key}: {n} -> {after[key]} days; "
+                    "retaining previous archive"
+                )
 
 
 def population_by_region(cfg):
@@ -278,10 +322,14 @@ def main():
     end = datetime.now(LOCAL).date()  # completed local days only
     start = date(2023, 1, 1)
     old = []
-    if OUTPUT.exists() and not args.full:
+    if OUTPUT.exists():
         old = list(csv.DictReader(OUTPUT.open()))
-        if old:
-            start = max(start, date.fromisoformat(max(r["date"] for r in old)) - timedelta(days=7))
+    metadata = json.loads(META.read_text()) if META.exists() else {}
+    rebuild = args.full or needs_archive_rebuild(old, metadata, all_stations)
+    if old and not rebuild:
+        start = max(start, date.fromisoformat(max(r["date"] for r in old)) - timedelta(days=7))
+    elif old:
+        print("Backfilling the full weather archive for schema/station changes", flush=True)
 
     rows = [r for r in old if r["date"] < start.isoformat()]
     cursor = start
@@ -297,8 +345,9 @@ def main():
         time.sleep(1.1)
 
     rows.sort(key=lambda r: (r["date"], r["station"]))
-    write_csv(OUTPUT, rows, FIELDS)
     region_rows = build_region_rows(rows, cfg)
+    validate_archive(rows, region_rows, old, cfg)
+    write_csv(OUTPUT, rows, FIELDS)
     write_csv(REGION_OUTPUT, region_rows, REGION_FIELDS)
 
     fallback_days = {
@@ -307,6 +356,7 @@ def main():
     }
     META.write_text(json.dumps({
         "generated_at": datetime.now(timezone.utc).isoformat(),
+        "schema_version": ARCHIVE_SCHEMA_VERSION,
         "source": SOURCE,
         "timezone": "America/Chicago",
         "stations": all_stations,

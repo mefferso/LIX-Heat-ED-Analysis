@@ -3,7 +3,8 @@ import unittest
 from datetime import date
 from pathlib import Path
 sys.path.insert(0, str(Path(__file__).resolve().parents[1]/'scripts'))
-from update_weather import heat_index, daily_rows, build_region_rows
+from update_weather import (heat_index, daily_rows, build_region_rows, row_complete,
+                            needs_archive_rebuild, validate_archive, ARCHIVE_SCHEMA_VERSION)
 
 class WeatherTests(unittest.TestCase):
     def test_nws_reference_values(self):
@@ -44,6 +45,44 @@ class WeatherTests(unittest.TestCase):
     def test_reject_bad_response(self):
         with self.assertRaises(ValueError):
             daily_rows('<html>Error</html>', date(2023,1,1),date(2023,1,2),['KBTR'])
+
+    def test_legacy_core_weather_survives_missing_ancillary_fields(self):
+        row = {'date':'2025-07-01','station':'KBTR','high_f':'94','low_f':'76',
+               'average_f':'85','peak_heat_index_f':'109',
+               'temperature_hours':'24','heat_index_hours':'24','expected_hours':'24'}
+        cfg = {'regions':{'2':{'weather_stations':['KBTR']}},'parishes':[]}
+        self.assertTrue(row_complete(row))
+        regional = build_region_rows([row], cfg)[0]
+        self.assertEqual(regional['high_f'], '94.0')
+        self.assertEqual(regional['peak_heat_index_f'], '109.0')
+        self.assertEqual(regional['morning_low_f'], '')
+        self.assertEqual(regional['hi_hours_105'], '')
+        # Keep the existing observation-coverage QC even for legacy rows.
+        self.assertFalse(row_complete(row | {'heat_index_hours':'10'}))
+
+    def test_archive_migration_checks_schema_rows_and_stations(self):
+        rows = daily_rows('station,valid,tmpf,relh\nBTR,2025-07-01 05:53,80,70\n',
+                          date(2025,7,1),date(2025,7,2),['KBTR'])
+        meta = {'schema_version':ARCHIVE_SCHEMA_VERSION,'stations':['KBTR']}
+        self.assertFalse(needs_archive_rebuild(rows,meta,['KBTR']))
+        self.assertTrue(needs_archive_rebuild(rows,{},['KBTR']))
+        self.assertTrue(needs_archive_rebuild(rows,meta,['KBTR','KREG']))
+        self.assertTrue(needs_archive_rebuild([rows[0] | {'hi_hours_105':''}],meta,['KBTR']))
+        self.assertTrue(needs_archive_rebuild([],meta,['KBTR']))
+
+    def test_partial_station_response_cannot_wipe_published_archive(self):
+        cfg = {'regions':{'2':{'weather_stations':['KBTR']},
+                          '9':{'weather_stations':['KASD']}},'parishes':[]}
+        old = [{'date':f'2025-07-{d:02d}','station':s,'high_f':94,'low_f':76,
+                'average_f':85,'peak_heat_index_f':109,'morning_low_f':76,
+                'temperature_hours':24,'heat_index_hours':24,'expected_hours':24}
+               for d in range(1,11) for s in ['KBTR','KASD']]
+        partial = [r if r['station']=='KBTR' else r | {'high_f':'','low_f':'',
+                   'average_f':'','peak_heat_index_f':'','temperature_hours':0,'heat_index_hours':0}
+                   for r in old]
+        with self.assertRaisesRegex(ValueError, 'coverage regression'):
+            validate_archive(partial,build_region_rows(partial,cfg),old,cfg)
+        validate_archive(old,build_region_rows(old,cfg),old,cfg)
 
     def test_regional_primary_fallback_and_persistence(self):
         cfg = {
