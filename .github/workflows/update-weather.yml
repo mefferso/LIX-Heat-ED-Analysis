@@ -17,7 +17,7 @@ permissions:
   contents: write
 
 concurrency:
-  group: weather-wbgt-${{ github.ref }}
+  # Shared with update-data.yml because both can write advanced_analysis.json and push generated data.\n  group: heat-health-generated-data-${{ github.ref }}
   cancel-in-progress: false
 
 jobs:
