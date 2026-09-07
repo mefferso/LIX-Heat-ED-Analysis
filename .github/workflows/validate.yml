@@ -9,6 +9,7 @@ on:
       - "*.js"
       - "scripts/**"
       - "config/**"
+      - "tests/**"
       - ".github/workflows/validate.yml"
   pull_request:
     paths:
@@ -17,6 +18,7 @@ on:
       - "*.js"
       - "scripts/**"
       - "config/**"
+      - "tests/**"
 
 jobs:
   validate:
@@ -30,7 +32,12 @@ jobs:
           python-version: "3.12"
 
       - name: Validate Python syntax
-        run: python -m py_compile scripts/update_data.py
+        run: python -m py_compile scripts/update_data.py scripts/update_weather.py
+
+      - name: Verify weather calculations and chart integration
+        run: |
+          python -m unittest discover -s tests
+          node tests/chart.cjs
 
       - name: Validate JavaScript syntax
         run: |

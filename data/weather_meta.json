@@ -1,0 +1,16 @@
+{
+  "generated_at": "2026-09-07T04:06:02.054253+00:00",
+  "source": "https://mesonet.agron.iastate.edu/cgi-bin/request/asos.py",
+  "timezone": "America/Chicago",
+  "stations": [
+    "KASD",
+    "KBTR",
+    "KHUM",
+    "KMSY",
+    "KNEW"
+  ],
+  "period_start": "2023-01-01",
+  "period_end": "2026-09-05",
+  "rows": 6720,
+  "method": "Latest routine observation per UTC hour; local-day extrema and arithmetic hourly mean. NWS heat index computed per hour. Blank when no observations; counts indicate partial days."
+}

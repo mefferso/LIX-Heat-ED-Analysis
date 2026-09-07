@@ -3,10 +3,10 @@
   "state": "LA",
   "notes": "Parish-first Louisiana subset of the WFO LIX CWA. LDH Region 3 includes St. Mary Parish, but St. Mary is outside LIX and is excluded.",
   "regions": {
-    "1": {"name": "Southeast / New Orleans", "short_name": "Southeast"},
-    "2": {"name": "Capital", "short_name": "Capital"},
-    "3": {"name": "South Central (LIX subset)", "short_name": "South Central"},
-    "9": {"name": "Northshore", "short_name": "Northshore"}
+    "1": {"name": "Southeast / New Orleans", "short_name": "Southeast", "weather_stations": ["KMSY", "KNEW"]},
+    "2": {"name": "Capital", "short_name": "Capital", "weather_stations": ["KBTR"]},
+    "3": {"name": "South Central (LIX subset)", "short_name": "South Central", "weather_stations": ["KHUM"]},
+    "9": {"name": "Northshore", "short_name": "Northshore", "weather_stations": ["KASD"]}
   },
   "parishes": [
     {"name":"Ascension","fips":"22005","region":"2"},

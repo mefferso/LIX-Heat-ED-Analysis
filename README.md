@@ -149,7 +149,7 @@ The GitHub Pages dashboard supports:
 - Capital
 - South Central
 - Northshore
-- individual parish heat-headline timelines
+- toggles for daily high, low, average temperature, and peak heat index
 
 Health metrics include:
 
@@ -160,7 +160,7 @@ Health metrics include:
 - Pearson correlation
 - 0-, 1-, 2-, and 3-day lag correlations
 
-For individual parish views, only the NWS/IEM headline history is shown because the public LDH dashboard does not expose the **daily** HRI ED series at parish resolution.
+The area selector offers the combined Louisiana CWA and four LDH regions.
 
 ## Headline severity
 
@@ -204,3 +204,22 @@ https://mesonet.agron.iastate.edu/request/gis/watchwarn.phtml
 This is an exploratory operational/public-health analysis, not a causal study. Heat headlines are not randomized exposure. Weather severity, behavior, demographics, access to cooling, location of exposure, healthcare-seeking behavior, and surveillance/reporting practices can all affect ED visits.
 
 This project is not an official NWS or LDH product.
+
+
+## Weather overlays
+
+Daily weather is cached in `data/weather_daily.csv`. The independent **Update airport weather** Action refreshes the last eight days daily and supports manual runs; `python scripts/update_weather.py --full` rebuilds the archive from January 2023. A failed source request leaves the previous dataset intact and does not block the LDH pipeline.
+
+| Area | Airport observations |
+| --- | --- |
+| Capital | KBTR |
+| Northshore | KASD (Slidell) |
+| Southeast | KMSY and KNEW, plotted separately |
+| South Central | KHUM |
+| LIX Louisiana CWA | All five stations, plotted separately |
+
+Toggle high, low, average, or peak heat index above the timeline. Colors identify variables; line patterns identify stations. Weather uses a separate °F axis. Dates on the horizontal axis are MM-DD, with the selected year or year range in the heading and full dates in tooltips.
+
+The [IEM routine airport observation archive](https://mesonet.agron.iastate.edu/request/download.phtml) supplies temperature and relative humidity. We keep the latest valid temperature report per UTC hour to avoid giving airports with multiple routine reports per hour extra weight. Days follow America/Chicago midnight boundaries, including 23/25-hour DST days. High and low are the extrema of those sampled hourly temperatures, **not official daily climate maxima/minima**. Average is the arithmetic mean of available hourly temperatures, **not (high + low)/2**.
+
+Peak heat index is the maximum of hourly values calculated using the [NWS heat-index equation](https://www.wpc.ncep.noaa.gov/html/heatindex_equation.shtml), with the initial Steadman screening and the Rothfusz low/high-humidity adjustments. Temperature and humidity always come from the same observation. Missing humidity cannot generate a heat-index value. No-observation days remain blank and graph lines do not bridge them. Partial days use available hours and tooltips show valid/expected hour counts; sparse observations may miss the actual daily extremes. Only completed local calendar days are cached.

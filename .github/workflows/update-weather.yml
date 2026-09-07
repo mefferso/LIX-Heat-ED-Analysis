@@ -1,0 +1,41 @@
+name: Update airport weather
+
+on:
+  workflow_dispatch:
+  schedule:
+    - cron: "43 11 * * *"
+  push:
+    branches: [main]
+    paths:
+      - "scripts/update_weather.py"
+      - "config/geography.json"
+      - ".github/workflows/update-weather.yml"
+
+permissions:
+  contents: write
+
+concurrency:
+  group: airport-weather-${{ github.ref }}
+  cancel-in-progress: false
+
+jobs:
+  update:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: Fetch hourly observations and calculate daily weather
+        run: python scripts/update_weather.py
+      - name: Commit weather data
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add data/weather_daily.csv data/weather_meta.json
+          if ! git diff --cached --quiet; then
+            git commit -m "Update daily airport temperatures and heat index"
+            git pull --rebase origin main
+            git push
+          fi

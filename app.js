@@ -3,6 +3,8 @@ const state = {
   hazards: [],
   analysis: [],
   summary: null,
+  weather: new Map(),
+  weatherStatus: "loading",
   chart: null
 };
 
@@ -171,18 +173,7 @@ function buildAreaOptions() {
   });
   select.appendChild(rg);
 
-  const pg = document.createElement("optgroup");
-  pg.label = "Individual parishes — headlines only";
-  state.geography.parishes
-    .slice()
-    .sort((a,b)=>a.name.localeCompare(b.name))
-    .forEach((p)=>{
-      const opt=document.createElement("option");
-      opt.value="parish:" + p.name;
-      opt.textContent=p.name;
-      pg.appendChild(opt);
-    });
-  select.appendChild(pg);
+
 }
 
 function buildSeasonOptions() {
@@ -193,7 +184,7 @@ function buildSeasonOptions() {
   select.innerHTML = "";
   const all = document.createElement("option");
   all.value = "all";
-  all.textContent = "All 2023–2026";
+  all.textContent = years.length ? "All " + years.at(-1) + "–" + years[0] : "All seasons";
   select.appendChild(all);
 
   years.forEach((year)=>{
@@ -423,9 +414,71 @@ function renderTables(series) {
   }).join("");
 }
 
+const WEATHER_METRICS = [
+  {id:"weatherHigh", key:"high_f", label:"High", color:"#b63c17"},
+  {id:"weatherLow", key:"low_f", label:"Low", color:"#007d87"},
+  {id:"weatherAverage", key:"average_f", label:"Average", color:"#6646ab"},
+  {id:"weatherHeatIndex", key:"peak_heat_index_f", label:"Peak HI", color:"#bf226f"}
+];
+const STATION_DASHES = {KBTR:[], KASD:[7,3], KMSY:[2,3], KNEW:[10,3,2,3], KHUM:[12,5]};
+
+async function loadWeather() {
+  try {
+    const rows = parseCSV(await fetchText("data/weather_daily.csv"));
+    if (!rows.length) throw new Error("Empty weather dataset");
+    for (const row of rows) {
+      const day = {...row};
+      for (const key of [...WEATHER_METRICS.map((m)=>m.key), "temperature_hours", "heat_index_hours", "expected_hours"]) {
+        day[key] = row[key] === "" || row[key] == null ? null : Number(row[key]);
+        if (!Number.isFinite(day[key])) day[key] = null;
+      }
+      state.weather.set(row.date+"|"+row.station,day);
+    }
+    state.weatherStatus = "loaded";
+  } catch (error) {
+    console.error(error);
+    state.weatherStatus = "unavailable";
+  }
+  renderAll();
+}
+
+function buildWeatherDatasets(series) {
+  const stations = selectedArea().regions.flatMap((id)=>state.geography.regions[id].weather_stations || []);
+  const metrics = WEATHER_METRICS.filter((m)=>$(m.id).checked);
+  const stationText = stations.map((s)=>s === "KASD" ? "KASD (Slidell)" : s).join(", ");
+  $("weatherLegend").replaceChildren();
+  $("weatherNote").textContent = state.weatherStatus === "loading" ? "Loading station weather…" :
+    state.weatherStatus === "unavailable" ? "Station weather is unavailable. ED visits and headline coverage remain available." :
+    stationText + " · Local calendar days (Central). High/low and average use hourly observations; peak HI is calculated hourly. Missing hours can understate extremes; hover for observation counts.";
+  const datasets = [];
+  for (const metric of metrics) {
+    for (const station of stations) {
+      const data = series.map((d)=>state.weather.get(d.date+"|"+station)?.[metric.key] ?? null);
+      if (!data.some(Number.isFinite)) continue;
+      const label = station+" · "+metric.label;
+      datasets.push({type:"line", label, station, weatherKey:metric.key, data,
+        yAxisID:"yWeather", borderColor:metric.color, backgroundColor:metric.color,
+        borderDash:STATION_DASHES[station], borderWidth:1.8, pointRadius:0,
+        pointHoverRadius:4, tension:0, spanGaps:false, order:-1});
+      const entry = document.createElement("span");
+      const swatch = document.createElement("i");
+      swatch.style.borderTopColor = metric.color;
+      swatch.style.borderTopStyle = STATION_DASHES[station].length ? "dashed" : "solid";
+      entry.append(swatch,document.createTextNode(label));
+      $("weatherLegend").appendChild(entry);
+    }
+  }
+  if (metrics.length && state.weatherStatus === "loaded") {
+    const absent = stations.filter((station)=>!datasets.some((d)=>d.station === station));
+    if (absent.length) $("weatherNote").textContent += " No selected weather data in this date range for " + absent.join(", ") + ".";
+  }
+  return datasets;
+}
+
 function renderChart(series) {
   const ctx=$("timelineChart").getContext("2d");
   const hasEd=series.some((d)=>d.edKnown);
+  const weatherDatasets = buildWeatherDatasets(series);
   if (state.chart) state.chart.destroy();
 
   state.chart=new Chart(ctx,{
@@ -433,6 +486,7 @@ function renderChart(series) {
     data:{
       labels:series.map((d)=>d.date),
       datasets:[
+        ...weatherDatasets,
         {
           type:"line",
           label:"Heat-related ED visits",
@@ -475,7 +529,8 @@ function renderChart(series) {
         x:{
           stacked:true,
           grid:{display:false},
-          ticks:{maxTicksLimit:14,autoSkip:true,maxRotation:0}
+          ticks:{maxTicksLimit:14,autoSkip:true,maxRotation:0,
+            callback(value) { return this.getLabelForValue(value).slice(5); }}
         },
         yEd:{
           type:"linear",
@@ -484,6 +539,14 @@ function renderChart(series) {
           display:hasEd,
           title:{display:hasEd,text:"Heat-related ED visits"},
           grid:{color:"rgba(80,100,120,.11)"}
+        },
+        yWeather:{
+          type:"linear",
+          position:"right",
+          display:weatherDatasets.length > 0,
+          title:{display:true,text:"Temperature / heat index (°F)"},
+          grid:{drawOnChartArea:false},
+          ticks:{callback:(v)=>v+"°"}
         },
         yCoverage:{
           type:"linear",
@@ -500,6 +563,16 @@ function renderChart(series) {
         legend:{display:false},
         tooltip:{
           callbacks:{
+            label(context) {
+              const value = context.parsed.y;
+              const dataset = context.dataset;
+              if (dataset.yAxisID === "yWeather") {
+                const day = state.weather.get(series[context.dataIndex].date + "|" + dataset.station);
+                const hours = dataset.weatherKey === "peak_heat_index_f" ? day.heat_index_hours : day.temperature_hours;
+                return dataset.label + ": " + value.toFixed(1) + " °F (" + hours + "/" + day.expected_hours + " hours)";
+              }
+              return dataset.label + ": " + value + (dataset.yAxisID === "yCoverage" ? "%" : "");
+            },
             afterBody(items) {
               const d=series[items[0]?.dataIndex];
               if (!d) return "";
@@ -547,7 +620,11 @@ function renderStatus() {
 function renderAll() {
   const series=dailySeries();
   const label=$("areaSelect").selectedOptions[0]?.textContent || "LIX Louisiana CWA";
-  $("timelineTitle").textContent=label;
+  const season = $("seasonSelect").value;
+  const years = [...new Set(series.map((d)=>d.date.slice(0,4)))];
+  const yearLabel = season === "all" ? (years.length > 1 ? years[0]+"–"+years.at(-1) : years[0] || "All seasons") : season;
+  $("timelineHeading").textContent="DAILY TIMELINE · "+yearLabel;
+  $("timelineTitle").textContent=label+" · "+yearLabel;
   renderScope();
   renderMetrics(series);
   renderTables(series);
@@ -574,6 +651,8 @@ async function boot() {
     resetDatesToSeason();
     renderAll();
 
+    loadWeather();
+    for (const metric of WEATHER_METRICS) $(metric.id).addEventListener("change",renderAll);
     $("areaSelect").addEventListener("change",renderAll);
     $("seasonSelect").addEventListener("change",()=>{
       resetDatesToSeason();

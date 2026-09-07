@@ -83,7 +83,7 @@
     <section class="panel chart-panel">
       <div class="panel-heading">
         <div>
-          <p class="eyebrow dark">DAILY TIMELINE</p>
+          <p class="eyebrow dark" id="timelineHeading">DAILY TIMELINE</p>
           <h2 id="timelineTitle">LIX Louisiana CWA</h2>
         </div>
         <div class="legend-note">
@@ -92,6 +92,15 @@
           <span><i class="legend-swatch warning"></i>Warning coverage</span>
         </div>
       </div>
+      <fieldset class="weather-controls">
+        <legend>Weather overlays · °F</legend>
+        <label><input type="checkbox" id="weatherHigh"> <span>High temperature</span></label>
+        <label><input type="checkbox" id="weatherLow"> <span>Low temperature</span></label>
+        <label><input type="checkbox" id="weatherAverage"> <span>Average temperature</span></label>
+        <label><input type="checkbox" id="weatherHeatIndex"> <span>Peak heat index</span></label>
+      </fieldset>
+      <p id="weatherNote" class="chart-caption" aria-live="polite">Loading station weather…</p>
+      <div id="weatherLegend" class="weather-legend"></div>
       <div class="chart-wrap"><canvas id="timelineChart"></canvas></div>
       <p class="chart-caption">Headline coverage is the percentage of selected LIX Louisiana parishes under a heat headline at any point during the local calendar day. Warning coverage takes precedence when both products occurred in a parish that day.</p>
     </section>
@@ -129,33 +138,6 @@
       </section>
     </section>
 
-    <section class="panel methodology">
-      <div class="panel-heading compact">
-        <div>
-          <p class="eyebrow dark">WHAT THE NUMBERS MEAN</p>
-          <h2>Methodology & limitations</h2>
-        </div>
-      </div>
-      <div class="method-grid">
-        <div>
-          <h3>Heat headlines</h3>
-          <p>IEM's NWS VTEC archive is expanded to local calendar days and the Louisiana LIX forecast zones. Parish/day severity is 0 for none, 1 for advisory and 2 for warning.</p>
-        </div>
-        <div>
-          <h3>LDH surveillance</h3>
-          <p>The automated LDH pull uses the public Heat-Related Illness Tableau dashboard. Daily HRI ED counts are available by LDH region and represent patient residence.</p>
-        </div>
-        <div>
-          <h3>Geography</h3>
-          <p>Regions 1, 2 and 9 align with the Louisiana LIX area used here. LDH Region 3 also contains St. Mary Parish, outside LIX, so South Central comparisons have that known mismatch. Mississippi is excluded.</p>
-        </div>
-        <div>
-          <h3>Interpretation</h3>
-          <p>These are associations, not causal estimates. Weather severity, exposure, behavior, demographics, access to cooling and surveillance/reporting can all influence ED visits.</p>
-        </div>
-      </div>
-    </section>
-
     <section id="noLdhPanel" class="panel no-data hidden">
       <h2>LDH automation is unavailable right now.</h2>
       <p>The IEM heat-headline history can still load, but ED statistics are suppressed rather than showing stale or invented health data.</p>
@@ -163,7 +145,7 @@
   </main>
 
   <footer>
-    <p>Data: Iowa Environmental Mesonet NWS VTEC archive + Louisiana Department of Health HRI surveillance.</p>
+    <p>Data: Iowa Environmental Mesonet NWS VTEC / airport observation archives + Louisiana Department of Health HRI surveillance.</p>
     <p>Research/operational analysis • Not an official NWS or LDH product.</p>
   </footer>
 
