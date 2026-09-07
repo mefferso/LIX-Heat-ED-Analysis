@@ -396,7 +396,7 @@ function renderMetrics(series) {
 function renderTables(series) {
   const area=selectedArea();
   if (area.type === "parish") {
-    $("categoryTable").innerHTML='<tr><td colspan="5">Daily LDH ED data are not published at parish resolution.</td></tr>';
+    $("categoryTable").innerHTML='<tr><td colspan="6">Daily LDH ED data are not published at parish resolution.</td></tr>';
     $("lagTable").innerHTML='<tr><td colspan="3">Choose an LDH region or LIX Louisiana CWA.</td></tr>';
     return;
   }
