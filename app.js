@@ -234,7 +234,7 @@ function edIndex() {
   const map = new Map();
   for (const r of state.analysis) {
     const visits = finiteValue(r.ed_visits);
-    const population = finiteValue(r.health_population_2020);
+    const population = finiteValue(r.health_population_2020) || configuredHealthPopulation(state.geography,r.ldh_region);
     if (visits !== null) map.set(r.date + "|" + r.ldh_region, {visits, population});
   }
   return map;
