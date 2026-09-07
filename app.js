@@ -629,6 +629,7 @@ function renderAll() {
   renderMetrics(series);
   renderTables(series);
   renderChart(series);
+  renderWeatherCorrelations();
   renderStatus();
 }
 
@@ -653,6 +654,8 @@ async function boot() {
 
     loadWeather();
     for (const metric of WEATHER_METRICS) $(metric.id).addEventListener("change",renderAll);
+    $("weatherLag").addEventListener("change",renderWeatherCorrelations);
+    $("weatherCoverage").addEventListener("change",renderWeatherCorrelations);
     $("areaSelect").addEventListener("change",renderAll);
     $("seasonSelect").addEventListener("change",()=>{
       resetDatesToSeason();

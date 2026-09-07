@@ -138,6 +138,35 @@
       </section>
     </section>
 
+    <section class="panel correlation-panel" aria-labelledby="correlationTitle">
+      <div class="panel-heading">
+        <div>
+          <p class="eyebrow dark">WEATHER + ED VISITS</p>
+          <h2 id="correlationTitle">Which weather variable tracks ED visits best?</h2>
+        </div>
+      </div>
+      <div class="correlation-controls">
+        <label><span>ED response</span><select id="weatherLag">
+          <option value="0">Same day</option><option value="1">1 day later</option>
+          <option value="2">2 days later</option><option value="3">3 days later</option>
+        </select></label>
+        <label><span>Observation coverage, each station</span><select id="weatherCoverage">
+          <option value="0.75">At least 75% of daily hours</option>
+          <option value="1">Complete days only</option>
+          <option value="0">Any reported hours</option>
+        </select></label>
+      </div>
+      <p id="correlationScope" class="correlation-note" aria-live="polite"></p>
+      <div class="table-wrap"><table>
+        <caption>Weather correlation ranking · each area's four variables use identical paired days</caption>
+        <thead><tr><th>Area</th><th>Strongest by |r|</th><th>High r</th><th>Low r</th><th>Average r</th><th>Peak HI r</th><th>Paired days</th></tr></thead>
+        <tbody id="weatherCorrelationTable"></tbody>
+      </table></div>
+      <p class="correlation-note">Pearson r measures a linear relationship (−1 to +1); R² is the fraction of visit variation explained by the fitted line in these data. A close ranking is not evidence that one variable is meaningfully better. These are exploratory, unadjusted correlations: seasonality, year-to-year changes and consecutive hot days can influence them. They do not establish causation or forecast skill.</p>
+      <p class="correlation-note"><strong>WBGT: not available in this dataset.</strong> The archive contains temperature and humidity, but no wind or solar radiation inputs for an outdoor WBGT calculation. A defensible comparison needs observed WBGT or a documented historical estimate using those inputs. <a href="https://www.weather.gov/tsa/wbgt" target="_blank" rel="noopener">NWS WBGT explanation</a>.</p>
+      <div id="weatherScatterGroups"></div>
+    </section>
+
     <section id="noLdhPanel" class="panel no-data hidden">
       <h2>LDH automation is unavailable right now.</h2>
       <p>The IEM heat-headline history can still load, but ED statistics are suppressed rather than showing stale or invented health data.</p>
@@ -150,6 +179,7 @@
   </footer>
 
   <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.7/dist/chart.umd.min.js"></script>
+  <script src="weather-analysis.js"></script>
   <script src="app.js"></script>
 </body>
 </html>

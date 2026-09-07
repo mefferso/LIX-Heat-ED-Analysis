@@ -301,3 +301,21 @@ footer p { margin: 0; }
 .weather-legend { display:flex; flex-wrap:wrap; gap:8px 16px; margin:12px 0; font-size:.875rem; }
 .weather-legend span { display:flex; align-items:center; gap:6px; }
 .weather-legend i { display:inline-block; width:22px; border-top:3px solid; }
+
+.correlation-panel { padding:22px; margin-top:16px; }
+.correlation-controls { display:flex; flex-wrap:wrap; gap:16px; }
+.correlation-controls label { flex:1 1 230px; max-width:360px; }
+.correlation-controls label > span:first-child { font-size:.875rem; }
+.correlation-note { color:var(--muted); font-size:.875rem; line-height:1.6; }
+.correlation-panel caption { text-align:left; font-size:.875rem; padding:12px 8px; font-weight:700; color:var(--navy); }
+.correlation-panel th { font-size:.8rem; }
+.correlation-panel td.best-correlation { font-weight:800; color:var(--navy); background:#eaf4fb; }
+.scatter-group { border-top:1px solid var(--line); margin-top:26px; padding-top:20px; }
+.scatter-group h3 { margin:0; color:var(--navy); font-size:1.2rem; }
+.scatter-grid { display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); gap:16px; }
+.scatter-card { min-width:0; border:1px solid var(--line); border-radius:12px; padding:16px; }
+.scatter-card h4 { margin:0 0 8px; font-size:1rem; }
+.scatter-stats { font-size:.875rem; margin:0 0 12px; color:var(--navy-2); }
+.scatter-wrap { height:285px; position:relative; }
+.scatter-empty { padding:24px 8px; color:var(--muted); line-height:1.6; }
+@media (max-width:700px) { .scatter-grid { grid-template-columns:1fr; } .correlation-panel { padding:16px; } }

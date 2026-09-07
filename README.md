@@ -206,7 +206,48 @@ This is an exploratory operational/public-health analysis, not a causal study. H
 This project is not an official NWS or LDH product.
 
 
-## Weather overlays
+## Weather / ED scatter plots
+
+The bottom of the dashboard compares daily high, low, hourly average temperature,
+and peak hourly heat index against heat-related ED visits. Area, season and date
+controls apply to these plots. The combined area shows a combined summary plus
+all four regions separately. Every plot includes year-colored daily points,
+hover dates and values, Pearson r, R², paired-day count and a linear fit.
+The summary ranks variables by absolute Pearson r (ties at three decimal places
+are shown together). This is a descriptive ranking, not a significance test or
+out-of-sample prediction result.
+
+Southeast uses the arithmetic mean of KMSY and KNEW daily metrics, requiring
+both stations. Combined weather is the equal-weight mean of the four regional
+values; combined ED is their sum, including St. Mary in Region 3. Means of
+station extrema are spatial summaries, not area-wide observed extrema.
+
+All four metrics use the **same paired dates within each area**. By default each
+station needs at least 75% of expected local-day temperature and heat-index
+hours (18 of 24); complete-day and any-reported-hour options are available.
+Incomplete weather is excluded rather than imputed. Real zero-visit days are
+retained; blank/non-numeric ED values are excluded. The four regions can have
+different paired-day counts. Date matching uses America/Chicago calendar-day
+keys already in the archive. Lags of 0–3 days pair weather on date D with ED on
+D+lag; both dates must be in the selected interval and year. No lag jumps over
+missing days. Undefined correlations (fewer than three pairs or no variation)
+are not ranked.
+
+These unadjusted correlations may reflect seasonality, interannual changes,
+serial dependence and other confounding. R² describes the fitted line in this
+sample, not causation or forecast skill. Multi-season data are pooled without
+year adjustment; use individual seasons to inspect consistency.
+
+**Outdoor WBGT is not calculated:** the cached observations contain temperature
+and humidity only. A defensible historical WBGT series requires observed WBGT
+or a documented estimate with wind and solar-radiation inputs. Wet-bulb
+temperature or a temperature/humidity-only index is not substituted for outdoor
+WBGT. See the [NWS WBGT explanation](https://www.weather.gov/tsa/wbgt).
+
+Run `node tests/correlation.cjs` for numerical, missing-data, calendar matching,
+regional weighting and chart integration checks against the cached archive.
+
+## Weather overlays and archive methodology
 
 Daily weather is cached in `data/weather_daily.csv`. The independent **Update airport weather** Action refreshes the last eight days daily and supports manual runs; `python scripts/update_weather.py --full` rebuilds the archive from January 2023. A failed source request leaves the previous dataset intact and does not block the LDH pipeline.
 
