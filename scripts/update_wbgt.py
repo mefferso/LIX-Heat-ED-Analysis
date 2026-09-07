@@ -37,7 +37,7 @@ META = ROOT / "data/wbgt_meta.json"
 TIMEZONE = "America/Chicago"
 TZINFO = ZoneInfo(TIMEZONE)
 OPEN_METEO_URL = "https://archive-api.open-meteo.com/v1/archive"
-MODEL_CANDIDATES = ("era5_land", "era5")
+MODEL_CANDIDATES = ("era5",)  # ERA5-Land currently returns unusable radiation fields for these archive requests.
 START_DATE = date(2023, 1, 1)
 ARCHIVE_LAG_DAYS = 5
 FIELDS = ["date", "ldh_region", "regional_wbgt_max_f", "wbgt_points",
@@ -111,11 +111,16 @@ def surface_pressure_from_mslp(mslp_hpa, elev_m, t_c):
     return mslp_hpa * np.exp(-9.80665 * float(elev_m) / (287.05 * t_k))
 
 
-def request_json(params: dict, attempts: int = 4):
+def request_json(params: dict, attempts: int = 6):
+    """Fetch Open-Meteo archive data with explicit rate-limit backoff."""
     last = None
     for n in range(1, attempts + 1):
         try:
             r = SESSION.get(OPEN_METEO_URL, params=params, timeout=180)
+            if r.status_code == 429:
+                retry_after = r.headers.get("Retry-After")
+                wait = float(retry_after) if retry_after and retry_after.replace(".", "", 1).isdigit() else min(15.0 * n, 75.0)
+                raise requests.HTTPError(f"429 rate limited; retrying after {wait:.0f}s", response=r)
             r.raise_for_status()
             payload = r.json()
             if isinstance(payload, dict) and payload.get("error"):
@@ -124,7 +129,13 @@ def request_json(params: dict, attempts: int = 4):
         except (requests.RequestException, ValueError, RuntimeError) as exc:
             last = exc
             if n < attempts:
-                time.sleep(1.5 * n)
+                if isinstance(exc, requests.HTTPError) and getattr(exc, "response", None) is not None and exc.response.status_code == 429:
+                    retry_after = exc.response.headers.get("Retry-After")
+                    wait = float(retry_after) if retry_after and retry_after.replace(".", "", 1).isdigit() else min(15.0 * n, 75.0)
+                else:
+                    wait = min(2.5 * n, 15.0)
+                print(f"      request retry {n}/{attempts - 1} after {wait:.0f}s: {exc}", flush=True)
+                time.sleep(wait)
     raise RuntimeError(f"Open-Meteo request failed after {attempts} attempts: {last}")
 
 
@@ -276,7 +287,7 @@ def main():
                     print(f"  {a}..{b}: {model} failed: {exc}", flush=True)
             if last_error is not None:
                 raise RuntimeError(f"Region {rid} {a}..{b}: no usable model: {last_error}")
-            time.sleep(0.8)
+            time.sleep(4.0)  # Be kind to the public archive API and avoid burst-rate limits.
         if not frames:
             continue
         data = pd.concat(frames, ignore_index=True)
