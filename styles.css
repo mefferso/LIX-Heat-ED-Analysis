@@ -297,3 +297,98 @@ footer p { margin: 0; }
 .scatter-wrap { height:285px; position:relative; }
 .scatter-empty { padding:24px 8px; color:var(--muted); line-height:1.6; }
 @media (max-width:700px) { .scatter-grid { grid-template-columns:1fr; } .correlation-panel { padding:16px; } }
+
+
+/* Threshold, persistence, WBGT, and adjusted-model additions */
+.threshold-section {
+  margin: 20px 0 22px;
+  padding: 18px;
+  border: 1px solid var(--line);
+  border-radius: 12px;
+  background: #f8fafc;
+}
+.subheading-row h3, .analysis-subpanel h3 {
+  margin: 0;
+  color: var(--navy);
+  font-size: 1.08rem;
+}
+.threshold-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0,1fr));
+  gap: 12px;
+  margin: 12px 0 8px;
+}
+.threshold-card {
+  background: white;
+  border: 1px solid var(--line);
+  border-radius: 10px;
+  padding: 14px;
+}
+.threshold-card h3 {
+  margin: 0 0 6px;
+  font-size: .9rem;
+  color: var(--muted);
+}
+.threshold-card strong {
+  display: block;
+  color: var(--navy);
+  font-size: 1.7rem;
+  line-height: 1;
+  margin-bottom: 8px;
+}
+.threshold-card p {
+  margin: 0;
+  font-size: .8rem;
+  line-height: 1.45;
+  color: var(--muted);
+}
+.threshold-card .threshold-note {
+  margin-top: 8px;
+  color: #7a4b00;
+  font-weight: 700;
+}
+.analysis-subpanel {
+  margin-top: 22px;
+  padding-top: 18px;
+  border-top: 1px solid var(--line);
+}
+.adjusted-heading {
+  align-items: flex-end;
+}
+.compact-control {
+  min-width: 250px;
+  max-width: 360px;
+}
+.bin-table-wrap {
+  margin-top: 12px;
+  max-height: 190px;
+  overflow: auto;
+  border-top: 1px solid var(--line);
+  padding-top: 9px;
+}
+.bin-title {
+  margin: 0 0 5px;
+  color: var(--muted);
+  font-size: .72rem;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: .03em;
+}
+.bin-table {
+  font-size: .75rem;
+}
+.bin-table th, .bin-table td {
+  padding: 5px 6px;
+}
+.scatter-card {
+  display: flex;
+  flex-direction: column;
+}
+.scatter-wrap {
+  min-height: 285px;
+}
+@media (max-width:700px) {
+  .threshold-grid { grid-template-columns:1fr; }
+  .adjusted-heading { align-items:flex-start; }
+  .compact-control { width:100%; max-width:none; }
+}

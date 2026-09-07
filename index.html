@@ -107,7 +107,7 @@
         </div>
         <div class="table-wrap">
           <table>
-            <thead><tr><th>Headline</th><th>Days</th><th>Mean visits</th><th>Median</th><th>vs. no headline</th></tr></thead>
+            <thead><tr><th>Headline</th><th>Days</th><th>Mean visits</th><th>Mean /100k</th><th>Median</th><th>vs. no headline</th></tr></thead>
             <tbody id="categoryTable"></tbody>
           </table>
         </div>
@@ -142,20 +142,60 @@
           <option value="0">Same day</option><option value="1">1 day later</option>
           <option value="2">2 days later</option><option value="3">3 days later</option>
         </select></label>
-        <label><span>Observation coverage, each station</span><select id="weatherCoverage">
-          <option value="0.75">At least 75% of daily hours</option>
-          <option value="1">Complete days only</option>
-          <option value="0">Any reported hours</option>
+        <label><span>ED response scale</span><select id="weatherResponseScale">
+          <option value="rate" selected>Visits per 100,000</option>
+          <option value="count">Raw visit count</option>
         </select></label>
       </div>
       <p id="correlationScope" class="correlation-note" aria-live="polite"></p>
+
+      <section class="threshold-section" aria-labelledby="thresholdTitle">
+        <div class="subheading-row">
+          <div>
+            <p class="eyebrow dark">RAMP-UP DIAGNOSTIC</p>
+            <h3 id="thresholdTitle">Where does the health response accelerate?</h3>
+          </div>
+        </div>
+        <div id="thresholdCards" class="threshold-grid"></div>
+        <p class="correlation-note">The breakpoint is a continuous two-slope fit searched over the middle 60% of observed exposure values. The interval is a bootstrap diagnostic, not an official hazard threshold. Peak-HI plots also show the current LIX 108°F advisory and 113°F warning criteria for reference.</p>
+      </section>
+
       <div class="table-wrap"><table>
-        <caption>Weather correlation ranking · each area's four variables use identical paired days</caption>
-        <thead><tr><th>Area</th><th>Strongest by |r|</th><th>High r</th><th>Low r</th><th>Average r</th><th>Peak HI r</th><th>Paired days</th></tr></thead>
+        <caption>Core weather correlation ranking · all five variables use identical paired days within each area</caption>
+        <thead><tr><th>Area</th><th>Strongest by |r|</th><th>High r</th><th>Low r</th><th>Average r</th><th>Peak HI r</th><th>WBGT r</th><th>Paired days</th></tr></thead>
         <tbody id="weatherCorrelationTable"></tbody>
       </table></div>
-      <p class="correlation-note">Pearson r measures the overall linear relationship (−1 to +1); r² is shown as a companion measure. The curved line is a locally weighted average of the observed ED visits, meant to reveal bends and ramp-up zones rather than force one straight-line relationship. A close ranking is not evidence that one variable is meaningfully better. These are exploratory, unadjusted correlations: seasonality, year-to-year changes and consecutive hot days can influence them. They do not establish causation or forecast skill.</p>
-      <p class="correlation-note"><strong>WBGT: not available in this dataset.</strong> The archive contains temperature and humidity, but no wind or solar radiation inputs for an outdoor WBGT calculation. A defensible comparison needs observed WBGT or a documented historical estimate using those inputs. <a href="https://www.weather.gov/tsa/wbgt" target="_blank" rel="noopener">NWS WBGT explanation</a>.</p>
+      <p class="correlation-note">Pearson r is deliberately left beside the nonlinear view: it summarizes the overall linear association, while the dark curve shows the locally weighted mean response and the shaded band shows an approximate pointwise 95% local uncertainty interval. A close ranking is not proof that one variable is meaningfully better, and none of these unadjusted plots establishes causation.</p>
+      <p class="correlation-note"><strong>Outdoor WBGT is now included.</strong> It is calculated with the Liljegren method using ERA5-Land/ERA5 temperature, humidity, pressure, wind, shortwave radiation and solar geometry. Direct radiation is used when available and otherwise estimated from global radiation. The daily regional value is the mean of configured parish-point daily maximum WBGT values. <a href="https://www.weather.gov/tsa/wbgt" target="_blank" rel="noopener">NWS WBGT explanation</a>.</p>
+
+      <section class="analysis-subpanel">
+        <div class="panel-heading compact">
+          <div><p class="eyebrow dark">DURATION + PERSISTENCE</p><h3>Do longer or multi-day heat exposures track ED visits better?</h3></div>
+        </div>
+        <div class="table-wrap"><table>
+          <thead><tr><th>Exposure metric</th><th>Pearson r</th><th>Paired days</th><th>Unit</th></tr></thead>
+          <tbody id="extendedCorrelationTable"></tbody>
+        </table></div>
+      </section>
+
+      <section class="analysis-subpanel">
+        <div class="panel-heading compact adjusted-heading">
+          <div>
+            <p class="eyebrow dark">ADJUSTED MODEL</p>
+            <h3>Population-normalized nonlinear model comparison</h3>
+          </div>
+          <label class="compact-control"><span>Model period</span><select id="adjustedPeriod">
+            <option value="all_months">All available warm-season months</option>
+            <option value="jja">June–August only</option>
+          </select></label>
+        </div>
+        <p class="correlation-note">These archive-level models use region-day ED counts with a log(population) offset, a cubic spline for each exposure, and adjustment for year, month, day-of-week, plus region in the combined-CWA model. Negative binomial is preferred; Poisson is used only if that fit fails. Lower ΔAIC indicates better relative fit. The rate ratio compares the model response at the 90th exposure percentile with the median.</p>
+        <div class="table-wrap"><table>
+          <thead><tr><th>Exposure</th><th>Model</th><th>n</th><th>ΔAIC</th><th>P50 → P90</th><th>Adjusted RR</th></tr></thead>
+          <tbody id="adjustedModelTable"></tbody>
+        </table></div>
+      </section>
+
       <div id="weatherScatterGroups"></div>
     </section>
 

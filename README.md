@@ -129,14 +129,39 @@ Merged LDH + IEM analysis table.
 For each LDH region/day it includes:
 
 - HRI ED visits
+- 2020 Census health-population denominator
+- ED visits per 100,000
 - number and percentage of LIX parishes under Heat Advisory
 - number and percentage under Excessive/Extreme Heat Warning
 - coverage-weighted headline severity score
 - mean headline hours per LIX parish
 
+Region 3 rates include St. Mary Parish in the denominator because St. Mary is included in the LDH Region 3 ED numerator. LIX headline/weather geography still excludes St. Mary.
+
+### `data/weather_region_daily.csv`
+
+QC'd regional exposure series used for heat-health comparisons. Primary airport observations are used when they meet the daily coverage requirement; configured fallback airports are used when a primary station does not. The file records the source station(s) and whether a fallback was used.
+
+It also contains:
+
+- daily high, low, hourly average, and peak heat index
+- 00–11 local morning/overnight low
+- hours with heat index ≥105°F and ≥108°F
+- 2-day and 3-day mean peak heat index
+- consecutive days with peak heat index ≥108°F
+- regional 2020 Census population used for combined population weighting
+
+### `data/wbgt_region_daily.csv`
+
+Outdoor WBGT archive calculated with the Liljegren method through ECMWF `thermofeel`. Inputs come from Open-Meteo ERA5-Land with ERA5 fallback and include temperature, humidity/dew point, pressure, wind, shortwave radiation, direct-radiation fallback, and solar geometry. The regional value is the mean of configured parish-point daily maximum WBGT values.
+
+### `data/advanced_analysis.json`
+
+Adjusted archive-level model summaries. Region-day ED counts are modeled with a log(population) offset, nonlinear cubic-spline exposure, and adjustment for year, month, day-of-week, plus region for the combined-CWA model. Negative binomial is preferred; Poisson is used only as a fit fallback.
+
 ### `data/summary.json`
 
-Pipeline status, coverage dates, source timestamps, row counts, and validation information.
+Pipeline status, coverage dates, source timestamps, row counts, population-source metadata, and validation information.
 
 ## Dashboard analysis
 
@@ -206,65 +231,76 @@ This is an exploratory operational/public-health analysis, not a causal study. H
 This project is not an official NWS or LDH product.
 
 
-## Weather / ED scatter plots
+## Weather / ED analysis
 
-The bottom of the dashboard compares daily high, low, hourly average temperature,
-and peak hourly heat index against heat-related ED visits. Area, season and date
-controls apply to these plots. The combined area shows a combined summary plus
-all four regions separately. Every plot includes year-colored daily points,
-hover dates and values, Pearson r, r², paired-day count and a locally weighted
-smoothed-average curve. The curve uses local linear fits across 22% of the
-available paired days, which lets it reveal nonlinear ramp-up zones without
-trying to pass through every noisy daily observation.
-The summary ranks variables by absolute Pearson r (ties at three decimal places
-are shown together). This is a descriptive ranking, not a significance test or
-out-of-sample prediction result.
+The bottom of the dashboard compares heat-related ED response with five core exposure variables:
 
-Southeast uses the arithmetic mean of KMSY and KNEW daily metrics, requiring
-both stations. Combined weather is the equal-weight mean of the four regional
-values; combined ED is their sum, including St. Mary in Region 3. Means of
-station extrema are spatial summaries, not area-wide observed extrema.
+- daily high temperature
+- daily low temperature
+- hourly average temperature
+- peak hourly heat index
+- outdoor Liljegren WBGT
 
-All four metrics use the **same paired dates within each area**. By default each
-station needs at least 75% of expected local-day temperature and heat-index
-hours (18 of 24); complete-day and any-reported-hour options are available.
-Incomplete weather is excluded rather than imputed. Real zero-visit days are
-retained; blank/non-numeric ED values are excluded. The four regions can have
-different paired-day counts. Date matching uses America/Chicago calendar-day
-keys already in the archive. Lags of 0–3 days pair weather on date D with ED on
-D+lag; both dates must be in the selected interval and year. No lag jumps over
-missing days. Undefined correlations (fewer than three pairs or no variation)
-are not ranked.
+The user can display raw ED counts or population-normalized ED visits per 100,000. For the full LIX Louisiana area, regional weather exposure is population-weighted rather than averaged equally across four regions.
 
-These unadjusted correlations may reflect seasonality, interannual changes,
-serial dependence and other confounding. The displayed r² is squared Pearson
-correlation; it does not score the nonlinear curve or establish forecast skill.
-Multi-season data are pooled without
-year adjustment; use individual seasons to inspect consistency.
+Each core scatterplot includes:
 
-**Outdoor WBGT is not calculated:** the cached observations contain temperature
-and humidity only. A defensible historical WBGT series requires observed WBGT
-or a documented estimate with wind and solar-radiation inputs. Wet-bulb
-temperature or a temperature/humidity-only index is not substituted for outdoor
-WBGT. See the [NWS WBGT explanation](https://www.weather.gov/tsa/wbgt).
+- year-colored daily observations
+- Pearson `r` and `r²`
+- a locally weighted nonlinear mean-response curve
+- an approximate pointwise 95% local uncertainty band
+- hover dates, ED response, and regional weather-source provenance
+- 108°F Heat Advisory and 113°F warning reference lines on peak-HI plots
+- 2°F exposure bins for peak HI and WBGT
 
-Run `node tests/correlation.cjs` for numerical, missing-data, calendar matching,
-regional weighting and chart integration checks against the cached archive.
+The page also estimates a continuous two-slope breakpoint for peak HI and WBGT. The breakpoint search is constrained to the middle 60% of observed exposure values to reduce tail leverage, and a bootstrap interval is shown as a stability diagnostic. It is exploratory and is **not** automatically an operational threshold.
 
-## Weather overlays and archive methodology
+### Duration and persistence metrics
 
-Daily weather is cached in `data/weather_daily.csv`. The independent **Update airport weather** Action refreshes the last eight days daily and supports manual runs; `python scripts/update_weather.py --full` rebuilds the archive from January 2023. A failed source request leaves the previous dataset intact and does not block the LDH pipeline.
+A separate ranking compares:
 
-| Area | Airport observations |
+- overnight / morning low
+- hours with HI ≥105°F
+- hours with HI ≥108°F
+- 2-day mean peak HI
+- 3-day mean peak HI
+- consecutive HI ≥108°F days
+
+These metrics are intended to test whether sustained thermal load explains ED visits better than one afternoon maximum.
+
+### Adjusted model comparison
+
+The dashboard also displays archive-level adjusted model results from `data/advanced_analysis.json`. These are fitted at region-day resolution, avoiding an equal-weight combined-region weather average. Models use ED counts with a log population offset and adjust for year, month, day-of-week, and region in the combined analysis.
+
+Exposure is represented with a cubic B-spline. Negative binomial is preferred, with Poisson fallback only when the negative-binomial fit fails. The table reports ΔAIC and the adjusted model response ratio between the median and 90th-percentile exposure. All-month and June–August-only results can be viewed.
+
+These adjusted results are still observational and exploratory. They reduce several obvious confounders but do not establish causation or out-of-sample forecast skill.
+
+### WBGT methodology
+
+The WBGT method is based on the project-supplied `fill_wbgt_v3.py` approach and has been converted into an automated regional archive. It uses the physically based Liljegren solver in ECMWF `thermofeel`, not a temperature/humidity-only shortcut.
+
+Open-Meteo's standard hourly shortwave radiation is treated as a preceding-hour mean, with solar geometry evaluated at the hour midpoint. Direct radiation is used when available; otherwise it is estimated from global shortwave radiation with the Erbs decomposition. Relative humidity and surface pressure have documented meteorological fallbacks when the primary fields are missing.
+
+## Weather overlays and airport archive methodology
+
+Daily airport observations remain cached in `data/weather_daily.csv` for the timeline overlays. The requested primary overlays are unchanged:
+
+| Area | Primary airport overlay |
 | --- | --- |
 | Capital | KBTR |
 | Northshore | KASD (Slidell) |
-| Southeast | KMSY and KNEW, plotted separately |
+| Southeast | KMSY and KNEW |
 | South Central | KHUM |
-| LIX Louisiana CWA | All five stations, plotted separately |
+| LIX Louisiana CWA | All five primary stations |
 
-Toggle high, low, average, or peak heat index above the timeline. Colors identify variables; line patterns identify stations. Weather uses a separate °F axis. Dates on the horizontal axis are MM-DD, with the selected year or year range in the heading and full dates in tooltips.
+The regional **analysis** layer is more resilient than the visual overlay layer. It uses the primary stations above when they meet ≥75% daily temperature and heat-index coverage, with explicit fallback chains configured in `config/geography.json`. Every regional day records the station source and whether a fallback was used; fallback substitution is never silent.
 
-The [IEM routine airport observation archive](https://mesonet.agron.iastate.edu/request/download.phtml) supplies temperature and relative humidity. We keep the latest valid temperature report per UTC hour to avoid giving airports with multiple routine reports per hour extra weight. Days follow America/Chicago midnight boundaries, including 23/25-hour DST days. High and low are the extrema of those sampled hourly temperatures, **not official daily climate maxima/minima**. Average is the arithmetic mean of available hourly temperatures, **not (high + low)/2**.
+The IEM routine airport observation archive supplies temperature and relative humidity. The latest valid temperature report per UTC hour is retained so airports with extra routine reports do not get extra weight. Days follow America/Chicago local-calendar boundaries, including 23/25-hour DST days. High and low are extrema of sampled hourly observations; average is the arithmetic mean of available hourly observations.
 
-Peak heat index is the maximum of hourly values calculated using the [NWS heat-index equation](https://www.wpc.ncep.noaa.gov/html/heatindex_equation.shtml), with the initial Steadman screening and the Rothfusz low/high-humidity adjustments. Temperature and humidity always come from the same observation. Missing humidity cannot generate a heat-index value. No-observation days remain blank and graph lines do not bridge them. Partial days use available hours and tooltips show valid/expected hour counts; sparse observations may miss the actual daily extremes. Only completed local calendar days are cached.
+Peak heat index uses the NWS Steadman/Rothfusz approach with humidity adjustments. Morning/overnight low is the minimum sampled temperature from 00–11 local. Duration variables count hourly heat-index observations at or above 105°F and 108°F. Multi-day variables require consecutive regional dates.
+
+The weather/WBGT Action refreshes the airport archive, regional exposure series, WBGT archive, and adjusted model summary. WBGT reanalysis intentionally trails real time by several days; it is a retrospective analysis variable, not an operational real-time observation.
+
+Population values come from the 2020 U.S. Census PL 94-171 Louisiana parish population table and are stored in `config/geography.json`.
+

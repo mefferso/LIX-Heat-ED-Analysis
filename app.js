@@ -4,7 +4,9 @@ const state = {
   analysis: [],
   summary: null,
   weather: new Map(),
+  weatherRegion: new Map(),
   weatherStatus: "loading",
+  advanced: null,
   chart: null
 };
 
@@ -231,7 +233,9 @@ function hazardIndex() {
 function edIndex() {
   const map = new Map();
   for (const r of state.analysis) {
-    map.set(r.date + "|" + r.ldh_region, num(r.ed_visits));
+    const visits = finiteValue(r.ed_visits);
+    const population = finiteValue(r.health_population_2020) || configuredHealthPopulation(state.geography,r.ldh_region);
+    if (visits !== null) map.set(r.date + "|" + r.ldh_region, {visits, population});
   }
   return map;
 }
@@ -288,8 +292,13 @@ function dailySeries() {
     const seasonAllows = season === "all" || dateYear === season;
     const edKnown = area.type !== "parish" && seasonAllows && knownEdDates.has(date);
     let edVisits = null;
+    let edPopulation = null;
+    let edRate = null;
     if (edKnown) {
-      edVisits = area.regions.reduce((sum,region)=>sum + (ed.get(date + "|" + region) || 0), 0);
+      const values = area.regions.map(region=>ed.get(date + "|" + region)).filter(Boolean);
+      edVisits = values.reduce((sum,row)=>sum + row.visits, 0);
+      edPopulation = values.reduce((sum,row)=>sum + (row.population || 0), 0);
+      edRate = edPopulation > 0 ? edVisits / edPopulation * 100000 : null;
     }
 
     const category = warning > 0 ? "warning" : advisory > 0 ? "advisory" : "none";
@@ -299,6 +308,8 @@ function dailySeries() {
       date,
       edKnown,
       edVisits,
+      edPopulation,
+      edRate,
       advisoryPct:advisory/n*100,
       warningPct:warning/n*100,
       severity:severityTotal/n,
@@ -310,10 +321,14 @@ function dailySeries() {
 
 function categoryStats(series) {
   const buckets={none:[],advisory:[],warning:[]};
-  series.filter((d)=>d.edKnown).forEach((d)=>buckets[d.category].push(d.edVisits));
+  const rateBuckets={none:[],advisory:[],warning:[]};
+  series.filter((d)=>d.edKnown).forEach((d)=>{
+    buckets[d.category].push(d.edVisits);
+    if (Number.isFinite(d.edRate)) rateBuckets[d.category].push(d.edRate);
+  });
   const out={};
   for (const [k,values] of Object.entries(buckets)) {
-    out[k]={days:values.length,mean:mean(values),median:median(values)};
+    out[k]={days:values.length,mean:mean(values),median:median(values),meanRate:mean(rateBuckets[k])};
   }
   return out;
 }
@@ -381,7 +396,7 @@ function renderMetrics(series) {
 function renderTables(series) {
   const area=selectedArea();
   if (area.type === "parish") {
-    $("categoryTable").innerHTML='<tr><td colspan="5">Daily LDH ED data are not published at parish resolution.</td></tr>';
+    $("categoryTable").innerHTML='<tr><td colspan="6">Daily LDH ED data are not published at parish resolution.</td></tr>';
     $("lagTable").innerHTML='<tr><td colspan="3">Choose an LDH region or LIX Louisiana CWA.</td></tr>';
     return;
   }
@@ -403,6 +418,7 @@ function renderTables(series) {
       '<td><span class="tag '+labels[key][1]+'">'+labels[key][0]+"</span></td>"+
       "<td>"+s.days+"</td>"+
       "<td>"+fmt(s.mean)+"</td>"+
+      "<td>"+fmt(s.meanRate,2)+"</td>"+
       "<td>"+fmt(s.median)+"</td>"+
       "<td>"+deltaText+"</td>"+
       "</tr>";
@@ -424,16 +440,45 @@ const STATION_DASHES = {KBTR:[], KASD:[7,3], KMSY:[2,3], KNEW:[10,3,2,3], KHUM:[
 
 async function loadWeather() {
   try {
-    const rows = parseCSV(await fetchText("data/weather_daily.csv"));
-    if (!rows.length) throw new Error("Empty weather dataset");
+    const [stationText, regionText, wbgtText, advanced] = await Promise.all([
+      fetchText("data/weather_daily.csv"),
+      fetchText("data/weather_region_daily.csv"),
+      fetchText("data/wbgt_region_daily.csv").catch(()=>""), 
+      fetchJSON("data/advanced_analysis.json").catch(()=>null)
+    ]);
+    const rows = parseCSV(stationText);
+    const regionRows = parseCSV(regionText);
+    if (!rows.length || !regionRows.length) throw new Error("Regional weather dataset is awaiting its first build");
+
     for (const row of rows) {
       const day = {...row};
-      for (const key of [...WEATHER_METRICS.map((m)=>m.key), "temperature_hours", "heat_index_hours", "expected_hours"]) {
+      for (const key of [...WEATHER_METRICS.map((m)=>m.key), "morning_low_f", "hi_hours_105", "hi_hours_108",
+                         "temperature_hours", "heat_index_hours", "expected_hours"]) {
         day[key] = row[key] === "" || row[key] == null ? null : Number(row[key]);
         if (!Number.isFinite(day[key])) day[key] = null;
       }
       state.weather.set(row.date+"|"+row.station,day);
     }
+
+    const wbgt = new Map(parseCSV(wbgtText).map(r=>[
+      r.date+"|"+r.ldh_region, finiteValue(r.regional_wbgt_max_f)
+    ]));
+    for (const row of regionRows) {
+      const day = {...row};
+      for (const metric of CORRELATION_METRICS) {
+        day[metric.key] = finiteValue(row[metric.key]);
+      }
+      day.population_2020 = finiteValue(row.population_2020);
+      day.temperature_hours = finiteValue(row.temperature_hours);
+      day.heat_index_hours = finiteValue(row.heat_index_hours);
+      day.expected_hours = finiteValue(row.expected_hours);
+      day.source_count = finiteValue(row.source_count);
+      day.fallback_used = row.fallback_used;
+      const w = wbgt.get(row.date+"|"+row.ldh_region);
+      day.regional_wbgt_max_f = Number.isFinite(w) ? w : null;
+      state.weatherRegion.set(row.date+"|"+row.ldh_region,day);
+    }
+    state.advanced = advanced;
     state.weatherStatus = "loaded";
   } catch (error) {
     console.error(error);
@@ -627,7 +672,8 @@ async function boot() {
     loadWeather();
     for (const metric of WEATHER_METRICS) $(metric.id).addEventListener("change",renderAll);
     $("weatherLag").addEventListener("change",renderWeatherCorrelations);
-    $("weatherCoverage").addEventListener("change",renderWeatherCorrelations);
+    $("weatherResponseScale").addEventListener("change",renderWeatherCorrelations);
+    $("adjustedPeriod").addEventListener("change",renderWeatherCorrelations);
     $("areaSelect").addEventListener("change",renderAll);
     $("seasonSelect").addEventListener("change",()=>{
       resetDatesToSeason();
