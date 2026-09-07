@@ -35,6 +35,8 @@
     "3": {
       "name": "South Central (LIX subset)",
       "short_name": "South Central",
+      "health_population_extra_2020": 49406,
+      "health_population_extra_note": "St. Mary Parish is included in the LDH Region 3 ED count but is outside LIX.",
       "weather_stations": ["KHUM"],
       "weather_fallback_stations": ["KGAO", "KPTN"],
       "wbgt_points": [
