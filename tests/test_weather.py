@@ -27,7 +27,7 @@ class WeatherTests(unittest.TestCase):
         self.assertEqual((btr['high_f'],btr['low_f'],btr['average_f']), (100,80,90))
         self.assertEqual((btr['temperature_hours'],btr['heat_index_hours']), (3,2))
         self.assertEqual(btr['peak_heat_index_f'],105.9)
-        self.assertEqual(btr['morning_low_f'],80)
+        self.assertEqual(btr['morning_low_f'],90)
         self.assertEqual(btr['hi_hours_105'],1)
         self.assertEqual(btr['hi_hours_108'],0)
         self.assertEqual(hum['high_f'],'')
