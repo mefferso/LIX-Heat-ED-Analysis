@@ -1,5 +1,757 @@
 {
-  "generated_at": "2026-09-07T06:29:15.719784+00:00",
-  "status": "no_data",
-  "groups": {}
+  "generated_at": "2026-09-07T06:36:53.434142+00:00",
+  "status": "ok",
+  "method": "Region-day count models with log(population) offset; cubic B-spline exposure; adjusted for year, month, day-of-week, and region for combined models. Discrete negative binomial preferred; Poisson fallback if fitting fails.",
+  "groups": {
+    "all": {
+      "all_months": {
+        "high_f": {
+          "n": 4,
+          "status": "insufficient_data",
+          "label": "High temperature",
+          "unit": "\u00b0F"
+        },
+        "low_f": {
+          "n": 4,
+          "status": "insufficient_data",
+          "label": "Low temperature",
+          "unit": "\u00b0F"
+        },
+        "average_f": {
+          "n": 4,
+          "status": "insufficient_data",
+          "label": "Average temperature",
+          "unit": "\u00b0F"
+        },
+        "peak_heat_index_f": {
+          "n": 4,
+          "status": "insufficient_data",
+          "label": "Peak heat index",
+          "unit": "\u00b0F"
+        },
+        "regional_wbgt_max_f": {
+          "status": "ok",
+          "model": "negative_binomial",
+          "n": 3108,
+          "aic": 10664.792897263007,
+          "p50": 86.64,
+          "p90": 92.95,
+          "rate_ratio_p90_vs_p50": 2.068653338719718,
+          "label": "Outdoor WBGT",
+          "unit": "\u00b0F",
+          "delta_aic": 0.0
+        },
+        "morning_low_f": {
+          "n": 4,
+          "status": "insufficient_data",
+          "label": "Overnight / morning low",
+          "unit": "\u00b0F"
+        },
+        "hi_hours_105": {
+          "n": 4,
+          "status": "insufficient_data",
+          "label": "Hours with HI \u2265105\u00b0F",
+          "unit": "hours"
+        },
+        "hi_hours_108": {
+          "n": 4,
+          "status": "insufficient_data",
+          "label": "Hours with HI \u2265108\u00b0F",
+          "unit": "hours"
+        },
+        "hi_2day_mean_f": {
+          "n": 0,
+          "status": "insufficient_data",
+          "label": "2-day mean peak HI",
+          "unit": "\u00b0F"
+        },
+        "hi_3day_mean_f": {
+          "n": 0,
+          "status": "insufficient_data",
+          "label": "3-day mean peak HI",
+          "unit": "\u00b0F"
+        },
+        "consecutive_hi108_days": {
+          "n": 4,
+          "status": "insufficient_data",
+          "label": "Consecutive HI \u2265108\u00b0F days",
+          "unit": "days"
+        }
+      },
+      "jja": {
+        "high_f": {
+          "n": 4,
+          "status": "insufficient_data",
+          "label": "High temperature",
+          "unit": "\u00b0F"
+        },
+        "low_f": {
+          "n": 4,
+          "status": "insufficient_data",
+          "label": "Low temperature",
+          "unit": "\u00b0F"
+        },
+        "average_f": {
+          "n": 4,
+          "status": "insufficient_data",
+          "label": "Average temperature",
+          "unit": "\u00b0F"
+        },
+        "peak_heat_index_f": {
+          "n": 4,
+          "status": "insufficient_data",
+          "label": "Peak heat index",
+          "unit": "\u00b0F"
+        },
+        "regional_wbgt_max_f": {
+          "status": "ok",
+          "model": "negative_binomial",
+          "n": 1434,
+          "aic": 6686.437497958066,
+          "p50": 90.47,
+          "p90": 94.22,
+          "rate_ratio_p90_vs_p50": 1.212895640674482,
+          "label": "Outdoor WBGT",
+          "unit": "\u00b0F",
+          "delta_aic": 0.0
+        },
+        "morning_low_f": {
+          "n": 4,
+          "status": "insufficient_data",
+          "label": "Overnight / morning low",
+          "unit": "\u00b0F"
+        },
+        "hi_hours_105": {
+          "n": 4,
+          "status": "insufficient_data",
+          "label": "Hours with HI \u2265105\u00b0F",
+          "unit": "hours"
+        },
+        "hi_hours_108": {
+          "n": 4,
+          "status": "insufficient_data",
+          "label": "Hours with HI \u2265108\u00b0F",
+          "unit": "hours"
+        },
+        "hi_2day_mean_f": {
+          "n": 0,
+          "status": "insufficient_data",
+          "label": "2-day mean peak HI",
+          "unit": "\u00b0F"
+        },
+        "hi_3day_mean_f": {
+          "n": 0,
+          "status": "insufficient_data",
+          "label": "3-day mean peak HI",
+          "unit": "\u00b0F"
+        },
+        "consecutive_hi108_days": {
+          "n": 4,
+          "status": "insufficient_data",
+          "label": "Consecutive HI \u2265108\u00b0F days",
+          "unit": "days"
+        }
+      }
+    },
+    "1": {
+      "all_months": {
+        "high_f": {
+          "n": 1,
+          "status": "insufficient_data",
+          "label": "High temperature",
+          "unit": "\u00b0F"
+        },
+        "low_f": {
+          "n": 1,
+          "status": "insufficient_data",
+          "label": "Low temperature",
+          "unit": "\u00b0F"
+        },
+        "average_f": {
+          "n": 1,
+          "status": "insufficient_data",
+          "label": "Average temperature",
+          "unit": "\u00b0F"
+        },
+        "peak_heat_index_f": {
+          "n": 1,
+          "status": "insufficient_data",
+          "label": "Peak heat index",
+          "unit": "\u00b0F"
+        },
+        "regional_wbgt_max_f": {
+          "status": "ok",
+          "model": "negative_binomial",
+          "n": 778,
+          "aic": 3001.6288437484727,
+          "p50": 86.14500000000001,
+          "p90": 92.556,
+          "rate_ratio_p90_vs_p50": 2.2342188445696882,
+          "label": "Outdoor WBGT",
+          "unit": "\u00b0F",
+          "delta_aic": 0.0
+        },
+        "morning_low_f": {
+          "n": 1,
+          "status": "insufficient_data",
+          "label": "Overnight / morning low",
+          "unit": "\u00b0F"
+        },
+        "hi_hours_105": {
+          "n": 1,
+          "status": "insufficient_data",
+          "label": "Hours with HI \u2265105\u00b0F",
+          "unit": "hours"
+        },
+        "hi_hours_108": {
+          "n": 1,
+          "status": "insufficient_data",
+          "label": "Hours with HI \u2265108\u00b0F",
+          "unit": "hours"
+        },
+        "hi_2day_mean_f": {
+          "n": 0,
+          "status": "insufficient_data",
+          "label": "2-day mean peak HI",
+          "unit": "\u00b0F"
+        },
+        "hi_3day_mean_f": {
+          "n": 0,
+          "status": "insufficient_data",
+          "label": "3-day mean peak HI",
+          "unit": "\u00b0F"
+        },
+        "consecutive_hi108_days": {
+          "n": 1,
+          "status": "insufficient_data",
+          "label": "Consecutive HI \u2265108\u00b0F days",
+          "unit": "days"
+        }
+      },
+      "jja": {
+        "high_f": {
+          "n": 1,
+          "status": "insufficient_data",
+          "label": "High temperature",
+          "unit": "\u00b0F"
+        },
+        "low_f": {
+          "n": 1,
+          "status": "insufficient_data",
+          "label": "Low temperature",
+          "unit": "\u00b0F"
+        },
+        "average_f": {
+          "n": 1,
+          "status": "insufficient_data",
+          "label": "Average temperature",
+          "unit": "\u00b0F"
+        },
+        "peak_heat_index_f": {
+          "n": 1,
+          "status": "insufficient_data",
+          "label": "Peak heat index",
+          "unit": "\u00b0F"
+        },
+        "regional_wbgt_max_f": {
+          "status": "ok",
+          "model": "negative_binomial",
+          "n": 358,
+          "aic": 1850.9693424305976,
+          "p50": 89.86500000000001,
+          "p90": 93.824,
+          "rate_ratio_p90_vs_p50": 1.1383592979477652,
+          "label": "Outdoor WBGT",
+          "unit": "\u00b0F",
+          "delta_aic": 0.0
+        },
+        "morning_low_f": {
+          "n": 1,
+          "status": "insufficient_data",
+          "label": "Overnight / morning low",
+          "unit": "\u00b0F"
+        },
+        "hi_hours_105": {
+          "n": 1,
+          "status": "insufficient_data",
+          "label": "Hours with HI \u2265105\u00b0F",
+          "unit": "hours"
+        },
+        "hi_hours_108": {
+          "n": 1,
+          "status": "insufficient_data",
+          "label": "Hours with HI \u2265108\u00b0F",
+          "unit": "hours"
+        },
+        "hi_2day_mean_f": {
+          "n": 0,
+          "status": "insufficient_data",
+          "label": "2-day mean peak HI",
+          "unit": "\u00b0F"
+        },
+        "hi_3day_mean_f": {
+          "n": 0,
+          "status": "insufficient_data",
+          "label": "3-day mean peak HI",
+          "unit": "\u00b0F"
+        },
+        "consecutive_hi108_days": {
+          "n": 1,
+          "status": "insufficient_data",
+          "label": "Consecutive HI \u2265108\u00b0F days",
+          "unit": "days"
+        }
+      }
+    },
+    "2": {
+      "all_months": {
+        "high_f": {
+          "n": 1,
+          "status": "insufficient_data",
+          "label": "High temperature",
+          "unit": "\u00b0F"
+        },
+        "low_f": {
+          "n": 1,
+          "status": "insufficient_data",
+          "label": "Low temperature",
+          "unit": "\u00b0F"
+        },
+        "average_f": {
+          "n": 1,
+          "status": "insufficient_data",
+          "label": "Average temperature",
+          "unit": "\u00b0F"
+        },
+        "peak_heat_index_f": {
+          "n": 1,
+          "status": "insufficient_data",
+          "label": "Peak heat index",
+          "unit": "\u00b0F"
+        },
+        "regional_wbgt_max_f": {
+          "status": "ok",
+          "model": "negative_binomial",
+          "n": 777,
+          "aic": 2281.1136357644837,
+          "p50": 86.93,
+          "p90": 93.09,
+          "rate_ratio_p90_vs_p50": 1.9802367415701303,
+          "label": "Outdoor WBGT",
+          "unit": "\u00b0F",
+          "delta_aic": 0.0
+        },
+        "morning_low_f": {
+          "n": 1,
+          "status": "insufficient_data",
+          "label": "Overnight / morning low",
+          "unit": "\u00b0F"
+        },
+        "hi_hours_105": {
+          "n": 1,
+          "status": "insufficient_data",
+          "label": "Hours with HI \u2265105\u00b0F",
+          "unit": "hours"
+        },
+        "hi_hours_108": {
+          "n": 1,
+          "status": "insufficient_data",
+          "label": "Hours with HI \u2265108\u00b0F",
+          "unit": "hours"
+        },
+        "hi_2day_mean_f": {
+          "n": 0,
+          "status": "insufficient_data",
+          "label": "2-day mean peak HI",
+          "unit": "\u00b0F"
+        },
+        "hi_3day_mean_f": {
+          "n": 0,
+          "status": "insufficient_data",
+          "label": "3-day mean peak HI",
+          "unit": "\u00b0F"
+        },
+        "consecutive_hi108_days": {
+          "n": 1,
+          "status": "insufficient_data",
+          "label": "Consecutive HI \u2265108\u00b0F days",
+          "unit": "days"
+        }
+      },
+      "jja": {
+        "high_f": {
+          "n": 1,
+          "status": "insufficient_data",
+          "label": "High temperature",
+          "unit": "\u00b0F"
+        },
+        "low_f": {
+          "n": 1,
+          "status": "insufficient_data",
+          "label": "Low temperature",
+          "unit": "\u00b0F"
+        },
+        "average_f": {
+          "n": 1,
+          "status": "insufficient_data",
+          "label": "Average temperature",
+          "unit": "\u00b0F"
+        },
+        "peak_heat_index_f": {
+          "n": 1,
+          "status": "insufficient_data",
+          "label": "Peak heat index",
+          "unit": "\u00b0F"
+        },
+        "regional_wbgt_max_f": {
+          "status": "ok",
+          "model": "negative_binomial",
+          "n": 358,
+          "aic": 1492.2182789604776,
+          "p50": 90.695,
+          "p90": 94.44800000000001,
+          "rate_ratio_p90_vs_p50": 1.1739726977696097,
+          "label": "Outdoor WBGT",
+          "unit": "\u00b0F",
+          "delta_aic": 0.0
+        },
+        "morning_low_f": {
+          "n": 1,
+          "status": "insufficient_data",
+          "label": "Overnight / morning low",
+          "unit": "\u00b0F"
+        },
+        "hi_hours_105": {
+          "n": 1,
+          "status": "insufficient_data",
+          "label": "Hours with HI \u2265105\u00b0F",
+          "unit": "hours"
+        },
+        "hi_hours_108": {
+          "n": 1,
+          "status": "insufficient_data",
+          "label": "Hours with HI \u2265108\u00b0F",
+          "unit": "hours"
+        },
+        "hi_2day_mean_f": {
+          "n": 0,
+          "status": "insufficient_data",
+          "label": "2-day mean peak HI",
+          "unit": "\u00b0F"
+        },
+        "hi_3day_mean_f": {
+          "n": 0,
+          "status": "insufficient_data",
+          "label": "3-day mean peak HI",
+          "unit": "\u00b0F"
+        },
+        "consecutive_hi108_days": {
+          "n": 1,
+          "status": "insufficient_data",
+          "label": "Consecutive HI \u2265108\u00b0F days",
+          "unit": "days"
+        }
+      }
+    },
+    "3": {
+      "all_months": {
+        "high_f": {
+          "n": 1,
+          "status": "insufficient_data",
+          "label": "High temperature",
+          "unit": "\u00b0F"
+        },
+        "low_f": {
+          "n": 1,
+          "status": "insufficient_data",
+          "label": "Low temperature",
+          "unit": "\u00b0F"
+        },
+        "average_f": {
+          "n": 1,
+          "status": "insufficient_data",
+          "label": "Average temperature",
+          "unit": "\u00b0F"
+        },
+        "peak_heat_index_f": {
+          "n": 1,
+          "status": "insufficient_data",
+          "label": "Peak heat index",
+          "unit": "\u00b0F"
+        },
+        "regional_wbgt_max_f": {
+          "status": "ok",
+          "model": "negative_binomial",
+          "n": 777,
+          "aic": 2527.24141046056,
+          "p50": 86.46,
+          "p90": 92.53399999999999,
+          "rate_ratio_p90_vs_p50": 1.8748431440489373,
+          "label": "Outdoor WBGT",
+          "unit": "\u00b0F",
+          "delta_aic": 0.0
+        },
+        "morning_low_f": {
+          "n": 1,
+          "status": "insufficient_data",
+          "label": "Overnight / morning low",
+          "unit": "\u00b0F"
+        },
+        "hi_hours_105": {
+          "n": 1,
+          "status": "insufficient_data",
+          "label": "Hours with HI \u2265105\u00b0F",
+          "unit": "hours"
+        },
+        "hi_hours_108": {
+          "n": 1,
+          "status": "insufficient_data",
+          "label": "Hours with HI \u2265108\u00b0F",
+          "unit": "hours"
+        },
+        "hi_2day_mean_f": {
+          "n": 0,
+          "status": "insufficient_data",
+          "label": "2-day mean peak HI",
+          "unit": "\u00b0F"
+        },
+        "hi_3day_mean_f": {
+          "n": 0,
+          "status": "insufficient_data",
+          "label": "3-day mean peak HI",
+          "unit": "\u00b0F"
+        },
+        "consecutive_hi108_days": {
+          "n": 1,
+          "status": "insufficient_data",
+          "label": "Consecutive HI \u2265108\u00b0F days",
+          "unit": "days"
+        }
+      },
+      "jja": {
+        "high_f": {
+          "n": 1,
+          "status": "insufficient_data",
+          "label": "High temperature",
+          "unit": "\u00b0F"
+        },
+        "low_f": {
+          "n": 1,
+          "status": "insufficient_data",
+          "label": "Low temperature",
+          "unit": "\u00b0F"
+        },
+        "average_f": {
+          "n": 1,
+          "status": "insufficient_data",
+          "label": "Average temperature",
+          "unit": "\u00b0F"
+        },
+        "peak_heat_index_f": {
+          "n": 1,
+          "status": "insufficient_data",
+          "label": "Peak heat index",
+          "unit": "\u00b0F"
+        },
+        "regional_wbgt_max_f": {
+          "status": "ok",
+          "model": "negative_binomial",
+          "n": 358,
+          "aic": 1573.8146860805923,
+          "p50": 90.11,
+          "p90": 94.22,
+          "rate_ratio_p90_vs_p50": 1.2913755640754405,
+          "label": "Outdoor WBGT",
+          "unit": "\u00b0F",
+          "delta_aic": 0.0
+        },
+        "morning_low_f": {
+          "n": 1,
+          "status": "insufficient_data",
+          "label": "Overnight / morning low",
+          "unit": "\u00b0F"
+        },
+        "hi_hours_105": {
+          "n": 1,
+          "status": "insufficient_data",
+          "label": "Hours with HI \u2265105\u00b0F",
+          "unit": "hours"
+        },
+        "hi_hours_108": {
+          "n": 1,
+          "status": "insufficient_data",
+          "label": "Hours with HI \u2265108\u00b0F",
+          "unit": "hours"
+        },
+        "hi_2day_mean_f": {
+          "n": 0,
+          "status": "insufficient_data",
+          "label": "2-day mean peak HI",
+          "unit": "\u00b0F"
+        },
+        "hi_3day_mean_f": {
+          "n": 0,
+          "status": "insufficient_data",
+          "label": "3-day mean peak HI",
+          "unit": "\u00b0F"
+        },
+        "consecutive_hi108_days": {
+          "n": 1,
+          "status": "insufficient_data",
+          "label": "Consecutive HI \u2265108\u00b0F days",
+          "unit": "days"
+        }
+      }
+    },
+    "9": {
+      "all_months": {
+        "high_f": {
+          "n": 1,
+          "status": "insufficient_data",
+          "label": "High temperature",
+          "unit": "\u00b0F"
+        },
+        "low_f": {
+          "n": 1,
+          "status": "insufficient_data",
+          "label": "Low temperature",
+          "unit": "\u00b0F"
+        },
+        "average_f": {
+          "n": 1,
+          "status": "insufficient_data",
+          "label": "Average temperature",
+          "unit": "\u00b0F"
+        },
+        "peak_heat_index_f": {
+          "n": 1,
+          "status": "insufficient_data",
+          "label": "Peak heat index",
+          "unit": "\u00b0F"
+        },
+        "regional_wbgt_max_f": {
+          "status": "ok",
+          "model": "negative_binomial",
+          "n": 777,
+          "aic": 2909.041283140979,
+          "p50": 87.36,
+          "p90": 93.3,
+          "rate_ratio_p90_vs_p50": 2.0551642090973727,
+          "label": "Outdoor WBGT",
+          "unit": "\u00b0F",
+          "delta_aic": 0.0
+        },
+        "morning_low_f": {
+          "n": 1,
+          "status": "insufficient_data",
+          "label": "Overnight / morning low",
+          "unit": "\u00b0F"
+        },
+        "hi_hours_105": {
+          "n": 1,
+          "status": "insufficient_data",
+          "label": "Hours with HI \u2265105\u00b0F",
+          "unit": "hours"
+        },
+        "hi_hours_108": {
+          "n": 1,
+          "status": "insufficient_data",
+          "label": "Hours with HI \u2265108\u00b0F",
+          "unit": "hours"
+        },
+        "hi_2day_mean_f": {
+          "n": 0,
+          "status": "insufficient_data",
+          "label": "2-day mean peak HI",
+          "unit": "\u00b0F"
+        },
+        "hi_3day_mean_f": {
+          "n": 0,
+          "status": "insufficient_data",
+          "label": "3-day mean peak HI",
+          "unit": "\u00b0F"
+        },
+        "consecutive_hi108_days": {
+          "n": 1,
+          "status": "insufficient_data",
+          "label": "Consecutive HI \u2265108\u00b0F days",
+          "unit": "days"
+        }
+      },
+      "jja": {
+        "high_f": {
+          "n": 1,
+          "status": "insufficient_data",
+          "label": "High temperature",
+          "unit": "\u00b0F"
+        },
+        "low_f": {
+          "n": 1,
+          "status": "insufficient_data",
+          "label": "Low temperature",
+          "unit": "\u00b0F"
+        },
+        "average_f": {
+          "n": 1,
+          "status": "insufficient_data",
+          "label": "Average temperature",
+          "unit": "\u00b0F"
+        },
+        "peak_heat_index_f": {
+          "n": 1,
+          "status": "insufficient_data",
+          "label": "Peak heat index",
+          "unit": "\u00b0F"
+        },
+        "regional_wbgt_max_f": {
+          "status": "ok",
+          "model": "negative_binomial",
+          "n": 358,
+          "aic": 1790.366473013134,
+          "p50": 91.17,
+          "p90": 94.447,
+          "rate_ratio_p90_vs_p50": 1.1122676246318566,
+          "label": "Outdoor WBGT",
+          "unit": "\u00b0F",
+          "delta_aic": 0.0
+        },
+        "morning_low_f": {
+          "n": 1,
+          "status": "insufficient_data",
+          "label": "Overnight / morning low",
+          "unit": "\u00b0F"
+        },
+        "hi_hours_105": {
+          "n": 1,
+          "status": "insufficient_data",
+          "label": "Hours with HI \u2265105\u00b0F",
+          "unit": "hours"
+        },
+        "hi_hours_108": {
+          "n": 1,
+          "status": "insufficient_data",
+          "label": "Hours with HI \u2265108\u00b0F",
+          "unit": "hours"
+        },
+        "hi_2day_mean_f": {
+          "n": 0,
+          "status": "insufficient_data",
+          "label": "2-day mean peak HI",
+          "unit": "\u00b0F"
+        },
+        "hi_3day_mean_f": {
+          "n": 0,
+          "status": "insufficient_data",
+          "label": "3-day mean peak HI",
+          "unit": "\u00b0F"
+        },
+        "consecutive_hi108_days": {
+          "n": 1,
+          "status": "insufficient_data",
+          "label": "Consecutive HI \u2265108\u00b0F days",
+          "unit": "days"
+        }
+      }
+    }
+  }
 }
