@@ -16,13 +16,6 @@
         <h1>Heat Headlines + ED Visits</h1>
         <p class="lede">Compare LIX Heat Advisory / Excessive or Extreme Heat Warning days with Louisiana Department of Health heat-related emergency department visits.</p>
       </div>
-      <div class="status-card" aria-live="polite">
-        <span class="status-dot" id="statusDot"></span>
-        <div>
-          <strong id="dataStatus">Loading data…</strong>
-          <span id="dataUpdated">Checking automated datasets</span>
-        </div>
-      </div>
     </div>
   </header>
 
@@ -99,7 +92,6 @@
         <label><input type="checkbox" id="weatherAverage"> <span>Average temperature</span></label>
         <label><input type="checkbox" id="weatherHeatIndex"> <span>Peak heat index</span></label>
       </fieldset>
-      <p id="weatherNote" class="chart-caption" aria-live="polite">Loading station weather…</p>
       <div id="weatherLegend" class="weather-legend"></div>
       <div class="chart-wrap"><canvas id="timelineChart"></canvas></div>
       <p class="chart-caption">Headline coverage is the percentage of selected LIX Louisiana parishes under a heat headline at any point during the local calendar day. Warning coverage takes precedence when both products occurred in a parish that day.</p>
@@ -162,7 +154,7 @@
         <thead><tr><th>Area</th><th>Strongest by |r|</th><th>High r</th><th>Low r</th><th>Average r</th><th>Peak HI r</th><th>Paired days</th></tr></thead>
         <tbody id="weatherCorrelationTable"></tbody>
       </table></div>
-      <p class="correlation-note">Pearson r measures a linear relationship (−1 to +1); R² is the fraction of visit variation explained by the fitted line in these data. A close ranking is not evidence that one variable is meaningfully better. These are exploratory, unadjusted correlations: seasonality, year-to-year changes and consecutive hot days can influence them. They do not establish causation or forecast skill.</p>
+      <p class="correlation-note">Pearson r measures the overall linear relationship (−1 to +1); r² is shown as a companion measure. The curved line is a locally weighted average of the observed ED visits, meant to reveal bends and ramp-up zones rather than force one straight-line relationship. A close ranking is not evidence that one variable is meaningfully better. These are exploratory, unadjusted correlations: seasonality, year-to-year changes and consecutive hot days can influence them. They do not establish causation or forecast skill.</p>
       <p class="correlation-note"><strong>WBGT: not available in this dataset.</strong> The archive contains temperature and humidity, but no wind or solar radiation inputs for an outdoor WBGT calculation. A defensible comparison needs observed WBGT or a documented historical estimate using those inputs. <a href="https://www.weather.gov/tsa/wbgt" target="_blank" rel="noopener">NWS WBGT explanation</a>.</p>
       <div id="weatherScatterGroups"></div>
     </section>

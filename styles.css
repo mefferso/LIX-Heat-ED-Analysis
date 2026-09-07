@@ -59,27 +59,6 @@ h1 {
   font-size: 1.05rem;
   line-height: 1.6;
 }
-.status-card {
-  min-width: 260px;
-  display: grid;
-  grid-template-columns: 12px 1fr;
-  gap: 12px;
-  padding: 14px 16px;
-  border: 1px solid rgba(255,255,255,.18);
-  background: rgba(0,0,0,.13);
-  border-radius: 12px;
-  backdrop-filter: blur(4px);
-}
-.status-card strong,
-.status-card span { display: block; }
-.status-card span { font-size: .78rem; color: rgba(255,255,255,.7); margin-top: 2px; }
-.status-dot {
-  width: 10px; height: 10px; border-radius: 50%;
-  background: #aab6c0; margin-top: 5px;
-}
-.status-dot.ok { background: #59d697; }
-.status-dot.warn { background: #f6c15e; }
-
 main {
   width: min(1200px, calc(100% - 32px));
   margin: -18px auto 42px;
@@ -280,7 +259,6 @@ footer p { margin: 0; }
 
 @media (max-width: 980px) {
   .hero__inner { display: block; }
-  .status-card { margin-top: 24px; width: fit-content; }
   .control-grid { grid-template-columns: 1fr 1fr; }
   .metric-grid { grid-template-columns: repeat(2, 1fr); }
   .two-column { grid-template-columns: 1fr; }

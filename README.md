@@ -212,7 +212,10 @@ The bottom of the dashboard compares daily high, low, hourly average temperature
 and peak hourly heat index against heat-related ED visits. Area, season and date
 controls apply to these plots. The combined area shows a combined summary plus
 all four regions separately. Every plot includes year-colored daily points,
-hover dates and values, Pearson r, R², paired-day count and a linear fit.
+hover dates and values, Pearson r, r², paired-day count and a locally weighted
+smoothed-average curve. The curve uses local linear fits across 22% of the
+available paired days, which lets it reveal nonlinear ramp-up zones without
+trying to pass through every noisy daily observation.
 The summary ranks variables by absolute Pearson r (ties at three decimal places
 are shown together). This is a descriptive ranking, not a significance test or
 out-of-sample prediction result.
@@ -234,8 +237,9 @@ missing days. Undefined correlations (fewer than three pairs or no variation)
 are not ranked.
 
 These unadjusted correlations may reflect seasonality, interannual changes,
-serial dependence and other confounding. R² describes the fitted line in this
-sample, not causation or forecast skill. Multi-season data are pooled without
+serial dependence and other confounding. The displayed r² is squared Pearson
+correlation; it does not score the nonlinear curve or establish forecast skill.
+Multi-season data are pooled without
 year adjustment; use individual seasons to inspect consistency.
 
 **Outdoor WBGT is not calculated:** the cached observations contain temperature

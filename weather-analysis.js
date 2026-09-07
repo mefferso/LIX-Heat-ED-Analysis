@@ -83,6 +83,40 @@ function linearStats(pairs, key) {
   return {n, r, r2:r*r, slope:xy/xx, intercept:my-xy/xx*mx};
 }
 
+function loessCurve(pairs, key, span=0.22, pointCount=64) {
+  if (pairs.length < 3) return [];
+  const source = pairs.map(p=>({x:p[key],y:p.y})).filter(p=>Number.isFinite(p.x) && Number.isFinite(p.y));
+  if (source.length < 3) return [];
+  const minX = Math.min(...source.map(p=>p.x));
+  const maxX = Math.max(...source.map(p=>p.x));
+  if (minX === maxX) return [];
+  const neighbors = Math.min(source.length,Math.max(15,Math.ceil(source.length*span)));
+  const curve = [];
+  for (let i=0; i<pointCount; i++) {
+    const x = minX + (maxX-minX)*i/(pointCount-1);
+    const distances = source.map(p=>Math.abs(p.x-x)).sort((a,b)=>a-b);
+    let bandwidth = distances[neighbors-1];
+    if (!bandwidth) bandwidth = distances.find(d=>d>0) || 1;
+    let sw=0, sx=0, sy=0, sxx=0, sxy=0;
+    for (const p of source) {
+      const ratio = Math.abs(p.x-x)/bandwidth;
+      if (ratio > 1) continue;
+      const weight = (1-ratio**3)**3;
+      sw += weight;
+      sx += weight*p.x;
+      sy += weight*p.y;
+      sxx += weight*p.x*p.x;
+      sxy += weight*p.x*p.y;
+    }
+    if (!sw) continue;
+    const denominator = sw*sxx-sx*sx;
+    const y = Math.abs(denominator) < 1e-9 ? sy/sw :
+      ((sy*sxx-sx*sxy)/denominator) + ((sw*sxy-sx*sy)/denominator)*x;
+    if (Number.isFinite(y)) curve.push({x,y:Math.max(0,y)});
+  }
+  return curve;
+}
+
 function renderWeatherCorrelations() {
   scatterCharts.forEach(chart=>chart.destroy());
   scatterCharts = [];
@@ -138,8 +172,7 @@ function renderWeatherCorrelations() {
       "ED visits summed across four LDH regions; weather is the equal-weight mean of four regional values (KMSY/KNEW averaged first). This spatial summary can smooth local extremes." :
       group.regions[0] === "1" ? "Weather is the mean of KMSY and KNEW daily values; both stations required." :
       `Weather: ${state.geography.regions[group.regions[0]].weather_stations.join(", ")}.`;
-    note.textContent = `${stationNote} ${pairs.length} paired days; ${eligible-pairs.length} excluded for missing/incomplete weather.` +
-      (group.regions.includes("3") ? " ED counts include St. Mary Parish outside LIX." : "");
+    note.textContent = `${stationNote} ${pairs.length} paired days; ${eligible-pairs.length} excluded for missing/incomplete weather.`;
     const grid = document.createElement("div");
     grid.className = "scatter-grid";
     section.append(heading,note,grid);
@@ -153,7 +186,7 @@ function renderWeatherCorrelations() {
       const detail = document.createElement("p");
       detail.className = "scatter-stats";
       detail.textContent = stat.r === null ? `n = ${stat.n} · Correlation needs ≥3 days and variation in both variables` :
-        `r = ${stat.r.toFixed(3)} · R² = ${stat.r2.toFixed(3)} · n = ${stat.n}`;
+        `Pearson r = ${stat.r.toFixed(3)} · r² = ${stat.r2.toFixed(3)} · n = ${stat.n}`;
       card.append(title,detail);
       grid.appendChild(card);
       if (!pairs.length) {
@@ -175,10 +208,10 @@ function renderWeatherCorrelations() {
         data:pairs.filter(p=>p.date.startsWith(year)).map(p=>({x:p[metric.key],y:p.y,date:p.date,edDate:p.edDate})),
         backgroundColor:SCATTER_YEAR_COLORS[(Number(year)-2023)%SCATTER_YEAR_COLORS.length]+"88",
         pointRadius:3, pointHoverRadius:5, order:1}));
-      if (stat.slope !== null) {
-        const xs = pairs.map(p=>p[metric.key]);
-        datasets.push({type:"line",label:"Linear fit",data:[Math.min(...xs),Math.max(...xs)].map(x=>({x,y:stat.intercept+stat.slope*x})),
-          borderColor:"#17212b",borderWidth:2,pointRadius:0,pointHitRadius:0,order:0});
+      const curve = loessCurve(pairs,metric.key);
+      if (curve.length) {
+        datasets.push({type:"line",label:"Smoothed average",data:curve,
+          borderColor:"#17212b",borderWidth:2.5,pointRadius:0,pointHitRadius:0,tension:0.18,order:0});
       }
       scatterCharts.push(new Chart(canvas.getContext("2d"),{type:"scatter",data:{datasets},options:{
         responsive:true,maintainAspectRatio:false,animation:false,
@@ -196,4 +229,4 @@ function renderWeatherCorrelations() {
   }
 }
 
-if (typeof module !== "undefined") module.exports = {finiteValue,shiftDate,weatherPairs,linearStats,CORRELATION_METRICS};
+if (typeof module !== "undefined") module.exports = {finiteValue,shiftDate,weatherPairs,linearStats,loessCurve,CORRELATION_METRICS};

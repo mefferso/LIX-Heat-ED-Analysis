@@ -1,7 +1,7 @@
 const assert = require('node:assert/strict');
 const fs = require('node:fs');
 const vm = require('node:vm');
-const {weatherPairs,linearStats,shiftDate,finiteValue} = require('../weather-analysis.js');
+const {weatherPairs,linearStats,loessCurve,shiftDate,finiteValue} = require('../weather-analysis.js');
 assert.equal(finiteValue(''),null);
 assert.equal(finiteValue('bad'),null);
 assert.equal(finiteValue('0'),0);
@@ -9,6 +9,10 @@ assert.equal(shiftDate('2024-02-28',1),'2024-02-29');
 assert.equal(shiftDate('2024-03-10',1),'2024-03-11');
 assert.equal(linearStats([{x:1,y:6},{x:2,y:4},{x:3,y:2}],'x').r,-1);
 assert.equal(linearStats([{x:1,y:0},{x:2,y:0},{x:3,y:0}],'x').r,null);
+const smooth = loessCurve(Array.from({length:30},(_,x)=>({x,y:x<15 ? 2 : 2+(x-14)*2})),'x');
+assert.equal(smooth.length,64);
+assert.ok(smooth[5].y < smooth.at(-5).y);
+assert.deepEqual(loessCurve([{x:1,y:2},{x:1,y:3},{x:1,y:4}],'x'),[]);
 const geography = {regions:{'1':{weather_stations:['A','B']},'2':{weather_stations:['C']}}};
 const analysis = [];
 const weather = new Map();
@@ -67,7 +71,10 @@ assert.equal(elements.get('weatherScatterGroups').children.length,1);
 const configs = vm.runInContext('scatterCharts.map(c=>c.config)',ctx);
 for(const config of configs){
   assert.equal(config.type,'scatter');
-  assert.ok(config.data.datasets.some(d=>d.label==='Linear fit'));
+  const curve = config.data.datasets.find(d=>d.label==='Smoothed average');
+  assert.ok(curve);
+  assert.equal(curve.data.length,64);
+  assert.ok(curve.data.every((point,i)=>i===0 || point.x>curve.data[i-1].x));
   assert.ok(config.data.datasets[0].data[0].edDate);
 }
-console.log('Correlation tests passed: missing vs zero, coverage, matching, lag dates, regional weighting, constant data, chart groups and cleanup.');
+console.log('Correlation tests passed: missing vs zero, coverage, matching, lag dates, regional weighting, nonlinear smoothing, chart groups and cleanup.');

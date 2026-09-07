@@ -445,11 +445,7 @@ async function loadWeather() {
 function buildWeatherDatasets(series) {
   const stations = selectedArea().regions.flatMap((id)=>state.geography.regions[id].weather_stations || []);
   const metrics = WEATHER_METRICS.filter((m)=>$(m.id).checked);
-  const stationText = stations.map((s)=>s === "KASD" ? "KASD (Slidell)" : s).join(", ");
   $("weatherLegend").replaceChildren();
-  $("weatherNote").textContent = state.weatherStatus === "loading" ? "Loading station weather…" :
-    state.weatherStatus === "unavailable" ? "Station weather is unavailable. ED visits and headline coverage remain available." :
-    stationText + " · Local calendar days (Central). High/low and average use hourly observations; peak HI is calculated hourly. Missing hours can understate extremes; hover for observation counts.";
   const datasets = [];
   for (const metric of metrics) {
     for (const station of stations) {
@@ -467,10 +463,6 @@ function buildWeatherDatasets(series) {
       entry.append(swatch,document.createTextNode(label));
       $("weatherLegend").appendChild(entry);
     }
-  }
-  if (metrics.length && state.weatherStatus === "loaded") {
-    const absent = stations.filter((station)=>!datasets.some((d)=>d.station === station));
-    if (absent.length) $("weatherNote").textContent += " No selected weather data in this date range for " + absent.join(", ") + ".";
   }
   return datasets;
 }
@@ -592,29 +584,9 @@ function renderScope() {
   const area=selectedArea();
   if (area.type === "parish") {
     $("scopeNote").textContent="IEM headlines are exact for this parish. LDH does not expose the daily ED series at parish resolution, so health metrics are hidden.";
-  } else if (area.regions.includes("3")) {
-    $("scopeNote").textContent="LDH Region 3 (South Central) includes St. Mary Parish outside LIX; that unavoidable extra health count is included. Mississippi is excluded.";
   } else {
     $("scopeNote").textContent="LDH daily ED visits are region-level and matched to LIX Louisiana heat headlines. Mississippi is excluded.";
   }
-}
-
-function renderStatus() {
-  const ok=state.analysis.length>0 && state.summary?.ldh_status==="loaded";
-  $("statusDot").className="status-dot "+(ok?"ok":"warn");
-
-  if (ok) {
-    $("dataStatus").textContent="IEM + LDH automated";
-    const source=state.summary.ldh_source_updated ? "LDH updated "+state.summary.ldh_source_updated : "LDH loaded";
-    const generated=state.summary.generated_at ? " • pipeline "+new Date(state.summary.generated_at).toLocaleString() : "";
-    $("dataUpdated").textContent=source+generated;
-  } else {
-    $("dataStatus").textContent="IEM active • LDH unavailable";
-    $("dataUpdated").textContent=state.summary?.generated_at
-      ? new Date(state.summary.generated_at).toLocaleString()
-      : "No automated LDH dataset";
-  }
-  $("noLdhPanel").classList.toggle("hidden",ok);
 }
 
 function renderAll() {
@@ -630,7 +602,7 @@ function renderAll() {
   renderTables(series);
   renderChart(series);
   renderWeatherCorrelations();
-  renderStatus();
+  $("noLdhPanel").classList.toggle("hidden",state.analysis.length>0 && state.summary?.ldh_status==="loaded");
 }
 
 async function boot() {
@@ -669,9 +641,6 @@ async function boot() {
     });
   } catch (error) {
     console.error(error);
-    $("dataStatus").textContent="Data load failed";
-    $("dataUpdated").textContent=error.message;
-    $("statusDot").className="status-dot warn";
     $("noLdhPanel").classList.remove("hidden");
   }
 }
