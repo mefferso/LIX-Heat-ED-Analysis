@@ -16,6 +16,7 @@ const EXTENDED_CORRELATION_METRICS = [
 ];
 const CORRELATION_METRICS = [...CORE_CORRELATION_METRICS, ...EXTENDED_CORRELATION_METRICS];
 const SCATTER_YEAR_COLORS = ["#236fa1", "#ae5215", "#754ca3", "#168175"];
+let scatterCharts = [];
 
 function finiteValue(value) {
   if (value == null || String(value).trim() === "") return null;
