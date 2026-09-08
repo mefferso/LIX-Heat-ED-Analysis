@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-09-07T16:39:37.376487+00:00",
+  "generated_at": "2026-09-08T15:18:38.053939+00:00",
   "source": "https://archive-api.open-meteo.com/v1/archive",
   "method": "Liljegren outdoor WBGT via ECMWF thermofeel; regional value is mean of configured parish-point daily maxima.",
   "models": [
@@ -8,8 +8,8 @@
   "timezone": "America/Chicago",
   "archive_lag_days": 5,
   "period_start": "2023-01-01",
-  "period_end": "2026-09-01",
-  "rows": 5340,
+  "period_end": "2026-09-02",
+  "rows": 5344,
   "regions": [
     "1",
     "2",
