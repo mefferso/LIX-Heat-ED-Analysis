@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-09-09T15:08:20.833045+00:00",
+  "generated_at": "2026-09-09T15:16:52.120216+00:00",
   "status": "ok",
   "method": "Region-day count models with log(population) offset; cubic B-spline exposure; adjusted for year, month, day-of-week, and region for combined models. Discrete negative binomial preferred; Poisson fallback if fitting fails.",
   "groups": {
