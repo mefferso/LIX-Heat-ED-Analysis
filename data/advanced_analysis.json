@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-09-10T15:00:58.577998+00:00",
+  "generated_at": "2026-09-10T15:09:06.172258+00:00",
   "status": "ok",
   "method": "Region-day count models with log(population) offset; cubic B-spline exposure; adjusted for year, month, day-of-week, and region for combined models. Discrete negative binomial preferred; Poisson fallback if fitting fails.",
   "groups": {
@@ -56,14 +56,14 @@
         "regional_wbgt_max_f": {
           "status": "ok",
           "model": "negative_binomial",
-          "n": 3128,
-          "aic": 10760.364752362884,
-          "p50": 86.67500000000001,
-          "p90": 92.943,
-          "rate_ratio_p90_vs_p50": 2.085057358112523,
+          "n": 3132,
+          "aic": 10776.648057323766,
+          "p50": 86.685,
+          "p90": 92.939,
+          "rate_ratio_p90_vs_p50": 2.0772360451675627,
           "label": "Outdoor WBGT",
           "unit": "\u00b0F",
-          "delta_aic": 213.14350176521657
+          "delta_aic": 229.42680672609822
         },
         "morning_low_f": {
           "status": "ok",
@@ -326,14 +326,14 @@
         "regional_wbgt_max_f": {
           "status": "ok",
           "model": "negative_binomial",
-          "n": 783,
-          "aic": 3031.694511195663,
-          "p50": 86.15,
-          "p90": 92.538,
-          "rate_ratio_p90_vs_p50": 2.2656810555698192,
+          "n": 784,
+          "aic": 3038.4652452271653,
+          "p50": 86.14500000000001,
+          "p90": 92.532,
+          "rate_ratio_p90_vs_p50": 2.2560137111219025,
           "label": "Outdoor WBGT",
           "unit": "\u00b0F",
-          "delta_aic": 156.97522736794872
+          "delta_aic": 163.74596139945106
         },
         "morning_low_f": {
           "status": "ok",
@@ -596,14 +596,14 @@
         "regional_wbgt_max_f": {
           "status": "ok",
           "model": "negative_binomial",
-          "n": 782,
-          "aic": 2303.953692917975,
-          "p50": 86.965,
-          "p90": 93.08800000000001,
-          "rate_ratio_p90_vs_p50": 2.031629980617105,
+          "n": 783,
+          "aic": 2309.001224634298,
+          "p50": 86.97,
+          "p90": 93.086,
+          "rate_ratio_p90_vs_p50": 2.0238763036496064,
           "label": "Outdoor WBGT",
           "unit": "\u00b0F",
-          "delta_aic": 13.681550116097242
+          "delta_aic": 18.729081832420434
         },
         "morning_low_f": {
           "status": "ok",
@@ -866,14 +866,14 @@
         "regional_wbgt_max_f": {
           "status": "ok",
           "model": "negative_binomial",
-          "n": 782,
-          "aic": 2544.9326098871315,
-          "p50": 86.50999999999999,
-          "p90": 92.466,
-          "rate_ratio_p90_vs_p50": 1.8558649818128132,
+          "n": 783,
+          "aic": 2548.1167622159746,
+          "p50": 86.55,
+          "p90": 92.462,
+          "rate_ratio_p90_vs_p50": 1.8409291510913206,
           "label": "Outdoor WBGT",
           "unit": "\u00b0F",
-          "delta_aic": 34.58323998510468
+          "delta_aic": 37.76739231394777
         },
         "morning_low_f": {
           "status": "ok",
@@ -1124,14 +1124,14 @@
         "regional_wbgt_max_f": {
           "status": "ok",
           "model": "negative_binomial",
-          "n": 782,
-          "aic": 2937.0728956494827,
-          "p50": 87.38,
+          "n": 783,
+          "aic": 2939.992953289959,
+          "p50": 87.37,
           "p90": 93.3,
-          "rate_ratio_p90_vs_p50": 2.065120547761496,
+          "rate_ratio_p90_vs_p50": 2.0668140114930407,
           "label": "Outdoor WBGT",
           "unit": "\u00b0F",
-          "delta_aic": 89.48340244042492
+          "delta_aic": 92.40346008090137
         },
         "morning_low_f": {
           "status": "ok",
