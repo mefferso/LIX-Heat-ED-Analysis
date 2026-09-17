@@ -7,6 +7,7 @@
   <title>LIX Heat + ED Analysis</title>
   <link rel="preconnect" href="https://cdn.jsdelivr.net">
   <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="health-impact.css">
 </head>
 <body>
   <header class="hero">
@@ -199,6 +200,82 @@
       <div id="weatherScatterGroups"></div>
     </section>
 
+    <section id="healthImpactPanel" class="panel impact-panel" aria-labelledby="healthImpactTitle">
+      <div class="panel-heading">
+        <div class="impact-intro">
+          <p class="eyebrow dark">HEALTH-IMPACT THRESHOLDS</p>
+          <h2 id="healthImpactTitle">When does peak heat index identify an unusually bad health day?</h2>
+          <p class="correlation-note">This is a separate archive-level analysis of the same LDH + weather pairs. It does not replace or alter the correlation work above.</p>
+        </div>
+      </div>
+
+      <div class="impact-controls">
+        <label><span>High-impact health day</span><select id="impactBenchmark">
+          <option value="0.95" selected>≥95th-percentile ED rate · CDC-style benchmark</option>
+          <option value="0.90">≥90th-percentile ED rate · sensitivity check</option>
+        </select></label>
+        <label><span>Evaluation period</span><select id="impactPeriod">
+          <option value="all" selected>May–September</option>
+          <option value="early">May–June</option>
+          <option value="peak">July–August</option>
+          <option value="late">September</option>
+        </select></label>
+        <label><span>Compare with current 108°F advisory</span><select id="impactCandidate">
+          <option value="104">104°F</option>
+          <option value="105">105°F</option>
+          <option value="106" selected>106°F</option>
+          <option value="107">107°F</option>
+          <option value="108">108°F</option>
+          <option value="109">109°F</option>
+          <option value="110">110°F</option>
+          <option value="111">111°F</option>
+        </select></label>
+      </div>
+      <p id="impactScope" class="correlation-note" aria-live="polite">Loading the local LDH + weather archive…</p>
+
+      <div class="impact-benchmark-grid" aria-label="Local warm-season ED rate percentiles">
+        <article class="impact-card"><span>Median warm-season ED rate</span><strong id="impactMedianRate">—</strong><small>visits /100k population</small></article>
+        <article class="impact-card"><span>90th-percentile ED rate</span><strong id="impactP90Rate">—</strong><small>visits /100k population</small></article>
+        <article class="impact-card"><span>95th-percentile ED rate</span><strong id="impactP95Rate">—</strong><small>visits /100k population</small></article>
+        <article class="impact-card"><span>Complete warm-season days</span><strong id="impactPairedDays">—</strong><small>May–September archive</small></article>
+      </div>
+
+      <div class="impact-operational-grid" aria-label="Operational threshold diagnostics">
+        <article class="impact-card"><span>Chance at ≥108°F</span><strong id="impact108Risk">—</strong><small>selected high-impact definition</small></article>
+        <article class="impact-card"><span>108°F sensitivity</span><strong id="impact108Sensitivity">—</strong><small>share of high-impact days captured</small></article>
+        <article class="impact-card"><span id="impactCandidateLabel">Chance at ≥106°F</span><strong id="impactCandidateRisk">—</strong><small>comparison threshold</small></article>
+      </div>
+
+      <p id="impactComparisonSummary" class="impact-summary">Waiting for complete paired data…</p>
+
+      <section class="impact-subsection" aria-labelledby="impactProbabilityTitle">
+        <h3 id="impactProbabilityTitle">Probability of a high-impact ED day by peak heat index</h3>
+        <div class="impact-chart-wrap"><canvas id="impactProbabilityChart"></canvas></div>
+        <p class="correlation-note">Each point is a 2°F heat-index bin with at least eight complete days. The health-event cutoff is fixed from the full local May–September archive, so changing the evaluation period does not redefine what counts as a high-impact day.</p>
+      </section>
+
+      <section class="impact-subsection" aria-labelledby="impactThresholdTableTitle">
+        <h3 id="impactThresholdTableTitle">What would different heat-index triggers capture?</h3>
+        <div class="table-wrap"><table>
+          <thead><tr><th>Peak HI trigger</th><th>Days ≥ trigger</th><th>High-impact probability</th><th>Sensitivity</th><th>Specificity</th><th>Risk ratio</th><th>Days vs 108°</th><th>High-impact days vs 108°</th></tr></thead>
+          <tbody id="impactThresholdTable"></tbody>
+        </table></div>
+        <p id="impactThresholdTableNote" class="correlation-note"></p>
+      </section>
+
+      <section class="impact-subsection" aria-labelledby="impactSeasonTitle">
+        <h3 id="impactSeasonTitle">Does the relationship look different through the season?</h3>
+        <div class="table-wrap"><table>
+          <thead><tr><th>Period</th><th>Days</th><th>All-day high-impact frequency</th><th>P(high impact | HI ≥106°)</th><th>P(high impact | HI ≥108°)</th><th>P(high impact | HI ≥113°)</th></tr></thead>
+          <tbody id="impactSeasonTable"></tbody>
+        </table></div>
+        <p class="correlation-note">This seasonal split can flag timing differences worth investigating, but by itself it does not prove acclimatization; the heat-index distribution and other seasonal factors also change.</p>
+      </section>
+
+      <p class="impact-method-note"><strong>CDC connection:</strong> CDC has used each HHS region's 95th percentile of daily warm-season heat-related ED visit rates to identify unusually high health-impact days. This page adapts that percentile idea to the local LDH series, then asks which local peak-HI thresholds capture those days. The numbers are <strong>not</strong> directly mixed with CDC rates because CDC reports HRI visits per 100,000 all-cause ED visits, while this local LDH analysis uses visits per 100,000 population. <a href="https://www.cdc.gov/mmwr/volumes/73/wr/mm7315a1.htm" target="_blank" rel="noopener">CDC methodology</a>.</p>
+      <p class="impact-method-note"><strong>Operational interpretation:</strong> a lower candidate trigger can increase sensitivity while also increasing the number of flagged days. This section quantifies that tradeoff; it does not by itself define a new NWS advisory criterion.</p>
+    </section>
+
     <section id="noLdhPanel" class="panel no-data hidden">
       <h2>LDH automation is unavailable right now.</h2>
       <p>The IEM heat-headline history can still load, but ED statistics are suppressed rather than showing stale or invented health data.</p>
@@ -213,5 +290,6 @@
   <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.7/dist/chart.umd.min.js"></script>
   <script src="weather-analysis.js"></script>
   <script src="app.js"></script>
+  <script src="health-impact.js"></script>
 </body>
 </html>
