@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-09-23T15:33:51.514199+00:00",
+  "generated_at": "2026-09-24T15:54:26.313009+00:00",
   "schema_version": 2,
   "source": "https://mesonet.agron.iastate.edu/cgi-bin/request/asos.py",
   "timezone": "America/Chicago",
@@ -15,14 +15,14 @@
     "KREG"
   ],
   "period_start": "2023-01-01",
-  "period_end": "2026-09-22",
-  "rows": 12249,
-  "regional_rows": 5444,
+  "period_end": "2026-09-23",
+  "rows": 12258,
+  "regional_rows": 5448,
   "regional_min_coverage": 0.75,
   "fallback_days": {
     "1": 0,
     "2": 16,
-    "3": 321,
+    "3": 322,
     "9": 28
   },
   "method": "Latest routine observation per UTC hour; local-day extrema and arithmetic hourly mean. NWS heat index computed per hour. Regional analysis uses configured primary stations meeting 75% daily temperature/heat-index coverage, then explicit fallbacks. Morning low is 00-11 local. Persistence fields use consecutive regional days."
