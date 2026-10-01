@@ -1,6 +1,6 @@
 {
-  "fetched_at": "2026-09-30T16:51:17.714Z",
-  "source_updated": "9/24/2026",
+  "fetched_at": "2026-10-01T17:23:40.160Z",
+  "source_updated": "10/1/2026",
   "dashboard": "https://analytics.la.gov/t/LDH/views/HeatRelatedIllnessDashboardLive_17568488201530/HeatRelatedIllnessesDashboard?:showVizHome=no",
   "years": [
     2023,
@@ -30,7 +30,7 @@
       "name": "Northshore"
     }
   ],
-  "rows": 3256,
+  "rows": 3284,
   "dictionary_segments_applied": [
     "0",
     "1",
@@ -41,37 +41,37 @@
       "year": 2026,
       "region": "1",
       "region_name": "Southeast",
-      "row_count": 172,
+      "row_count": 179,
       "first_date": "2026-04-01",
-      "last_date": "2026-09-19",
-      "sum_ed_visits": 718
+      "last_date": "2026-09-26",
+      "sum_ed_visits": 745
     },
     {
       "year": 2026,
       "region": "2",
       "region_name": "Capital Region",
-      "row_count": 172,
+      "row_count": 179,
       "first_date": "2026-04-01",
-      "last_date": "2026-09-19",
-      "sum_ed_visits": 374
+      "last_date": "2026-09-26",
+      "sum_ed_visits": 389
     },
     {
       "year": 2026,
       "region": "3",
       "region_name": "South Central",
-      "row_count": 172,
+      "row_count": 179,
       "first_date": "2026-04-01",
-      "last_date": "2026-09-19",
-      "sum_ed_visits": 440
+      "last_date": "2026-09-26",
+      "sum_ed_visits": 454
     },
     {
       "year": 2026,
       "region": "9",
       "region_name": "Northshore",
-      "row_count": 172,
+      "row_count": 179,
       "first_date": "2026-04-01",
-      "last_date": "2026-09-19",
-      "sum_ed_visits": 607
+      "last_date": "2026-09-26",
+      "sum_ed_visits": 619
     },
     {
       "year": 2025,
