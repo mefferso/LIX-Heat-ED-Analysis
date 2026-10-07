@@ -5455,3 +5455,7 @@ date,ldh_region,regional_wbgt_max_f,wbgt_points,wbgt_expected_points,source_mode
 2026-09-30,2,85.89,7,7,era5
 2026-09-30,3,85.98,6,6,era5
 2026-09-30,9,86.35,5,5,era5
+2026-10-01,1,85.89,4,4,era5
+2026-10-01,2,86.54,7,7,era5
+2026-10-01,3,86.13,6,6,era5
+2026-10-01,9,86.54,5,5,era5
