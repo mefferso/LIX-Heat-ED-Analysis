@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-10-14T15:51:05.781624+00:00",
+  "generated_at": "2026-10-14T15:57:37.197785+00:00",
   "status": "ok",
   "method": "Region-day count models with log(population) offset; cubic B-spline exposure; adjusted for year, month, day-of-week, and region for combined models. Discrete negative binomial preferred; Poisson fallback if fitting fails.",
   "groups": {
@@ -9,10 +9,10 @@
           "status": "ok",
           "model": "negative_binomial",
           "n": 3240,
-          "aic": 10991.395231475486,
+          "aic": 10991.395231475492,
           "p50": 89.0,
           "p90": 95.0,
-          "rate_ratio_p90_vs_p50": 2.448774411488366,
+          "rate_ratio_p90_vs_p50": 2.448774411487844,
           "label": "High temperature",
           "unit": "\u00b0F",
           "delta_aic": 0.0
@@ -21,10 +21,10 @@
           "status": "ok",
           "model": "negative_binomial",
           "n": 3248,
-          "aic": 11549.411993929587,
+          "aic": 11549.411993929592,
           "p50": 73.4,
           "p90": 79.0,
-          "rate_ratio_p90_vs_p50": 1.6638942360916744,
+          "rate_ratio_p90_vs_p50": 1.6638942360916982,
           "label": "Low temperature",
           "unit": "\u00b0F",
           "delta_aic": 558.0167624541009
@@ -33,13 +33,13 @@
           "status": "ok",
           "model": "negative_binomial",
           "n": 3236,
-          "aic": 11044.85953212711,
+          "aic": 11044.859532127102,
           "p50": 80.3,
           "p90": 86.0,
-          "rate_ratio_p90_vs_p50": 2.437976088577237,
+          "rate_ratio_p90_vs_p50": 2.4379760885772113,
           "label": "Average temperature",
           "unit": "\u00b0F",
-          "delta_aic": 53.46430065162349
+          "delta_aic": 53.464300651610756
         },
         "peak_heat_index_f": {
           "status": "ok",
@@ -48,82 +48,82 @@
           "aic": 11023.63502334126,
           "p50": 96.5,
           "p90": 108.0,
-          "rate_ratio_p90_vs_p50": 2.331778532272772,
+          "rate_ratio_p90_vs_p50": 2.3317785322715707,
           "label": "Peak heat index",
           "unit": "\u00b0F",
-          "delta_aic": 32.23979186577344
+          "delta_aic": 32.239791865767984
         },
         "regional_wbgt_max_f": {
           "status": "ok",
           "model": "negative_binomial",
           "n": 3244,
-          "aic": 11227.095322751258,
+          "aic": 11227.095322751262,
           "p50": 86.76,
           "p90": 92.947,
-          "rate_ratio_p90_vs_p50": 2.016734331843232,
+          "rate_ratio_p90_vs_p50": 2.0167343318426587,
           "label": "Outdoor WBGT",
           "unit": "\u00b0F",
-          "delta_aic": 235.70009127577214
+          "delta_aic": 235.70009127577032
         },
         "morning_low_f": {
           "status": "ok",
           "model": "negative_binomial",
           "n": 3239,
-          "aic": 11540.044370216448,
+          "aic": 11540.044370216452,
           "p50": 73.6,
           "p90": 80.0,
-          "rate_ratio_p90_vs_p50": 1.7614763517595509,
+          "rate_ratio_p90_vs_p50": 1.7614763517596164,
           "label": "Overnight / morning low",
           "unit": "\u00b0F",
-          "delta_aic": 548.6491387409624
+          "delta_aic": 548.6491387409606
         },
         "hi_hours_105": {
           "status": "ok",
           "model": "negative_binomial",
           "n": 3272,
-          "aic": 11550.877263330773,
+          "aic": 11550.87726333078,
           "p50": 0.0,
           "p90": 3.5,
-          "rate_ratio_p90_vs_p50": 1.8111111352338989,
+          "rate_ratio_p90_vs_p50": 1.811111135233905,
           "label": "Hours with HI \u2265105\u00b0F",
           "unit": "hours",
-          "delta_aic": 559.4820318552866
+          "delta_aic": 559.4820318552884
         },
         "hi_hours_108": {
           "status": "ok",
           "model": "negative_binomial",
           "n": 3270,
-          "aic": 11659.32769593108,
+          "aic": 11659.327695931077,
           "p50": 0.0,
           "p90": 0.5,
-          "rate_ratio_p90_vs_p50": 1.222921566782951,
+          "rate_ratio_p90_vs_p50": 1.2229215667829512,
           "label": "Hours with HI \u2265108\u00b0F",
           "unit": "hours",
-          "delta_aic": 667.9324644555945
+          "delta_aic": 667.9324644555854
         },
         "hi_2day_mean_f": {
           "status": "ok",
           "model": "negative_binomial",
           "n": 3232,
-          "aic": 11061.286695613904,
+          "aic": 11061.2866956139,
           "p50": 96.6,
           "p90": 107.9,
-          "rate_ratio_p90_vs_p50": 2.3728106245694627,
+          "rate_ratio_p90_vs_p50": 2.372810624570002,
           "label": "2-day mean peak HI",
           "unit": "\u00b0F",
-          "delta_aic": 69.89146413841809
+          "delta_aic": 69.89146413840899
         },
         "hi_3day_mean_f": {
           "status": "ok",
           "model": "negative_binomial",
           "n": 3232,
-          "aic": 11134.218787135696,
+          "aic": 11134.218787135693,
           "p50": 96.7,
           "p90": 107.7,
-          "rate_ratio_p90_vs_p50": 2.3661671382632314,
+          "rate_ratio_p90_vs_p50": 2.366167138261542,
           "label": "3-day mean peak HI",
           "unit": "\u00b0F",
-          "delta_aic": 142.82355566021033
+          "delta_aic": 142.82355566020124
         },
         "consecutive_hi108_days": {
           "status": "ok",
@@ -132,10 +132,10 @@
           "aic": 11711.926235465482,
           "p50": 0.0,
           "p90": 1.0,
-          "rate_ratio_p90_vs_p50": 1.597218573232432,
+          "rate_ratio_p90_vs_p50": 1.5972185732324293,
           "label": "Consecutive HI \u2265108\u00b0F days",
           "unit": "days",
-          "delta_aic": 720.531003989996
+          "delta_aic": 720.5310039899905
         }
       },
       "jja": {
